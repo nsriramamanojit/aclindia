@@ -1,0 +1,17 @@
+<h1>User Details</h1>
+<table id="one-column-emphasis">
+    <colgroup>
+    	<col class="oce-first" />
+    </colgroup>
+    <tbody>
+   	<tr>
+  <div>
+    <td>User Name</td>
+    <td>  <%= @user.name %></td>
+  </div>
+</tr>
+    </tbody>
+</table>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

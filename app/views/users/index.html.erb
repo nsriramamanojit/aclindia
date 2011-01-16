@@ -1,0 +1,35 @@
+<h1>Listing Users</h1>
+<!-- START_HIGHLIGHT -->
+  <% if notice %>
+    <p id="notice"><%= notice %></p>
+  <% end %>
+<!-- END_HIGHLIGHT -->
+<table id="rounded-corner">
+    <thead>
+    	<tr>
+        	<th scope="col" class="rounded-company">User Name</th>
+            <th scope="col" class="rounded-q1">View</th>
+            <th scope="col" class="rounded-q2">Edit</th>
+            <th scope="col" class="rounded-q3">Delete</th>
+ 
+        </tr>
+    </thead>
+         <tfoot>
+    	<tr>
+        	<td colspan="3" class="rounded-foot-left"></td>
+        	<td class="rounded-foot-right">&nbsp;</td>
+        </tr>
+    </tfoot>
+ <% @users.each do |user| %>
+  <tr>
+    <td><%= user.name %></td>
+    <td><%= link_to 'View', user %></td>
+    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    <td><%= link_to 'Delete', user, :confirm => 'Are you sure?',
+       :method => :delete %></td>
+  </tr>
+<% end %>
+    </tbody>
+</table>
+<%= link_to 'New User', new_user_path %>
+

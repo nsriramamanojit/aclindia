@@ -1,0 +1,101 @@
+<!-- START_HIGHLIGHT -->
+  <% if notice %>
+    <p id="notice"><%= notice %></p>
+  <% end %>
+<!-- END_HIGHLIGHT -->
+
+<h1>Central Lab Details</h1>
+<table id="one-column-emphasis">
+    <colgroup>
+    	<col class="oce-first" />
+    </colgroup>
+    <tbody>
+   	<tr>
+  <div>
+    <td>Lab Id</td>
+    <td><%= @labcentral.labid %></td>
+  </div>
+</tr>
+   	<tr>
+  <div>
+    <td>Lab Name</td>
+    <td><%= @labcentral.labname %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+    <td>Door No</td>
+    <td><%= @labcentral.housenumber %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+	  <td>Street</td>
+      <td><%= @labcentral.street %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+	  <td>Land Mark</td>
+      <td><%= @labcentral.landmark %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+	  <td>Street</td>
+      <td><%= @labcentral.street %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+	  <td>City</td>
+      <td><%= @labcentral.city %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+	  <td>State</td>
+      <td><%= @labcentral.state %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+	  <td>Country</td>
+      <td><%= @labcentral.country %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+	  <td>PIN</td>
+      <td><%= @labcentral.pincode %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+	  <td>Phone</td>
+      <td><%= @labcentral.land %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+	  <td>Mobile</td>
+      <td><%= @labcentral.mobile %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+	  <td>Email</td>
+      <td><%= @labcentral.email %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+	  <td>Status</td>
+      <td><%= @labcentral.status %></td>
+  </div>
+</tr>
+    </tbody>
+</table>
+
+<%= link_to 'Edit', edit_labcentral_path(@labcentral) %> |
+<%= link_to 'Back', labcentrals_path %>

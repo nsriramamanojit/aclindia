@@ -1,0 +1,124 @@
+<div class="home_form">
+<%= form_for(@labregional) do |f| %>
+  <% if @labregional.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@labregional.errors.count, "error") %> prohibited this labregional from being saved:</h2>
+
+      <ul>
+      <% @labregional.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <fieldset>
+  <legend>Enter Regional Lab Details</legend>
+<table id="one-column-emphasis">
+    <colgroup>
+    	<col class="oce-first" />
+    </colgroup>
+    <tbody>
+   	<tr>
+  <div class="field">
+   <td><%= f.label :labid ,"Lab Id"%></td>
+    <td><%= f.text_field :labid %></td>
+  </div>
+</tr>
+   	<tr>
+  <div class="field">
+   <td><%= f.label :labid ,"Central Lab"%></td>
+    <td><%= collection_select(:labregional,:labcentral_id,@labcentral,:id,:labid,:prompt=>"Select Central Lab") %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <td><%= f.label :labname ,"Lab Name"%></td>
+    <td><%= f.text_field :labname %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <td><%= f.label :housenumber,"Door No" %></td>
+    <td><%= f.text_field :housenumber %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <td><%= f.label :street %></td>
+    <td><%= f.text_field :street %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <td><%= f.label :area %></td>
+    <td><%= f.text_field :area %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <td><%= f.label :landmark, "Land Mark"%></td>
+    <td><%= f.text_field :landmark %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <td><%= f.label :city %></td>
+    <td><%= f.text_field :city %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <td><%= f.label :state %></td>
+    <td><%= f.text_field :state %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <td><%= f.label :pincode,"PIN" %></td>
+    <td><%= f.text_field :pincode %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <td><%= f.label :land, "Phone" %></td>
+    <td><%= f.text_field :land %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <td><%= f.label :mobile %></td>
+    <td><%= f.text_field :mobile %></td>
+  </div>
+</tr>
+</tr>
+  <div class="field">
+    <td><%= f.label :fax %></td>
+    <td><%= f.text_field :fax %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <td><%= f.label :email %></td>
+    <td><%= f.text_field :email %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+   <td><%= f.label :status %></td>
+   <td><%= f.radio_button :status, 'A', :checked => true %> Active
+    <%= f.radio_button :status, 'I' %> Inactive</td>
+  </div>
+</tr>
+<tr>
+  <div class="actions">
+	<td></td>
+    <td><%= f.submit "Save"%></td>
+  </div>
+</tr>
+    </tbody>
+</table>
+</fieldset>
+
+<% end %>
+</div>

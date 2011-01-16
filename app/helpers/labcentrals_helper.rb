@@ -1,0 +1,2 @@
+module LabcentralsHelper
+end

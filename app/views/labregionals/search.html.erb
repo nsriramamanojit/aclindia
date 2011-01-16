@@ -1,0 +1,32 @@
+<h1>Search Results</h1>
+<% if @labregionals.blank? %>
+ 	<p>Oops!!! No Matches found.</p>
+<% else %>
+<table id="rounded-corner">
+    <thead>
+    	<tr>
+        	<th scope="col" class="rounded-company">Lab Id</th>
+            <th scope="col" class="rounded-q1">View</th>
+            <th scope="col" class="rounded-q2">Edit</th>
+            <th scope="col" class="rounded-q3">Delete</th>
+ 
+        </tr>
+    </thead>
+         <tfoot>
+    	<tr>
+        	<td colspan="3" class="rounded-foot-left"></td>
+        	<td class="rounded-foot-right">&nbsp;</td>
+        </tr>
+    </tfoot>
+<% @labregionals.each do |labregional| %>
+   <tr>
+    <td><%= labregional.labid %></td>
+    <td><%= link_to 'View', labregional %></td>
+    <td><%= link_to 'Edit', edit_labregional_path(labregional) %></td>
+    <td><%= link_to 'Delete', labregional, :confirm => 'Are you sure?',
+       :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+<% end %>
+<%= link_to 'Back to Regional Labs', labregionals_path %>

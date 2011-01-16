@@ -1,0 +1,49 @@
+<h1>Search Cities</h1>
+<!--Start of search text box -->
+<%= form_tag :action => 'search' %>
+	<table id="one-column-emphasis">
+    <colgroup>
+    	<col class="oce-first" />
+    </colgroup>
+	<tr>
+		<td>Search: </td>
+		<td><%= text_field_tag :query ,@query ||="Enter City Name/State Name/Country Name",:class=>'title',
+:onfocus=>"javascript: this.value=''",:onblur=>"javascript: if(this.value=='') this.value='Enter City Name/State Name/Country Name'" %></td>
+		<td><%= submit_tag "Search" %></td>
+	</tr>
+	</table>
+<%= form_tag %>
+<!--end of search text box -->
+<h1>Listing Cities</h1>
+<!-- START_HIGHLIGHT -->
+  <% if notice %>
+    <p id="notice"><%= notice %></p>
+  <% end %>
+<!-- END_HIGHLIGHT -->
+<table id="rounded-corner">
+    <thead>
+    	<tr>
+        	<th scope="col" class="rounded-company">City Name</th>
+            <th scope="col" class="rounded-q1">View</th>
+            <th scope="col" class="rounded-q2">Edit</th>
+            <th scope="col" class="rounded-q3">Delete</th>
+ 
+        </tr>
+    </thead>
+         <tfoot>
+    	<tr>
+        	<td colspan="3" class="rounded-foot-left"></td>
+        	<td class="rounded-foot-right">&nbsp;</td>
+        </tr>
+    </tfoot>
+<% @cities.each do |city| %>
+  <tr>
+    <td><%= city.name %></td>
+    <td><%= link_to 'View', city %></td>
+    <td><%= link_to 'Edit', edit_city_path(city) %></td>
+    <td><%= link_to 'Delete', city, :confirm => 'Are you sure?',
+       :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+<%= link_to 'New City', new_city_path %>

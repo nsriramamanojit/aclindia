@@ -1,0 +1,2 @@
+module LabregionalsHelper
+end

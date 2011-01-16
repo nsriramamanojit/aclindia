@@ -1,0 +1,58 @@
+<div class="home_form">
+<%= form_for(@state) do |f| %>
+  <% if @state.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@state.errors.count, "error") %> prohibited this state from being saved:</h2>
+
+      <ul>
+      <% @state.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <fieldset>
+  <legend>Enter State Details</legend>
+<table id="one-column-emphasis">
+    <colgroup>
+    	<col class="oce-first" />
+    </colgroup>
+    <tbody>
+   	<tr>
+  <div>
+   <td> <%= f.label :id , "Country"%></td>
+    <td><%= collection_select(:state,:country_id,@country,:id,:name) %></td>
+  </div>
+</tr>
+
+   	<tr>
+  <div>
+   <td> <%= f.label :name %></td>
+    <td><%= f.text_field :name,:class=>'title' %></td>
+  </div>
+</tr>
+<tr> 
+ <div>
+   <td><%= f.label :description %></td>
+   <td><%= f.text_field :description,:class=>'title' %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+   <td><%= f.label :status %></td>
+   <td><%= f.radio_button :status, 'A', :checked => true %> Active
+    <%= f.radio_button :status, 'I' %> Inactive</td>
+  </div>
+</tr>
+<tr>
+  <div>
+	<td></td>
+    <td><%= f.submit "Save"%>
+  </div>
+</tr>
+
+    </tbody>
+</table>
+</fieldset>
+<% end %>
+</div>

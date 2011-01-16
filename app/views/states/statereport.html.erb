@@ -1,0 +1,22 @@
+		<h1 align="center">STATES</h1>
+
+		<hr>
+		<h2 align="center">Report of State</h2>
+		<br>
+
+			<table border="1" align="center">
+			<tr>
+				<td>Name</td>
+		<td>Description</td>
+			</tr>
+			<% @states.each do |c| %>
+	
+			<tr>
+				<td><%= c.name%></td>
+				<td><%=c.description %></td>
+			</tr>
+			<% end %>
+			</table>
+
+
+

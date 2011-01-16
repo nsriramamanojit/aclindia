@@ -1,0 +1,23 @@
+[Tue Jan 11 20:43:17.275 2011] [ 2378] accepting connections
+[Tue Jan 11 21:17:29.252 2011] [ 2378] caught SIGTERM, shutting down
+[Tue Jan 11 21:17:29.252 2011] [ 2378] shutdown complete
+[Tue Jan 11 21:17:29.939 2011] [ 2729] accepting connections
+[Tue Jan 11 21:23:49.589 2011] [ 2729] caught SIGTERM, shutting down
+[Tue Jan 11 21:23:49.590 2011] [ 2729] shutdown complete
+[Tue Jan 11 21:23:50.332 2011] [ 2767] accepting connections
+[Tue Jan 11 21:24:55.000 2011] [ 2767] caught SIGTERM, shutting down
+[Tue Jan 11 21:24:55.001 2011] [ 2767] shutdown complete
+[Tue Jan 11 21:24:55.721 2011] [ 2781] accepting connections
+[Tue Jan 11 21:33:39.655 2011] [ 2781] caught SIGTERM, shutting down
+[Tue Jan 11 21:33:39.655 2011] [ 2781] shutdown complete
+[Thu Jan 13 20:18:04.017 2011] [ 2785] accepting connections
+[Thu Jan 13 20:19:47.009 2011] [ 2785] caught SIGTERM, shutting down
+[Thu Jan 13 20:19:47.010 2011] [ 2785] shutdown complete
+[Thu Jan 13 20:25:30.975 2011] [ 4461] accepting connections
+[Thu Jan 13 20:25:52.481 2011] [ 4461] caught SIGTERM, shutting down
+[Thu Jan 13 20:25:52.482 2011] [ 4461] shutdown complete
+[Thu Jan 13 20:52:07.969 2011] [ 4741] accepting connections
+[Sun Jan 16 18:37:48.064 2011] [ 2502] accepting connections
+[Sun Jan 16 18:44:37.801 2011] [ 2502] caught SIGTERM, shutting down
+[Sun Jan 16 18:44:37.802 2011] [ 2502] shutdown complete
+[Sun Jan 16 18:44:39.023 2011] [ 2561] accepting connections

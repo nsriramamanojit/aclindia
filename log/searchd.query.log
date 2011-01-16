@@ -1,0 +1,44 @@
+[Tue Jan 11 20:43:38.710 2011] 0.002 sec [all/2/rel 1 (0,20)] [state_core] Assam
+[Tue Jan 11 20:43:54.392 2011] 0.000 sec [all/2/rel 0 (0,20)] [state_core] as
+[Tue Jan 11 20:44:13.220 2011] 0.000 sec [all/2/rel 1 (0,20)] [state_core] assam
+[Tue Jan 11 20:46:29.155 2011] 0.000 sec [all/2/rel 1 (0,20)] [state_core] Assam
+[Tue Jan 11 20:47:14.619 2011] 0.000 sec [all/2/rel 1 (0,20)] [state_core] pradesh
+[Tue Jan 11 21:17:36.782 2011] 0.000 sec [all/2/rel 1 (0,20)] [country_core] india
+[Tue Jan 11 21:19:05.001 2011] 0.004 sec [all/2/rel 0 (0,20)] [country_core] Assam
+[Tue Jan 11 21:19:49.517 2011] 0.000 sec [all/2/rel 0 (0,20)] [country_core] Enter Country Name
+[Tue Jan 11 21:20:02.167 2011] 0.000 sec [all/2/rel 0 (0,20)] [country_core] Enter Country Name
+[Tue Jan 11 21:26:59.378 2011] 0.000 sec [all/2/rel 1 (0,20)] [city_core] Vijayawada
+[Tue Jan 11 21:27:04.164 2011] 0.000 sec [all/2/rel 0 (0,20)] [city_core] validation
+[Tue Jan 11 21:27:52.016 2011] 0.000 sec [all/2/rel 0 (0,20)] [city_core] Enter City Name
+[Thu Jan 13 20:18:11.414 2011] 0.002 sec [all/2/rel 0 (0,20)] [city_core] india
+[Thu Jan 13 20:18:15.993 2011] 0.000 sec [all/2/rel 2 (0,20)] [city_core] Vijayawada
+[Thu Jan 13 20:52:14.838 2011] 0.002 sec [all/2/rel 1 (0,20)] [city_core] india
+[Thu Jan 13 20:52:21.375 2011] 0.000 sec [all/2/rel 1 (0,20)] [city_core] Assam
+[Thu Jan 13 20:55:56.903 2011] 0.000 sec [all/2/rel 1 (0,20)] [city_core] Assam
+[Thu Jan 13 20:56:23.205 2011] 0.000 sec [all/2/rel 1 (0,20)] [city_core] india
+[Thu Jan 13 21:02:09.163 2011] 0.000 sec [scan/2/rel 0 (0,20)] [city_core]
+[Thu Jan 13 21:02:20.566 2011] 0.000 sec [scan/2/rel 1 (0,20)] [city_core]
+[Thu Jan 13 21:03:05.958 2011] 0.000 sec [scan/2/rel 0 (0,20)] [city_core]
+[Thu Jan 13 21:05:00.109 2011] 0.000 sec [scan/2/rel 0 (0,20)] [city_core]
+[Sun Jan 16 18:38:01.919 2011] 0.046 sec [all/2/rel 1 (0,20)] [country_core] india
+[Sun Jan 16 18:38:06.139 2011] 0.000 sec [all/2/rel 0 (0,20)] [country_core] a
+[Sun Jan 16 18:38:37.546 2011] 0.000 sec [all/2/rel 1 (0,20)] [city_core] Vijayawada
+[Sun Jan 16 18:38:47.736 2011] 0.000 sec [all/2/rel 1 (0,20)] [category_core] agri
+[Sun Jan 16 18:39:30.484 2011] 0.000 sec [all/2/rel 1 (0,20)] [subcategory_core] sub
+[Sun Jan 16 18:39:36.891 2011] 0.000 sec [all/2/rel 1 (0,20)] [subcategory_core] agri
+[Sun Jan 16 18:39:54.043 2011] 0.000 sec [all/2/rel 1 (0,20)] [exchange_core] bse
+[Sun Jan 16 18:44:51.104 2011] 0.000 sec [all/2/rel 1 (0,20)] [state_core] Andhra Pradesh
+[Sun Jan 16 18:44:58.274 2011] 0.000 sec [all/2/rel 1 (0,20)] [state_core] india
+[Sun Jan 16 18:45:19.017 2011] 0.000 sec [all/2/rel 1 (0,20)] [labcentral_core] cen/1
+[Sun Jan 16 18:45:23.761 2011] 0.000 sec [all/2/rel 1 (0,20)] [labcentral_core] cen
+[Sun Jan 16 18:45:28.075 2011] 0.000 sec [all/2/rel 0 (0,20)] [labcentral_core] av
+[Sun Jan 16 18:45:35.740 2011] 0.000 sec [all/2/rel 2 (0,20)] [labregional_core] reg/1
+[Sun Jan 16 18:45:44.756 2011] 0.000 sec [all/2/rel 2 (0,20)] [labregional_core] cen/1
+[Sun Jan 16 18:45:52.550 2011] 0.000 sec [all/2/rel 2 (0,20)] [labregional_core] reg/1
+[Sun Jan 16 18:48:44.479 2011] 0.000 sec [all/2/rel 0 (0,20)] [labregional_core] Enter Regional/Central Lab Name
+[Sun Jan 16 18:51:24.786 2011] 0.000 sec [all/2/rel 0 (0,20)] [labregional_core] Enter Regional/Central Lab Name
+[Sun Jan 16 19:09:55.642 2011] 0.000 sec [all/2/rel 0 (0,20)] [subcategory_core] Enter Subcategory/Category Name
+[Sun Jan 16 19:10:09.383 2011] 0.000 sec [all/2/rel 0 (0,20)] [subcategory_core] Enter Subcategory/Category Name
+[Sun Jan 16 19:18:30.814 2011] 0.000 sec [all/2/rel 0 (0,20)] [country_core] Enter Country Name
+[Sun Jan 16 19:18:41.019 2011] 0.000 sec [all/2/rel 0 (0,20)] [country_core] Enter Country Name
+[Sun Jan 16 19:19:01.713 2011] 0.000 sec [all/2/rel 0 (0,20)] [state_core] Enter State Name/Country Name

@@ -1,0 +1,33 @@
+en:
+
+#START:layout
+  layouts:
+    application:
+      title:       "Shree Shubham Logistics Limited"
+      home:        "Home"
+      user:        "User Management"
+      country:     "Country"
+      state:       "State"
+      footer:      "All Rights are Reserved"
+      city:        "City"
+      category:    "Category"
+      labcentral:  "Central Lab"
+      labregional: "Regional Lab"
+      lablocational: "Locational Lab"
+      exchange: 	"Exchange"
+      subcategory:  "Sub Category"
+#END:layout
+
+#START:main
+  home:
+    index:
+      title_html:  "Welcome to Shree Shubham Logistics Limited"
+ #END:main
+
+#START:main
+  sessions:
+    new:
+      title_html:  "Welcome to Shree Shubham Logistics Limited"
+ #END:main
+
+

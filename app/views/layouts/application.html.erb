@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Agri Procurement Quality Assurance Management System</title>
+<!-- START:stylesheet -->
+  <%= stylesheet_link_tag "scaffold" %>
+  <%= stylesheet_link_tag "depot" %>
+<!-- END:stylesheet -->
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<body id="home">
+<div id="banner">
+<!-- START_HIGHLIGHT -->
+    <%= @page_title || t('.title') %>
+<!-- END_HIGHLIGHT -->
+  </div>
+<div id="columns">
+<div id="side">
+<!-- START_HIGHLIGHT -->
+      <a href="/home"><%= t('.home') %></a><br />
+      <a href="/users"><%= t('.user') %></a><br />
+      <a href="/countries"><%= t('.country') %></a><br />
+      <a href="/states"><%= t('.state') %></a><br />
+      <a href="/cities"><%= t('.city') %></a><br />
+      <a href="/categories"><%= t('.category') %></a><br />
+      <a href="/subcategories"><%= t('.subcategory') %></a><br />
+      <a href="/labcentrals"><%= t('.labcentral') %></a><br />
+      <a href="/labregionals"><%= t('.labregional') %></a><br />
+      <a href="/lablocationals"><%= t('.lablocational') %></a><br />
+      <a href="/exchanges"><%= t('.exchange') %></a><br />
+<!-- END_HIGHLIGHT -->
+</div>
+<div id="main">
+<%= yield %>
+</div>
+<!--<div id="footer"> -->
+<!-- START_HIGHLIGHT -->
+<!--<%= @page_title || t('.footer') %> -->
+<!-- END_HIGHLIGHT -->
+<!--</div> -->
+</div>
+</body>
+</html>
