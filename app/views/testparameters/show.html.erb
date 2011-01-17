@@ -1,0 +1,36 @@
+<!-- START_HIGHLIGHT -->
+  <% if notice %>
+    <p id="notice"><%= notice %></p>
+  <% end %>
+<!-- END_HIGHLIGHT -->
+
+<h1>Test Parameter Details</h1>
+<table id="one-column-emphasis">
+    <colgroup>
+    	<col class="oce-first" />
+    </colgroup>
+    <tbody>
+   	<tr>
+  <div>
+    <td>Name</td>
+    <td>  <%= @testparameter.name %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+    <td>Description</td>
+    <td><%= @testparameter.description %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+	  <td>Status</td>
+      <td><%= @testparameter.status %></td>
+  </div>
+</tr>
+    </tbody>
+</table>
+
+
+<%= link_to 'Edit', edit_testparameter_path(@testparameter) %> |
+<%= link_to 'Back', testparameters_path %>

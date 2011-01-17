@@ -21,3 +21,7 @@
 [Sun Jan 16 18:44:37.801 2011] [ 2502] caught SIGTERM, shutting down
 [Sun Jan 16 18:44:37.802 2011] [ 2502] shutdown complete
 [Sun Jan 16 18:44:39.023 2011] [ 2561] accepting connections
+[Mon Jan 17 16:22:31.333 2011] [ 2247] accepting connections
+[Mon Jan 17 16:46:55.122 2011] [ 2247] caught SIGTERM, shutting down
+[Mon Jan 17 16:46:55.123 2011] [ 2247] shutdown complete
+[Mon Jan 17 16:46:56.272 2011] [ 2418] accepting connections

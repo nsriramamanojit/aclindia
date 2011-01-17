@@ -57,6 +57,8 @@ class LablocationalsController < ApplicationController
         format.html { redirect_to(@lablocational, :notice => 'Lablocational was successfully created.') }
         format.xml  { render :xml => @lablocational, :status => :created, :location => @lablocational }
       else
+	@labcentral = Labcentral.all
+	@labregional = Labregional.all
         format.html { render :action => "new" }
         format.xml  { render :xml => @lablocational.errors, :status => :unprocessable_entity }
       end
@@ -73,6 +75,8 @@ class LablocationalsController < ApplicationController
         format.html { redirect_to(@lablocational, :notice => 'Lablocational was successfully updated.') }
         format.xml  { head :ok }
       else
+	@labcentral = Labcentral.all
+	@labregional = Labregional.all
         format.html { render :action => "edit" }
         format.xml  { render :xml => @lablocational.errors, :status => :unprocessable_entity }
       end

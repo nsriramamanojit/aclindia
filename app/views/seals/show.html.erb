@@ -1,0 +1,35 @@
+<!-- START_HIGHLIGHT -->
+  <% if notice %>
+    <p id="notice"><%= notice %></p>
+  <% end %>
+<!-- END_HIGHLIGHT -->
+
+<h1>Seal Details</h1>
+<table id="one-column-emphasis">
+    <colgroup>
+    	<col class="oce-first" />
+    </colgroup>
+    <tbody>
+   	<tr>
+  <div>
+    <td>Name</td>
+    <td>  <%= @seal.name %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+    <td>Description</td>
+    <td><%= @seal.description %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+	  <td>Status</td>
+      <td><%= @seal.status %></td>
+  </div>
+</tr>
+    </tbody>
+</table>
+
+<%= link_to 'Edit', edit_seal_path(@seal) %> |
+<%= link_to 'Back', seals_path %>

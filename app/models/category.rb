@@ -5,6 +5,7 @@
 class Category < ActiveRecord::Base
 	#relations
 	has_many :subcategories
+	has_many :products #, :through => :subcategories
 
 	#validations
 	validates :name, :presence =>true

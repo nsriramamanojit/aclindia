@@ -1,0 +1,21 @@
+<h1>Listing teststandards</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @teststandards.each do |teststandard| %>
+  <tr>
+    <td><%= link_to 'Show', teststandard %></td>
+    <td><%= link_to 'Edit', edit_teststandard_path(teststandard) %></td>
+    <td><%= link_to 'Destroy', teststandard, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Teststandard', new_teststandard_path %>

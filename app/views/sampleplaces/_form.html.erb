@@ -1,0 +1,57 @@
+<div class="home_form">
+<%= form_for(@sampleplace) do |f| %>
+  <% if @sampleplace.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sampleplace.errors.count, "error") %> prohibited this sampleplace from being saved:</h2>
+
+      <ul>
+      <% @sampleplace.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <fieldset>
+  <legend>Enter Sample Unit Details</legend>
+<table id="one-column-emphasis">
+    <colgroup>
+    	<col class="oce-first" />
+    </colgroup>
+    <tbody>
+   	<tr>
+  <div>
+    <td><%= f.label :code %></td>
+    <td><%= f.text_field :code,:class=>'title'%></td>
+  </div>
+</tr>
+   	<tr>
+  <div>
+    <td><%= f.label :name %></td>
+    <td><%= f.text_field :name,:class=>'title'%></td>
+  </div>
+</tr>
+<tr>
+  <div>
+    <td><%= f.label :description %></td>
+    <td><%= f.text_field :description,:class=>'title' %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+	  <td><%= f.label :status %></td>
+      <td><%= f.radio_button :status, 'A', :checked => true %> Active
+    <%= f.radio_button :status, 'I' %> Inactive </td>
+  </div>
+</tr>
+<tr>
+  <div>
+	<td></td>
+   <td><%= f.submit "Save"%></td>
+  </div>
+</tr>
+    </tbody>
+</table>
+</fieldset>
+<% end %>
+</div>

@@ -85,9 +85,10 @@ class CategoriesController < ApplicationController
     end
   end
 
-
+	#Search
 	def search
 		@query = params[:query]
 		@categories = Category.search @query
 	end
+	#End: Search
 end

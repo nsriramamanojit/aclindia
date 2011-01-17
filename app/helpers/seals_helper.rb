@@ -1,0 +1,2 @@
+module SealsHelper
+end

@@ -18557,3 +18557,779 @@ Started GET "/exchanges" for 127.0.0.1 at Mon Jan 17 10:10:26 +0530 2011
   [1m[36mExchange Load (0.2ms)[0m  [1mSELECT `exchanges`.* FROM `exchanges`[0m
 Rendered exchanges/index.html.erb within layouts/application (23.9ms)
 Completed 200 OK in 313ms (Views: 32.9ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Jan 17 15:53:59 +0530 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (36.4ms)
+Completed 200 OK in 133ms (Views: 131.2ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/subcategories" for 127.0.0.1 at Mon Jan 17 15:54:04 +0530 2011
+  Processing by SubcategoriesController#index as HTML
+  [1m[36mSubcategory Load (0.8ms)[0m  [1mSELECT `subcategories`.* FROM `subcategories`[0m
+Rendered subcategories/index.html.erb within layouts/application (25.1ms)
+Completed 200 OK in 536ms (Views: 193.6ms | ActiveRecord: 0.8ms | Sphinx: 0.0ms)
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateUsers (20110110180512)
+Migrating to CreateCountries (20110111063853)
+Migrating to CreateStates (20110111102015)
+Migrating to CreateCities (20110111105058)
+Migrating to CreateLabcentrals (20110113051654)
+Migrating to CreateLabregionals (20110113054603)
+Migrating to CreateLablocationals (20110113054618)
+Migrating to CreateCategories (20110115151319)
+Migrating to CreateExchanges (20110116120238)
+Migrating to CreateSubcategories (20110116122532)
+Migrating to CreateProducts (20110117102451)
+  [1m[35mSQL (147.6ms)[0m  CREATE TABLE `products` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `category_id` int(11), `subcategory_id` int(11), `name` varchar(255), `description` varchar(255), `status` varchar(255), `created_by` varchar(255), `modified_by` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (65.7ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110117102451')[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `categories`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `categories`
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `cities`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `cities`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `countries`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `countries`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `exchanges`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `exchanges`
+  [1m[36mSQL (1.2ms)[0m  [1mdescribe `labcentrals`[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW KEYS FROM `labcentrals`
+  [1m[36mSQL (1.4ms)[0m  [1mdescribe `lablocationals`[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW KEYS FROM `lablocationals`
+  [1m[36mSQL (1.4ms)[0m  [1mdescribe `labregionals`[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW KEYS FROM `labregionals`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `products`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `products`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `states`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `states`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `subcategories`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `subcategories`
+  [1m[36mSQL (0.8ms)[0m  [1mdescribe `users`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `users`
+
+
+Started GET "/subcategories" for 127.0.0.1 at Mon Jan 17 16:11:07 +0530 2011
+  Processing by SubcategoriesController#index as HTML
+  [1m[35mSubcategory Load (0.2ms)[0m  SELECT `subcategories`.* FROM `subcategories`
+Rendered subcategories/index.html.erb within layouts/application (20.2ms)
+Completed 200 OK in 381ms (Views: 25.5ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at Mon Jan 17 16:11:10 +0530 2011
+  Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.6ms)[0m  [1mSELECT `products`.* FROM `products`[0m
+Rendered products/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 28ms (Views: 15.0ms | ActiveRecord: 0.6ms | Sphinx: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at Mon Jan 17 16:11:16 +0530 2011
+  Processing by ProductsController#new as HTML
+  [1m[35mCategory Load (0.6ms)[0m  SELECT `categories`.* FROM `categories`
+  [1m[36mSubcategory Load (0.2ms)[0m  [1mSELECT `subcategories`.* FROM `subcategories`[0m
+Rendered products/_form.html.erb (28.8ms)
+Rendered products/new.html.erb within layouts/application (36.9ms)
+Completed 200 OK in 314ms (Views: 42.4ms | ActiveRecord: 0.7ms | Sphinx: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at Mon Jan 17 16:11:19 +0530 2011
+  Processing by ProductsController#create as HTML
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"QcOHR77t7dDMM1aeBfirPSMxn/y/W6Uv3cyxgHCVlF8=", "utf8"=>"✓", "product"=>{"name"=>"", "category_id"=>"", "description"=>"", "status"=>"A", "subcategory_id"=>""}}
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+Rendered products/_form.html.erb (236.3ms)
+Rendered products/new.html.erb within layouts/application (247.4ms)
+Completed   in 286ms
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.map):
+    22:    	<tr>
+    23:   <div>
+    24:    <td> <%= f.label :id , "Category"%></td>
+    25:     <td><%= collection_select(:product,:category_id,@category,:id,:name,:prompt=>"Select Category") %></td>
+    26:   </div>
+    27: </tr>
+    28:    	<tr>
+  app/views/products/_form.html.erb:25:in `_app_views_products__form_html_erb___770812209__614118568_496496'
+  app/views/products/_form.html.erb:2:in `_app_views_products__form_html_erb___770812209__614118568_496496'
+  app/views/products/new.html.erb:3:in `_app_views_products_new_html_erb___347510283__614113818_0'
+  app/controllers/products_controller.rb:56:in `create'
+  app/controllers/products_controller.rb:51:in `create'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (12.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (22.3ms)
+
+
+Started POST "/products" for 127.0.0.1 at Mon Jan 17 16:11:35 +0530 2011
+  Processing by ProductsController#create as HTML
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"QcOHR77t7dDMM1aeBfirPSMxn/y/W6Uv3cyxgHCVlF8=", "utf8"=>"✓", "product"=>{"name"=>"", "category_id"=>"1", "description"=>"", "status"=>"A", "subcategory_id"=>"1"}}
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+Rendered products/_form.html.erb (6.7ms)
+Rendered products/new.html.erb within layouts/application (8.7ms)
+Completed   in 56ms
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.map):
+    22:    	<tr>
+    23:   <div>
+    24:    <td> <%= f.label :id , "Category"%></td>
+    25:     <td><%= collection_select(:product,:category_id,@category,:id,:name,:prompt=>"Select Category") %></td>
+    26:   </div>
+    27: </tr>
+    28:    	<tr>
+  app/views/products/_form.html.erb:25:in `_app_views_products__form_html_erb___770812209__613865588_496496'
+  app/views/products/_form.html.erb:2:in `_app_views_products__form_html_erb___770812209__613865588_496496'
+  app/views/products/new.html.erb:3:in `_app_views_products_new_html_erb___347510283__613858688_0'
+  app/controllers/products_controller.rb:56:in `create'
+  app/controllers/products_controller.rb:51:in `create'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (18.4ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (31.1ms)
+
+
+Started POST "/products" for 127.0.0.1 at Mon Jan 17 16:11:58 +0530 2011
+  Processing by ProductsController#create as HTML
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"QcOHR77t7dDMM1aeBfirPSMxn/y/W6Uv3cyxgHCVlF8=", "utf8"=>"✓", "product"=>{"name"=>"Product", "category_id"=>"1", "description"=>"Product", "status"=>"A", "subcategory_id"=>"1"}}
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.1ms)[0m  describe `products`
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO `products` (`created_by`, `updated_at`, `subcategory_id`, `status`, `created_at`, `name`, `description`, `category_id`, `modified_by`) VALUES (NULL, '2011-01-17 10:41:58', 1, 'A', '2011-01-17 10:41:58', 'Product', 'Product', 1, NULL)[0m
+  [1m[35mSQL (59.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/products/1
+Completed 302 Found in 242ms
+
+
+Started GET "/products/1" for 127.0.0.1 at Mon Jan 17 16:11:58 +0530 2011
+  Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.6ms)[0m  [1mSELECT `products`.* FROM `products` WHERE (`products`.`id` = 1) LIMIT 1[0m
+  [1m[35mCategory Load (1.9ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 1) LIMIT 1
+  [1m[36mSubcategory Load (0.5ms)[0m  [1mSELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`id` = 1) LIMIT 1[0m
+Rendered products/show.html.erb within layouts/application (304.2ms)
+Completed 200 OK in 327ms (Views: 307.5ms | ActiveRecord: 64.4ms | Sphinx: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at Mon Jan 17 16:12:02 +0530 2011
+  Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.6ms)[0m  SELECT `products`.* FROM `products`
+Rendered products/index.html.erb within layouts/application (20.9ms)
+Completed 200 OK in 41ms (Views: 26.6ms | ActiveRecord: 0.6ms | Sphinx: 0.0ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at Mon Jan 17 16:12:04 +0530 2011
+  Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT `products`.* FROM `products` WHERE (`products`.`id` = 1) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 1) LIMIT 1
+  [1m[36mSubcategory Load (0.1ms)[0m  [1mSELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`id` = 1) LIMIT 1[0m
+Rendered products/show.html.erb within layouts/application (330.9ms)
+Completed 200 OK in 352ms (Views: 336.0ms | ActiveRecord: 0.4ms | Sphinx: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at Mon Jan 17 16:12:06 +0530 2011
+  Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT `products`.* FROM `products`
+Rendered products/index.html.erb within layouts/application (28.3ms)
+Completed 200 OK in 209ms (Views: 34.7ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/products/1/edit" for 127.0.0.1 at Mon Jan 17 16:12:07 +0530 2011
+  Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.* FROM `categories`[0m
+  [1m[35mSubcategory Load (0.1ms)[0m  SELECT `subcategories`.* FROM `subcategories`
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT `products`.* FROM `products` WHERE (`products`.`id` = 1) LIMIT 1[0m
+Rendered products/_form.html.erb (32.1ms)
+Rendered products/edit.html.erb within layouts/application (41.2ms)
+Completed 200 OK in 326ms (Views: 47.0ms | ActiveRecord: 0.5ms | Sphinx: 0.0ms)
+
+
+Started POST "/products/1" for 127.0.0.1 at Mon Jan 17 16:12:09 +0530 2011
+  Processing by ProductsController#update as HTML
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"QcOHR77t7dDMM1aeBfirPSMxn/y/W6Uv3cyxgHCVlF8=", "utf8"=>"✓", "id"=>"1", "product"=>{"name"=>"Product", "category_id"=>"1", "description"=>"Product", "status"=>"A", "subcategory_id"=>"1"}}
+  [1m[35mProduct Load (0.1ms)[0m  SELECT `products`.* FROM `products` WHERE (`products`.`id` = 1) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/products/1
+Completed 302 Found in 27ms
+
+
+Started GET "/products/1" for 127.0.0.1 at Mon Jan 17 16:12:09 +0530 2011
+  Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT `products`.* FROM `products` WHERE (`products`.`id` = 1) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 1) LIMIT 1
+  [1m[36mSubcategory Load (0.1ms)[0m  [1mSELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`id` = 1) LIMIT 1[0m
+Rendered products/show.html.erb within layouts/application (474.0ms)
+Completed 200 OK in 495ms (Views: 480.9ms | ActiveRecord: 0.4ms | Sphinx: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at Mon Jan 17 16:12:11 +0530 2011
+  Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT `products`.* FROM `products`
+Rendered products/index.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 38ms (Views: 24.3ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at Mon Jan 17 16:14:40 +0530 2011
+  Processing by ProductsController#new as HTML
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.* FROM `categories`[0m
+  [1m[35mSubcategory Load (0.1ms)[0m  SELECT `subcategories`.* FROM `subcategories`
+Rendered products/_form.html.erb (32.6ms)
+Rendered products/new.html.erb within layouts/application (43.0ms)
+Completed 200 OK in 300ms (Views: 166.3ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at Mon Jan 17 16:14:42 +0530 2011
+  Processing by ProductsController#create as HTML
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"QcOHR77t7dDMM1aeBfirPSMxn/y/W6Uv3cyxgHCVlF8=", "utf8"=>"✓", "product"=>{"name"=>"", "category_id"=>"", "description"=>"", "status"=>"A", "subcategory_id"=>""}}
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.* FROM `categories`[0m
+  [1m[35mSubcategory Load (0.1ms)[0m  SELECT `subcategories`.* FROM `subcategories`
+Rendered products/_form.html.erb (25.1ms)
+Rendered products/new.html.erb within layouts/application (33.4ms)
+Completed 200 OK in 338ms (Views: 38.8ms | ActiveRecord: 0.7ms | Sphinx: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at Mon Jan 17 16:14:56 +0530 2011
+  Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT `products`.* FROM `products`[0m
+Rendered products/index.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 36ms (Views: 25.1ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at Mon Jan 17 16:14:58 +0530 2011
+  Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProduct Load (0.1ms)[0m  SELECT `products`.* FROM `products` WHERE (`products`.`id` = 1) LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 1) LIMIT 1[0m
+  [1m[35mSubcategory Load (0.2ms)[0m  SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`id` = 1) LIMIT 1
+Rendered products/show.html.erb within layouts/application (316.0ms)
+Completed 200 OK in 509ms (Views: 321.8ms | ActiveRecord: 0.5ms | Sphinx: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at Mon Jan 17 16:15:00 +0530 2011
+  Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT `products`.* FROM `products`[0m
+Rendered products/index.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 37ms (Views: 24.5ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT @@global.sql_mode, @@session.sql_mode;
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+
+
+Started GET "/products" for 127.0.0.1 at Mon Jan 17 16:22:34 +0530 2011
+  Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT `products`.* FROM `products`
+Rendered products/index.html.erb within layouts/application (25.9ms)
+Completed 200 OK in 372ms (Views: 33.3ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started POST "/products/search" for 127.0.0.1 at Mon Jan 17 16:22:39 +0530 2011
+  Processing by ProductsController#search as HTML
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"QcOHR77t7dDMM1aeBfirPSMxn/y/W6Uv3cyxgHCVlF8=", "utf8"=>"✓", "query"=>"product"}
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
+  [1m[36mSQL (2.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
+  [1m[32mSphinx Query (36.3ms)[0m  [1mproduct[0m
+  [1m[32mSphinx[0m  Found 1 result
+  [1m[36mProduct Load (0.5ms)[0m  [1mSELECT `products`.* FROM `products` WHERE (`products`.`id` IN (1))[0m
+Rendered products/search.html.erb within layouts/application (71.7ms)
+Completed 200 OK in 422ms (Views: 40.3ms | ActiveRecord: 9.8ms | Sphinx: 36.3ms)
+
+
+Started GET "/products" for 127.0.0.1 at Mon Jan 17 16:22:41 +0530 2011
+  Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT `products`.* FROM `products`
+Rendered products/index.html.erb within layouts/application (20.4ms)
+Completed 200 OK in 310ms (Views: 25.8ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started POST "/products/search" for 127.0.0.1 at Mon Jan 17 16:22:45 +0530 2011
+  Processing by ProductsController#search as HTML
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"QcOHR77t7dDMM1aeBfirPSMxn/y/W6Uv3cyxgHCVlF8=", "utf8"=>"✓", "query"=>"agri"}
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
+  [1m[32mSphinx Query (3.4ms)[0m  [1magri[0m
+  [1m[32mSphinx[0m  Found 1 result
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT `products`.* FROM `products` WHERE (`products`.`id` IN (1))[0m
+Rendered products/search.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 539ms (Views: 30.4ms | ActiveRecord: 7.5ms | Sphinx: 3.4ms)
+
+
+Started GET "/products" for 127.0.0.1 at Mon Jan 17 16:22:46 +0530 2011
+  Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT `products`.* FROM `products`
+Rendered products/index.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 353ms (Views: 29.9ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at Mon Jan 17 16:26:22 +0530 2011
+  Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT `products`.* FROM `products`[0m
+Rendered products/index.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 347ms (Views: 23.8ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/warehouses" for 127.0.0.1 at Mon Jan 17 16:31:45 +0530 2011
+  Processing by WarehousesController#index as HTML
+  [1m[35mWarehouse Load (0.7ms)[0m  SELECT `warehouses`.* FROM `warehouses`
+Mysql::Error: Table 'acl_development.warehouses' doesn't exist: SELECT `warehouses`.* FROM `warehouses`
+Completed   in 8ms
+
+ActiveRecord::StatementInvalid (Mysql::Error: Table 'acl_development.warehouses' doesn't exist: SELECT `warehouses`.* FROM `warehouses`):
+  app/controllers/warehouses_controller.rb:5:in `index'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.3ms)
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateUsers (20110110180512)
+Migrating to CreateCountries (20110111063853)
+Migrating to CreateStates (20110111102015)
+Migrating to CreateCities (20110111105058)
+Migrating to CreateLabcentrals (20110113051654)
+Migrating to CreateLabregionals (20110113054603)
+Migrating to CreateLablocationals (20110113054618)
+Migrating to CreateCategories (20110115151319)
+Migrating to CreateExchanges (20110116120238)
+Migrating to CreateSubcategories (20110116122532)
+Migrating to CreateProducts (20110117102451)
+Migrating to CreateWarehouses (20110117105416)
+  [1m[35mSQL (161.6ms)[0m  CREATE TABLE `warehouses` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `whnumber` varchar(255), `whnickname` varchar(255), `whaddress` text, `status` varchar(255), `created_by` varchar(255), `modified_by` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (65.8ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110117105416')[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `categories`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `categories`
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `cities`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `cities`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `countries`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `countries`
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `exchanges`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `exchanges`
+  [1m[36mSQL (1.4ms)[0m  [1mdescribe `labcentrals`[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW KEYS FROM `labcentrals`
+  [1m[36mSQL (1.5ms)[0m  [1mdescribe `lablocationals`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `lablocationals`
+  [1m[36mSQL (1.4ms)[0m  [1mdescribe `labregionals`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `labregionals`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `products`[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW KEYS FROM `products`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `states`[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW KEYS FROM `states`
+  [1m[36mSQL (1.2ms)[0m  [1mdescribe `subcategories`[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW KEYS FROM `subcategories`
+  [1m[36mSQL (0.8ms)[0m  [1mdescribe `users`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `users`
+  [1m[36mSQL (1.2ms)[0m  [1mdescribe `warehouses`[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW KEYS FROM `warehouses`
+
+
+Started GET "/warehouses" for 127.0.0.1 at Mon Jan 17 16:32:11 +0530 2011
+  Processing by WarehousesController#index as HTML
+  [1m[36mWarehouse Load (0.5ms)[0m  [1mSELECT `warehouses`.* FROM `warehouses`[0m
+Rendered warehouses/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 167ms (Views: 158.0ms | ActiveRecord: 1.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/warehouses/new" for 127.0.0.1 at Mon Jan 17 16:32:12 +0530 2011
+  Processing by WarehousesController#new as HTML
+Rendered warehouses/_form.html.erb (13.1ms)
+Rendered warehouses/new.html.erb within layouts/application (22.8ms)
+Completed 200 OK in 43ms (Views: 32.8ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/warehouses/new" for 127.0.0.1 at Mon Jan 17 16:33:24 +0530 2011
+  Processing by WarehousesController#new as HTML
+Rendered warehouses/_form.html.erb (18.3ms)
+Rendered warehouses/new.html.erb within layouts/application (44.1ms)
+Completed 200 OK in 74ms (Views: 53.5ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/warehouses" for 127.0.0.1 at Mon Jan 17 16:44:16 +0530 2011
+  Processing by WarehousesController#index as HTML
+  [1m[35mWarehouse Load (0.2ms)[0m  SELECT `warehouses`.* FROM `warehouses`
+Rendered warehouses/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 23ms (Views: 15.1ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/warehouses/new" for 127.0.0.1 at Mon Jan 17 16:44:19 +0530 2011
+  Processing by WarehousesController#new as HTML
+Rendered warehouses/_form.html.erb (10.4ms)
+Rendered warehouses/new.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 34ms (Views: 23.8ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started POST "/warehouses" for 127.0.0.1 at Mon Jan 17 16:44:31 +0530 2011
+  Processing by WarehousesController#create as HTML
+  Parameters: {"commit"=>"Save", "warehouse"=>{"whnickname"=>"Warehouse", "whnumber"=>"1234", "status"=>"A"}, "authenticity_token"=>"QcOHR77t7dDMM1aeBfirPSMxn/y/W6Uv3cyxgHCVlF8=", "utf8"=>"✓"}
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `warehouses`[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO `warehouses` (`updated_at`, `whnickname`, `status`, `modified_by`, `whnumber`, `whaddress`, `created_by`, `created_at`) VALUES ('2011-01-17 11:14:31', 'Warehouse', 'A', NULL, '1234', NULL, NULL, '2011-01-17 11:14:31')
+  [1m[36mSQL (108.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/warehouses/1
+Completed 302 Found in 134ms
+
+
+Started GET "/warehouses/1" for 127.0.0.1 at Mon Jan 17 16:44:31 +0530 2011
+  Processing by WarehousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
+  [1m[36mWarehouse Load (0.5ms)[0m  [1mSELECT `warehouses`.* FROM `warehouses` WHERE (`warehouses`.`id` = 1) LIMIT 1[0m
+Rendered warehouses/show.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 34ms (Views: 22.9ms | ActiveRecord: 1.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/warehouses" for 127.0.0.1 at Mon Jan 17 16:44:33 +0530 2011
+  Processing by WarehousesController#index as HTML
+  [1m[35mWarehouse Load (0.5ms)[0m  SELECT `warehouses`.* FROM `warehouses`
+Rendered warehouses/index.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 35ms (Views: 24.1ms | ActiveRecord: 0.5ms | Sphinx: 0.0ms)
+
+
+Started GET "/warehouses/1" for 127.0.0.1 at Mon Jan 17 16:44:36 +0530 2011
+  Processing by WarehousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mWarehouse Load (0.2ms)[0m  SELECT `warehouses`.* FROM `warehouses` WHERE (`warehouses`.`id` = 1) LIMIT 1
+Rendered warehouses/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 42ms (Views: 24.9ms | ActiveRecord: 0.9ms | Sphinx: 0.0ms)
+
+
+Started GET "/warehouses" for 127.0.0.1 at Mon Jan 17 16:44:38 +0530 2011
+  Processing by WarehousesController#index as HTML
+  [1m[36mWarehouse Load (0.2ms)[0m  [1mSELECT `warehouses`.* FROM `warehouses`[0m
+Rendered warehouses/index.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 34ms (Views: 25.2ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT @@global.sql_mode, @@session.sql_mode;
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+
+
+Started GET "/warehouses" for 127.0.0.1 at Mon Jan 17 16:46:59 +0530 2011
+  Processing by WarehousesController#index as HTML
+  [1m[35mWarehouse Load (0.2ms)[0m  SELECT `warehouses`.* FROM `warehouses`
+Rendered warehouses/index.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 373ms (Views: 23.8ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started POST "/warehouses/search" for 127.0.0.1 at Mon Jan 17 16:47:03 +0530 2011
+  Processing by WarehousesController#search as HTML
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"QcOHR77t7dDMM1aeBfirPSMxn/y/W6Uv3cyxgHCVlF8=", "utf8"=>"✓", "query"=>"warehouse"}
+Rendered warehouses/search.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 13ms (Views: 12.6ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/warehouses" for 127.0.0.1 at Mon Jan 17 16:47:04 +0530 2011
+  Processing by WarehousesController#index as HTML
+  [1m[36mWarehouse Load (0.2ms)[0m  [1mSELECT `warehouses`.* FROM `warehouses`[0m
+Rendered warehouses/index.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 346ms (Views: 26.1ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/warehouses" for 127.0.0.1 at Mon Jan 17 16:47:35 +0530 2011
+  Processing by WarehousesController#index as HTML
+  [1m[35mWarehouse Load (0.2ms)[0m  SELECT `warehouses`.* FROM `warehouses`
+Rendered warehouses/index.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 393ms (Views: 32.5ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started POST "/warehouses/search" for 127.0.0.1 at Mon Jan 17 16:47:39 +0530 2011
+  Processing by WarehousesController#search as HTML
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"QcOHR77t7dDMM1aeBfirPSMxn/y/W6Uv3cyxgHCVlF8=", "utf8"=>"✓", "query"=>"warehouse"}
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[32mSphinx Query (3.4ms)[0m  [1mwarehouse[0m
+  [1m[32mSphinx[0m  Found 1 result
+  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
+  [1m[36mWarehouse Load (0.6ms)[0m  [1mSELECT `warehouses`.* FROM `warehouses` WHERE (`warehouses`.`id` IN (1))[0m
+Rendered warehouses/search.html.erb within layouts/application (26.6ms)
+Completed 200 OK in 391ms (Views: 27.1ms | ActiveRecord: 9.6ms | Sphinx: 3.4ms)
+
+
+Started GET "/warehouses" for 127.0.0.1 at Mon Jan 17 16:47:40 +0530 2011
+  Processing by WarehousesController#index as HTML
+  [1m[35mWarehouse Load (0.2ms)[0m  SELECT `warehouses`.* FROM `warehouses`
+Rendered warehouses/index.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 336ms (Views: 25.0ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/warehouses" for 127.0.0.1 at Mon Jan 17 17:24:24 +0530 2011
+  Processing by WarehousesController#index as HTML
+  [1m[36mWarehouse Load (0.2ms)[0m  [1mSELECT `warehouses`.* FROM `warehouses`[0m
+Rendered warehouses/index.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 339ms (Views: 27.0ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/warehouses" for 127.0.0.1 at Mon Jan 17 17:26:27 +0530 2011
+  Processing by WarehousesController#index as HTML
+  [1m[35mWarehouse Load (0.2ms)[0m  SELECT `warehouses`.* FROM `warehouses`
+Rendered warehouses/index.html.erb within layouts/application (30.0ms)
+Completed 200 OK in 571ms (Views: 38.1ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/warehouses" for 127.0.0.1 at Mon Jan 17 17:27:02 +0530 2011
+  Processing by WarehousesController#index as HTML
+  [1m[36mWarehouse Load (0.2ms)[0m  [1mSELECT `warehouses`.* FROM `warehouses`[0m
+Rendered warehouses/index.html.erb within layouts/application (169.7ms)
+Completed 200 OK in 578ms (Views: 178.6ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/warehouses" for 127.0.0.1 at Mon Jan 17 17:27:16 +0530 2011
+  Processing by WarehousesController#index as HTML
+  [1m[35mWarehouse Load (0.2ms)[0m  SELECT `warehouses`.* FROM `warehouses`
+Rendered warehouses/index.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 431ms (Views: 25.3ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Mon Jan 17 17:27:18 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.6ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (20.2ms)
+Completed 200 OK in 355ms (Views: 34.5ms | ActiveRecord: 0.6ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Mon Jan 17 17:27:29 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/index.html.erb within layouts/application (21.4ms)
+Completed 200 OK in 387ms (Views: 27.0ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Mon Jan 17 17:28:00 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 621ms (Views: 28.0ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Mon Jan 17 17:28:20 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/index.html.erb within layouts/application (152.4ms)
+Completed 200 OK in 557ms (Views: 157.8ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Mon Jan 17 17:28:31 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 435ms (Views: 25.5ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Mon Jan 17 17:28:48 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/index.html.erb within layouts/application (19.9ms)
+Completed 200 OK in 399ms (Views: 25.2ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Mon Jan 17 17:29:02 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (18.8ms)
+Completed 200 OK in 351ms (Views: 24.4ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Mon Jan 17 17:29:24 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/index.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 363ms (Views: 26.5ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Mon Jan 17 17:29:36 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 343ms (Views: 27.2ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Mon Jan 17 17:29:45 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/index.html.erb within layouts/application (22.4ms)
+Completed 200 OK in 537ms (Views: 28.5ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Mon Jan 17 17:29:54 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (19.9ms)
+Completed 200 OK in 405ms (Views: 25.2ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Mon Jan 17 17:33:53 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/index.html.erb within layouts/application (19.4ms)
+Completed 200 OK in 412ms (Views: 28.0ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Mon Jan 17 17:34:07 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (25.6ms)
+Completed 200 OK in 405ms (Views: 33.1ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Mon Jan 17 17:34:29 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/index.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 379ms (Views: 25.4ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Mon Jan 17 17:36:07 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 346ms (Views: 27.0ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Mon Jan 17 17:40:21 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/index.html.erb within layouts/application (29.4ms)
+Completed 200 OK in 608ms (Views: 35.4ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Mon Jan 17 17:40:49 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (151.5ms)
+Completed 200 OK in 559ms (Views: 159.2ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at Mon Jan 17 17:47:30 +0530 2011
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (20.9ms)
+Completed 200 OK in 53ms (Views: 52.2ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/testmethods" for 127.0.0.1 at Mon Jan 17 17:47:31 +0530 2011
+  Processing by TestmethodsController#index as HTML
+  [1m[35mTestmethod Load (154.6ms)[0m  SELECT `testmethods`.* FROM `testmethods`
+Mysql::Error: Table 'acl_development.testmethods' doesn't exist: SELECT `testmethods`.* FROM `testmethods`
+Completed   in 194ms
+
+ActiveRecord::StatementInvalid (Mysql::Error: Table 'acl_development.testmethods' doesn't exist: SELECT `testmethods`.* FROM `testmethods`):
+  app/controllers/testmethods_controller.rb:5:in `index'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.1ms)
+
+
+Started GET "/labregionals" for 127.0.0.1 at Mon Jan 17 17:47:36 +0530 2011
+  Processing by LabregionalsController#index as HTML
+  [1m[36mLabregional Load (0.6ms)[0m  [1mSELECT `labregionals`.* FROM `labregionals`[0m
+Rendered labregionals/index.html.erb within layouts/application (29.9ms)
+Completed 200 OK in 430ms (Views: 99.9ms | ActiveRecord: 155.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/labregionals" for 127.0.0.1 at Mon Jan 17 17:51:00 +0530 2011
+  Processing by LabregionalsController#index as HTML
+  [1m[35mLabregional Load (0.2ms)[0m  SELECT `labregionals`.* FROM `labregionals`
+Rendered labregionals/index.html.erb within layouts/application (34.2ms)
+Completed 200 OK in 584ms (Views: 40.8ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/lablocationals" for 127.0.0.1 at Mon Jan 17 17:51:05 +0530 2011
+  Processing by LablocationalsController#index as HTML
+  [1m[36mLablocational Load (0.6ms)[0m  [1mSELECT `lablocationals`.* FROM `lablocationals`[0m
+Rendered lablocationals/index.html.erb within layouts/application (170.7ms)
+Completed 200 OK in 568ms (Views: 205.6ms | ActiveRecord: 0.6ms | Sphinx: 0.0ms)
+
+
+Started GET "/lablocationals" for 127.0.0.1 at Mon Jan 17 17:52:18 +0530 2011
+  Processing by LablocationalsController#index as HTML
+  [1m[35mLablocational Load (0.3ms)[0m  SELECT `lablocationals`.* FROM `lablocationals`
+Rendered lablocationals/index.html.erb within layouts/application (29.4ms)
+Completed 200 OK in 426ms (Views: 35.1ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/lablocationals" for 127.0.0.1 at Mon Jan 17 17:54:37 +0530 2011
+  Processing by LablocationalsController#index as HTML
+  [1m[36mLablocational Load (0.2ms)[0m  [1mSELECT `lablocationals`.* FROM `lablocationals`[0m
+Rendered lablocationals/index.html.erb within layouts/application (30.1ms)
+Completed 200 OK in 393ms (Views: 36.0ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/lablocationals" for 127.0.0.1 at Mon Jan 17 17:59:07 +0530 2011
+  Processing by LablocationalsController#index as HTML
+  [1m[35mLablocational Load (0.3ms)[0m  SELECT `lablocationals`.* FROM `lablocationals`
+Rendered lablocationals/index.html.erb within layouts/application (30.2ms)
+Completed 200 OK in 358ms (Views: 37.5ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/testmethods" for 127.0.0.1 at Mon Jan 17 18:00:15 +0530 2011
+  Processing by TestmethodsController#index as HTML
+  [1m[36mTestmethod Load (0.6ms)[0m  [1mSELECT `testmethods`.* FROM `testmethods`[0m
+Mysql::Error: Table 'acl_development.testmethods' doesn't exist: SELECT `testmethods`.* FROM `testmethods`
+Completed   in 178ms
+
+ActiveRecord::StatementInvalid (Mysql::Error: Table 'acl_development.testmethods' doesn't exist: SELECT `testmethods`.* FROM `testmethods`):
+  app/controllers/testmethods_controller.rb:5:in `index'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.3ms)

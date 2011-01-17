@@ -1,4 +1,24 @@
 Aclindia::Application.routes.draw do
+  resources :sampleunits
+
+  resources :sampleplaces
+
+  resources :seals
+
+  resources :packings
+
+  resources :testrequires
+
+  resources :teststandards
+
+  resources :testmethods
+
+  resources :testparameters
+
+  resources :warehouses
+
+  resources :products
+
   resources :subcategories
 
   resources :exchanges

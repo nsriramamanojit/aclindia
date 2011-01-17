@@ -42,3 +42,6 @@
 [Sun Jan 16 19:18:30.814 2011] 0.000 sec [all/2/rel 0 (0,20)] [country_core] Enter Country Name
 [Sun Jan 16 19:18:41.019 2011] 0.000 sec [all/2/rel 0 (0,20)] [country_core] Enter Country Name
 [Sun Jan 16 19:19:01.713 2011] 0.000 sec [all/2/rel 0 (0,20)] [state_core] Enter State Name/Country Name
+[Mon Jan 17 16:22:39.966 2011] 0.002 sec [all/2/rel 1 (0,20)] [product_core] product
+[Mon Jan 17 16:22:45.612 2011] 0.000 sec [all/2/rel 1 (0,20)] [product_core] agri
+[Mon Jan 17 16:47:39.544 2011] 0.000 sec [all/2/rel 1 (0,20)] [warehouse_core] warehouse

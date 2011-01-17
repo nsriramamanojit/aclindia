@@ -1,0 +1,48 @@
+<!-- START_HIGHLIGHT -->
+  <% if notice %>
+    <p id="notice"><%= notice %></p>
+  <% end %>
+<!-- END_HIGHLIGHT -->
+
+<h1>Subcategory Details</h1>
+<table id="one-column-emphasis">
+    <colgroup>
+    	<col class="oce-first" />
+    </colgroup>
+    <tbody>
+   	<tr>
+  <div>
+    <td>Category</td>
+    <td><%= @product.category.name %></td>
+  </div>
+</tr>
+   	<tr>
+  <div>
+    <td>Subcategory</td>
+    <td><%= @product.subcategory.name %></td>
+  </div>
+</tr>
+   	<tr>
+  <div>
+    <td>Name</td>
+    <td><%= @product.name %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+    <td>Description</td>
+    <td><%= @product.description %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+	  <td>Status</td>
+      <td><%= @product.status %></td>
+  </div>
+</tr>
+    </tbody>
+</table>
+
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>

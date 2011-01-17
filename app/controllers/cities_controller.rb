@@ -56,6 +56,8 @@ class CitiesController < ApplicationController
         format.html { redirect_to(@city, :notice => 'City was Successfully created.') }
         format.xml  { render :xml => @city, :status => :created, :location => @city }
       else
+	@state = State.all
+	@country = Country.all
         format.html { render :action => "new" }
         format.xml  { render :xml => @city.errors, :status => :unprocessable_entity }
       end
@@ -72,6 +74,8 @@ class CitiesController < ApplicationController
         format.html { redirect_to(@city, :notice => 'City was successfully updated.') }
         format.xml  { head :ok }
       else
+	@state = State.all
+	@country = Country.all
         format.html { render :action => "edit" }
         format.xml  { render :xml => @city.errors, :status => :unprocessable_entity }
       end

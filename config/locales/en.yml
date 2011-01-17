@@ -16,6 +16,21 @@ en:
       lablocational: "Locational Lab"
       exchange: 	"Exchange"
       subcategory:  "Sub Category"
+      product:      "Product"
+      warehouse:    "Ware House"
+      testmethod:    "Test Methods"
+      testparameter:    "Test Parameters"
+      testrequire:    "Test Requires"
+      teststandard:    "Test Standards"
+      lab:        "Labs"
+      test:        "Tests"
+      commodity:        "Commodity"
+      sample:        "Sample"
+      sampleplace:        "Sample Place"
+      sampleunit:        "Sample Units"
+      packing:        "Sample Packing"
+      seal:        "Seal"
+
 #END:layout
 
 #START:main

@@ -1,0 +1,41 @@
+<!-- START_HIGHLIGHT -->
+  <% if notice %>
+    <p id="notice"><%= notice %></p>
+  <% end %>
+<!-- END_HIGHLIGHT -->
+
+<h1>Ware House Details</h1>
+<table id="one-column-emphasis">
+    <colgroup>
+    	<col class="oce-first" />
+    </colgroup>
+    <tbody>
+   	<tr>
+  <div>
+    <td>Warehouse Number</td>
+    <td>  <%= @warehouse.whnumber %></td>
+  </div>
+</tr>
+   	<tr>
+  <div>
+    <td>Warehouse Name</td>
+    <td>  <%= @warehouse.whnickname %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+    <td>Address</td>
+    <td><%= @warehouse.whaddress %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+	  <td>Status</td>
+      <td><%= @warehouse.status %></td>
+  </div>
+</tr>
+    </tbody>
+</table>
+
+<%= link_to 'Edit', edit_warehouse_path(@warehouse) %> |
+<%= link_to 'Back', warehouses_path %>

@@ -54,6 +54,7 @@ class SubcategoriesController < ApplicationController
         format.html { redirect_to(@subcategory, :notice => 'Subcategory Successfully Created.') }
         format.xml  { render :xml => @subcategory, :status => :created, :location => @subcategory }
       else
+	@category = Category.all
         format.html { render :action => "new" }
         format.xml  { render :xml => @subcategory.errors, :status => :unprocessable_entity }
       end

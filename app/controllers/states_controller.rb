@@ -54,6 +54,7 @@ class StatesController < ApplicationController
         format.html { redirect_to(@state, :notice => 'State was Created Successfully.') }
         format.xml  { render :xml => @state, :status => :created, :location => @state }
       else
+	@country = Country.all
         format.html { render :action => "new" }
         format.xml  { render :xml => @state.errors, :status => :unprocessable_entity }
       end

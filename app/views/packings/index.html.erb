@@ -1,0 +1,21 @@
+<h1>Listing packings</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @packings.each do |packing| %>
+  <tr>
+    <td><%= link_to 'Show', packing %></td>
+    <td><%= link_to 'Edit', edit_packing_path(packing) %></td>
+    <td><%= link_to 'Destroy', packing, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Packing', new_packing_path %>

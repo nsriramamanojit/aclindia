@@ -5,6 +5,8 @@
 class Subcategory < ActiveRecord::Base
 	#relations
 	belongs_to :category
+	has_many   :products 
+
 
 	#validations
 	validates :name, :presence =>true
