@@ -18117,3 +18117,443 @@ ActionController::RoutingError (No route matches "/stylesheets/application.css")
   
 
 Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Jan 17 09:33:01 +0530 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (22.5ms)
+Completed   in 63ms
+
+ActionView::Template::Error (No expansion found for :menu):
+    8:   <%= stylesheet_link_tag "menu" %>
+    9: <!-- END:stylesheet -->
+    10:   <%= javascript_include_tag :defaults %>
+    11:   <%= javascript_include_tag :menu %>
+    12:   <%= javascript_include_tag :jquery %>
+    13:   <%= csrf_meta_tag %>
+    14: </head>
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__741255624__613485188_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (130.3ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Jan 17 09:34:12 +0530 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (8.2ms)
+Completed   in 14ms
+
+ActionView::Template::Error (No expansion found for :menu):
+    8: 
+    9: <!-- END:stylesheet -->
+    10:   <%= javascript_include_tag :defaults %>
+    11:   <%= javascript_include_tag :menu %>
+    12:   <%= javascript_include_tag :jquery %>
+    13:   <%= csrf_meta_tag %>
+    14: </head>
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__741255624__612359198_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Jan 17 09:34:13 +0530 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (5.8ms)
+Completed   in 12ms
+
+ActionView::Template::Error (No expansion found for :menu):
+    8: 
+    9: <!-- END:stylesheet -->
+    10:   <%= javascript_include_tag :defaults %>
+    11:   <%= javascript_include_tag :menu %>
+    12:   <%= javascript_include_tag :jquery %>
+    13:   <%= csrf_meta_tag %>
+    14: </head>
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__741255624__612960148_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (12.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (19.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Jan 17 09:34:13 +0530 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (6.3ms)
+Completed   in 12ms
+
+ActionView::Template::Error (No expansion found for :menu):
+    8: 
+    9: <!-- END:stylesheet -->
+    10:   <%= javascript_include_tag :defaults %>
+    11:   <%= javascript_include_tag :menu %>
+    12:   <%= javascript_include_tag :jquery %>
+    13:   <%= csrf_meta_tag %>
+    14: </head>
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__741255624__613561878_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (17.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (28.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Jan 17 09:34:14 +0530 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (5.9ms)
+Completed   in 12ms
+
+ActionView::Template::Error (No expansion found for :menu):
+    8: 
+    9: <!-- END:stylesheet -->
+    10:   <%= javascript_include_tag :defaults %>
+    11:   <%= javascript_include_tag :menu %>
+    12:   <%= javascript_include_tag :jquery %>
+    13:   <%= csrf_meta_tag %>
+    14: </head>
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__741255624__612647638_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Jan 17 09:34:14 +0530 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (5.7ms)
+Completed   in 12ms
+
+ActionView::Template::Error (No expansion found for :menu):
+    8: 
+    9: <!-- END:stylesheet -->
+    10:   <%= javascript_include_tag :defaults %>
+    11:   <%= javascript_include_tag :menu %>
+    12:   <%= javascript_include_tag :jquery %>
+    13:   <%= csrf_meta_tag %>
+    14: </head>
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__741255624__613304698_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (18.9ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Jan 17 09:34:29 +0530 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (8.2ms)
+Completed   in 15ms
+
+ActionView::Template::Error (No expansion found for :jquery):
+    9: <!-- END:stylesheet -->
+    10:   <%= javascript_include_tag :defaults %>
+    11: 
+    12:   <%= javascript_include_tag :jquery %>
+    13:   <%= csrf_meta_tag %>
+    14: </head>
+    15: <body id="home">
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__741255624__612180438_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (19.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Jan 17 09:34:46 +0530 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 19ms (Views: 17.8ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Jan 17 09:43:47 +0530 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (166.5ms)
+Completed   in 172ms
+
+ActionView::Template::Error (undefined local variable or method `menu' for #<#<Class:0xb6e13898>:0xb6e12984>):
+    8:   <%= stylesheet_link_tag "menu" %>
+    9: <!-- END:stylesheet -->
+    10:   <%= javascript_include_tag :defaults %>
+    11:   <%= javascript_include_tag menu %>
+    12:   <%= javascript_include_tag jquery %>
+    13:   <%= csrf_meta_tag %>
+    14: </head>
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__741255624__613381748_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (18.1ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Jan 17 09:44:11 +0530 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Jan 17 09:46:15 +0530 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Jan 17 09:47:13 +0530 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 17ms (Views: 16.7ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Jan 17 09:47:58 +0530 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 18ms (Views: 15.4ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Jan 17 09:48:15 +0530 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 18ms (Views: 17.3ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Jan 17 09:48:46 +0530 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Jan 17 09:49:25 +0530 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Jan 17 09:56:40 +0530 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 19ms (Views: 17.9ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Jan 17 10:00:43 +0530 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Jan 17 10:01:20 +0530 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Jan 17 10:01:45 +0530 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Jan 17 10:02:13 +0530 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/subcategories" for 127.0.0.1 at Mon Jan 17 10:02:14 +0530 2011
+  Processing by SubcategoriesController#index as HTML
+  [1m[36mSubcategory Load (10.1ms)[0m  [1mSELECT `subcategories`.* FROM `subcategories`[0m
+Rendered subcategories/index.html.erb within layouts/application (21.3ms)
+Completed 200 OK in 449ms (Views: 51.9ms | ActiveRecord: 10.1ms | Sphinx: 0.0ms)
+
+
+Started GET "/lablocationals" for 127.0.0.1 at Mon Jan 17 10:02:17 +0530 2011
+  Processing by LablocationalsController#index as HTML
+  [1m[35mLablocational Load (0.7ms)[0m  SELECT `lablocationals`.* FROM `lablocationals`
+Rendered lablocationals/index.html.erb within layouts/application (26.7ms)
+Completed 200 OK in 322ms (Views: 46.4ms | ActiveRecord: 0.7ms | Sphinx: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at Mon Jan 17 10:02:19 +0530 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT `users`.* FROM `users` ORDER BY name[0m
+Rendered users/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 204ms (Views: 192.6ms | ActiveRecord: 0.8ms | Sphinx: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at Mon Jan 17 10:02:31 +0530 2011
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` ORDER BY name
+Rendered users/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 27ms (Views: 13.4ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/cities" for 127.0.0.1 at Mon Jan 17 10:02:34 +0530 2011
+  Processing by CitiesController#index as HTML
+  [1m[36mCity Load (2.3ms)[0m  [1mSELECT `cities`.* FROM `cities`[0m
+Rendered cities/index.html.erb within layouts/application (19.9ms)
+Completed 200 OK in 326ms (Views: 63.1ms | ActiveRecord: 2.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/labcentrals" for 127.0.0.1 at Mon Jan 17 10:02:37 +0530 2011
+  Processing by LabcentralsController#index as HTML
+  [1m[35mLabcentral Load (0.8ms)[0m  SELECT `labcentrals`.* FROM `labcentrals`
+Rendered labcentrals/index.html.erb within layouts/application (24.4ms)
+Completed 200 OK in 340ms (Views: 63.9ms | ActiveRecord: 0.8ms | Sphinx: 0.0ms)
+
+
+Started GET "/lablocationals" for 127.0.0.1 at Mon Jan 17 10:02:38 +0530 2011
+  Processing by LablocationalsController#index as HTML
+  [1m[36mLablocational Load (0.2ms)[0m  [1mSELECT `lablocationals`.* FROM `lablocationals`[0m
+Rendered lablocationals/index.html.erb within layouts/application (27.2ms)
+Completed 200 OK in 310ms (Views: 32.5ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/exchanges" for 127.0.0.1 at Mon Jan 17 10:02:40 +0530 2011
+  Processing by ExchangesController#index as HTML
+  [1m[35mExchange Load (0.7ms)[0m  SELECT `exchanges`.* FROM `exchanges`
+Rendered exchanges/index.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 143ms (Views: 26.1ms | ActiveRecord: 0.7ms | Sphinx: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at Mon Jan 17 10:02:42 +0530 2011
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 41ms (Views: 40.1ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at Mon Jan 17 10:02:44 +0530 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` ORDER BY name[0m
+Rendered users/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 25ms (Views: 13.2ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Mon Jan 17 10:02:45 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.7ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/index.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 320ms (Views: 58.9ms | ActiveRecord: 0.7ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Mon Jan 17 10:04:01 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 299ms (Views: 25.6ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Mon Jan 17 10:05:44 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/index.html.erb within layouts/application (18.8ms)
+Completed 200 OK in 155ms (Views: 24.0ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Mon Jan 17 10:06:06 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (20.8ms)
+Completed 200 OK in 282ms (Views: 26.4ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Mon Jan 17 10:06:15 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/index.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 296ms (Views: 24.2ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Mon Jan 17 10:06:17 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 277ms (Views: 23.8ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Mon Jan 17 10:06:29 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/index.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 294ms (Views: 25.3ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Mon Jan 17 10:08:08 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (25.5ms)
+Completed 200 OK in 349ms (Views: 32.9ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/new" for 127.0.0.1 at Mon Jan 17 10:08:14 +0530 2011
+  Processing by CountriesController#new as HTML
+Rendered countries/_form.html.erb (10.7ms)
+Rendered countries/new.html.erb within layouts/application (33.4ms)
+Completed 200 OK in 344ms (Views: 67.8ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Mon Jan 17 10:08:17 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/index.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 299ms (Views: 24.5ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Mon Jan 17 10:08:20 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 297ms (Views: 24.5ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Mon Jan 17 10:08:38 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/index.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 147ms (Views: 26.1ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/labcentrals" for 127.0.0.1 at Mon Jan 17 10:08:42 +0530 2011
+  Processing by LabcentralsController#index as HTML
+  [1m[36mLabcentral Load (0.2ms)[0m  [1mSELECT `labcentrals`.* FROM `labcentrals`[0m
+Rendered labcentrals/index.html.erb within layouts/application (28.4ms)
+Completed 200 OK in 287ms (Views: 36.1ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/labregionals" for 127.0.0.1 at Mon Jan 17 10:08:44 +0530 2011
+  Processing by LabregionalsController#index as HTML
+  [1m[35mLabregional Load (0.8ms)[0m  SELECT `labregionals`.* FROM `labregionals`
+Rendered labregionals/index.html.erb within layouts/application (36.4ms)
+Completed 200 OK in 350ms (Views: 77.7ms | ActiveRecord: 0.8ms | Sphinx: 0.0ms)
+
+
+Started GET "/lablocationals" for 127.0.0.1 at Mon Jan 17 10:08:45 +0530 2011
+  Processing by LablocationalsController#index as HTML
+  [1m[36mLablocational Load (0.2ms)[0m  [1mSELECT `lablocationals`.* FROM `lablocationals`[0m
+Rendered lablocationals/index.html.erb within layouts/application (29.5ms)
+Completed 200 OK in 307ms (Views: 35.3ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/exchanges" for 127.0.0.1 at Mon Jan 17 10:08:47 +0530 2011
+  Processing by ExchangesController#index as HTML
+  [1m[35mExchange Load (0.2ms)[0m  SELECT `exchanges`.* FROM `exchanges`
+Rendered exchanges/index.html.erb within layouts/application (19.9ms)
+Completed 200 OK in 300ms (Views: 25.5ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/exchanges" for 127.0.0.1 at Mon Jan 17 10:09:31 +0530 2011
+  Processing by ExchangesController#index as HTML
+  [1m[36mExchange Load (0.2ms)[0m  [1mSELECT `exchanges`.* FROM `exchanges`[0m
+Rendered exchanges/index.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 297ms (Views: 25.6ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/exchanges" for 127.0.0.1 at Mon Jan 17 10:09:57 +0530 2011
+  Processing by ExchangesController#index as HTML
+  [1m[35mExchange Load (0.2ms)[0m  SELECT `exchanges`.* FROM `exchanges`
+Rendered exchanges/index.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 308ms (Views: 24.2ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/exchanges" for 127.0.0.1 at Mon Jan 17 10:10:26 +0530 2011
+  Processing by ExchangesController#index as HTML
+  [1m[36mExchange Load (0.2ms)[0m  [1mSELECT `exchanges`.* FROM `exchanges`[0m
+Rendered exchanges/index.html.erb within layouts/application (23.9ms)
+Completed 200 OK in 313ms (Views: 32.9ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)

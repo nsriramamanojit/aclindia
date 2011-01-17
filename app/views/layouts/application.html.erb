@@ -1,12 +1,15 @@
-<!DOCTYPE html>
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
   <title>Agri Procurement Quality Assurance Management System</title>
 <!-- START:stylesheet -->
   <%= stylesheet_link_tag "scaffold" %>
   <%= stylesheet_link_tag "depot" %>
+  <%= stylesheet_link_tag "menu" %>
 <!-- END:stylesheet -->
   <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag 'menu' %>
+  <%= javascript_include_tag 'jquery' %>
   <%= csrf_meta_tag %>
 </head>
 <body id="home">
@@ -17,19 +20,25 @@
   </div>
 <div id="columns">
 <div id="side">
-<!-- START_HIGHLIGHT -->
-      <a href="/home"><%= t('.home') %></a><br />
-      <a href="/users"><%= t('.user') %></a><br />
-      <a href="/countries"><%= t('.country') %></a><br />
-      <a href="/states"><%= t('.state') %></a><br />
-      <a href="/cities"><%= t('.city') %></a><br />
-      <a href="/categories"><%= t('.category') %></a><br />
-      <a href="/subcategories"><%= t('.subcategory') %></a><br />
-      <a href="/labcentrals"><%= t('.labcentral') %></a><br />
-      <a href="/labregionals"><%= t('.labregional') %></a><br />
-      <a href="/lablocationals"><%= t('.lablocational') %></a><br />
-      <a href="/exchanges"><%= t('.exchange') %></a><br />
-<!-- END_HIGHLIGHT -->
+	<div id="menu">
+		<ul class="menu">
+			<li><a href="/home"><span><%= t('.home') %></span></a></li>
+			<li><a href="/users"><span><%= t('.user') %></span></a></li>
+			<li><a href="/countries#"><span><%= t('.country') %></span></a>
+</li>
+			<li><a href="/states"><span><%= t('.state') %></span></a></li>
+			<li><a href="/cities"><span><%= t('.city') %></span></a></li>
+			<li><a href="/categories"><span><%= t('.category') %></span></a></li>
+			<li><a href="/subcategories"><span><%= t('.subcategory') %></span></a></li>
+<li><a href="/labcentrals"><span><%= t('.labcentral') %></span></a></li>
+<li><a href="/labregionals"><span><%= t('.labregional') %></span></a></li>
+<li><a href="/lablocationals"><span><%= t('.lablocational') %></span></a></li>
+
+
+			<li class="last"><a href="/exchanges"><span><%= t('.exchange') %></span></a></li>
+		</ul>
+	</div>
+
 </div>
 <div id="main">
 <%= yield %>
