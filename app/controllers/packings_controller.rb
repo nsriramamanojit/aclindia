@@ -1,3 +1,7 @@
+#------------------------------
+#Author: Chaitanya Ram N
+#Controller: Packing
+#--------------------------------
 class PackingsController < ApplicationController
   # GET /packings
   # GET /packings.xml

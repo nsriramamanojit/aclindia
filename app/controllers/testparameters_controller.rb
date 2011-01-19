@@ -1,3 +1,7 @@
+#------------------------------
+#Author: Chaitanya Ram N
+#Controller: Test Parameters
+#--------------------------------
 class TestparametersController < ApplicationController
   # GET /testparameters
   # GET /testparameters.xml

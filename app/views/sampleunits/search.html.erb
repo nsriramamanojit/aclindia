@@ -1,0 +1,31 @@
+<h1>Search Results</h1>
+<% if @sampleunits.blank? %>
+ 	<p>Oops!!! No Matches found.</p>
+<% else %>
+<table id="newspaper-b">
+    <thead>
+    	<tr>
+        	<th scope="col">Sample Unit</th>
+            <th scope="col">View</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+ 
+        </tr>
+    </thead>
+         <tfoot>
+    	<tr>
+        	<td colspan="4"></td>
+        </tr>
+    </tfoot>
+<% @sampleunits.each do |sampleunit| %>
+  <tr>
+    <td><%= sampleunit.name %></td>
+    <td><%= link_to 'View', sampleunit %></td>
+    <td><%= link_to 'Edit', edit_sampleunit_path(sampleunit) %></td>
+    <td><%= link_to 'Delete', sampleunit, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<% end %>
+<%= link_to 'Back to Sample Units', sampleunits_path %>

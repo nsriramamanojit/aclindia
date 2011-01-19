@@ -1,3 +1,7 @@
+#------------------------------
+#Author: Chaitanya Ram N
+#Controller: Sample Places
+#--------------------------------
 class SampleplacesController < ApplicationController
   # GET /sampleplaces
   # GET /sampleplaces.xml

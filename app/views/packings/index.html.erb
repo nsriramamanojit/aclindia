@@ -1,21 +1,47 @@
-<h1>Listing packings</h1>
-
-<table>
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<h1>Search Packings</h1>
+<!--Start of search text box -->
+<%= form_tag :action => 'search' %>
+	<table id="one-column-emphasis">
+    <colgroup>
+    	<col class="oce-first" />
+    </colgroup>
+	<tr>
+		<td>Search: </td>
+		<td><%= text_field_tag :query ,@query ||="Enter Packing Name",:class=>'title',
+:onfocus=>"javascript: this.value=''",:onblur=>"javascript: if(this.value=='') this.value='Enter Packing Name'" %></td>
+		<td><%= submit_tag "Search" %></td>
+	</tr>
+	</table>
+<%= form_tag %>
+<!--end of search text box -->
+<h1>Listing Packings</h1>
+<!-- START_HIGHLIGHT -->
+  <% if notice %>
+    <p id="notice"><%= notice %></p>
+  <% end %>
+<!-- END_HIGHLIGHT -->
+<table id="newspaper-b">
+    <thead>
+    	<tr>
+        	<th scope="col">Name</th>
+            <th scope="col">View</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+ 
+        </tr>
+    </thead>
+         <tfoot>
+    	<tr>
+        	<td colspan="4"></td>
+        </tr>
+    </tfoot>
 <% @packings.each do |packing| %>
   <tr>
-    <td><%= link_to 'Show', packing %></td>
+    <td><%= packing.name %></td>
+    <td><%= link_to 'View', packing %></td>
     <td><%= link_to 'Edit', edit_packing_path(packing) %></td>
-    <td><%= link_to 'Destroy', packing, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Delete', packing, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
-
-<br />
-
 <%= link_to 'New Packing', new_packing_path %>

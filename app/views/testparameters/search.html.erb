@@ -1,0 +1,29 @@
+<% if @testparameters.blank? %>
+ 	<p>Oops!!! No Matches found.</p>
+<% else %>
+<table id="newspaper-b">
+    <thead>
+    	<tr>
+        	<th scope="col">Sample Parameter</th>
+            <th scope="col">View</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+ 
+        </tr>
+    </thead>
+         <tfoot>
+    	<tr>
+        	<td colspan="4"></td>
+        </tr>
+    </tfoot>
+<% @testparameters.each do |testparameter| %>
+  <tr>
+    <td><%= testparameter.name %></td>
+    <td><%= link_to 'View', testparameter %></td>
+    <td><%= link_to 'Edit', edit_testparameter_path(testparameter) %></td>
+    <td><%= link_to 'Delete', testparameter, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+<% end %>
+<%= link_to 'Back to Parameters', testparameters_path %>

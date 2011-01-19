@@ -15,3 +15,46 @@
     <%= f.submit %>
   </div>
 <% end %>
+  <fieldset>
+  <legend>Enter Test Requires Details</legend>
+<table id="one-column-emphasis">
+    <colgroup>
+    	<col class="oce-first" />
+    </colgroup>
+    <tbody>
+   	<tr>
+  <div>
+    <td><%= f.label :name %></td>
+    <td><%= f.text_field :name,:class=>'title'%></td>
+  </div>
+</tr>
+<tr>
+  <div>
+    <td><%= f.label :description %></td>
+    <td><%= f.text_field :description,:class=>'title' %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+    <td><%= f.label :fileurl %></td>
+    <td><%= f.text_field :fileurl,:class=>'title' %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+	  <td><%= f.label :status %></td>
+      <td><%= f.radio_button :status, 'A', :checked => true %> Active
+    <%= f.radio_button :status, 'I' %> Inactive </td>
+  </div>
+</tr>
+<tr>
+  <div>
+	<td></td>
+   <td><%= f.submit "Save"%></td>
+  </div>
+</tr>
+    </tbody>
+</table>
+</fieldset>
+<% end %>
+</div>

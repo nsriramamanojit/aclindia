@@ -1,3 +1,7 @@
+#------------------------------
+#Author: Chaitanya Ram N
+#Controller: Ware House
+#--------------------------------
 class WarehousesController < ApplicationController
   # GET /warehouses
   # GET /warehouses.xml

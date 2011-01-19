@@ -1,0 +1,30 @@
+<h1>Search Results</h1>
+<% if @seals.blank? %>
+ 	<p>Oops!!! No Matches found.</p>
+<% else %>
+<table id="newspaper-b">
+    <thead>
+    	<tr>
+        	<th scope="col">Seal</th>
+            <th scope="col">View</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+ 
+        </tr>
+    </thead>
+         <tfoot>
+    	<tr>
+        	<td colspan="4"></td>
+        </tr>
+    </tfoot>
+<% @seals.each do |seal| %>
+  <tr>
+    <td><%= seal.name %></td>
+    <td><%= link_to 'View', seal %></td>
+    <td><%= link_to 'Edit', edit_seal_path(seal) %></td>
+    <td><%= link_to 'Delete', seal, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+<% end %>
+<%= link_to 'Back to Seals', seals_path %>

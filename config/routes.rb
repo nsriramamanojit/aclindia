@@ -1,4 +1,6 @@
 Aclindia::Application.routes.draw do
+  resources :sampleconditions
+
   resources :sampleunits
 
   resources :sampleplaces

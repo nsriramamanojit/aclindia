@@ -1,3 +1,7 @@
+#------------------------------
+#Author: Chaitanya Ram N
+#Controller: Seal
+#--------------------------------
 class SealsController < ApplicationController
   # GET /seals
   # GET /seals.xml

@@ -1,0 +1,48 @@
+<h1>Search Sample Condition</h1>
+<!--Start of search text box -->
+<%= form_tag :action => 'search' %>
+	<table id="one-column-emphasis">
+    <colgroup>
+    	<col class="oce-first" />
+    </colgroup>
+	<tr>
+		<td>Search: </td>
+		<td><%= text_field_tag :query ,@query ||="Enter Sample Condition Name",:class=>'title',
+:onfocus=>"javascript: this.value=''",:onblur=>"javascript: if(this.value=='') this.value='Enter Sample Condition Name'" %></td>
+		<td><%= submit_tag "Search" %></td>
+	</tr>
+	</table>
+<%= form_tag %>
+<!--end of search text box -->
+<h1>Listing Sample Conditions</h1>
+<!-- START_HIGHLIGHT -->
+  <% if notice %>
+    <p id="notice"><%= notice %></p>
+  <% end %>
+<!-- END_HIGHLIGHT -->
+<table id="newspaper-b">
+    <thead>
+    	<tr>
+        	<th scope="col">Sample Condition</th>
+            <th scope="col">View</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+ 
+        </tr>
+    </thead>
+         <tfoot>
+    	<tr>
+        	<td colspan="4"></td>
+        </tr>
+    </tfoot>
+<% @sampleconditions.each do |samplecondition| %>
+  <tr>
+    <td><%= samplecondition.name %></td>
+    <td><%= link_to 'View', samplecondition %></td>
+    <td><%= link_to 'Edit', edit_samplecondition_path(samplecondition) %></td>
+    <td><%= link_to 'Delete', samplecondition, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'New Samplecondition', new_samplecondition_path %>

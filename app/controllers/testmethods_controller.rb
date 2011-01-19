@@ -1,3 +1,7 @@
+#------------------------------
+#Author: Chaitanya Ram N
+#Controller: Test Methods
+#--------------------------------
 class TestmethodsController < ApplicationController
   # GET /testmethods
   # GET /testmethods.xml

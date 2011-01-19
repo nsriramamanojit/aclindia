@@ -2,21 +2,20 @@
 <% if @countries.blank? %>
  	<p>Oops!!! No Matches found.</p>
 <% else %>
-<table id="rounded-corner">
+<table id="newspaper-b">
     <thead>
     	<tr>
-        	<th scope="col" class="rounded-company">Country Name</th>
-            <th scope="col" class="rounded-q1">View</th>
-            <th scope="col" class="rounded-q2">Edit</th>
-            <th scope="col" class="rounded-q3">Delete</th>
+        	<th scope="col">Country Name</th>
+            <th scope="col">View</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
  
         </tr>
     </thead>
          <tfoot>
     	<tr>
-        	<td colspan="3" class="rounded-foot-left"></td>
-        	<td class="rounded-foot-right">&nbsp;</td>
-        </tr>
+        	<td colspan="4"></td>
+       </tr>
     </tfoot>
 <% @countries.each do |country| %>
   <tr>

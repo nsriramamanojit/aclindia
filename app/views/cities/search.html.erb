@@ -2,25 +2,28 @@
 <% if @cities.blank? %>
  	<p>Oops!!! No Matches found.</p>
 <% else %>
-<table id="rounded-corner">
+<table id="newspaper-b">
     <thead>
     	<tr>
-        	<th scope="col" class="rounded-company">City Name</th>
-            <th scope="col" class="rounded-q1">View</th>
-            <th scope="col" class="rounded-q2">Edit</th>
-            <th scope="col" class="rounded-q3">Delete</th>
+        	<th scope="col">City</th>
+        	<th scope="col">State</th>
+        	<th scope="col">Country</th>
+            <th scope="col">View</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
  
         </tr>
     </thead>
          <tfoot>
     	<tr>
-        	<td colspan="3" class="rounded-foot-left"></td>
-        	<td class="rounded-foot-right">&nbsp;</td>
+        	<td colspan="4"></td>
         </tr>
     </tfoot>
 <% @cities.each do |city| %>
   <tr>
     <td><%= city.name %></td>
+    <td><%= city.state.name %></td>
+    <td><%= city.country.name %></td>
     <td><%= link_to 'View', city %></td>
     <td><%= link_to 'Edit', edit_city_path(city) %></td>
     <td><%= link_to 'Delete', city, :confirm => 'Are you sure?',

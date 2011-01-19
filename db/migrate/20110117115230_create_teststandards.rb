@@ -4,7 +4,6 @@ class CreateTeststandards < ActiveRecord::Migration
 
 	t.string :name
 	t.string :description
-	t.string :uploadstatus
 	t.string :fileurl
 	t.string :status
 	t.string :created_by

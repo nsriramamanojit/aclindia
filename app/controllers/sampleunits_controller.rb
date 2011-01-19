@@ -1,3 +1,7 @@
+#------------------------------
+#Author: Chaitanya Ram N
+#Controller: Sample Units
+#--------------------------------
 class SampleunitsController < ApplicationController
   # GET /sampleunits
   # GET /sampleunits.xml

@@ -19333,3 +19333,618 @@ ActiveRecord::StatementInvalid (Mysql::Error: Table 'acl_development.testmethods
 Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
 Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.2ms)
 Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.3ms)
+
+
+Started GET "/" for 127.0.0.1 at Wed Jan 19 09:49:59 +0530 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (66.4ms)
+Completed 200 OK in 140ms (Views: 135.5ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/labcentrals" for 127.0.0.1 at Wed Jan 19 09:50:08 +0530 2011
+  Processing by LabcentralsController#index as HTML
+  [1m[36mLabcentral Load (20.5ms)[0m  [1mSELECT `labcentrals`.* FROM `labcentrals`[0m
+Rendered labcentrals/index.html.erb within layouts/application (41.4ms)
+Completed 200 OK in 985ms (Views: 97.1ms | ActiveRecord: 20.5ms | Sphinx: 0.0ms)
+
+
+Started GET "/categories" for 127.0.0.1 at Wed Jan 19 09:50:13 +0530 2011
+  Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (0.8ms)[0m  SELECT `categories`.* FROM `categories`
+Rendered categories/index.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 510ms (Views: 26.0ms | ActiveRecord: 0.8ms | Sphinx: 0.0ms)
+
+
+Started GET "/categories" for 127.0.0.1 at Wed Jan 19 09:50:33 +0530 2011
+  Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.* FROM `categories`[0m
+Rendered categories/index.html.erb within layouts/application (26.4ms)
+Completed 200 OK in 482ms (Views: 48.2ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/categories" for 127.0.0.1 at Wed Jan 19 09:51:08 +0530 2011
+  Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.* FROM `categories`
+Rendered categories/index.html.erb within layouts/application (57.5ms)
+Completed 200 OK in 738ms (Views: 81.9ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/categories" for 127.0.0.1 at Wed Jan 19 09:51:24 +0530 2011
+  Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.* FROM `categories`[0m
+Rendered categories/index.html.erb within layouts/application (66.3ms)
+Completed 200 OK in 924ms (Views: 75.5ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/cities" for 127.0.0.1 at Wed Jan 19 09:55:23 +0530 2011
+  Processing by CitiesController#index as HTML
+  [1m[35mCity Load (1.2ms)[0m  SELECT `cities`.* FROM `cities`
+Rendered cities/index.html.erb within layouts/application (39.8ms)
+Completed 200 OK in 953ms (Views: 246.9ms | ActiveRecord: 1.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/cities" for 127.0.0.1 at Wed Jan 19 10:01:11 +0530 2011
+  Processing by CitiesController#index as HTML
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT `cities`.* FROM `cities`[0m
+  [1m[35mSQL (111.2ms)[0m  SHOW TABLES
+  [1m[36mState Load (33.8ms)[0m  [1mSELECT `states`.* FROM `states` WHERE (`states`.`id` = 1) LIMIT 1[0m
+  [1m[35mCountry Load (0.5ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1
+Rendered cities/index.html.erb within layouts/application (194.9ms)
+Completed 200 OK in 661ms (Views: 70.7ms | ActiveRecord: 145.8ms | Sphinx: 0.0ms)
+
+
+Started GET "/cities" for 127.0.0.1 at Wed Jan 19 10:01:26 +0530 2011
+  Processing by CitiesController#index as HTML
+  [1m[36mCity Load (0.5ms)[0m  [1mSELECT `cities`.* FROM `cities`[0m
+  [1m[35mState Load (0.1ms)[0m  SELECT `states`.* FROM `states` WHERE (`states`.`id` = 1) LIMIT 1
+  [1m[36mCountry Load (0.1ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1[0m
+Rendered cities/index.html.erb within layouts/application (48.5ms)
+Completed 200 OK in 369ms (Views: 53.6ms | ActiveRecord: 0.7ms | Sphinx: 0.0ms)
+
+
+Started GET "/warehouses" for 127.0.0.1 at Wed Jan 19 10:21:15 +0530 2011
+  Processing by WarehousesController#index as HTML
+  [1m[35mWarehouse Load (2.1ms)[0m  SELECT `warehouses`.* FROM `warehouses`
+Rendered warehouses/index.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 344ms (Views: 24.9ms | ActiveRecord: 2.1ms | Sphinx: 0.0ms)
+
+
+Started GET "/seals" for 127.0.0.1 at Wed Jan 19 10:21:19 +0530 2011
+  Processing by SealsController#index as HTML
+  [1m[36mSeal Load (0.7ms)[0m  [1mSELECT `seals`.* FROM `seals`[0m
+Mysql::Error: Table 'acl_development.seals' doesn't exist: SELECT `seals`.* FROM `seals`
+Completed   in 474ms
+
+ActiveRecord::StatementInvalid (Mysql::Error: Table 'acl_development.seals' doesn't exist: SELECT `seals`.* FROM `seals`):
+  app/controllers/seals_controller.rb:5:in `index'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.5ms)
+
+
+Started GET "/labregionals" for 127.0.0.1 at Wed Jan 19 10:21:24 +0530 2011
+  Processing by LabregionalsController#index as HTML
+  [1m[35mLabregional Load (0.8ms)[0m  SELECT `labregionals`.* FROM `labregionals`
+Rendered labregionals/index.html.erb within layouts/application (29.1ms)
+Completed 200 OK in 379ms (Views: 34.4ms | ActiveRecord: 1.5ms | Sphinx: 0.0ms)
+
+
+Started GET "/lablocationals" for 127.0.0.1 at Wed Jan 19 10:21:28 +0530 2011
+  Processing by LablocationalsController#index as HTML
+  [1m[36mLablocational Load (0.8ms)[0m  [1mSELECT `lablocationals`.* FROM `lablocationals`[0m
+Rendered lablocationals/index.html.erb within layouts/application (28.6ms)
+Completed 200 OK in 346ms (Views: 34.1ms | ActiveRecord: 0.8ms | Sphinx: 0.0ms)
+
+
+Started GET "/cities" for 127.0.0.1 at Wed Jan 19 10:21:34 +0530 2011
+  Processing by CitiesController#index as HTML
+  [1m[35mCity Load (0.2ms)[0m  SELECT `cities`.* FROM `cities`
+  [1m[36mState Load (0.1ms)[0m  [1mSELECT `states`.* FROM `states` WHERE (`states`.`id` = 1) LIMIT 1[0m
+  [1m[35mCountry Load (0.1ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1
+Rendered cities/index.html.erb within layouts/application (52.3ms)
+Completed 200 OK in 530ms (Views: 58.0ms | ActiveRecord: 0.5ms | Sphinx: 0.0ms)
+
+
+Started GET "/cities" for 127.0.0.1 at Wed Jan 19 10:22:20 +0530 2011
+  Processing by CitiesController#index as HTML
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT `cities`.* FROM `cities`[0m
+  [1m[35mState Load (0.1ms)[0m  SELECT `states`.* FROM `states` WHERE (`states`.`id` = 1) LIMIT 1
+  [1m[36mCountry Load (0.1ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1[0m
+Rendered cities/index.html.erb within layouts/application (48.4ms)
+Completed 200 OK in 406ms (Views: 53.6ms | ActiveRecord: 0.5ms | Sphinx: 0.0ms)
+
+
+Started GET "/cities" for 127.0.0.1 at Wed Jan 19 10:22:22 +0530 2011
+  Processing by CitiesController#index as HTML
+  [1m[35mCity Load (0.2ms)[0m  SELECT `cities`.* FROM `cities`
+  [1m[36mState Load (0.1ms)[0m  [1mSELECT `states`.* FROM `states` WHERE (`states`.`id` = 1) LIMIT 1[0m
+  [1m[35mCountry Load (0.1ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1
+Rendered cities/index.html.erb within layouts/application (46.7ms)
+Completed 200 OK in 383ms (Views: 52.5ms | ActiveRecord: 0.5ms | Sphinx: 0.0ms)
+  [1m[36mSQL (169.1ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.5ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateUsers (20110110180512)
+Migrating to CreateCountries (20110111063853)
+Migrating to CreateStates (20110111102015)
+Migrating to CreateCities (20110111105058)
+Migrating to CreateLabcentrals (20110113051654)
+Migrating to CreateLabregionals (20110113054603)
+Migrating to CreateLablocationals (20110113054618)
+Migrating to CreateCategories (20110115151319)
+Migrating to CreateExchanges (20110116120238)
+Migrating to CreateSubcategories (20110116122532)
+Migrating to CreateProducts (20110117102451)
+Migrating to CreateWarehouses (20110117105416)
+Migrating to CreateTestparameters (20110117115205)
+  [1m[35mSQL (172.3ms)[0m  CREATE TABLE `testparameters` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` varchar(255), `status` varchar(255), `created_by` varchar(255), `modified_by` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (67.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110117115205')[0m
+Migrating to CreateTestmethods (20110117115214)
+  [1m[35mSQL (131.2ms)[0m  CREATE TABLE `testmethods` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` varchar(255), `status` varchar(255), `created_by` varchar(255), `modified_by` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (43.7ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110117115214')[0m
+Migrating to CreateTeststandards (20110117115230)
+  [1m[35mSQL (107.3ms)[0m  CREATE TABLE `teststandards` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` varchar(255), `fileurl` varchar(255), `status` varchar(255), `created_by` varchar(255), `modified_by` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (56.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110117115230')[0m
+Migrating to CreateTestrequires (20110117115324)
+  [1m[35mSQL (112.6ms)[0m  CREATE TABLE `testrequires` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` varchar(255), `status` varchar(255), `created_by` varchar(255), `modified_by` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (43.8ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110117115324')[0m
+Migrating to CreatePackings (20110117115342)
+  [1m[35mSQL (103.3ms)[0m  CREATE TABLE `packings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` varchar(255), `status` varchar(255), `created_by` varchar(255), `modified_by` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (43.8ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110117115342')[0m
+Migrating to CreateSeals (20110117115352)
+  [1m[35mSQL (120.4ms)[0m  CREATE TABLE `seals` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` varchar(255), `status` varchar(255), `created_by` varchar(255), `modified_by` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (54.7ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110117115352')[0m
+Migrating to CreateSampleplaces (20110117115404)
+  [1m[35mSQL (122.8ms)[0m  CREATE TABLE `sampleplaces` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `code` varchar(255), `name` varchar(255), `description` varchar(255), `status` varchar(255), `created_by` varchar(255), `modified_by` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (43.6ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110117115404')[0m
+Migrating to CreateSampleunits (20110117115416)
+  [1m[35mSQL (120.8ms)[0m  CREATE TABLE `sampleunits` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` varchar(255), `status` varchar(255), `created_by` varchar(255), `modified_by` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (43.7ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110117115416')[0m
+  [1m[35mSQL (0.9ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `categories`[0m
+  [1m[35mSQL (9.3ms)[0m  SHOW KEYS FROM `categories`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `cities`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `cities`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `countries`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `countries`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `exchanges`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `exchanges`
+  [1m[36mSQL (1.2ms)[0m  [1mdescribe `labcentrals`[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW KEYS FROM `labcentrals`
+  [1m[36mSQL (1.5ms)[0m  [1mdescribe `lablocationals`[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW KEYS FROM `lablocationals`
+  [1m[36mSQL (1.4ms)[0m  [1mdescribe `labregionals`[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW KEYS FROM `labregionals`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `packings`[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW KEYS FROM `packings`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `products`[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW KEYS FROM `products`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `sampleplaces`[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW KEYS FROM `sampleplaces`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `sampleunits`[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW KEYS FROM `sampleunits`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `seals`[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW KEYS FROM `seals`
+  [1m[36mSQL (1.2ms)[0m  [1mdescribe `states`[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW KEYS FROM `states`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `subcategories`[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW KEYS FROM `subcategories`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `testmethods`[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW KEYS FROM `testmethods`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `testparameters`[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW KEYS FROM `testparameters`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `testrequires`[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW KEYS FROM `testrequires`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `teststandards`[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW KEYS FROM `teststandards`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `users`[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW KEYS FROM `users`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `warehouses`[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW KEYS FROM `warehouses`
+
+
+Started GET "/cities" for 127.0.0.1 at Wed Jan 19 10:51:46 +0530 2011
+  Processing by CitiesController#index as HTML
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT `cities`.* FROM `cities`[0m
+  [1m[35mState Load (0.2ms)[0m  SELECT `states`.* FROM `states` WHERE (`states`.`id` = 1) LIMIT 1
+  [1m[36mCountry Load (0.1ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1[0m
+Rendered cities/index.html.erb within layouts/application (70.0ms)
+Completed 200 OK in 522ms (Views: 99.2ms | ActiveRecord: 0.5ms | Sphinx: 0.0ms)
+
+
+Started GET "/testmethods" for 127.0.0.1 at Wed Jan 19 10:51:51 +0530 2011
+  Processing by TestmethodsController#index as HTML
+  [1m[35mTestmethod Load (0.5ms)[0m  SELECT `testmethods`.* FROM `testmethods`
+Rendered testmethods/index.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 363ms (Views: 36.0ms | ActiveRecord: 0.5ms | Sphinx: 0.0ms)
+
+
+Started GET "/testparameters" for 127.0.0.1 at Wed Jan 19 10:51:57 +0530 2011
+  Processing by TestparametersController#index as HTML
+  [1m[36mTestparameter Load (0.6ms)[0m  [1mSELECT `testparameters`.* FROM `testparameters`[0m
+Rendered testparameters/index.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 502ms (Views: 17.5ms | ActiveRecord: 0.6ms | Sphinx: 0.0ms)
+
+
+Started GET "/testrequires" for 127.0.0.1 at Wed Jan 19 10:52:05 +0530 2011
+  Processing by TestrequiresController#index as HTML
+  [1m[35mTestrequire Load (0.6ms)[0m  SELECT `testrequires`.* FROM `testrequires`
+Rendered testrequires/index.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 377ms (Views: 17.9ms | ActiveRecord: 0.6ms | Sphinx: 0.0ms)
+
+
+Started GET "/teststandards" for 127.0.0.1 at Wed Jan 19 10:52:13 +0530 2011
+  Processing by TeststandardsController#index as HTML
+  [1m[36mTeststandard Load (0.6ms)[0m  [1mSELECT `teststandards`.* FROM `teststandards`[0m
+Rendered teststandards/index.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 340ms (Views: 18.2ms | ActiveRecord: 0.6ms | Sphinx: 0.0ms)
+
+
+Started GET "/categories" for 127.0.0.1 at Wed Jan 19 10:52:18 +0530 2011
+  Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.* FROM `categories`
+Rendered categories/index.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 409ms (Views: 57.2ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/subcategories" for 127.0.0.1 at Wed Jan 19 10:52:22 +0530 2011
+  Processing by SubcategoriesController#index as HTML
+  [1m[36mSubcategory Load (0.6ms)[0m  [1mSELECT `subcategories`.* FROM `subcategories`[0m
+Rendered subcategories/index.html.erb within layouts/application (21.7ms)
+Completed 200 OK in 397ms (Views: 62.4ms | ActiveRecord: 0.6ms | Sphinx: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at Wed Jan 19 10:52:25 +0530 2011
+  Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.6ms)[0m  SELECT `products`.* FROM `products`
+Rendered products/index.html.erb within layouts/application (144.8ms)
+Completed 200 OK in 504ms (Views: 150.9ms | ActiveRecord: 0.6ms | Sphinx: 0.0ms)
+
+
+Started GET "/seals" for 127.0.0.1 at Wed Jan 19 10:52:27 +0530 2011
+  Processing by SealsController#index as HTML
+  [1m[36mSeal Load (0.6ms)[0m  [1mSELECT `seals`.* FROM `seals`[0m
+Rendered seals/index.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 369ms (Views: 18.1ms | ActiveRecord: 0.6ms | Sphinx: 0.0ms)
+
+
+Started GET "/sampleplaces" for 127.0.0.1 at Wed Jan 19 10:52:30 +0530 2011
+  Processing by SampleplacesController#index as HTML
+  [1m[35mSampleplace Load (0.5ms)[0m  SELECT `sampleplaces`.* FROM `sampleplaces`
+Rendered sampleplaces/index.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 512ms (Views: 40.6ms | ActiveRecord: 0.5ms | Sphinx: 0.0ms)
+
+
+Started GET "/sampleunits" for 127.0.0.1 at Wed Jan 19 10:52:32 +0530 2011
+  Processing by SampleunitsController#index as HTML
+  [1m[36mSampleunit Load (0.6ms)[0m  [1mSELECT `sampleunits`.* FROM `sampleunits`[0m
+Rendered sampleunits/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 378ms (Views: 17.8ms | ActiveRecord: 0.6ms | Sphinx: 0.0ms)
+
+
+Started GET "/packings" for 127.0.0.1 at Wed Jan 19 10:52:35 +0530 2011
+  Processing by PackingsController#index as HTML
+  [1m[35mPacking Load (0.6ms)[0m  SELECT `packings`.* FROM `packings`
+Rendered packings/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 596ms (Views: 54.2ms | ActiveRecord: 0.6ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Wed Jan 19 16:50:13 +0530 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (68.1ms)
+Completed 200 OK in 163ms (Views: 162.2ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Wed Jan 19 16:51:11 +0530 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Wed Jan 19 16:51:35 +0530 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 23ms (Views: 22.7ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Wed Jan 19 16:56:09 +0530 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 23ms (Views: 22.1ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Wed Jan 19 16:56:43 +0530 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Wed Jan 19 16:57:13 +0530 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 18ms (Views: 17.2ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Wed Jan 19 16:57:19 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.8ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (23.2ms)
+Completed 200 OK in 738ms (Views: 44.7ms | ActiveRecord: 0.8ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/new" for 127.0.0.1 at Wed Jan 19 16:57:22 +0530 2011
+  Processing by CountriesController#new as HTML
+Rendered countries/_form.html.erb (12.1ms)
+Rendered countries/new.html.erb within layouts/application (21.4ms)
+Completed 200 OK in 383ms (Views: 26.7ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/labcentrals" for 127.0.0.1 at Wed Jan 19 16:57:28 +0530 2011
+  Processing by LabcentralsController#index as HTML
+  [1m[35mLabcentral Load (0.7ms)[0m  SELECT `labcentrals`.* FROM `labcentrals`
+Rendered labcentrals/index.html.erb within layouts/application (28.3ms)
+Completed 200 OK in 392ms (Views: 72.6ms | ActiveRecord: 0.7ms | Sphinx: 0.0ms)
+
+
+Started GET "/labcentrals/new" for 127.0.0.1 at Wed Jan 19 16:57:30 +0530 2011
+  Processing by LabcentralsController#new as HTML
+Rendered labcentrals/_form.html.erb (27.0ms)
+Rendered labcentrals/new.html.erb within layouts/application (49.9ms)
+Completed 200 OK in 571ms (Views: 88.3ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at Wed Jan 19 16:57:43 +0530 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT `users`.* FROM `users` ORDER BY name[0m
+Rendered users/index.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 99ms (Views: 86.7ms | ActiveRecord: 0.7ms | Sphinx: 0.0ms)
+
+
+Started GET "/cities" for 127.0.0.1 at Wed Jan 19 16:57:46 +0530 2011
+  Processing by CitiesController#index as HTML
+  [1m[35mCity Load (0.7ms)[0m  SELECT `cities`.* FROM `cities`
+  [1m[36mSQL (181.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mState Load (0.6ms)[0m  SELECT `states`.* FROM `states` WHERE (`states`.`id` = 1) LIMIT 1
+  [1m[36mCountry Load (0.7ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1[0m
+Rendered cities/index.html.erb within layouts/application (243.1ms)
+Completed 200 OK in 882ms (Views: 121.4ms | ActiveRecord: 183.9ms | Sphinx: 0.0ms)
+
+
+Started GET "/cities/new" for 127.0.0.1 at Wed Jan 19 16:57:49 +0530 2011
+  Processing by CitiesController#new as HTML
+  [1m[35mState Load (0.5ms)[0m  SELECT `states`.* FROM `states`
+  [1m[36mCountry Load (0.1ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered cities/_form.html.erb (28.8ms)
+Rendered cities/new.html.erb within layouts/application (50.6ms)
+Completed 200 OK in 461ms (Views: 71.8ms | ActiveRecord: 0.7ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Wed Jan 19 16:58:09 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/index.html.erb within layouts/application (31.8ms)
+Completed 200 OK in 523ms (Views: 39.3ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/new" for 127.0.0.1 at Wed Jan 19 16:58:11 +0530 2011
+  Processing by CountriesController#new as HTML
+Rendered countries/_form.html.erb (12.2ms)
+Rendered countries/new.html.erb within layouts/application (21.6ms)
+Completed 200 OK in 417ms (Views: 26.8ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/categories" for 127.0.0.1 at Wed Jan 19 16:58:21 +0530 2011
+  Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.7ms)[0m  [1mSELECT `categories`.* FROM `categories`[0m
+Rendered categories/index.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 461ms (Views: 68.0ms | ActiveRecord: 0.7ms | Sphinx: 0.0ms)
+
+
+Started GET "/categories/new" for 127.0.0.1 at Wed Jan 19 16:58:23 +0530 2011
+  Processing by CategoriesController#new as HTML
+Rendered categories/_form.html.erb (13.6ms)
+Rendered categories/new.html.erb within layouts/application (35.1ms)
+Completed 200 OK in 545ms (Views: 89.3ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/seals" for 127.0.0.1 at Wed Jan 19 16:58:26 +0530 2011
+  Processing by SealsController#index as HTML
+  [1m[35mSeal Load (0.7ms)[0m  SELECT `seals`.* FROM `seals`
+Rendered seals/index.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 402ms (Views: 47.5ms | ActiveRecord: 0.7ms | Sphinx: 0.0ms)
+
+
+Started GET "/seals/new" for 127.0.0.1 at Wed Jan 19 16:58:28 +0530 2011
+  Processing by SealsController#new as HTML
+Rendered seals/_form.html.erb (11.3ms)
+Rendered seals/new.html.erb within layouts/application (29.7ms)
+Completed 200 OK in 538ms (Views: 55.0ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Wed Jan 19 16:58:34 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (20.9ms)
+Completed 200 OK in 451ms (Views: 26.1ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at Wed Jan 19 16:58:43 +0530 2011
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 42ms (Views: 41.5ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at Wed Jan 19 16:59:00 +0530 2011
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 22ms (Views: 21.1ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at Wed Jan 19 16:59:01 +0530 2011
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 19ms (Views: 18.5ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/labcentrals" for 127.0.0.1 at Wed Jan 19 17:06:59 +0530 2011
+  Processing by LabcentralsController#index as HTML
+  [1m[35mLabcentral Load (0.2ms)[0m  SELECT `labcentrals`.* FROM `labcentrals`
+Rendered labcentrals/index.html.erb within layouts/application (174.1ms)
+Completed 200 OK in 521ms (Views: 179.8ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/labcentrals/new" for 127.0.0.1 at Wed Jan 19 17:07:02 +0530 2011
+  Processing by LabcentralsController#new as HTML
+Rendered labcentrals/_form.html.erb (25.4ms)
+Rendered labcentrals/new.html.erb within layouts/application (36.8ms)
+Completed 200 OK in 415ms (Views: 42.6ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/labregionals" for 127.0.0.1 at Wed Jan 19 17:07:09 +0530 2011
+  Processing by LabregionalsController#index as HTML
+  [1m[36mLabregional Load (0.8ms)[0m  [1mSELECT `labregionals`.* FROM `labregionals`[0m
+Rendered labregionals/index.html.erb within layouts/application (35.2ms)
+Completed 200 OK in 596ms (Views: 95.6ms | ActiveRecord: 0.8ms | Sphinx: 0.0ms)
+
+
+Started GET "/labregionals/new" for 127.0.0.1 at Wed Jan 19 17:07:12 +0530 2011
+  Processing by LabregionalsController#new as HTML
+  [1m[35mLabcentral Load (0.2ms)[0m  SELECT `labcentrals`.* FROM `labcentrals`
+Rendered labregionals/_form.html.erb (42.5ms)
+Rendered labregionals/new.html.erb within layouts/application (53.3ms)
+Completed 200 OK in 521ms (Views: 80.7ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/cities" for 127.0.0.1 at Wed Jan 19 17:07:16 +0530 2011
+  Processing by CitiesController#index as HTML
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT `cities`.* FROM `cities`[0m
+  [1m[35mState Load (0.1ms)[0m  SELECT `states`.* FROM `states` WHERE (`states`.`id` = 1) LIMIT 1
+  [1m[36mCountry Load (0.1ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1[0m
+Rendered cities/index.html.erb within layouts/application (49.5ms)
+Completed 200 OK in 447ms (Views: 55.1ms | ActiveRecord: 0.5ms | Sphinx: 0.0ms)
+
+
+Started GET "/cities/new" for 127.0.0.1 at Wed Jan 19 17:07:19 +0530 2011
+  Processing by CitiesController#new as HTML
+  [1m[35mState Load (0.2ms)[0m  SELECT `states`.* FROM `states`
+  [1m[36mCountry Load (4.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered cities/_form.html.erb (66.3ms)
+Rendered cities/new.html.erb within layouts/application (89.9ms)
+Completed 200 OK in 727ms (Views: 102.9ms | ActiveRecord: 4.4ms | Sphinx: 0.0ms)
+
+
+Started GET "/cities/new" for 127.0.0.1 at Wed Jan 19 17:08:16 +0530 2011
+  Processing by CitiesController#new as HTML
+  [1m[35mState Load (0.2ms)[0m  SELECT `states`.* FROM `states`
+  [1m[36mCountry Load (0.1ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered cities/_form.html.erb (28.8ms)
+Rendered cities/new.html.erb within layouts/application (40.5ms)
+Completed 200 OK in 446ms (Views: 46.1ms | ActiveRecord: 0.4ms | Sphinx: 0.0ms)
+
+
+Started GET "/cities/new" for 127.0.0.1 at Wed Jan 19 17:08:32 +0530 2011
+  Processing by CitiesController#new as HTML
+  [1m[35mState Load (0.2ms)[0m  SELECT `states`.* FROM `states`
+  [1m[36mCountry Load (0.1ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered cities/_form.html.erb (28.7ms)
+Rendered cities/new.html.erb within layouts/application (38.7ms)
+Completed 200 OK in 471ms (Views: 44.1ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/cities/new" for 127.0.0.1 at Wed Jan 19 17:09:51 +0530 2011
+  Processing by CitiesController#new as HTML
+  [1m[35mState Load (0.2ms)[0m  SELECT `states`.* FROM `states`
+  [1m[36mCountry Load (0.1ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered cities/_form.html.erb (28.6ms)
+Rendered cities/new.html.erb within layouts/application (38.0ms)
+Completed 200 OK in 436ms (Views: 43.3ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at Wed Jan 19 17:10:09 +0530 2011
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` ORDER BY name
+Rendered users/index.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 34ms (Views: 20.4ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at Wed Jan 19 17:10:12 +0530 2011
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 15ms (Views: 14.8ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/cities" for 127.0.0.1 at Wed Jan 19 17:10:18 +0530 2011
+  Processing by CitiesController#index as HTML
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT `cities`.* FROM `cities`[0m
+  [1m[35mState Load (0.1ms)[0m  SELECT `states`.* FROM `states` WHERE (`states`.`id` = 1) LIMIT 1
+  [1m[36mCountry Load (0.1ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1[0m
+Rendered cities/index.html.erb within layouts/application (64.3ms)
+Completed 200 OK in 640ms (Views: 71.6ms | ActiveRecord: 0.5ms | Sphinx: 0.0ms)
+
+
+Started GET "/cities/new" for 127.0.0.1 at Wed Jan 19 17:10:19 +0530 2011
+  Processing by CitiesController#new as HTML
+  [1m[35mState Load (0.2ms)[0m  SELECT `states`.* FROM `states`
+  [1m[36mCountry Load (0.1ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered cities/_form.html.erb (28.8ms)
+Rendered cities/new.html.erb within layouts/application (38.0ms)
+Completed 200 OK in 440ms (Views: 43.4ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/cities" for 127.0.0.1 at Wed Jan 19 17:10:22 +0530 2011
+  Processing by CitiesController#index as HTML
+  [1m[35mCity Load (0.2ms)[0m  SELECT `cities`.* FROM `cities`
+  [1m[36mState Load (0.1ms)[0m  [1mSELECT `states`.* FROM `states` WHERE (`states`.`id` = 1) LIMIT 1[0m
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1
+Rendered cities/index.html.erb within layouts/application (49.4ms)
+Completed 200 OK in 384ms (Views: 54.6ms | ActiveRecord: 0.5ms | Sphinx: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at Wed Jan 19 17:10:25 +0530 2011
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 15ms (Views: 14.7ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at Wed Jan 19 17:11:34 +0530 2011
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started POST "/home" for 127.0.0.1 at Wed Jan 19 17:12:13 +0530 2011
+  Processing by SessionsController#create as HTML
+  Parameters: {"name"=>"", "commit"=>"Login", "authenticity_token"=>"LUZLuOneDe7uI+JVwSG0ijzH7mPldnLn2vDdYBfskrQ=", "utf8"=>"✓", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`name` = '') LIMIT 1[0m
+Redirected to http://localhost:3000/home
+Completed 302 Found in 37ms
+
+
+Started GET "/home" for 127.0.0.1 at Wed Jan 19 17:12:14 +0530 2011
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Wed Jan 19 17:12:17 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/index.html.erb within layouts/application (23.4ms)
+Completed 200 OK in 490ms (Views: 50.3ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/new" for 127.0.0.1 at Wed Jan 19 17:12:20 +0530 2011
+  Processing by CountriesController#new as HTML
+Rendered countries/_form.html.erb (12.0ms)
+Rendered countries/new.html.erb within layouts/application (23.3ms)
+Completed 200 OK in 389ms (Views: 28.7ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Wed Jan 19 17:12:23 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 514ms (Views: 26.4ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)

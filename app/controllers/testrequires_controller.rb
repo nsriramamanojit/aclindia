@@ -1,3 +1,7 @@
+#------------------------------
+#Author: Chaitanya Ram N
+#Controller: Test Requires
+#--------------------------------
 class TestrequiresController < ApplicationController
   # GET /testrequires
   # GET /testrequires.xml

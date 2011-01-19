@@ -1,0 +1,30 @@
+<h1>Search Results</h1>
+<% if @packings.blank? %>
+ 	<p>Oops!!! No Matches found.</p>
+<% else %>
+<table id="newspaper-b">
+    <thead>
+    	<tr>
+        	<th scope="col">Name</th>
+            <th scope="col">View</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+ 
+        </tr>
+    </thead>
+         <tfoot>
+    	<tr>
+        	<td colspan="4"></td>
+        </tr>
+    </tfoot>
+<% @packings.each do |packing| %>
+  <tr>
+    <td><%= packing.name %></td>
+    <td><%= link_to 'View', packing %></td>
+    <td><%= link_to 'Edit', edit_packing_path(packing) %></td>
+    <td><%= link_to 'Delete', packing, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+<% end %>
+<%= link_to 'Back to Packings', packings_path %>
