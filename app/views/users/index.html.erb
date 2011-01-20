@@ -1,23 +1,39 @@
+<!-- START_HIGHLIGHT -->
+<h1>Search Users</h1>
+<!--Start of search text box -->
+<%= form_tag :action => 'search' %>
+	<table id="one-column-emphasis">
+    <colgroup>
+    	<col class="oce-first" />
+    </colgroup>
+	<tr>
+		<td>Search</td>
+		<td><%= text_field_tag :query ,@query ||="Enter User Name",:class=>'title',
+:onfocus=>"javascript: this.value=''",:onblur=>"javascript: if(this.value=='') this.value='Enter User Name'" %></td>
+		<td><%= submit_tag "Search" %></td>
+	</tr>
+	</table>
+<%= form_tag %>
+<!--end of search text box -->
 <h1>Listing Users</h1>
 <!-- START_HIGHLIGHT -->
   <% if notice %>
     <p id="notice"><%= notice %></p>
   <% end %>
 <!-- END_HIGHLIGHT -->
-<table id="rounded-corner">
+<table id="newspaper-b">
     <thead>
     	<tr>
-        	<th scope="col" class="rounded-company">User Name</th>
-            <th scope="col" class="rounded-q1">View</th>
-            <th scope="col" class="rounded-q2">Edit</th>
-            <th scope="col" class="rounded-q3">Delete</th>
+        	<th scope="col">User Name</th>
+            <th scope="col">View</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
  
         </tr>
     </thead>
          <tfoot>
     	<tr>
-        	<td colspan="3" class="rounded-foot-left"></td>
-        	<td class="rounded-foot-right">&nbsp;</td>
+        	<td colspan="4"></td>
         </tr>
     </tfoot>
  <% @users.each do |user| %>

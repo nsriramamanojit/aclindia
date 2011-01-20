@@ -6,7 +6,7 @@
     	<col class="oce-first" />
     </colgroup>
 	<tr>
-		<td>Search: </td>
+		<td>Search</td>
 		<td><%= text_field_tag :query ,@query ||="Enter Regional/Central Lab Name",:class=>'title',
 :onfocus=>"javascript: this.value=''",:onblur=>"javascript: if(this.value=='') this.value='Enter Regional/Central Lab Name'" %></td>
 		<td><%= submit_tag "Search" %></td>
@@ -23,7 +23,8 @@
 <table id="newspaper-b">
     <thead>
     	<tr>
-        	<th scope="col">Lab Id</th>
+        	<th scope="col">Regional</th>
+        	<th scope="col">Central</th>
             <th scope="col">View</th>
             <th scope="col">Edit</th>
             <th scope="col">Delete</th>
@@ -32,12 +33,13 @@
     </thead>
          <tfoot>
     	<tr>
-        	<td colspan="4"></td>
+        	<td colspan="5"></td>
         </tr>
     </tfoot>
 <% @labregionals.each do |labregional| %>
    <tr>
-    <td><%= labregional.labid %></td>
+    <td><%= labregional.labname %></td>
+    <td><%= labregional.labcentral.labname %></td>
     <td><%= link_to 'View', labregional %></td>
     <td><%= link_to 'Edit', edit_labregional_path(labregional) %></td>
     <td><%= link_to 'Delete', labregional, :confirm => 'Are you sure?',

@@ -5,21 +5,22 @@
 <table id="newspaper-b">
     <thead>
     	<tr>
-        	<th scope="col">Subcategory</th>
+        	<th scope="col">Sub Category</th>
+        	<th scope="col">Category</th>
             <th scope="col">View</th>
             <th scope="col">Edit</th>
             <th scope="col">Delete</th>
- 
         </tr>
     </thead>
          <tfoot>
     	<tr>
-        	<td colspan="4"></td>
+        	<td colspan="5"></td>
         </tr>
     </tfoot>
 <% @subcategories.each do |subcategory| %>
   <tr>
     <td><%= subcategory.name %></td>
+    <td><%= subcategory.category.name %></td>
     <td><%= link_to 'View', subcategory %></td>
     <td><%= link_to 'Edit', edit_subcategory_path(subcategory) %></td>
     <td><%= link_to 'Delete', subcategory, :confirm => 'Are you sure?', :method => :delete %></td>

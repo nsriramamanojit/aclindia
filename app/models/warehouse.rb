@@ -11,6 +11,5 @@ class Warehouse < ActiveRecord::Base
 	define_index do
 		indexes whnickname
 		indexes whnumber
-
 	end
 end

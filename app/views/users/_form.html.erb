@@ -1,5 +1,4 @@
 <div class="home_form">
-
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -15,27 +14,37 @@
 
   <fieldset>
   <legend>Enter User Details</legend>
-
+<table id="one-column-emphasis">
+    <colgroup>
+    	<col class="oce-first" />
+    </colgroup>
+    <tbody>
+   	<tr>
   <div>
-    <%= f.label :name %>:
-    <%= f.text_field :name, :size => 20 %>
+    <td><%= f.label :name, 'User Name' %></td>
+    <td><%= f.text_field :name,:class=>'title'%></td>
   </div>
-
+</tr>
+<tr>
   <div>
-    <%= f.label :password, 'Password' %>:
-    <%= f.password_field :password, :size => 20 %>
+    <td><%= f.label :password, 'Password' %></td>
+    <td><%= f.password_field :password, :size => 20,:class=>'title' %></td>
   </div>
-
+</tr>
+<tr>
   <div>
-    <%= f.label :password_confirmation, 'Confirm' %>:
-    <%= f.password_field :password_confirmation, :size => 20 %>
+	  <td><%= f.label :password_confirmation, 'Confirm' %></td>
+      <td><%= f.password_field :password_confirmation, :size => 20,:class=>'title'%></td>
   </div>
-
+</tr>
+<tr>
   <div>
-    <%= f.submit %>
+	<td></td>
+   <td><%= f.submit "Save"%></td>
   </div>
-
-  </fieldset>
+</tr>
+    </tbody>
+</table>
+</fieldset>
 <% end %>
-
 </div>

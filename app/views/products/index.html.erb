@@ -24,6 +24,8 @@
     <thead>
     	<tr>
         	<th scope="col">Product</th>
+        	<th scope="col">Sub Category</th>
+        	<th scope="col">Category</th>
             <th scope="col">View</th>
             <th scope="col">Edit</th>
             <th scope="col">Delete</th>
@@ -32,12 +34,14 @@
     </thead>
          <tfoot>
     	<tr>
-        	<td colspan="4"></td>
+        	<td colspan="6"></td>
         </tr>
     </tfoot>
 <% @products.each do |product| %>
   <tr>
     <td><%= product.name %></td>
+    <td><%= product.subcategory.name %></td>
+    <td><%= product.category.name %></td>
     <td><%= link_to 'View', product %></td>
     <td><%= link_to 'Edit', edit_product_path(product) %></td>
     <td><%= link_to 'Delete', product, :confirm => 'Are you sure?', :method => :delete %></td>

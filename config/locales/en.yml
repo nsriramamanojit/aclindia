@@ -30,7 +30,7 @@ en:
       sampleunit:        "Sample Units"
       packing:        "Sample Packing"
       seal:        "Seal"
-
+      samplecondition:        "Sample Condition"
 #END:layout
 
 #START:main

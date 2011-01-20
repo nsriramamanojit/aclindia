@@ -88,17 +88,6 @@ class StatesController < ApplicationController
       format.xml  { head :ok }
     end
   end
-	#method: Report Generation
-	def statereports
-		@states = State.find(:all)
-   		html = render :layout => false 
-		kit = PDFKit.new(html,:orientation => 'Landscape')
-
-		kit.stylesheets << RAILS_ROOT + '/public/stylesheets/styles.css' 
-
-		send_data(kit.to_pdf, :filename => "statereport.pdf", :type => 'application/pdf')
-	end
-	#End:report
 
 	def search
 		@query = params[:query]

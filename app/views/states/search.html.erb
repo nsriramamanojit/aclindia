@@ -6,6 +6,7 @@
     <thead>
     	<tr>
         	<th scope="col">State</th>
+        	<th scope="col">Country</th>
             <th scope="col">View</th>
             <th scope="col">Edit</th>
             <th scope="col">Delete</th>
@@ -14,12 +15,13 @@
     </thead>
          <tfoot>
     	<tr>
-        	<td colspan="4"></td>
+        	<td colspan="5"></td>
         </tr>
     </tfoot>
 <% @states.each do |state| %>
   <tr>
     <td><%= state.name %></td>
+    <td><%= state.country.name %></td>
     <td><%= link_to 'View', state %></td>
     <td><%= link_to 'Edit', edit_state_path(state) %></td>
     <td><%= link_to 'Delete', state, :confirm => 'Are you sure?',

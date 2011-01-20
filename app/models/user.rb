@@ -43,6 +43,11 @@ class User < ActiveRecord::Base
     end
   end     
 
+	#Method: Indexing
+	define_index do
+		indexes name
+	end
+
   private
 
     def password_must_be_present
@@ -52,4 +57,6 @@ class User < ActiveRecord::Base
     def generate_salt
       self.salt = self.object_id.to_s + rand.to_s
     end
+
+
 end

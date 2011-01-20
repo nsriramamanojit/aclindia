@@ -45,3 +45,23 @@
 [Mon Jan 17 16:22:39.966 2011] 0.002 sec [all/2/rel 1 (0,20)] [product_core] product
 [Mon Jan 17 16:22:45.612 2011] 0.000 sec [all/2/rel 1 (0,20)] [product_core] agri
 [Mon Jan 17 16:47:39.544 2011] 0.000 sec [all/2/rel 1 (0,20)] [warehouse_core] warehouse
+[Thu Jan 20 11:23:06.197 2011] 0.003 sec [all/2/rel 1 (0,20)] [product_core] barley
+[Thu Jan 20 11:23:32.668 2011] 0.000 sec [scan/2/rel 1 (0,20)] [product_core]
+[Thu Jan 20 11:31:32.879 2011] 0.000 sec [all/2/rel 1 (0,20)] [product_core] barley
+[Thu Jan 20 11:33:12.325 2011] 0.000 sec [all/2/rel 1 (0,20)] [state_core] Maharashtra
+[Thu Jan 20 11:33:58.008 2011] 0.000 sec [all/2/rel 1 (0,20)] [state_core] Maharashtra
+[Thu Jan 20 11:34:13.741 2011] 0.000 sec [all/2/rel 1 (0,20)] [city_core] Hyderabad
+[Thu Jan 20 11:34:35.061 2011] 0.000 sec [all/2/rel 1 (0,20)] [city_core] Hyderabad
+[Thu Jan 20 11:34:43.043 2011] 0.000 sec [all/2/rel 2 (0,20)] [city_core] Maharashtra
+[Thu Jan 20 11:48:51.605 2011] 0.000 sec [all/2/rel 1 (0,20)] [testmethod_core] IS:1797-1985
+[Thu Jan 20 11:49:02.457 2011] 0.000 sec [all/2/rel 1 (0,20)] [country_core] INDIA
+[Thu Jan 20 11:49:09.676 2011] 0.000 sec [all/2/rel 1 (0,20)] [city_core] Hyderabad
+[Thu Jan 20 11:49:21.279 2011] 0.000 sec [all/2/rel 1 (0,20)] [teststandard_core] IS
+[Thu Jan 20 11:50:07.775 2011] 0.000 sec [all/2/rel 1 (0,20)] [teststandard_core] IS
+[Thu Jan 20 11:50:27.249 2011] 0.000 sec [all/2/rel 1 (0,20)] [teststandard_core] IS
+[Thu Jan 20 11:52:08.204 2011] 0.002 sec [all/2/rel 2 (0,20)] [product_core] Agricultural
+[Thu Jan 20 11:52:58.623 2011] 0.000 sec [all/2/rel 2 (0,20)] [product_core] Agricultural
+[Thu Jan 20 11:53:14.139 2011] 0.000 sec [all/2/rel 2 (0,20)] [subcategory_core] Agricultural
+[Thu Jan 20 11:53:48.852 2011] 0.000 sec [all/2/rel 2 (0,20)] [subcategory_core] Agricultural
+[Thu Jan 20 12:21:19.516 2011] 0.000 sec [all/2/rel 1 (0,20)] [user_core] admin
+[Thu Jan 20 12:21:25.408 2011] 0.000 sec [all/2/rel 0 (0,20)] [user_core] Assam

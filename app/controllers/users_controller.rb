@@ -93,4 +93,9 @@ class UsersController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+	def search
+		@query = params[:query]
+		@users = User.search @query
+	end
 end

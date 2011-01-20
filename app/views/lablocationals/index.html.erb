@@ -23,7 +23,9 @@
 <table id="newspaper-b">
     <thead>
     	<tr>
-        	<th scope="col">Lab ID</th>
+        	<th scope="col">Locational</th>
+       		<th scope="col">Regional</th>
+       		<th scope="col">Central</th>
             <th scope="col">View</th>
             <th scope="col">Edit</th>
             <th scope="col">Delete</th>
@@ -32,13 +34,15 @@
     </thead>
          <tfoot>
     	<tr>
-        	<td colspan="4"></td>
+        	<td colspan="6"></td>
         </tr>
     </tfoot>
 
 <% @lablocationals.each do |lablocational| %>
    <tr>
-    <td><%= lablocational.labid %></td>
+    <td><%= lablocational.labname %></td>
+    <td><%= lablocational.labregional.labname %></td>
+    <td><%= lablocational.labcentral.labname %></td>
     <td><%= link_to 'View', lablocational %></td>
     <td><%= link_to 'Edit', edit_lablocational_path(lablocational) %></td>
     <td><%= link_to 'Delete', lablocational, :confirm => 'Are you sure?',

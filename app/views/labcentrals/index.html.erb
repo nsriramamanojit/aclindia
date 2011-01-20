@@ -23,7 +23,7 @@
 <table id="newspaper-b">
     <thead>
     	<tr>
-        	<th scope="col">Lab Id</th>
+        	<th scope="col">Lab Name</th>
             <th scope="col">View</th>
             <th scope="col">Edit</th>
             <th scope="col">Delete</th>
@@ -37,7 +37,7 @@
     </tfoot>
 <% @labcentrals.each do |labcentral| %>
    <tr>
-    <td><%= labcentral.labid %></td>
+    <td><%= labcentral.labname %></td>
     <td><%= link_to 'View', labcentral %></td>
     <td><%= link_to 'Edit', edit_labcentral_path(labcentral) %></td>
     <td><%= link_to 'Delete', labcentral, :confirm => 'Are you sure?',

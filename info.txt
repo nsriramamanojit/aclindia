@@ -1,0 +1,1 @@
+<%= link_to "Download Report (PDF)", states_path(@state, :format => "pdf") %>

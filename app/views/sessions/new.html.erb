@@ -14,21 +14,32 @@
   <%= form_tag do %>
     <fieldset>
       <legend>Please Log In</legend>
-
-      <div>
-        <label for="name">Name:</label>
-        <%= text_field_tag :name, params[:name],:class=>'title' %>
-      </div>
-
-      <div>
-        <label for="password">Password:</label>
-        <%= password_field_tag :password, params[:password],:class=>'title' %>
-      </div>
-  
-      <div>
-        <%= submit_tag "Login" %>
-      </div>
+<table id="one-column-emphasis">
+    <colgroup>
+    	<col class="oce-first" />
+    </colgroup>
+    <tbody>
+   	<tr>
+  <div>
+    <td><label for="name">Name</label></td>
+    <td><%= text_field_tag :name, params[:name],:class => 'title'%></td>
+  </div>
+</tr>
+<tr>
+  <div>
+    <td><label for="password">Password</label></td>
+    <td><%= password_field_tag :password, params[:password],:class=>'title' %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+	<td></td>
+    <td><%= submit_tag "Login" %></td>
+  </div>
+</tr>
+    </tbody>
+</table>
     </fieldset>
   <% end %>
 </div>
-<br><br>
+

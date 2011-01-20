@@ -51,6 +51,6 @@ Aclindia::Application.routes.draw do
 
    resources :home
 
-  root :to => "home#index"
-  match ':controller(/:action(/:id(.:format)))'
+   root :to => "home#index"
+   match ':controller(/:action(/:id(.:format)))'
 end

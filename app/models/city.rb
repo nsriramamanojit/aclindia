@@ -7,6 +7,10 @@ class City < ActiveRecord::Base
 	belongs_to :state
 	belongs_to :country
 
+	#validations
+	validates_presence_of :name
+  	validates_length_of :description, :maximum => 10,
+    :too_long => "%{count} characters is the maximum allowed"
 
 	#Method: Indexing
 	define_index do
