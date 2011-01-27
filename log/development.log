@@ -26982,3 +26982,1359 @@ Started GET "/subcategories" for 127.0.0.1 at Thu Jan 27 18:32:35 +0530 2011
   [1m[35mCategory Load (0.5ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 3) LIMIT 1
 Rendered subcategories/index.html.erb within layouts/application (43.1ms)
 Completed 200 OK in 443ms (Views: 83.5ms | ActiveRecord: 30.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Jan 27 23:47:00 +0530 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (61.0ms)
+Completed 200 OK in 152ms (Views: 151.0ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at Thu Jan 27 23:47:06 +0530 2011
+  Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (18.3ms)[0m  [1mSELECT `products`.* FROM `products`[0m
+  [1m[35mSQL (1.2ms)[0m  SHOW TABLES
+  [1m[36mSubcategory Load (0.7ms)[0m  [1mSELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`id` = 1) LIMIT 1[0m
+  [1m[35mCategory Load (0.7ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`id` = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 1) LIMIT 1
+  [1m[36mSubcategory Load (0.6ms)[0m  [1mSELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`id` = 3) LIMIT 1[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 3) LIMIT 1
+Rendered products/index.html.erb within layouts/application (66.3ms)
+Completed 200 OK in 1240ms (Views: 99.2ms | ActiveRecord: 22.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at Thu Jan 27 23:47:09 +0530 2011
+  Processing by ProductsController#new as HTML
+  [1m[36mCategory Load (0.7ms)[0m  [1mSELECT `categories`.* FROM `categories`[0m
+  [1m[35mSubcategory Load (0.4ms)[0m  SELECT `subcategories`.* FROM `subcategories`
+Rendered products/_form.html.erb (159.2ms)
+Rendered products/new.html.erb within layouts/application (172.1ms)
+Completed 200 OK in 581ms (Views: 205.2ms | ActiveRecord: 1.1ms | Sphinx: 0.0ms)
+
+
+Started GET "/cities" for 127.0.0.1 at Thu Jan 27 23:52:39 +0530 2011
+  Processing by CitiesController#index as HTML
+  [1m[36mCity Load (2.5ms)[0m  [1mSELECT `cities`.* FROM `cities`[0m
+  [1m[35mState Load (0.7ms)[0m  SELECT `states`.* FROM `states` WHERE (`states`.`id` = 1) LIMIT 1
+  [1m[36mCountry Load (0.7ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1[0m
+  [1m[35mState Load (0.5ms)[0m  SELECT `states`.* FROM `states` WHERE (`states`.`id` = 2) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `states`.* FROM `states` WHERE (`states`.`id` = 2) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1[0m
+  [1m[35mState Load (0.5ms)[0m  SELECT `states`.* FROM `states` WHERE (`states`.`id` = 4) LIMIT 1
+  [1m[36mCountry Load (0.5ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 2) LIMIT 1[0m
+Rendered cities/index.html.erb within layouts/application (64.8ms)
+Completed 200 OK in 563ms (Views: 87.7ms | ActiveRecord: 5.5ms | Sphinx: 0.0ms)
+
+
+Started GET "/cities/new" for 127.0.0.1 at Thu Jan 27 23:52:42 +0530 2011
+  Processing by CitiesController#new as HTML
+  [1m[35mState Load (0.6ms)[0m  SELECT `states`.* FROM `states`
+  [1m[36mCountry Load (0.4ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered cities/_form.html.erb (24.8ms)
+Rendered cities/new.html.erb within layouts/application (34.7ms)
+Completed 200 OK in 421ms (Views: 69.0ms | ActiveRecord: 1.0ms | Sphinx: 0.0ms)
+
+
+Started POST "/cities/load_states" for 127.0.0.1 at Thu Jan 27 23:52:45 +0530 2011
+  Processing by CitiesController#load_states as JS
+  Parameters: {"authenticity_token"=>"LFkRhPc5PTrQZVQwZP0gmSX0j+tZVuf/74hAqcSkNzk=", "id"=>"1", "_"=>""}
+  [1m[36mState Load (0.6ms)[0m  [1mSELECT `states`.* FROM `states` WHERE (`states`.`country_id` = 1)[0m
+Completed 200 OK in 524ms (Views: 13.4ms | ActiveRecord: 0.6ms | Sphinx: 0.0ms)
+
+
+Started POST "/cities/load_states" for 127.0.0.1 at Thu Jan 27 23:52:49 +0530 2011
+  Processing by CitiesController#load_states as JS
+  Parameters: {"authenticity_token"=>"LFkRhPc5PTrQZVQwZP0gmSX0j+tZVuf/74hAqcSkNzk=", "id"=>"2", "_"=>""}
+  [1m[35mState Load (0.6ms)[0m  SELECT `states`.* FROM `states` WHERE (`states`.`country_id` = 2)
+Completed 200 OK in 367ms (Views: 11.9ms | ActiveRecord: 0.6ms | Sphinx: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at Thu Jan 27 23:52:55 +0530 2011
+  Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT `products`.* FROM `products`[0m
+  [1m[35mSubcategory Load (0.2ms)[0m  SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`id` = 1) LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`id` = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 1) LIMIT 1[0m
+  [1m[35mSubcategory Load (0.2ms)[0m  SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`id` = 3) LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 3) LIMIT 1[0m
+Rendered products/index.html.erb within layouts/application (60.5ms)
+Completed 200 OK in 653ms (Views: 65.7ms | ActiveRecord: 0.9ms | Sphinx: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at Thu Jan 27 23:52:57 +0530 2011
+  Processing by ProductsController#new as HTML
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered products/_form.html.erb (166.9ms)
+Rendered products/new.html.erb within layouts/application (169.2ms)
+Completed   in 555ms
+
+ActionView::Template::Error (undefined method `country_id' for #<Product:0xb6d6c804>):
+    22:    	<tr>
+    23:   <div>
+    24:    <td> <%= f.label :id , "Category"%></td>
+    25:     <td><%= f.collection_select :country_id, Country.find(:all), :id, :name ,{:prompt=>'Select Categoery'},{ :onchange=>"#{remote_function(:url=>{:action=>'load_subcategries'},:with =>"'id='+value")}" }%></td>
+    26:   </div>
+    27: </tr>
+    28:    	<tr>
+  app/views/products/_form.html.erb:25:in `_app_views_products__form_html_erb___770812209__613734738_496496'
+  app/views/products/_form.html.erb:2:in `_app_views_products__form_html_erb___770812209__613734738_496496'
+  app/views/products/new.html.erb:3:in `_app_views_products_new_html_erb___347510283__613729578_0'
+  app/controllers/products_controller.rb:34:in `new'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (21.6ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at Thu Jan 27 23:53:34 +0530 2011
+  Processing by ProductsController#new as HTML
+Rendered products/_form.html.erb (21.6ms)
+Rendered products/new.html.erb within layouts/application (23.8ms)
+Completed   in 460ms
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Categoery):
+    22:    	<tr>
+    23:   <div>
+    24:    <td> <%= f.label :id , "Category"%></td>
+    25:     <td><%= f.collection_select :categoery_id, Categoery.find(:all), :id, :name ,{:prompt=>'Select Categoery'},{ :onchange=>"#{remote_function(:url=>{:action=>'load_subcategries'},:with =>"'id='+value")}" }%></td>
+    26:   </div>
+    27: </tr>
+    28:    	<tr>
+  app/views/products/_form.html.erb:25:in `_app_views_products__form_html_erb___770812209__613535628_496496'
+  app/views/products/_form.html.erb:2:in `_app_views_products__form_html_erb___770812209__613535628_496496'
+  app/views/products/new.html.erb:3:in `_app_views_products_new_html_erb___347510283__613529898_0'
+  app/controllers/products_controller.rb:34:in `new'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (161.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (170.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at Thu Jan 27 23:54:07 +0530 2011
+  Processing by ProductsController#new as HTML
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.* FROM `categories`[0m
+Rendered products/_form.html.erb (20.4ms)
+Rendered products/new.html.erb within layouts/application (22.5ms)
+Completed   in 406ms
+
+ActionView::Template::Error (undefined method `subcategoery_id' for #<Product:0xb6e0adb0>):
+    28:    	<tr>
+    29:   <div>
+    30:    <td> <%= f.label :id , "Subcategory"%></td>
+    31:     <td><%= f.collection_select :subcategoery_id, {},:id, :name,{:prompt =>'Select Subcategoery'} %></td>
+    32:   </div>
+    33: </tr>
+    34:    	<tr>
+  app/views/products/_form.html.erb:31:in `_app_views_products__form_html_erb___770812209__613431288_496496'
+  app/views/products/_form.html.erb:2:in `_app_views_products__form_html_erb___770812209__613431288_496496'
+  app/views/products/new.html.erb:3:in `_app_views_products_new_html_erb___347510283__613421768_0'
+  app/controllers/products_controller.rb:34:in `new'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (9.4ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (17.8ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at Thu Jan 27 23:54:20 +0530 2011
+  Processing by ProductsController#new as HTML
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.* FROM `categories`
+Rendered products/_form.html.erb (26.7ms)
+Rendered products/new.html.erb within layouts/application (39.3ms)
+Completed 200 OK in 461ms (Views: 46.3ms | ActiveRecord: 0.4ms | Sphinx: 0.0ms)
+
+
+Started POST "/products/load_subcategries" for 127.0.0.1 at Thu Jan 27 23:54:24 +0530 2011
+  Processing by ProductsController#load_subcategries as JS
+  Parameters: {"authenticity_token"=>"LFkRhPc5PTrQZVQwZP0gmSX0j+tZVuf/74hAqcSkNzk=", "id"=>"1", "_"=>""}
+Completed   in 4ms
+
+NameError (uninitialized constant ProductsController::Subcategoery):
+  app/controllers/products_controller.rb:104:in `load_subcategries'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (11.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (19.4ms)
+
+
+Started POST "/products/load_subcategries" for 127.0.0.1 at Thu Jan 27 23:54:27 +0530 2011
+  Processing by ProductsController#load_subcategries as JS
+  Parameters: {"authenticity_token"=>"LFkRhPc5PTrQZVQwZP0gmSX0j+tZVuf/74hAqcSkNzk=", "id"=>"2", "_"=>""}
+Completed   in 5ms
+
+NameError (uninitialized constant ProductsController::Subcategoery):
+  app/controllers/products_controller.rb:104:in `load_subcategries'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (14.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.1ms)
+
+
+Started POST "/products/load_subcategries" for 127.0.0.1 at Thu Jan 27 23:54:28 +0530 2011
+  Processing by ProductsController#load_subcategries as JS
+  Parameters: {"authenticity_token"=>"LFkRhPc5PTrQZVQwZP0gmSX0j+tZVuf/74hAqcSkNzk=", "id"=>"", "_"=>""}
+Completed   in 10ms
+
+NameError (uninitialized constant ProductsController::Subcategoery):
+  app/controllers/products_controller.rb:104:in `load_subcategries'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (14.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.6ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at Thu Jan 27 23:55:04 +0530 2011
+  Processing by ProductsController#new as HTML
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.* FROM `categories`[0m
+Rendered products/_form.html.erb (22.9ms)
+Rendered products/new.html.erb within layouts/application (36.3ms)
+Completed 200 OK in 383ms (Views: 41.5ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started POST "/products/load_subcategries" for 127.0.0.1 at Thu Jan 27 23:55:07 +0530 2011
+  Processing by ProductsController#load_subcategries as JS
+  Parameters: {"authenticity_token"=>"LFkRhPc5PTrQZVQwZP0gmSX0j+tZVuf/74hAqcSkNzk=", "id"=>"1", "_"=>""}
+  [1m[35mSubcategory Load (0.8ms)[0m  SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`categoery_id` = '1')
+Mysql::Error: Unknown column 'subcategories.categoery_id' in 'where clause': SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`categoery_id` = '1')
+Completed   in 342ms
+
+ActiveRecord::StatementInvalid (Mysql::Error: Unknown column 'subcategories.categoery_id' in 'where clause': SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`categoery_id` = '1')):
+  app/controllers/products_controller.rb:108:in `load_subcategries'
+  app/controllers/products_controller.rb:107:in `load_subcategries'
+  app/controllers/products_controller.rb:105:in `load_subcategries'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  [1m[36mSubcategory Load (0.5ms)[0m  [1mSELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`categoery_id` = '1')[0m
+Mysql::Error: Unknown column 'subcategories.categoery_id' in 'where clause': SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`categoery_id` = '1')
+  [1m[35mSubcategory Load (2.4ms)[0m  SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`categoery_id` = '1')
+Mysql::Error: Unknown column 'subcategories.categoery_id' in 'where clause': SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`categoery_id` = '1')
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.1ms)
+
+
+Started POST "/products/load_subcategries" for 127.0.0.1 at Thu Jan 27 23:55:11 +0530 2011
+  Processing by ProductsController#load_subcategries as JS
+  Parameters: {"authenticity_token"=>"LFkRhPc5PTrQZVQwZP0gmSX0j+tZVuf/74hAqcSkNzk=", "id"=>"2", "_"=>""}
+  [1m[36mSubcategory Load (1.0ms)[0m  [1mSELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`categoery_id` = '2')[0m
+Mysql::Error: Unknown column 'subcategories.categoery_id' in 'where clause': SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`categoery_id` = '2')
+Completed   in 427ms
+
+ActiveRecord::StatementInvalid (Mysql::Error: Unknown column 'subcategories.categoery_id' in 'where clause': SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`categoery_id` = '2')):
+  app/controllers/products_controller.rb:108:in `load_subcategries'
+  app/controllers/products_controller.rb:107:in `load_subcategries'
+  app/controllers/products_controller.rb:105:in `load_subcategries'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  [1m[35mSubcategory Load (0.5ms)[0m  SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`categoery_id` = '2')
+Mysql::Error: Unknown column 'subcategories.categoery_id' in 'where clause': SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`categoery_id` = '2')
+  [1m[36mSubcategory Load (0.7ms)[0m  [1mSELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`categoery_id` = '2')[0m
+Mysql::Error: Unknown column 'subcategories.categoery_id' in 'where clause': SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`categoery_id` = '2')
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.3ms)
+
+
+Started POST "/products/load_subcategries" for 127.0.0.1 at Thu Jan 27 23:55:15 +0530 2011
+  Processing by ProductsController#load_subcategries as JS
+  Parameters: {"authenticity_token"=>"LFkRhPc5PTrQZVQwZP0gmSX0j+tZVuf/74hAqcSkNzk=", "id"=>"", "_"=>""}
+  [1m[35mSubcategory Load (0.7ms)[0m  SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`categoery_id` = '')
+Mysql::Error: Unknown column 'subcategories.categoery_id' in 'where clause': SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`categoery_id` = '')
+Completed   in 538ms
+
+ActiveRecord::StatementInvalid (Mysql::Error: Unknown column 'subcategories.categoery_id' in 'where clause': SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`categoery_id` = '')):
+  app/controllers/products_controller.rb:108:in `load_subcategries'
+  app/controllers/products_controller.rb:107:in `load_subcategries'
+  app/controllers/products_controller.rb:105:in `load_subcategries'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  [1m[36mSubcategory Load (0.5ms)[0m  [1mSELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`categoery_id` = '')[0m
+Mysql::Error: Unknown column 'subcategories.categoery_id' in 'where clause': SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`categoery_id` = '')
+  [1m[35mSubcategory Load (0.5ms)[0m  SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`categoery_id` = '')
+Mysql::Error: Unknown column 'subcategories.categoery_id' in 'where clause': SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`categoery_id` = '')
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.1ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at Thu Jan 27 23:55:17 +0530 2011
+  Processing by ProductsController#new as HTML
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.* FROM `categories`[0m
+Rendered products/_form.html.erb (155.5ms)
+Rendered products/new.html.erb within layouts/application (168.2ms)
+Completed 200 OK in 554ms (Views: 173.6ms | ActiveRecord: 2.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at Thu Jan 27 23:55:46 +0530 2011
+  Processing by ProductsController#new as HTML
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.* FROM `categories`
+Rendered products/_form.html.erb (157.4ms)
+Rendered products/new.html.erb within layouts/application (168.8ms)
+Completed 200 OK in 616ms (Views: 174.1ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started POST "/products/load_subcategries" for 127.0.0.1 at Thu Jan 27 23:55:49 +0530 2011
+  Processing by ProductsController#load_subcategries as JS
+  Parameters: {"authenticity_token"=>"LFkRhPc5PTrQZVQwZP0gmSX0j+tZVuf/74hAqcSkNzk=", "id"=>"1", "_"=>""}
+  [1m[36mSubcategory Load (0.6ms)[0m  [1mSELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`category_id` = 1)[0m
+Completed 200 OK in 369ms (Views: 12.2ms | ActiveRecord: 0.6ms | Sphinx: 0.0ms)
+
+
+Started POST "/products/load_subcategries" for 127.0.0.1 at Thu Jan 27 23:55:52 +0530 2011
+  Processing by ProductsController#load_subcategries as JS
+  Parameters: {"authenticity_token"=>"LFkRhPc5PTrQZVQwZP0gmSX0j+tZVuf/74hAqcSkNzk=", "id"=>"2", "_"=>""}
+  [1m[35mSubcategory Load (0.6ms)[0m  SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`category_id` = 2)
+Completed 200 OK in 348ms (Views: 5.3ms | ActiveRecord: 0.6ms | Sphinx: 0.0ms)
+
+
+Started POST "/products/load_subcategries" for 127.0.0.1 at Thu Jan 27 23:55:56 +0530 2011
+  Processing by ProductsController#load_subcategries as JS
+  Parameters: {"authenticity_token"=>"LFkRhPc5PTrQZVQwZP0gmSX0j+tZVuf/74hAqcSkNzk=", "id"=>"3", "_"=>""}
+  [1m[36mSubcategory Load (0.6ms)[0m  [1mSELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`category_id` = 3)[0m
+Completed 200 OK in 495ms (Views: 13.0ms | ActiveRecord: 0.6ms | Sphinx: 0.0ms)
+
+
+Started POST "/products/load_subcategries" for 127.0.0.1 at Thu Jan 27 23:56:08 +0530 2011
+  Processing by ProductsController#load_subcategries as JS
+  Parameters: {"authenticity_token"=>"LFkRhPc5PTrQZVQwZP0gmSX0j+tZVuf/74hAqcSkNzk=", "id"=>"1", "_"=>""}
+  [1m[35mSubcategory Load (0.2ms)[0m  SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`category_id` = 1)
+Completed 200 OK in 377ms (Views: 14.4ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at Thu Jan 27 23:56:19 +0530 2011
+  Processing by ProductsController#create as HTML
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"LFkRhPc5PTrQZVQwZP0gmSX0j+tZVuf/74hAqcSkNzk=", "utf8"=>"✓", "product"=>{"name"=>"Mangoes", "category_id"=>"1", "description"=>"Mangoes", "status"=>"A", "subcategory_id"=>"2"}}
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.2ms)[0m  [1mdescribe `products`[0m
+  [1m[35mAREL (0.6ms)[0m  INSERT INTO `products` (`status`, `description`, `updated_at`, `category_id`, `created_by`, `subcategory_id`, `modified_by`, `name`, `created_at`) VALUES ('A', 'Mangoes', '2011-01-27 18:26:20', 1, NULL, 2, NULL, 'Mangoes', '2011-01-27 18:26:20')
+  [1m[36mSQL (65.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/products/4
+Completed 302 Found in 646ms
+
+
+Started GET "/products/4" for 127.0.0.1 at Thu Jan 27 23:56:20 +0530 2011
+  Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mProduct Load (0.5ms)[0m  SELECT `products`.* FROM `products` WHERE (`products`.`id` = 4) LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 1) LIMIT 1[0m
+  [1m[35mSubcategory Load (0.6ms)[0m  SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`id` = 2) LIMIT 1
+Rendered products/show.html.erb within layouts/application (178.5ms)
+Completed 200 OK in 576ms (Views: 206.3ms | ActiveRecord: 1.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at Thu Jan 27 23:56:23 +0530 2011
+  Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.6ms)[0m  [1mSELECT `products`.* FROM `products`[0m
+  [1m[35mSubcategory Load (0.2ms)[0m  SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`id` = 1) LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`id` = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 1) LIMIT 1[0m
+  [1m[35mSubcategory Load (0.2ms)[0m  SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`id` = 3) LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 3) LIMIT 1[0m
+  [1m[35mSubcategory Load (0.2ms)[0m  SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`id` = 2) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 1) LIMIT 1[0m
+Rendered products/index.html.erb within layouts/application (210.2ms)
+Completed 200 OK in 596ms (Views: 216.6ms | ActiveRecord: 70.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/products/2/edit" for 127.0.0.1 at Thu Jan 27 23:57:16 +0530 2011
+  Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.* FROM `categories`
+  [1m[36mSubcategory Load (0.1ms)[0m  [1mSELECT `subcategories`.* FROM `subcategories`[0m
+  [1m[35mProduct Load (0.5ms)[0m  SELECT `products`.* FROM `products` WHERE (`products`.`id` = 2) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `categories`.* FROM `categories`[0m
+Rendered products/_form.html.erb (40.2ms)
+Rendered products/edit.html.erb within layouts/application (59.0ms)
+Completed 200 OK in 489ms (Views: 95.9ms | ActiveRecord: 0.9ms | Sphinx: 0.0ms)
+
+
+Started POST "/products/load_subcategries" for 127.0.0.1 at Thu Jan 27 23:57:20 +0530 2011
+  Processing by ProductsController#load_subcategries as JS
+  Parameters: {"authenticity_token"=>"LFkRhPc5PTrQZVQwZP0gmSX0j+tZVuf/74hAqcSkNzk=", "id"=>"2", "_"=>""}
+  [1m[35mSubcategory Load (0.2ms)[0m  SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`category_id` = 2)
+Completed 200 OK in 425ms (Views: 7.4ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started POST "/products/load_subcategries" for 127.0.0.1 at Thu Jan 27 23:57:22 +0530 2011
+  Processing by ProductsController#load_subcategries as JS
+  Parameters: {"authenticity_token"=>"LFkRhPc5PTrQZVQwZP0gmSX0j+tZVuf/74hAqcSkNzk=", "id"=>"3", "_"=>""}
+  [1m[36mSubcategory Load (0.2ms)[0m  [1mSELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`category_id` = 3)[0m
+Completed 200 OK in 438ms (Views: 11.9ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started POST "/products/load_subcategries" for 127.0.0.1 at Thu Jan 27 23:57:23 +0530 2011
+  Processing by ProductsController#load_subcategries as JS
+  Parameters: {"authenticity_token"=>"LFkRhPc5PTrQZVQwZP0gmSX0j+tZVuf/74hAqcSkNzk=", "id"=>"1", "_"=>""}
+  [1m[35mSubcategory Load (0.2ms)[0m  SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`category_id` = 1)
+Completed 200 OK in 416ms (Views: 12.2ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at Thu Jan 27 23:57:27 +0530 2011
+  Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (4.7ms)[0m  [1mSELECT `products`.* FROM `products`[0m
+  [1m[35mSubcategory Load (0.2ms)[0m  SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`id` = 1) LIMIT 1
+  [1m[36mCategory Load (6.2ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`id` = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 1) LIMIT 1[0m
+  [1m[35mSubcategory Load (4.3ms)[0m  SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`id` = 3) LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 3) LIMIT 1[0m
+  [1m[35mSubcategory Load (3.4ms)[0m  SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`id` = 2) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 1) LIMIT 1[0m
+Rendered products/index.html.erb within layouts/application (133.7ms)
+Completed 200 OK in 1105ms (Views: 134.8ms | ActiveRecord: 18.9ms | Sphinx: 0.0ms)
+
+
+Started GET "/products/4/edit" for 127.0.0.1 at Thu Jan 27 23:57:38 +0530 2011
+  Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.* FROM `categories`
+  [1m[36mSubcategory Load (0.1ms)[0m  [1mSELECT `subcategories`.* FROM `subcategories`[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT `products`.* FROM `products` WHERE (`products`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `categories`.* FROM `categories`[0m
+Rendered products/_form.html.erb (26.2ms)
+Rendered products/edit.html.erb within layouts/application (39.0ms)
+Completed 200 OK in 482ms (Views: 44.5ms | ActiveRecord: 0.5ms | Sphinx: 0.0ms)
+
+
+Started POST "/products/load_subcategries" for 127.0.0.1 at Thu Jan 27 23:57:44 +0530 2011
+  Processing by ProductsController#load_subcategries as JS
+  Parameters: {"authenticity_token"=>"LFkRhPc5PTrQZVQwZP0gmSX0j+tZVuf/74hAqcSkNzk=", "id"=>"2", "_"=>""}
+  [1m[35mSubcategory Load (0.2ms)[0m  SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`category_id` = 2)
+Completed 200 OK in 378ms (Views: 5.1ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started POST "/products/load_subcategries" for 127.0.0.1 at Thu Jan 27 23:57:45 +0530 2011
+  Processing by ProductsController#load_subcategries as JS
+  Parameters: {"authenticity_token"=>"LFkRhPc5PTrQZVQwZP0gmSX0j+tZVuf/74hAqcSkNzk=", "id"=>"1", "_"=>""}
+  [1m[36mSubcategory Load (0.2ms)[0m  [1mSELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`category_id` = 1)[0m
+Completed 200 OK in 501ms (Views: 13.4ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at Thu Jan 27 23:57:49 +0530 2011
+  Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT `products`.* FROM `products`
+  [1m[36mSubcategory Load (0.1ms)[0m  [1mSELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`id` = 1) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`id` = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 1) LIMIT 1
+  [1m[36mSubcategory Load (0.3ms)[0m  [1mSELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`id` = 3) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 3) LIMIT 1
+  [1m[36mSubcategory Load (0.2ms)[0m  [1mSELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`id` = 2) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 1) LIMIT 1
+Rendered products/index.html.erb within layouts/application (62.8ms)
+Completed 200 OK in 459ms (Views: 67.5ms | ActiveRecord: 1.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/seals" for 127.0.0.1 at Thu Jan 27 23:58:30 +0530 2011
+  Processing by SealsController#index as HTML
+  [1m[36mSeal Load (0.9ms)[0m  [1mSELECT `seals`.* FROM `seals`[0m
+Rendered seals/index.html.erb within layouts/application (24.9ms)
+Completed 200 OK in 423ms (Views: 75.7ms | ActiveRecord: 0.9ms | Sphinx: 0.0ms)
+
+
+Started GET "/subcategories" for 127.0.0.1 at Thu Jan 27 23:58:34 +0530 2011
+  Processing by SubcategoriesController#index as HTML
+  [1m[35mSubcategory Load (0.2ms)[0m  SELECT `subcategories`.* FROM `subcategories`
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 1) LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 3) LIMIT 1[0m
+Rendered subcategories/index.html.erb within layouts/application (47.3ms)
+Completed 200 OK in 605ms (Views: 86.6ms | ActiveRecord: 0.5ms | Sphinx: 0.0ms)
+
+
+Started GET "/subcategories/new" for 127.0.0.1 at Thu Jan 27 23:58:36 +0530 2011
+  Processing by SubcategoriesController#new as HTML
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.* FROM `categories`
+Rendered subcategories/_form.html.erb (21.8ms)
+Rendered subcategories/new.html.erb within layouts/application (40.6ms)
+Completed 200 OK in 462ms (Views: 74.7ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/subcategories" for 127.0.0.1 at Thu Jan 27 23:58:40 +0530 2011
+  Processing by SubcategoriesController#index as HTML
+  [1m[36mSubcategory Load (0.2ms)[0m  [1mSELECT `subcategories`.* FROM `subcategories`[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 1) LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 3) LIMIT 1
+Rendered subcategories/index.html.erb within layouts/application (44.7ms)
+Completed 200 OK in 408ms (Views: 51.4ms | ActiveRecord: 0.6ms | Sphinx: 0.0ms)
+
+
+Started GET "/sampleplaces" for 127.0.0.1 at Thu Jan 27 23:58:45 +0530 2011
+  Processing by SampleplacesController#index as HTML
+  [1m[36mSampleplace Load (21.1ms)[0m  [1mSELECT `sampleplaces`.* FROM `sampleplaces`[0m
+Rendered sampleplaces/index.html.erb within layouts/application (27.9ms)
+Completed 200 OK in 618ms (Views: 70.3ms | ActiveRecord: 21.1ms | Sphinx: 0.0ms)
+
+
+Started GET "/sampleunits" for 127.0.0.1 at Thu Jan 27 23:58:48 +0530 2011
+  Processing by SampleunitsController#index as HTML
+  [1m[35mSampleunit Load (0.7ms)[0m  SELECT `sampleunits`.* FROM `sampleunits`
+Rendered sampleunits/index.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 427ms (Views: 31.2ms | ActiveRecord: 0.7ms | Sphinx: 0.0ms)
+
+
+Started GET "/sampleconditions" for 127.0.0.1 at Thu Jan 27 23:58:51 +0530 2011
+  Processing by SampleconditionsController#index as HTML
+  [1m[36mSamplecondition Load (0.7ms)[0m  [1mSELECT `sampleconditions`.* FROM `sampleconditions`[0m
+Rendered sampleconditions/index.html.erb within layouts/application (24.5ms)
+Completed 200 OK in 440ms (Views: 83.7ms | ActiveRecord: 0.7ms | Sphinx: 0.0ms)
+
+
+Started GET "/packings" for 127.0.0.1 at Thu Jan 27 23:58:53 +0530 2011
+  Processing by PackingsController#index as HTML
+  [1m[35mPacking Load (0.7ms)[0m  SELECT `packings`.* FROM `packings`
+Rendered packings/index.html.erb within layouts/application (26.3ms)
+Completed 200 OK in 623ms (Views: 87.7ms | ActiveRecord: 0.7ms | Sphinx: 0.0ms)
+
+
+Started GET "/labcentrals" for 127.0.0.1 at Thu Jan 27 23:59:00 +0530 2011
+  Processing by LabcentralsController#index as HTML
+  [1m[36mLabcentral Load (0.8ms)[0m  [1mSELECT `labcentrals`.* FROM `labcentrals`[0m
+Rendered labcentrals/index.html.erb within layouts/application (160.0ms)
+Completed 200 OK in 595ms (Views: 207.4ms | ActiveRecord: 0.8ms | Sphinx: 0.0ms)
+
+
+Started GET "/labregionals" for 127.0.0.1 at Thu Jan 27 23:59:06 +0530 2011
+  Processing by LabregionalsController#index as HTML
+  [1m[35mLabregional Load (0.7ms)[0m  SELECT `labregionals`.* FROM `labregionals`
+  [1m[36mLabcentral Load (2.1ms)[0m  [1mSELECT `labcentrals`.* FROM `labcentrals` WHERE (`labcentrals`.`id` = 1) LIMIT 1[0m
+Rendered labregionals/index.html.erb within layouts/application (55.6ms)
+Completed 200 OK in 476ms (Views: 86.9ms | ActiveRecord: 2.9ms | Sphinx: 0.0ms)
+
+
+Started GET "/lablocationals" for 127.0.0.1 at Thu Jan 27 23:59:10 +0530 2011
+  Processing by LablocationalsController#index as HTML
+  [1m[35mLablocational Load (0.8ms)[0m  SELECT `lablocationals`.* FROM `lablocationals`
+  [1m[36mLabregional Load (0.6ms)[0m  [1mSELECT `labregionals`.* FROM `labregionals` WHERE (`labregionals`.`id` = 1) LIMIT 1[0m
+  [1m[35mLabcentral Load (0.2ms)[0m  SELECT `labcentrals`.* FROM `labcentrals` WHERE (`labcentrals`.`id` = 1) LIMIT 1
+Rendered lablocationals/index.html.erb within layouts/application (77.6ms)
+Completed 200 OK in 631ms (Views: 105.5ms | ActiveRecord: 1.5ms | Sphinx: 0.0ms)
+
+
+Started GET "/lablocationals/new" for 127.0.0.1 at Fri Jan 28 00:03:07 +0530 2011
+  Processing by LablocationalsController#new as HTML
+  [1m[36mLabcentral Load (0.2ms)[0m  [1mSELECT `labcentrals`.* FROM `labcentrals`[0m
+  [1m[35mLabregional Load (0.2ms)[0m  SELECT `labregionals`.* FROM `labregionals`
+Rendered lablocationals/_form.html.erb (32.8ms)
+Rendered lablocationals/new.html.erb within layouts/application (35.7ms)
+Completed   in 563ms
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Lancentral):
+    28:    	<tr>
+    29:   <div class="field">
+    30:    <td><%= f.label :labid ,"Central Lab"%></td>
+    31:     <td><%= f.collection_select :labcentral_id, Lancentral.find(:all), :id, :labname ,{:prompt=>'Select CentralLab'},{ :onchange=>"#{remote_function(:url=>{:action=>'load_regional'},:with =>"'id='+value")}" }%></td>
+    32:   </div>
+    33: </tr>
+    34:    	<tr>
+  app/views/lablocationals/_form.html.erb:31:in `_app_views_lablocationals__form_html_erb__415044474__612803648_496496'
+  app/views/lablocationals/_form.html.erb:2:in `_app_views_lablocationals__form_html_erb__415044474__612803648_496496'
+  app/views/lablocationals/new.html.erb:3:in `_app_views_lablocationals_new_html_erb___338466536__612790968_0'
+  app/controllers/lablocationals_controller.rb:36:in `new'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (18.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (28.6ms)
+
+
+Started GET "/lablocationals/new" for 127.0.0.1 at Fri Jan 28 00:04:37 +0530 2011
+  Processing by LablocationalsController#new as HTML
+  [1m[36mLabcentral Load (1.8ms)[0m  [1mSELECT `labcentrals`.* FROM `labcentrals`[0m
+  [1m[35mLabregional Load (0.2ms)[0m  SELECT `labregionals`.* FROM `labregionals`
+Rendered lablocationals/_form.html.erb (162.8ms)
+Rendered lablocationals/new.html.erb within layouts/application (165.1ms)
+Completed   in 566ms
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Lancentral):
+    28:    	<tr>
+    29:   <div class="field">
+    30:    <td><%= f.label :labid ,"Central Lab"%></td>
+    31:     <td><%= f.collection_select :labcentral_id, Lancentral.find(:all), :id, :labname ,{:prompt=>'Select CentralLab'},{ :onchange=>"#{remote_function(:url=>{:action=>'load_regional'},:with =>"'id='+value")}" }%></td>
+    32:   </div>
+    33: </tr>
+    34:    	<tr>
+  app/views/lablocationals/_form.html.erb:31:in `_app_views_lablocationals__form_html_erb__415044474__613758138_496496'
+  app/views/lablocationals/_form.html.erb:2:in `_app_views_lablocationals__form_html_erb__415044474__613758138_496496'
+  app/views/lablocationals/new.html.erb:3:in `_app_views_lablocationals_new_html_erb___338466536__613752388_0'
+  app/controllers/lablocationals_controller.rb:36:in `new'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (18.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (29.3ms)
+
+
+Started GET "/lablocationals/new" for 127.0.0.1 at Fri Jan 28 00:07:36 +0530 2011
+  Processing by LablocationalsController#new as HTML
+  [1m[36mLabcentral Load (0.2ms)[0m  [1mSELECT `labcentrals`.* FROM `labcentrals`[0m
+  [1m[35mLabregional Load (0.2ms)[0m  SELECT `labregionals`.* FROM `labregionals`
+Rendered lablocationals/_form.html.erb (29.7ms)
+Rendered lablocationals/new.html.erb within layouts/application (31.9ms)
+Completed   in 435ms
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Lancentral):
+    28:    	<tr>
+    29:   <div class="field">
+    30:    <td><%= f.label :labid ,"Central Lab"%></td>
+    31:     <td><%= f.collection_select :labcentral_id, Lancentral.find(:all), :id, :labid ,{:prompt=>'Select CentralLab'},{ :onchange=>"#{remote_function(:url=>{:action=>'load_regional'},:with =>"'id='+value")}" }%></td>
+    32:   </div>
+    33: </tr>
+    34:    	<tr>
+  app/views/lablocationals/_form.html.erb:31:in `_app_views_lablocationals__form_html_erb__415044474__613632708_496496'
+  app/views/lablocationals/_form.html.erb:2:in `_app_views_lablocationals__form_html_erb__415044474__613632708_496496'
+  app/views/lablocationals/new.html.erb:3:in `_app_views_lablocationals_new_html_erb___338466536__613622038_0'
+  app/controllers/lablocationals_controller.rb:36:in `new'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (28.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (37.9ms)
+
+
+Started GET "/lablocationals/new" for 127.0.0.1 at Fri Jan 28 00:08:02 +0530 2011
+  Processing by LablocationalsController#new as HTML
+  [1m[36mLabcentral Load (0.2ms)[0m  [1mSELECT `labcentrals`.* FROM `labcentrals`[0m
+  [1m[35mLabregional Load (0.2ms)[0m  SELECT `labregionals`.* FROM `labregionals`
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `labcentrals`.* FROM `labcentrals`[0m
+Rendered lablocationals/_form.html.erb (44.1ms)
+Rendered lablocationals/new.html.erb within layouts/application (55.8ms)
+Completed 200 OK in 511ms (Views: 61.3ms | ActiveRecord: 0.4ms | Sphinx: 0.0ms)
+
+
+Started POST "/lablocationals/load_regional" for 127.0.0.1 at Fri Jan 28 00:08:06 +0530 2011
+  Processing by LablocationalsController#load_regional as JS
+  Parameters: {"authenticity_token"=>"LFkRhPc5PTrQZVQwZP0gmSX0j+tZVuf/74hAqcSkNzk=", "id"=>"1", "_"=>""}
+  [1m[35mLabregional Load (0.8ms)[0m  SELECT `labregionals`.* FROM `labregionals` WHERE (`labregionals`.`lancentral_id` = '1')
+Mysql::Error: Unknown column 'labregionals.lancentral_id' in 'where clause': SELECT `labregionals`.* FROM `labregionals` WHERE (`labregionals`.`lancentral_id` = '1')
+Completed   in 344ms
+
+ActiveRecord::StatementInvalid (Mysql::Error: Unknown column 'labregionals.lancentral_id' in 'where clause': SELECT `labregionals`.* FROM `labregionals` WHERE (`labregionals`.`lancentral_id` = '1')):
+  app/controllers/lablocationals_controller.rb:109:in `load_regional'
+  app/controllers/lablocationals_controller.rb:108:in `load_regional'
+  app/controllers/lablocationals_controller.rb:106:in `load_regional'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  [1m[36mLabregional Load (0.6ms)[0m  [1mSELECT `labregionals`.* FROM `labregionals` WHERE (`labregionals`.`lancentral_id` = '1')[0m
+Mysql::Error: Unknown column 'labregionals.lancentral_id' in 'where clause': SELECT `labregionals`.* FROM `labregionals` WHERE (`labregionals`.`lancentral_id` = '1')
+  [1m[35mLabregional Load (0.5ms)[0m  SELECT `labregionals`.* FROM `labregionals` WHERE (`labregionals`.`lancentral_id` = '1')
+Mysql::Error: Unknown column 'labregionals.lancentral_id' in 'where clause': SELECT `labregionals`.* FROM `labregionals` WHERE (`labregionals`.`lancentral_id` = '1')
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.5ms)
+
+
+Started GET "/lablocationals/new" for 127.0.0.1 at Fri Jan 28 00:09:27 +0530 2011
+  Processing by LablocationalsController#new as HTML
+  [1m[36mLabcentral Load (0.3ms)[0m  [1mSELECT `labcentrals`.* FROM `labcentrals`[0m
+  [1m[35mLabregional Load (0.2ms)[0m  SELECT `labregionals`.* FROM `labregionals`
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `labcentrals`.* FROM `labcentrals`[0m
+Rendered lablocationals/_form.html.erb (44.3ms)
+Rendered lablocationals/new.html.erb within layouts/application (56.1ms)
+Completed 200 OK in 424ms (Views: 62.2ms | ActiveRecord: 0.5ms | Sphinx: 0.0ms)
+
+
+Started POST "/lablocationals/load_regional" for 127.0.0.1 at Fri Jan 28 00:09:30 +0530 2011
+  Processing by LablocationalsController#load_regional as JS
+  Parameters: {"authenticity_token"=>"LFkRhPc5PTrQZVQwZP0gmSX0j+tZVuf/74hAqcSkNzk=", "id"=>"1", "_"=>""}
+  [1m[35mLabregional Load (0.8ms)[0m  SELECT `labregionals`.* FRO
+
+Started GET "/" for 127.0.0.1 at Fri Jan 28 00:11:34 +0530 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (67.9ms)
+Completed 200 OK in 192ms (Views: 189.5ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/lablocationals" for 127.0.0.1 at Fri Jan 28 00:11:46 +0530 2011
+  Processing by LablocationalsController#index as HTML
+  [1m[36mLablocational Load (18.5ms)[0m  [1mSELECT `lablocationals`.* FROM `lablocationals`[0m
+  [1m[35mSQL (1.1ms)[0m  SHOW TABLES
+  [1m[36mLabregional Load (0.8ms)[0m  [1mSELECT `labregionals`.* FROM `labregionals` WHERE (`labregionals`.`id` = 1) LIMIT 1[0m
+  [1m[35mLabcentral Load (0.9ms)[0m  SELECT `labcentrals`.* FROM `labcentrals` WHERE (`labcentrals`.`id` = 1) LIMIT 1
+Rendered lablocationals/index.html.erb within layouts/application (82.2ms)
+Completed 200 OK in 1036ms (Views: 111.8ms | ActiveRecord: 21.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/lablocationals/new" for 127.0.0.1 at Fri Jan 28 00:11:58 +0530 2011
+  Processing by LablocationalsController#new as HTML
+  [1m[36mLabcentral Load (0.6ms)[0m  [1mSELECT `labcentrals`.* FROM `labcentrals`[0m
+  [1m[35mLabregional Load (0.5ms)[0m  SELECT `labregionals`.* FROM `labregionals`
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `labcentrals`.* FROM `labcentrals`[0m
+Rendered lablocationals/_form.html.erb (176.2ms)
+Rendered lablocationals/new.html.erb within layouts/application (196.2ms)
+Completed 200 OK in 672ms (Views: 228.4ms | ActiveRecord: 1.1ms | Sphinx: 0.0ms)
+
+
+Started GET "/cities" for 127.0.0.1 at Fri Jan 28 00:15:27 +0530 2011
+  Processing by CitiesController#index as HTML
+  [1m[35mCity Load (0.9ms)[0m  SELECT `cities`.* FROM `cities`
+  [1m[36mState Load (0.8ms)[0m  [1mSELECT `states`.* FROM `states` WHERE (`states`.`id` = 1) LIMIT 1[0m
+  [1m[35mCountry Load (0.7ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1
+  [1m[36mState Load (0.6ms)[0m  [1mSELECT `states`.* FROM `states` WHERE (`states`.`id` = 2) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `states`.* FROM `states` WHERE (`states`.`id` = 2) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1
+  [1m[36mState Load (0.6ms)[0m  [1mSELECT `states`.* FROM `states` WHERE (`states`.`id` = 4) LIMIT 1[0m
+  [1m[35mCountry Load (0.4ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 2) LIMIT 1
+Rendered cities/index.html.erb within layouts/application (63.9ms)
+Completed 200 OK in 471ms (Views: 93.4ms | ActiveRecord: 3.9ms | Sphinx: 0.0ms)
+
+
+Started GET "/cities/new" for 127.0.0.1 at Fri Jan 28 00:15:28 +0530 2011
+  Processing by CitiesController#new as HTML
+  [1m[36mState Load (0.6ms)[0m  [1mSELECT `states`.* FROM `states`[0m
+  [1m[35mCountry Load (0.4ms)[0m  SELECT `countries`.* FROM `countries`
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered cities/_form.html.erb (23.4ms)
+Rendered cities/new.html.erb within layouts/application (49.9ms)
+Completed 200 OK in 464ms (Views: 79.0ms | ActiveRecord: 1.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/cities/new" for 127.0.0.1 at Fri Jan 28 00:16:14 +0530 2011
+  Processing by CitiesController#new as HTML
+  [1m[36mState Load (0.3ms)[0m  [1mSELECT `states`.* FROM `states`[0m
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered cities/_form.html.erb (26.7ms)
+Rendered cities/new.html.erb within layouts/application (47.9ms)
+Completed 200 OK in 419ms (Views: 53.6ms | ActiveRecord: 0.5ms | Sphinx: 0.0ms)
+
+
+Started GET "/cities/new" for 127.0.0.1 at Fri Jan 28 00:18:11 +0530 2011
+
+SyntaxError (/home/chaitanya/aclindia/app/controllers/cities_controller.rb:120: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.4ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.0ms)
+
+
+Started GET "/cities/new" for 127.0.0.1 at Fri Jan 28 00:18:13 +0530 2011
+
+SyntaxError (/home/chaitanya/aclindia/app/controllers/cities_controller.rb:120: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.6ms)
+
+
+Started GET "/cities/new" for 127.0.0.1 at Fri Jan 28 00:18:14 +0530 2011
+
+SyntaxError (/home/chaitanya/aclindia/app/controllers/cities_controller.rb:120: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.7ms)
+
+
+Started GET "/cities/new" for 127.0.0.1 at Fri Jan 28 00:18:14 +0530 2011
+
+SyntaxError (/home/chaitanya/aclindia/app/controllers/cities_controller.rb:120: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.8ms)
+
+
+Started GET "/cities/new" for 127.0.0.1 at Fri Jan 28 00:18:15 +0530 2011
+
+SyntaxError (/home/chaitanya/aclindia/app/controllers/cities_controller.rb:120: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.4ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.5ms)
+
+
+Started GET "/cities/new" for 127.0.0.1 at Fri Jan 28 00:18:16 +0530 2011
+
+SyntaxError (/home/chaitanya/aclindia/app/controllers/cities_controller.rb:120: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.3ms)
+
+
+Started GET "/cities/new" for 127.0.0.1 at Fri Jan 28 00:18:16 +0530 2011
+
+SyntaxError (/home/chaitanya/aclindia/app/controllers/cities_controller.rb:120: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.6ms)
+
+
+Started GET "/cities/new" for 127.0.0.1 at Fri Jan 28 00:18:17 +0530 2011
+
+SyntaxError (/home/chaitanya/aclindia/app/controllers/cities_controller.rb:120: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.2ms)
+
+
+Started GET "/cities/new" for 127.0.0.1 at Fri Jan 28 00:18:17 +0530 2011
+
+SyntaxError (/home/chaitanya/aclindia/app/controllers/cities_controller.rb:120: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.7ms)
+
+
+Started GET "/cities/new" for 127.0.0.1 at Fri Jan 28 00:18:18 +0530 2011
+
+SyntaxError (/home/chaitanya/aclindia/app/controllers/cities_controller.rb:120: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.3ms)
+
+
+Started GET "/cities/new" for 127.0.0.1 at Fri Jan 28 00:18:58 +0530 2011
+  Processing by CitiesController#new as HTML
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered cities/_form.html.erb (26.7ms)
+Rendered cities/new.html.erb within layouts/application (37.4ms)
+Completed 200 OK in 571ms (Views: 43.5ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started POST "/cities/load_states" for 127.0.0.1 at Fri Jan 28 00:19:01 +0530 2011
+  Processing by CitiesController#load_states as JS
+  Parameters: {"authenticity_token"=>"M9CCTIZstUeXt0f8QkaBiCMte191gQ9OVsDst83b2Wg=", "id"=>"1", "_"=>""}
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mState Load (0.8ms)[0m  SELECT `states`.* FROM `states` WHERE (`states`.`country_id` = 1)
+Completed 200 OK in 517ms (Views: 13.6ms | ActiveRecord: 1.8ms | Sphinx: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at Fri Jan 28 00:19:47 +0530 2011
+  Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (1.1ms)[0m  [1mSELECT `products`.* FROM `products`[0m
+  [1m[35mSubcategory Load (22.1ms)[0m  SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`id` = 1) LIMIT 1
+  [1m[36mCategory Load (0.6ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`id` = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 1) LIMIT 1[0m
+  [1m[35mSubcategory Load (0.5ms)[0m  SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`id` = 3) LIMIT 1
+  [1m[36mCategory Load (1.9ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 3) LIMIT 1[0m
+  [1m[35mSubcategory Load (0.5ms)[0m  SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`id` = 2) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 1) LIMIT 1[0m
+Rendered products/index.html.erb within layouts/application (85.8ms)
+Completed 200 OK in 495ms (Views: 76.6ms | ActiveRecord: 26.8ms | Sphinx: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at Fri Jan 28 00:19:49 +0530 2011
+  Processing by ProductsController#new as HTML
+  [1m[35mCategory Load (0.5ms)[0m  SELECT `categories`.* FROM `categories`
+Rendered products/_form.html.erb (32.5ms)
+Rendered products/new.html.erb within layouts/application (43.4ms)
+Completed 200 OK in 517ms (Views: 87.1ms | ActiveRecord: 0.5ms | Sphinx: 0.0ms)
+
+
+Started POST "/products/load_subcategries" for 127.0.0.1 at Fri Jan 28 00:19:51 +0530 2011
+  Processing by ProductsController#load_subcategries as JS
+  Parameters: {"authenticity_token"=>"M9CCTIZstUeXt0f8QkaBiCMte191gQ9OVsDst83b2Wg=", "id"=>"1", "_"=>""}
+  [1m[36mSubcategory Load (0.6ms)[0m  [1mSELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`category_id` = 1)[0m
+Completed 200 OK in 535ms (Views: 14.8ms | ActiveRecord: 0.6ms | Sphinx: 0.0ms)
+
+
+Started POST "/products/load_subcategries" for 127.0.0.1 at Fri Jan 28 00:19:55 +0530 2011
+  Processing by ProductsController#load_subcategries as JS
+  Parameters: {"authenticity_token"=>"M9CCTIZstUeXt0f8QkaBiCMte191gQ9OVsDst83b2Wg=", "id"=>"2", "_"=>""}
+  [1m[35mSubcategory Load (0.6ms)[0m  SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`category_id` = 2)
+Completed 200 OK in 348ms (Views: 4.8ms | ActiveRecord: 0.6ms | Sphinx: 0.0ms)
+
+
+Started POST "/products/load_subcategries" for 127.0.0.1 at Fri Jan 28 00:19:57 +0530 2011
+  Processing by ProductsController#load_subcategries as JS
+  Parameters: {"authenticity_token"=>"M9CCTIZstUeXt0f8QkaBiCMte191gQ9OVsDst83b2Wg=", "id"=>"", "_"=>""}
+  [1m[36mSubcategory Load (0.6ms)[0m  [1mSELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`category_id` = 0)[0m
+Completed 200 OK in 487ms (Views: 4.7ms | ActiveRecord: 0.6ms | Sphinx: 0.0ms)
+
+
+Started POST "/products/load_subcategries" for 127.0.0.1 at Fri Jan 28 00:19:59 +0530 2011
+  Processing by ProductsController#load_subcategries as JS
+  Parameters: {"authenticity_token"=>"M9CCTIZstUeXt0f8QkaBiCMte191gQ9OVsDst83b2Wg=", "id"=>"1", "_"=>""}
+  [1m[35mSubcategory Load (0.2ms)[0m  SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`category_id` = 1)
+Completed 200 OK in 354ms (Views: 12.2ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/lablocationals" for 127.0.0.1 at Fri Jan 28 00:20:03 +0530 2011
+  Processing by LablocationalsController#index as HTML
+  [1m[36mLablocational Load (0.2ms)[0m  [1mSELECT `lablocationals`.* FROM `lablocationals`[0m
+  [1m[35mLabregional Load (0.2ms)[0m  SELECT `labregionals`.* FROM `labregionals` WHERE (`labregionals`.`id` = 1) LIMIT 1
+  [1m[36mLabcentral Load (0.2ms)[0m  [1mSELECT `labcentrals`.* FROM `labcentrals` WHERE (`labcentrals`.`id` = 1) LIMIT 1[0m
+Rendered lablocationals/index.html.erb within layouts/application (73.9ms)
+Completed 200 OK in 419ms (Views: 78.9ms | ActiveRecord: 0.5ms | Sphinx: 0.0ms)
+
+
+Started GET "/lablocationals/new" for 127.0.0.1 at Fri Jan 28 00:20:05 +0530 2011
+  Processing by LablocationalsController#new as HTML
+  [1m[35mLabcentral Load (0.2ms)[0m  SELECT `labcentrals`.* FROM `labcentrals`
+  [1m[36mLabregional Load (0.2ms)[0m  [1mSELECT `labregionals`.* FROM `labregionals`[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `labcentrals`.* FROM `labcentrals`
+Rendered lablocationals/_form.html.erb (49.6ms)
+Rendered lablocationals/new.html.erb within layouts/application (60.5ms)
+Completed 200 OK in 625ms (Views: 66.3ms | ActiveRecord: 0.4ms | Sphinx: 0.0ms)
+
+
+Started POST "/lablocationals/load_regional" for 127.0.0.1 at Fri Jan 28 00:20:07 +0530 2011
+  Processing by LablocationalsController#load_regional as JS
+  Parameters: {"authenticity_token"=>"M9CCTIZstUeXt0f8QkaBiCMte191gQ9OVsDst83b2Wg=", "id"=>"1", "_"=>""}
+  [1m[36mLabregional Load (0.8ms)[0m  [1mSELECT `labregionals`.* FROM `labregionals` WHERE (`labregionals`.`lancentral_id` = '1')[0m
+Mysql::Error: Unknown column 'labregionals.lancentral_id' in 'where clause': SELECT `labregionals`.* FROM `labregionals` WHERE (`labregionals`.`lancentral_id` = '1')
+Completed   in 365ms
+
+ActiveRecord::StatementInvalid (Mysql::Error: Unknown column 'labregionals.lancentral_id' in 'where clause': SELECT `labregionals`.* FROM `labregionals` WHERE (`labregionals`.`lancentral_id` = '1')):
+  app/controllers/lablocationals_controller.rb:109:in `load_regional'
+  app/controllers/lablocationals_controller.rb:108:in `load_regional'
+  app/controllers/lablocationals_controller.rb:106:in `load_regional'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+  [1m[35mLabregional Load (0.7ms)[0m  SELECT `labregionals`.* FROM `labregionals` WHERE (`labregionals`.`lancentral_id` = '1')
+Mysql::Error: Unknown column 'labregionals.lancentral_id' in 'where clause': SELECT `labregionals`.* FROM `labregionals` WHERE (`labregionals`.`lancentral_id` = '1')
+  [1m[36mLabregional Load (0.5ms)[0m  [1mSELECT `labregionals`.* FROM `labregionals` WHERE (`labregionals`.`lancentral_id` = '1')[0m
+Mysql::Error: Unknown column 'labregionals.lancentral_id' in 'where clause': SELECT `labregionals`.* FROM `labregionals` WHERE (`labregionals`.`lancentral_id` = '1')
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (20.7ms)
+
+
+Started GET "/lablocationals/new" for 127.0.0.1 at Fri Jan 28 00:22:02 +0530 2011
+  Processing by LablocationalsController#new as HTML
+  [1m[35mLabcentral Load (0.3ms)[0m  SELECT `labcentrals`.* FROM `labcentrals`
+Rendered lablocationals/_form.html.erb (44.5ms)
+Rendered lablocationals/new.html.erb within layouts/application (54.2ms)
+Completed 200 OK in 409ms (Views: 61.3ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started POST "/lablocationals/load_regional" for 127.0.0.1 at Fri Jan 28 00:22:05 +0530 2011
+  Processing by LablocationalsController#load_regional as JS
+  Parameters: {"authenticity_token"=>"M9CCTIZstUeXt0f8QkaBiCMte191gQ9OVsDst83b2Wg=", "id"=>"1", "_"=>""}
+  [1m[36mLabregional Load (0.8ms)[0m  [1mSELECT `labregionals`.* FROM `labregionals` WHERE (`labregionals`.`lancentral_id` = '1')[0m
+Mysql::Error: Unknown column 'labregionals.lancentral_id' in 'where clause': SELECT `labregionals`.* FROM `labregionals` WHERE (`labregionals`.`lancentral_id` = '1')
+Completed   in 332ms
+
+ActiveRecord::StatementInvalid (Mysql::Error: Unknown column 'labregionals.lancentral_id' in 'where clause': SELECT `labregionals`.* FROM `labregionals` WHERE (`labregionals`.`lancentral_id` = '1')):
+  app/controllers/lablocationals_controller.rb:114:in `load_regional'
+  app/controllers/lablocationals_controller.rb:113:in `load_regional'
+  app/controllers/lablocationals_controller.rb:111:in `load_regional'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  [1m[35mLabregional Load (0.5ms)[0m  SELECT `labregionals`.* FROM `labregionals` WHERE (`labregionals`.`lancentral_id` = '1')
+Mysql::Error: Unknown column 'labregionals.lancentral_id' in 'where clause': SELECT `labregionals`.* FROM `labregionals` WHERE (`labregionals`.`lancentral_id` = '1')
+  [1m[36mLabregional Load (0.5ms)[0m  [1mSELECT `labregionals`.* FROM `labregionals` WHERE (`labregionals`.`lancentral_id` = '1')[0m
+Mysql::Error: Unknown column 'labregionals.lancentral_id' in 'where clause': SELECT `labregionals`.* FROM `labregionals` WHERE (`labregionals`.`lancentral_id` = '1')
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.6ms)
+
+
+Started GET "/lablocationals/new" for 127.0.0.1 at Fri Jan 28 00:24:07 +0530 2011
+  Processing by LablocationalsController#new as HTML
+  [1m[35mLabcentral Load (0.2ms)[0m  SELECT `labcentrals`.* FROM `labcentrals`
+Rendered lablocationals/_form.html.erb (59.5ms)
+Rendered lablocationals/new.html.erb within layouts/application (72.9ms)
+Completed 200 OK in 473ms (Views: 91.9ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/lablocationals/new" for 127.0.0.1 at Fri Jan 28 00:24:08 +0530 2011
+  Processing by LablocationalsController#new as HTML
+  [1m[36mLabcentral Load (0.2ms)[0m  [1mSELECT `labcentrals`.* FROM `labcentrals`[0m
+Rendered lablocationals/_form.html.erb (47.4ms)
+Rendered lablocationals/new.html.erb within layouts/application (59.6ms)
+Completed 200 OK in 633ms (Views: 65.4ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started POST "/lablocationals/load_regional" for 127.0.0.1 at Fri Jan 28 00:24:11 +0530 2011
+  Processing by LablocationalsController#load_regional as JS
+  Parameters: {"authenticity_token"=>"M9CCTIZstUeXt0f8QkaBiCMte191gQ9OVsDst83b2Wg=", "id"=>"1", "_"=>""}
+  [1m[35mLabregional Load (0.7ms)[0m  SELECT `labregionals`.* FROM `labregionals` WHERE (`labregionals`.`labcentral_id` = 1)
+Completed 200 OK in 517ms (Views: 19.9ms | ActiveRecord: 0.7ms | Sphinx: 0.0ms)
+
+
+Started GET "/lablocationals/new" for 127.0.0.1 at Fri Jan 28 00:24:47 +0530 2011
+  Processing by LablocationalsController#new as HTML
+  [1m[36mLabcentral Load (0.2ms)[0m  [1mSELECT `labcentrals`.* FROM `labcentrals`[0m
+Rendered lablocationals/_form.html.erb (46.1ms)
+Rendered lablocationals/new.html.erb within layouts/application (56.1ms)
+Completed 200 OK in 531ms (Views: 61.2ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started POST "/lablocationals/load_regional" for 127.0.0.1 at Fri Jan 28 00:24:50 +0530 2011
+  Processing by LablocationalsController#load_regional as JS
+  Parameters: {"authenticity_token"=>"M9CCTIZstUeXt0f8QkaBiCMte191gQ9OVsDst83b2Wg=", "id"=>"1", "_"=>""}
+  [1m[35mLabregional Load (0.2ms)[0m  SELECT `labregionals`.* FROM `labregionals` WHERE (`labregionals`.`labcentral_id` = 1)
+Completed 200 OK in 369ms (Views: 26.0ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/lablocationals/new" for 127.0.0.1 at Fri Jan 28 00:25:13 +0530 2011
+  Processing by LablocationalsController#new as HTML
+  [1m[36mLabcentral Load (0.2ms)[0m  [1mSELECT `labcentrals`.* FROM `labcentrals`[0m
+Rendered lablocationals/_form.html.erb (47.1ms)
+Rendered lablocationals/new.html.erb within layouts/application (57.0ms)
+Completed 200 OK in 410ms (Views: 62.5ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started POST "/lablocationals/load_regional" for 127.0.0.1 at Fri Jan 28 00:25:16 +0530 2011
+  Processing by LablocationalsController#load_regional as JS
+  Parameters: {"authenticity_token"=>"M9CCTIZstUeXt0f8QkaBiCMte191gQ9OVsDst83b2Wg=", "id"=>"1", "_"=>""}
+  [1m[35mLabregional Load (0.2ms)[0m  SELECT `labregionals`.* FROM `labregionals` WHERE (`labregionals`.`labcentral_id` = 1)
+Completed 200 OK in 354ms (Views: 19.1ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/lablocationals/new" for 127.0.0.1 at Fri Jan 28 00:25:48 +0530 2011
+  Processing by LablocationalsController#new as HTML
+  [1m[36mLabcentral Load (0.3ms)[0m  [1mSELECT `labcentrals`.* FROM `labcentrals`[0m
+Rendered lablocationals/_form.html.erb (47.8ms)
+Rendered lablocationals/new.html.erb within layouts/application (195.0ms)
+Completed 200 OK in 560ms (Views: 200.5ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/lablocationals/new" for 127.0.0.1 at Fri Jan 28 00:25:51 +0530 2011
+  Processing by LablocationalsController#new as HTML
+  [1m[35mLabcentral Load (0.2ms)[0m  SELECT `labcentrals`.* FROM `labcentrals`
+Rendered lablocationals/_form.html.erb (172.4ms)
+Rendered lablocationals/new.html.erb within layouts/application (187.4ms)
+Completed 200 OK in 565ms (Views: 194.5ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started POST "/lablocationals/load_regional" for 127.0.0.1 at Fri Jan 28 00:25:53 +0530 2011
+  Processing by LablocationalsController#load_regional as JS
+  Parameters: {"authenticity_token"=>"M9CCTIZstUeXt0f8QkaBiCMte191gQ9OVsDst83b2Wg=", "id"=>"1", "_"=>""}
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mLabregional Load (0.2ms)[0m  SELECT `labregionals`.* FROM `labregionals` WHERE (`labregionals`.`labcentral_id` = 1)
+Completed 200 OK in 369ms (Views: 18.9ms | ActiveRecord: 1.1ms | Sphinx: 0.0ms)
+
+
+Started GET "/states" for 127.0.0.1 at Fri Jan 28 00:25:58 +0530 2011
+  Processing by StatesController#index as HTML
+  [1m[36mState Load (0.2ms)[0m  [1mSELECT `states`.* FROM `states`[0m
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 2) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 2) LIMIT 1
+Rendered states/index.html.erb within layouts/application (49.8ms)
+Completed 200 OK in 403ms (Views: 70.1ms | ActiveRecord: 0.6ms | Sphinx: 0.0ms)
+
+
+Started GET "/cities" for 127.0.0.1 at Fri Jan 28 00:26:00 +0530 2011
+  Processing by CitiesController#index as HTML
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT `cities`.* FROM `cities`[0m
+  [1m[35mState Load (0.1ms)[0m  SELECT `states`.* FROM `states` WHERE (`states`.`id` = 1) LIMIT 1
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1[0m
+  [1m[35mState Load (0.2ms)[0m  SELECT `states`.* FROM `states` WHERE (`states`.`id` = 2) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `states`.* FROM `states` WHERE (`states`.`id` = 2) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1[0m
+  [1m[35mState Load (0.2ms)[0m  SELECT `states`.* FROM `states` WHERE (`states`.`id` = 4) LIMIT 1
+  [1m[36mCountry Load (0.1ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 2) LIMIT 1[0m
+Rendered cities/index.html.erb within layouts/application (63.7ms)
+Completed 200 OK in 573ms (Views: 69.8ms | ActiveRecord: 1.1ms | Sphinx: 0.0ms)
+
+
+Started GET "/cities/new" for 127.0.0.1 at Fri Jan 28 00:26:02 +0530 2011
+  Processing by CitiesController#new as HTML
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered cities/_form.html.erb (27.8ms)
+Rendered cities/new.html.erb within layouts/application (41.4ms)
+Completed 200 OK in 608ms (Views: 174.3ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started POST "/cities/load_states" for 127.0.0.1 at Fri Jan 28 00:26:05 +0530 2011
+  Processing by CitiesController#load_states as JS
+  Parameters: {"authenticity_token"=>"M9CCTIZstUeXt0f8QkaBiCMte191gQ9OVsDst83b2Wg=", "id"=>"1", "_"=>""}
+  [1m[36mState Load (0.2ms)[0m  [1mSELECT `states`.* FROM `states` WHERE (`states`.`country_id` = 1)[0m
+Completed 200 OK in 374ms (Views: 12.4ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started POST "/cities/load_states" for 127.0.0.1 at Fri Jan 28 00:26:18 +0530 2011
+  Processing by CitiesController#load_states as JS
+  Parameters: {"authenticity_token"=>"M9CCTIZstUeXt0f8QkaBiCMte191gQ9OVsDst83b2Wg=", "id"=>"2", "_"=>""}
+  [1m[35mState Load (0.7ms)[0m  SELECT `states`.* FROM `states` WHERE (`states`.`country_id` = 2)
+Completed 200 OK in 485ms (Views: 12.3ms | ActiveRecord: 0.7ms | Sphinx: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at Fri Jan 28 00:26:23 +0530 2011
+  Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT `products`.* FROM `products`[0m
+  [1m[35mSubcategory Load (0.2ms)[0m  SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`id` = 1) LIMIT 1
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`id` = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 1) LIMIT 1[0m
+  [1m[35mSubcategory Load (0.2ms)[0m  SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`id` = 3) LIMIT 1
+  [1m[36mCategory Load (3.0ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 3) LIMIT 1[0m
+  [1m[35mSubcategory Load (0.2ms)[0m  SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`id` = 2) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 1) LIMIT 1[0m
+Rendered products/index.html.erb within layouts/application (218.7ms)
+Completed 200 OK in 761ms (Views: 222.4ms | ActiveRecord: 3.9ms | Sphinx: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at Fri Jan 28 00:26:25 +0530 2011
+  Processing by ProductsController#new as HTML
+  [1m[35mCategory Load (0.2ms)[0m  SELECT `categories`.* FROM `categories`
+Rendered products/_form.html.erb (25.0ms)
+Rendered products/new.html.erb within layouts/application (34.9ms)
+Completed 200 OK in 473ms (Views: 39.9ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started POST "/products/load_subcategries" for 127.0.0.1 at Fri Jan 28 00:26:27 +0530 2011
+  Processing by ProductsController#load_subcategries as JS
+  Parameters: {"authenticity_token"=>"M9CCTIZstUeXt0f8QkaBiCMte191gQ9OVsDst83b2Wg=", "id"=>"1", "_"=>""}
+  [1m[36mSubcategory Load (0.2ms)[0m  [1mSELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`category_id` = 1)[0m
+Completed 200 OK in 336ms (Views: 12.7ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at Fri Jan 28 00:26:32 +0530 2011
+  Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT `products`.* FROM `products`
+  [1m[36mSubcategory Load (0.1ms)[0m  [1mSELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`id` = 1) LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`id` = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 1) LIMIT 1
+  [1m[36mSubcategory Load (0.2ms)[0m  [1mSELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`id` = 3) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 3) LIMIT 1
+  [1m[36mSubcategory Load (0.2ms)[0m  [1mSELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`id` = 2) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 1) LIMIT 1
+Rendered products/index.html.erb within layouts/application (193.0ms)
+Completed 200 OK in 779ms (Views: 199.0ms | ActiveRecord: 1.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/lablocationals" for 127.0.0.1 at Fri Jan 28 00:26:36 +0530 2011
+  Processing by LablocationalsController#index as HTML
+  [1m[36mLablocational Load (0.2ms)[0m  [1mSELECT `lablocationals`.* FROM `lablocationals`[0m
+  [1m[35mLabregional Load (0.2ms)[0m  SELECT `labregionals`.* FROM `labregionals` WHERE (`labregionals`.`id` = 1) LIMIT 1
+  [1m[36mLabcentral Load (0.2ms)[0m  [1mSELECT `labcentrals`.* FROM `labcentrals` WHERE (`labcentrals`.`id` = 1) LIMIT 1[0m
+Rendered lablocationals/index.html.erb within layouts/application (73.6ms)
+Completed 200 OK in 455ms (Views: 80.4ms | ActiveRecord: 0.5ms | Sphinx: 0.0ms)
+
+
+Started GET "/lablocationals/new" for 127.0.0.1 at Fri Jan 28 00:26:38 +0530 2011
+  Processing by LablocationalsController#new as HTML
+  [1m[35mLabcentral Load (0.2ms)[0m  SELECT `labcentrals`.* FROM `labcentrals`
+Rendered lablocationals/_form.html.erb (88.2ms)
+Rendered lablocationals/new.html.erb within layouts/application (109.5ms)
+Completed 200 OK in 459ms (Views: 115.1ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started POST "/lablocationals/load_regional" for 127.0.0.1 at Fri Jan 28 00:26:41 +0530 2011
+  Processing by LablocationalsController#load_regional as JS
+  Parameters: {"authenticity_token"=>"M9CCTIZstUeXt0f8QkaBiCMte191gQ9OVsDst83b2Wg=", "id"=>"1", "_"=>""}
+  [1m[36mLabregional Load (0.2ms)[0m  [1mSELECT `labregionals`.* FROM `labregionals` WHERE (`labregionals`.`labcentral_id` = 1)[0m
+Completed 200 OK in 628ms (Views: 20.2ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/lablocationals/new" for 127.0.0.1 at Fri Jan 28 00:29:49 +0530 2011
+  Processing by LablocationalsController#new as HTML
+  [1m[35mLabcentral Load (0.2ms)[0m  SELECT `labcentrals`.* FROM `labcentrals`
+Rendered lablocationals/_form.html.erb (49.3ms)
+Rendered lablocationals/new.html.erb within layouts/application (59.6ms)
+Completed 200 OK in 642ms (Views: 67.1ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started POST "/lablocationals/load_regional" for 127.0.0.1 at Fri Jan 28 00:29:51 +0530 2011
+  Processing by LablocationalsController#load_regional as JS
+  Parameters: {"authenticity_token"=>"M9CCTIZstUeXt0f8QkaBiCMte191gQ9OVsDst83b2Wg=", "id"=>"1", "_"=>""}
+  [1m[36mLabregional Load (0.2ms)[0m  [1mSELECT `labregionals`.* FROM `labregionals` WHERE (`labregionals`.`labcentral_id` = 1)[0m
+Completed 200 OK in 346ms (Views: 19.4ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started POST "/lablocationals/load_regional" for 127.0.0.1 at Fri Jan 28 00:30:03 +0530 2011
+  Processing by LablocationalsController#load_regional as JS
+  Parameters: {"authenticity_token"=>"M9CCTIZstUeXt0f8QkaBiCMte191gQ9OVsDst83b2Wg=", "id"=>"", "_"=>""}
+  [1m[35mLabregional Load (0.7ms)[0m  SELECT `labregionals`.* FROM `labregionals` WHERE (`labregionals`.`labcentral_id` = 0)
+Completed 200 OK in 388ms (Views: 7.5ms | ActiveRecord: 0.7ms | Sphinx: 0.0ms)
+
+
+Started POST "/lablocationals/load_regional" for 127.0.0.1 at Fri Jan 28 00:30:04 +0530 2011
+  Processing by LablocationalsController#load_regional as JS
+  Parameters: {"authenticity_token"=>"M9CCTIZstUeXt0f8QkaBiCMte191gQ9OVsDst83b2Wg=", "id"=>"1", "_"=>""}
+  [1m[36mLabregional Load (0.2ms)[0m  [1mSELECT `labregionals`.* FROM `labregionals` WHERE (`labregionals`.`labcentral_id` = 1)[0m
+Completed 200 OK in 369ms (Views: 19.3ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/cities" for 127.0.0.1 at Fri Jan 28 00:35:29 +0530 2011
+  Processing by CitiesController#index as HTML
+  [1m[35mCity Load (0.2ms)[0m  SELECT `cities`.* FROM `cities`
+  [1m[36mState Load (0.1ms)[0m  [1mSELECT `states`.* FROM `states` WHERE (`states`.`id` = 1) LIMIT 1[0m
+  [1m[35mCountry Load (0.1ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1
+  [1m[36mState Load (0.2ms)[0m  [1mSELECT `states`.* FROM `states` WHERE (`states`.`id` = 2) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `states`.* FROM `states` WHERE (`states`.`id` = 2) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1
+  [1m[36mState Load (0.2ms)[0m  [1mSELECT `states`.* FROM `states` WHERE (`states`.`id` = 4) LIMIT 1[0m
+  [1m[35mCountry Load (0.1ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 2) LIMIT 1
+Rendered cities/index.html.erb within layouts/application (63.0ms)
+Completed 200 OK in 407ms (Views: 67.5ms | ActiveRecord: 1.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/cities/new" for 127.0.0.1 at Fri Jan 28 00:35:31 +0530 2011
+  Processing by CitiesController#new as HTML
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered cities/_form.html.erb (23.6ms)
+Rendered cities/new.html.erb within layouts/application (37.7ms)
+Completed 200 OK in 549ms (Views: 42.9ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started POST "/cities/load_states" for 127.0.0.1 at Fri Jan 28 00:35:35 +0530 2011
+  Processing by CitiesController#load_states as JS
+  Parameters: {"authenticity_token"=>"M9CCTIZstUeXt0f8QkaBiCMte191gQ9OVsDst83b2Wg=", "id"=>"1", "_"=>""}
+  [1m[35mState Load (0.2ms)[0m  SELECT `states`.* FROM `states` WHERE (`states`.`country_id` = 1)
+Completed 200 OK in 370ms (Views: 12.2ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started POST "/cities/load_states" for 127.0.0.1 at Fri Jan 28 00:35:37 +0530 2011
+  Processing by CitiesController#load_states as JS
+  Parameters: {"authenticity_token"=>"M9CCTIZstUeXt0f8QkaBiCMte191gQ9OVsDst83b2Wg=", "id"=>"2", "_"=>""}
+  [1m[36mState Load (0.2ms)[0m  [1mSELECT `states`.* FROM `states` WHERE (`states`.`country_id` = 2)[0m
+Completed 200 OK in 337ms (Views: 12.1ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at Fri Jan 28 00:36:25 +0530 2011
+  Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT `products`.* FROM `products`
+  [1m[36mSubcategory Load (0.2ms)[0m  [1mSELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`id` = 1) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`id` = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 1) LIMIT 1
+  [1m[36mSubcategory Load (0.2ms)[0m  [1mSELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`id` = 3) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 3) LIMIT 1
+  [1m[36mSubcategory Load (0.2ms)[0m  [1mSELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`id` = 2) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 1) LIMIT 1
+Rendered products/index.html.erb within layouts/application (67.7ms)
+Completed 200 OK in 574ms (Views: 72.8ms | ActiveRecord: 1.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at Fri Jan 28 00:36:27 +0530 2011
+  Processing by ProductsController#new as HTML
+  [1m[36mCategory Load (1.8ms)[0m  [1mSELECT `categories`.* FROM `categories`[0m
+Rendered products/_form.html.erb (41.1ms)
+Rendered products/new.html.erb within layouts/application (54.9ms)
+Completed 200 OK in 513ms (Views: 67.9ms | ActiveRecord: 1.8ms | Sphinx: 0.0ms)
+
+
+Started POST "/products/load_subcategries" for 127.0.0.1 at Fri Jan 28 00:36:29 +0530 2011
+  Processing by ProductsController#load_subcategries as JS
+  Parameters: {"authenticity_token"=>"M9CCTIZstUeXt0f8QkaBiCMte191gQ9OVsDst83b2Wg=", "id"=>"1", "_"=>""}
+  [1m[35mSubcategory Load (0.2ms)[0m  SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`category_id` = 1)
+Completed 200 OK in 336ms (Views: 12.2ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started POST "/products/load_subcategries" for 127.0.0.1 at Fri Jan 28 00:36:32 +0530 2011
+  Processing by ProductsController#load_subcategries as JS
+  Parameters: {"authenticity_token"=>"M9CCTIZstUeXt0f8QkaBiCMte191gQ9OVsDst83b2Wg=", "id"=>"3", "_"=>""}
+  [1m[36mSubcategory Load (0.6ms)[0m  [1mSELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`category_id` = 3)[0m
+Completed 200 OK in 485ms (Views: 12.7ms | ActiveRecord: 0.6ms | Sphinx: 0.0ms)
+
+
+Started POST "/products/load_subcategries" for 127.0.0.1 at Fri Jan 28 00:36:35 +0530 2011
+  Processing by ProductsController#load_subcategries as JS
+  Parameters: {"authenticity_token"=>"M9CCTIZstUeXt0f8QkaBiCMte191gQ9OVsDst83b2Wg=", "id"=>"1", "_"=>""}
+  [1m[35mSubcategory Load (0.2ms)[0m  SELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`category_id` = 1)
+Completed 200 OK in 364ms (Views: 12.3ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started POST "/products/load_subcategries" for 127.0.0.1 at Fri Jan 28 00:36:39 +0530 2011
+  Processing by ProductsController#load_subcategries as JS
+  Parameters: {"authenticity_token"=>"M9CCTIZstUeXt0f8QkaBiCMte191gQ9OVsDst83b2Wg=", "id"=>"2", "_"=>""}
+  [1m[36mSubcategory Load (0.2ms)[0m  [1mSELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`category_id` = 2)[0m
+Completed 200 OK in 333ms (Views: 4.8ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at Fri Jan 28 00:36:41 +0530 2011
+  Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT `products`.* FROM `products`
+  [1m[36mSubcategory Load (0.2ms)[0m  [1mSELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`id` = 1) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`id` = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 1) LIMIT 1
+  [1m[36mSubcategory Load (0.2ms)[0m  [1mSELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`id` = 3) LIMIT 1[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 3) LIMIT 1
+  [1m[36mSubcategory Load (0.2ms)[0m  [1mSELECT `subcategories`.* FROM `subcategories` WHERE (`subcategories`.`id` = 2) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 1) LIMIT 1
+Rendered products/index.html.erb within layouts/application (196.1ms)
+Completed 200 OK in 655ms (Views: 200.8ms | ActiveRecord: 1.1ms | Sphinx: 0.0ms)
+
+
+Started GET "/lablocationals" for 127.0.0.1 at Fri Jan 28 00:36:49 +0530 2011
+  Processing by LablocationalsController#index as HTML
+  [1m[36mLablocational Load (0.2ms)[0m  [1mSELECT `lablocationals`.* FROM `lablocationals`[0m
+  [1m[35mLabregional Load (0.2ms)[0m  SELECT `labregionals`.* FROM `labregionals` WHERE (`labregionals`.`id` = 1) LIMIT 1
+  [1m[36mLabcentral Load (0.2ms)[0m  [1mSELECT `labcentrals`.* FROM `labcentrals` WHERE (`labcentrals`.`id` = 1) LIMIT 1[0m
+Rendered lablocationals/index.html.erb within layouts/application (73.3ms)
+Completed 200 OK in 460ms (Views: 78.4ms | ActiveRecord: 0.5ms | Sphinx: 0.0ms)
+
+
+Started GET "/lablocationals/new" for 127.0.0.1 at Fri Jan 28 00:36:54 +0530 2011
+  Processing by LablocationalsController#new as HTML
+  [1m[35mLabcentral Load (0.2ms)[0m  SELECT `labcentrals`.* FROM `labcentrals`
+Rendered lablocationals/_form.html.erb (49.9ms)
+Rendered lablocationals/new.html.erb within layouts/application (60.3ms)
+Completed 200 OK in 429ms (Views: 66.1ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started POST "/lablocationals/load_regional" for 127.0.0.1 at Fri Jan 28 00:36:56 +0530 2011
+  Processing by LablocationalsController#load_regional as JS
+  Parameters: {"authenticity_token"=>"M9CCTIZstUeXt0f8QkaBiCMte191gQ9OVsDst83b2Wg=", "id"=>"1", "_"=>""}
+  [1m[36mLabregional Load (0.2ms)[0m  [1mSELECT `labregionals`.* FROM `labregionals` WHERE (`labregionals`.`labcentral_id` = 1)[0m
+Completed 200 OK in 513ms (Views: 20.7ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/lablocationals/new" for 127.0.0.1 at Fri Jan 28 00:40:29 +0530 2011
+  Processing by LablocationalsController#new as HTML
+  [1m[35mLabcentral Load (0.2ms)[0m  SELECT `labcentrals`.* FROM `labcentrals`
+Rendered lablocationals/_form.html.erb (48.0ms)
+Rendered lablocationals/new.html.erb within layouts/application (58.8ms)
+Completed 200 OK in 445ms (Views: 64.4ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started POST "/lablocationals/load_regional" for 127.0.0.1 at Fri Jan 28 00:40:35 +0530 2011
+  Processing by LablocationalsController#load_regional as JS
+  Parameters: {"authenticity_token"=>"M9CCTIZstUeXt0f8QkaBiCMte191gQ9OVsDst83b2Wg=", "id"=>"1", "_"=>""}
+  [1m[36mLabregional Load (0.2ms)[0m  [1mSELECT `labregionals`.* FROM `labregionals` WHERE (`labregionals`.`labcentral_id` = 1)[0m
+Completed 200 OK in 350ms (Views: 19.5ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/cities" for 127.0.0.1 at Fri Jan 28 00:41:37 +0530 2011
+  Processing by CitiesController#index as HTML
+  [1m[35mCity Load (0.4ms)[0m  SELECT `cities`.* FROM `cities`
+  [1m[36mState Load (1.5ms)[0m  [1mSELECT `states`.* FROM `states` WHERE (`states`.`id` = 1) LIMIT 1[0m
+  [1m[35mCountry Load (0.1ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1
+  [1m[36mState Load (0.2ms)[0m  [1mSELECT `states`.* FROM `states` WHERE (`states`.`id` = 2) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `states`.* FROM `states` WHERE (`states`.`id` = 2) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1
+  [1m[36mState Load (0.2ms)[0m  [1mSELECT `states`.* FROM `states` WHERE (`states`.`id` = 4) LIMIT 1[0m
+  [1m[35mCountry Load (0.1ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 2) LIMIT 1
+Rendered cities/index.html.erb within layouts/application (63.7ms)
+Completed 200 OK in 546ms (Views: 66.9ms | ActiveRecord: 2.6ms | Sphinx: 0.0ms)
+
+
+Started GET "/lablocationals" for 127.0.0.1 at Fri Jan 28 00:47:09 +0530 2011
+  Processing by LablocationalsController#index as HTML
+  [1m[36mLablocational Load (80.2ms)[0m  [1mSELECT `lablocationals`.* FROM `lablocationals`[0m
+  [1m[35mLabregional Load (0.2ms)[0m  SELECT `labregionals`.* FROM `labregionals` WHERE (`labregionals`.`id` = 1) LIMIT 1
+  [1m[36mLabcentral Load (0.2ms)[0m  [1mSELECT `labcentrals`.* FROM `labcentrals` WHERE (`labcentrals`.`id` = 1) LIMIT 1[0m
+Rendered lablocationals/index.html.erb within layouts/application (289.9ms)
+Completed 200 OK in 1064ms (Views: 326.8ms | ActiveRecord: 80.5ms | Sphinx: 0.0ms)
+
+
+Started GET "/lablocationals/new" for 127.0.0.1 at Fri Jan 28 00:47:12 +0530 2011
+  Processing by LablocationalsController#new as HTML
+  [1m[35mLabcentral Load (0.2ms)[0m  SELECT `labcentrals`.* FROM `labcentrals`
+Rendered lablocationals/_form.html.erb (46.7ms)
+Rendered lablocationals/new.html.erb within layouts/application (68.4ms)
+Completed 200 OK in 507ms (Views: 108.2ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started POST "/lablocationals/load_regional" for 127.0.0.1 at Fri Jan 28 00:47:15 +0530 2011
+  Processing by LablocationalsController#load_regional as JS
+  Parameters: {"authenticity_token"=>"M9CCTIZstUeXt0f8QkaBiCMte191gQ9OVsDst83b2Wg=", "id"=>"1", "_"=>""}
+  [1m[36mLabregional Load (0.2ms)[0m  [1mSELECT `labregionals`.* FROM `labregionals` WHERE (`labregionals`.`labcentral_id` = 1)[0m
+Completed 200 OK in 356ms (Views: 19.7ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)

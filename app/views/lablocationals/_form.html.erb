@@ -28,13 +28,13 @@
    	<tr>
   <div class="field">
    <td><%= f.label :labid ,"Central Lab"%></td>
-    <td><%= collection_select(:lablocational,:labcentral_id,@labcentral,:id,:labid,:prompt=>"Select Central Lab") %></td>
+    <td><%= f.collection_select :labcentral_id, Labcentral.find(:all), :id, :labid ,{:prompt=>'Select CentralLab'},{ :onchange=>"#{remote_function(:url=>{:action=>'load_regional'},:with =>"'id='+value")}" }%></td>
   </div>
 </tr>
    	<tr>
   <div class="field">
    <td><%= f.label :labid ,"Regional Lab"%></td>
-    <td><%= collection_select(:lablocational,:labregional_id,@labregional,:id,:labid,:prompt=>"Select Regional Lab") %></td>
+    <td><%= f.collection_select :labregional_id, {},:id, :labid,{:prompt =>'Select RegionalLab'} %></td>
   </div>
 </tr>
 <tr>

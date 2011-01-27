@@ -29,8 +29,6 @@ class LablocationalsController < ApplicationController
   # GET /lablocationals/new
   # GET /lablocationals/new.xml
   def new
-	@labcentral = Labcentral.all
-	@labregional = Labregional.all
     @lablocational = Lablocational.new
 
     respond_to do |format|
@@ -98,4 +96,17 @@ class LablocationalsController < ApplicationController
 		@query = params[:query]
 		@lablocationals = Lablocational.search @query
 	end
+
+
+	def load_regional
+		@labregionals = Labregional.where(:labcentral_id => params[:id])
+			respond_to do |format|
+			format.js{
+			render :update do |page| 
+				page[:lablocation_labregional_id].replace collection_select(:lablocation,:labregional_id, @labregionals, :id, :labid)
+			end
+					}
+			end
+	end
+
 end

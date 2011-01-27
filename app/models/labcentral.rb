@@ -4,7 +4,7 @@
 class Labcentral < ActiveRecord::Base
 	#Relations
 	has_many :labregionals
-	has_many :lablocationals,:through => :labregionals
+	has_many :lablocationals #,:through => :labregionals
 
 	#validations
 	validates :labname, :presence =>true

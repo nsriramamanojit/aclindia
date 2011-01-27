@@ -22,13 +22,13 @@
    	<tr>
   <div>
    <td> <%= f.label :id , "Category"%></td>
-    <td><%= collection_select(:product,:category_id,@category,:id,:name,:prompt=>"Select Category") %></td>
+    <td><%= f.collection_select :category_id, Category.find(:all), :id, :name ,{:prompt=>'Select Categoery'},{ :onchange=>"#{remote_function(:url=>{:action=>'load_subcategries'},:with =>"'id='+value")}" }%></td>
   </div>
 </tr>
    	<tr>
   <div>
    <td> <%= f.label :id , "Subcategory"%></td>
-    <td><%= collection_select(:product,:subcategory_id,@subcategory,:id,:name,:prompt=>"Select Subcategory") %></td>
+    <td><%= f.collection_select :subcategory_id, {},:id, :name,{:prompt =>'Select Subcategory'} %></td>
   </div>
 </tr>
    	<tr>

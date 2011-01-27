@@ -28,9 +28,6 @@ class ProductsController < ApplicationController
   # GET /products/new
   # GET /products/new.xml
   def new
-	@category = Category.all
-	@subcategory = Subcategory.all
-
     @product = Product.new
 
     respond_to do |format|
@@ -41,9 +38,6 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
-	@category = Category.all
-	@subcategory = Subcategory.all
-
     @product = Product.find(params[:id])
   end
 
@@ -99,4 +93,18 @@ class ProductsController < ApplicationController
 		@products = Product.search @query
 	end
 	#End: Search
+
+#method for load subcategories
+	def load_subcategries
+	#puts "#### Country Id - #{params[:id]}"
+		@subcategories = Subcategory.where(:category_id => params[:id])
+			respond_to do |format|
+			format.js{
+			render :update do |page| 
+				page[:product_subcategory_id].replace collection_select(:product,:subcategory_id, @subcategories, :id, :name)
+			end
+					}
+			end
+	end
+#End
 end

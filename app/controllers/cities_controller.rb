@@ -29,10 +29,7 @@ class CitiesController < ApplicationController
   # GET /cities/new
   # GET /cities/new.xml
   def new
-	@state = State.all
-	@country = Country.all
     @city = City.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @city }
@@ -98,6 +95,8 @@ class CitiesController < ApplicationController
 		@query = params[:query]
 		@cities = City.search @query
 	end
+
+
 #method for load states
 	def load_states
 	#puts "#### Country Id - #{params[:id]}"
