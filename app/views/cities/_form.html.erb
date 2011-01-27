@@ -21,13 +21,15 @@
    	<tr>
   <div>
    <td> <%= f.label :id , "State"%></td>
-    <td><%= collection_select(:city,:country_id,@country,:id,:name,:prompt=>"Select Country") %></td>
+    <td>     
+<%= f.collection_select :country_id, Country.find(:all), :id, :name ,{:prompt=>'Select Country'},{ :onchange=>"#{remote_function(:url=>{:action=>'load_states'},:with =>"'id='+value")}" }%>
+</td>
   </div>
 </tr>
    	<tr>
   <div>
    <td> <%= f.label :id , "State"%></td>
-    <td><%= collection_select(:city,:state_id,@state,:id,:name,:prompt=>"Select State") %></td>
+    <td>    <%= f.collection_select :state_id, {},:id, :name,{:prompt =>'Select State'} %></td>
   </div>
 </tr>
 

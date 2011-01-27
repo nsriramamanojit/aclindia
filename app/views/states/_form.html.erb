@@ -21,7 +21,7 @@
    	<tr>
   <div>
    <td> <%= f.label :id , "Country"%></td>
-    <td><%= collection_select(:state,:country_id,@country,:id,:name) %></td>
+    <td><%= collection_select(:state,:country_id,@country,:id,:name,:prompt=>'Select Country') %></td>
   </div>
 </tr>
 

@@ -98,4 +98,17 @@ class CitiesController < ApplicationController
 		@query = params[:query]
 		@cities = City.search @query
 	end
+#method for load states
+	def load_states
+	#puts "#### Country Id - #{params[:id]}"
+		@states = State.where(:country_id => params[:id])
+			respond_to do |format|
+			format.js{
+			render :update do |page| 
+				page[:city_state_id].replace collection_select(:city,:state_id, @states, :id, :name)
+			end
+					}
+			end
+	end
+#End- States
 end

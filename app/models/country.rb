@@ -6,6 +6,9 @@ class Country < ActiveRecord::Base
 	has_many :states
 	has_many :cities #, :through => :states
 
+
+ 	validates_presence_of :name
+
 	#Method: Indexing
 	define_index do
 		indexes name

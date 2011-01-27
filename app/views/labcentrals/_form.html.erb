@@ -2,7 +2,7 @@
 <%= form_for(@labcentral) do |f| %>
   <% if @labcentral.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@labcentral.errors.count, "error") %> prohibited this labcentral from being saved:</h2>
+      <h2><%= pluralize(@labcentral.errors.count, "error") %> prohibited this Central Lab from being saved:</h2>
 
       <ul>
       <% @labcentral.errors.full_messages.each do |msg| %>
@@ -26,7 +26,7 @@
 </tr>
 <tr>
   <div class="field">
-    <td><%= f.label :labname ,"Lab Name"%></td>
+    <td>Lab Name</td>
     <td><%= f.text_field :labname,:class=>'title' %></td>
   </div>
 </tr>
