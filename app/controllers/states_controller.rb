@@ -89,6 +89,7 @@ class StatesController < ApplicationController
     end
   end
 
+	#search
 	def search
 		@query = params[:query]
 		@states = State.search @query

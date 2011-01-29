@@ -2,6 +2,13 @@
 #Controller: Country Information
 #==========================================
 class CountriesController < ApplicationController
+
+prawnto :prawn => {
+          :left_margin => 48, 
+          :right_margin => 48,
+          :top_margin => 24,
+          :bottom_margin => 24}
+
   # GET /countries
   # GET /countries.xml
   def index
@@ -10,17 +17,20 @@ class CountriesController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @countries }
+	  format.csv { send_data @countries.to_csv }
     end
+
   end
 
   # GET /countries/1
   # GET /countries/1.xml
   def show
-    @country = Country.find(params[:id])
+    @country = Country.all
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @country }
+#      format.xml  { render :xml => @country }
+      format.pdf { render :layout => false }
     end
   end
 
@@ -84,8 +94,23 @@ class CountriesController < ApplicationController
     end
   end
 
+	#search using thinking-sphinix
 	def search
 		@query = params[:query]
 		@countries = Country.search @query
 	end
+	#end:Search
+
+  #report using prawn	
+  def report
+    @country = Country.all
+
+    respond_to do |format|
+      format.html # show.html.erb
+#      format.xml  { render :xml => @country }
+      format.pdf { render :layout => false }
+    end
+  end
+  #end report
+
 end

@@ -48,7 +48,7 @@ class TestmethodsController < ApplicationController
 
     respond_to do |format|
       if @testmethod.save
-        format.html { redirect_to(@testmethod, :notice => 'Testmethod was successfully created.') }
+        format.html { redirect_to(@testmethod, :notice => 'Test Method was successfully created.') }
         format.xml  { render :xml => @testmethod, :status => :created, :location => @testmethod }
       else
         format.html { render :action => "new" }
@@ -64,7 +64,7 @@ class TestmethodsController < ApplicationController
 
     respond_to do |format|
       if @testmethod.update_attributes(params[:testmethod])
-        format.html { redirect_to(@testmethod, :notice => 'Testmethod was successfully updated.') }
+        format.html { redirect_to(@testmethod, :notice => 'Test Method was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -85,6 +85,7 @@ class TestmethodsController < ApplicationController
     end
   end
 
+	#search
 	def search
 		@query = params[:query]
 		@testmethods = Testmethod.search @query

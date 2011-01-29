@@ -44,7 +44,7 @@ class LabcentralsController < ApplicationController
   # POST /labcentrals.xml
   def create
     @labcentral = Labcentral.new(params[:labcentral])
-	@labcentral.labid = @labcentral.max
+#	@labcentral.labid = @labcentral.max
 
     respond_to do |format|
       if @labcentral.save
@@ -64,7 +64,7 @@ class LabcentralsController < ApplicationController
 
     respond_to do |format|
       if @labcentral.update_attributes(params[:labcentral])
-        format.html { redirect_to(@labcentral, :notice => 'Labcentral was successfully updated.') }
+        format.html { redirect_to(@labcentral, :notice => 'Central Lab was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

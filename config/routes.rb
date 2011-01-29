@@ -1,4 +1,6 @@
 Aclindia::Application.routes.draw do
+  resources :userroles
+
   resources :sampleconditions
 
   resources :sampleunits

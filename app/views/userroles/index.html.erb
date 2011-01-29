@@ -1,0 +1,47 @@
+<h1>Search User Role</h1>
+<!--Start of search text box -->
+<%= form_tag :action => 'search' %>
+	<table id="one-column-emphasis">
+    <colgroup>
+    	<col class="oce-first" />
+    </colgroup>
+	<tr>
+		<td>Search</td>
+		<td><%= text_field_tag :query ,@query ||="Enter User Role",:class=>'title',
+:onfocus=>"javascript: this.value=''",:onblur=>"javascript: if(this.value=='') this.value='Enter User Role'" %></td>
+		<td><%= submit_tag "Search" %></td>
+	</tr>
+	</table>
+<%= form_tag %>
+<!--end of search text box -->
+<h1>Listing Use Roles</h1>
+<!-- START_HIGHLIGHT -->
+  <% if notice %>
+    <p id="notice"><%= notice %></p>
+  <% end %>
+<!-- END_HIGHLIGHT -->
+<table id="newspaper-b">
+    <thead>
+    	<tr>
+        	<th scope="col">Role</th>
+            <th scope="col">View</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+ 
+        </tr>
+    </thead>
+         <tfoot>
+    	<tr>
+        	<td colspan="4"></td>
+        </tr>
+    </tfoot>
+<% @userroles.each do |userrole| %>
+  <tr>
+    <td><%= userrole.name %></td>
+    <td><%= link_to 'Show', userrole %></td>
+    <td><%= link_to 'Edit', edit_userrole_path(userrole) %></td>
+    <td><%= link_to 'Delete', userrole, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+<%= link_to 'New User Role', new_userrole_path %>

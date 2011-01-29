@@ -6,6 +6,9 @@ gem 'rails', '3.0.3'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql'
+gem 'prawn'
+gem 'to_csv'
+gem 'to_xls'
 gem 'pdfkit', '0.5.0'
 gem 'thinking-sphinx', '2.0.2', :require => 'thinking_sphinx'
 

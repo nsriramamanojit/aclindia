@@ -1,5 +1,122 @@
 <h1>New Central Lab</h1>
+<div class="home_form">
+<%= form_for(@labcentral) do |f| %>
+  <% if @labcentral.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@labcentral.errors.count, "error") %> prohibited this Central Lab from being saved:</h2>
 
-<%= render 'form' %>
+      <ul>
+      <% @labcentral.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <fieldset>
+  <legend>Enter Central Lab Details</legend>
+<table id="one-column-emphasis">
+    <colgroup>
+    	<col class="oce-first" />
+    </colgroup>
+    <tbody>
+   	<tr>
+  <div class="field">
+   <td><%= f.label :labid ,"Lab Id"%></td>
+    <td><%= f.text_field :labid,:class=>'title',:value=>@labcentral.labid = @labcentral.max,:readonly=>'true' %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <td>Lab Name</td>
+    <td><%= f.text_field :labname,:class=>'title' %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <td><%= f.label :housenumber,"Door No" %></td>
+    <td><%= f.text_field :housenumber,:class=>'title' %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <td><%= f.label :street %></td>
+    <td><%= f.text_field :street,:class=>'title' %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <td><%= f.label :area %></td>
+    <td><%= f.text_field :area,:class=>'title' %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <td><%= f.label :landmark, "Land Mark"%></td>
+    <td><%= f.text_field :landmark,:class=>'title' %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <td><%= f.label :city %></td>
+    <td><%= f.text_field :city,:class=>'title' %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <td><%= f.label :state %></td>
+    <td><%= f.text_field :state,:class=>'title' %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <td><%= f.label :pincode,"PIN" %></td>
+    <td><%= f.text_field :pincode,:class=>'title' %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <td><%= f.label :land, "Phone" %></td>
+    <td><%= f.text_field :land,:class=>'title' %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <td><%= f.label :mobile %></td>
+    <td><%= f.text_field :mobile,:class=>'title' %></td>
+  </div>
+</tr>
+</tr>
+  <div class="field">
+    <td><%= f.label :fax %></td>
+    <td><%= f.text_field :fax,:class=>'title' %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <td><%= f.label :email %></td>
+    <td><%= f.text_field :email,:class=>'title' %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+   <td><%= f.label :status %></td>
+   <td><%= f.radio_button :status, 'A', :checked => true %> Active
+    <%= f.radio_button :status, 'I' %> Inactive</td>
+  </div>
+</tr>
+<tr>
+  <div class="actions">
+	<td></td>
+    <td><%= f.submit "Save"%></td>
+  </div>
+</tr>
+    </tbody>
+</table>
+</fieldset>
+<% end %>
+</div>
+
+
+<!--<%= render 'form' %>-->
 
 <%= link_to 'Back', labcentrals_path %>

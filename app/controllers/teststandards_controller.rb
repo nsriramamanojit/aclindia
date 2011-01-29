@@ -44,7 +44,7 @@ class TeststandardsController < ApplicationController
 
     respond_to do |format|
       if @teststandard.save
-        format.html { redirect_to(@teststandard, :notice => 'Teststandard was successfully created.') }
+        format.html { redirect_to(@teststandard, :notice => 'Test Standard was successfully created.') }
         format.xml  { render :xml => @teststandard, :status => :created, :location => @teststandard }
       else
         format.html { render :action => "new" }
@@ -60,7 +60,7 @@ class TeststandardsController < ApplicationController
 
     respond_to do |format|
       if @teststandard.update_attributes(params[:teststandard])
-        format.html { redirect_to(@teststandard, :notice => 'Teststandard was successfully updated.') }
+        format.html { redirect_to(@teststandard, :notice => 'Test Standard was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -81,6 +81,7 @@ class TeststandardsController < ApplicationController
     end
   end
 
+	#search
 	def search
 		@query = params[:query]
 		@teststandards = Teststandard.search @query

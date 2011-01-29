@@ -31,18 +31,36 @@ en:
       packing:        "Sample Packing"
       seal:        "Seal"
       samplecondition:        "Sample Condition"
+      userrole:        "User Roles"
+      logout:        "Logout"
+
+    home:
+      title:       "Shree Shubham Logistics Limited"
 #END:layout
 
-#START:main
+#START:home
   home:
     index:
       title_html:  "Welcome to Shree Shubham Logistics Limited"
- #END:main
+ #END:home
 
-#START:main
+#START:sessions
   sessions:
     new:
       title_html:  "Welcome to Shree Shubham Logistics Limited"
- #END:main
+      title:       "Shree Shubham Logistics Limited"
+    create:
+      title_html:  "Welcome to Shree Shubham Logistics Limited"
+      title:       "Shree Shubham Logistics Limited"
+    destroy:
+      title_html:  "Welcome to Shree Shubham Logistics Limited"
+      title:       "Shree Shubham Logistics Limited"
 
+#END:session
+
+#START:admin
+  admin:
+    index:
+      title_html:  "Greetings! You are logged as "
+ #END:session
 

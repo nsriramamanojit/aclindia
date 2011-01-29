@@ -48,7 +48,7 @@ class TestrequiresController < ApplicationController
 
     respond_to do |format|
       if @testrequire.save
-        format.html { redirect_to(@testrequire, :notice => 'Testrequire was successfully created.') }
+        format.html { redirect_to(@testrequire, :notice => 'Test Require was successfully created.') }
         format.xml  { render :xml => @testrequire, :status => :created, :location => @testrequire }
       else
         format.html { render :action => "new" }
@@ -64,7 +64,7 @@ class TestrequiresController < ApplicationController
 
     respond_to do |format|
       if @testrequire.update_attributes(params[:testrequire])
-        format.html { redirect_to(@testrequire, :notice => 'Testrequire was successfully updated.') }
+        format.html { redirect_to(@testrequire, :notice => 'Test Require was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -85,6 +85,7 @@ class TestrequiresController < ApplicationController
     end
   end
 
+	#search
 	def search
 		@query = params[:query]
 		@testrequires = Testrequire.search @query

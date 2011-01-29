@@ -1,0 +1,31 @@
+<h1>Search Results</h1>
+<% if @userroles.blank? %>
+ 	<p>Oops!!! No Matches found.</p>
+<% else %>
+
+<table id="newspaper-b">
+    <thead>
+    	<tr>
+        	<th scope="col">Role</th>
+            <th scope="col">View</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+ 
+        </tr>
+    </thead>
+         <tfoot>
+    	<tr>
+        	<td colspan="4"></td>
+        </tr>
+    </tfoot>
+<% @userroles.each do |userrole| %>
+  <tr>
+    <td><%= userrole.name %></td>
+    <td><%= link_to 'Show', userrole %></td>
+    <td><%= link_to 'Edit', edit_userrole_path(userrole) %></td>
+    <td><%= link_to 'Delete', userrole, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+<% end %>
+<%= link_to 'Back to User Roles', userroles_path %>

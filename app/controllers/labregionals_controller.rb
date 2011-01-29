@@ -48,11 +48,11 @@ class LabregionalsController < ApplicationController
   def create
 
     @labregional = Labregional.new(params[:labregional])
-	@labregional.labid = @labregional.max
+#	@labregional.labid = @labregional.max
 
     respond_to do |format|
       if @labregional.save
-        format.html { redirect_to(@labregional, :notice => 'Labregional was successfully created.') }
+        format.html { redirect_to(@labregional, :notice => 'Regional Lab was successfully created.') }
         format.xml  { render :xml => @labregional, :status => :created, :location => @labregional }
       else
 	@labcentral = Labcentral.all
@@ -69,7 +69,7 @@ class LabregionalsController < ApplicationController
 
     respond_to do |format|
       if @labregional.update_attributes(params[:labregional])
-        format.html { redirect_to(@labregional, :notice => 'Labregional was successfully updated.') }
+        format.html { redirect_to(@labregional, :notice => 'Regional Lab was successfully updated.') }
         format.xml  { head :ok }
       else
 	@labcentral = Labcentral.all

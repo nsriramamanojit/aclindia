@@ -26,8 +26,16 @@
 <div id="side">
 <div id="menu">
 <ul class="menu">
-<li><a href="/home"><span><%= t('.home') %></span></a></li>
+<li><a href="/admin"><span><%= t('.home') %></span></a></li>
+<li><a href="#"class="parent"><span><%= t('.user') %></span></a>
+            <div>
+			<ul>
+               <li><a href="/userroles"><span><%= t('.userrole') %></span></a></li>
 <li><a href="/users"><span><%= t('.user') %></span></a></li>
+
+            </ul>
+			</div>
+</li>
 <li><a href="/countries"><span><%= t('.country') %></span></a></li>
 <li><a href="/states"><span><%= t('.state') %></span></a></li>
 <li><a href="/cities"><span><%= t('.city') %></span></a></li>
@@ -73,10 +81,10 @@
             </ul>
 			</div>
 </li>
-
-
 <li><a href="/warehouses"><span><%= t('.warehouse') %></span></a></li>
 <li class="last"><a href="/exchanges"><span><%= t('.exchange') %></span></a></li>
+<li class="last"><a href="/sessions/destroy"><span><%= t('.logout') %></span></a></li>
+
 </ul>
 </div>
 </div>

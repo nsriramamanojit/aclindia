@@ -94,6 +94,7 @@ class UsersController < ApplicationController
     end
   end
 
+	#search
 	def search
 		@query = params[:query]
 		@users = User.search @query

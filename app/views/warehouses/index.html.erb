@@ -6,7 +6,7 @@
     	<col class="oce-first" />
     </colgroup>
 	<tr>
-		<td>Search: </td>
+		<td>Search</td>
 		<td><%= text_field_tag :query ,@query ||="Enter Ware House  Name",:class=>'title',
 :onfocus=>"javascript: this.value=''",:onblur=>"javascript: if(this.value=='') this.value='Enter Ware House Name'" %></td>
 		<td><%= submit_tag "Search" %></td>
@@ -40,7 +40,7 @@
     <td><%= warehouse.whnickname %></td>
     <td><%= link_to 'Show', warehouse %></td>
     <td><%= link_to 'Edit', edit_warehouse_path(warehouse) %></td>
-    <td><%= link_to 'Destroy', warehouse, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Delete', warehouse, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

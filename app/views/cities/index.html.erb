@@ -6,7 +6,7 @@
     	<col class="oce-first" />
     </colgroup>
 	<tr>
-		<td>Search: </td>
+		<td>Search</td>
 		<td><%= text_field_tag :query ,@query ||="Enter City Name/State Name/Country Name",:class=>'title',
 :onfocus=>"javascript: this.value=''",:onblur=>"javascript: if(this.value=='') this.value='Enter City Name/State Name/Country Name'" %></td>
 		<td><%= submit_tag "Search" %></td>

@@ -48,7 +48,7 @@ class SampleunitsController < ApplicationController
 
     respond_to do |format|
       if @sampleunit.save
-        format.html { redirect_to(@sampleunit, :notice => 'Sampleunit was successfully created.') }
+        format.html { redirect_to(@sampleunit, :notice => 'Sample Unit was successfully created.') }
         format.xml  { render :xml => @sampleunit, :status => :created, :location => @sampleunit }
       else
         format.html { render :action => "new" }
@@ -64,7 +64,7 @@ class SampleunitsController < ApplicationController
 
     respond_to do |format|
       if @sampleunit.update_attributes(params[:sampleunit])
-        format.html { redirect_to(@sampleunit, :notice => 'Sampleunit was successfully updated.') }
+        format.html { redirect_to(@sampleunit, :notice => 'Sample Unit was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -84,8 +84,10 @@ class SampleunitsController < ApplicationController
       format.xml  { head :ok }
     end
   end
-	def search
+	
+  #Search
+  def search
 		@query = params[:query]
 		@sampleunits = Sampleunit.search @query
-	end
+  end
 end

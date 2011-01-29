@@ -2,6 +2,7 @@
 #Controller: Login Session
 #==========================================
 class SessionsController < ApplicationController
+  layout 'home'
   skip_before_filter :authorize
   def new
   end
@@ -11,13 +12,13 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to admin_url
     else
-      redirect_to home_url, :alert => "Invalid user/password combination"
+      redirect_to home_url, :alert => "Please Check Username or Password"
     end
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to home_url, :notice => "Logged out"
+    redirect_to home_url, :notice => "You are Successfully logged out from System."
   end
 
 end

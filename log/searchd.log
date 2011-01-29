@@ -34,3 +34,6 @@
 [Thu Jan 20 12:21:09.268 2011] [ 3350] caught SIGTERM, shutting down
 [Thu Jan 20 12:21:09.270 2011] [ 3350] shutdown complete
 [Thu Jan 20 12:21:10.631 2011] [ 3367] accepting connections
+[Sat Jan 29 11:41:31.161 2011] [ 2757] accepting connections
+[Sat Jan 29 12:10:26.750 2011] [ 2757] caught SIGTERM, shutting down
+[Sat Jan 29 12:10:26.963 2011] [ 2757] shutdown complete

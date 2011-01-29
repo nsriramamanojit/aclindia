@@ -48,7 +48,7 @@ class TestparametersController < ApplicationController
 
     respond_to do |format|
       if @testparameter.save
-        format.html { redirect_to(@testparameter, :notice => 'Testparameter was successfully created.') }
+        format.html { redirect_to(@testparameter, :notice => 'Test Parameter was successfully created.') }
         format.xml  { render :xml => @testparameter, :status => :created, :location => @testparameter }
       else
         format.html { render :action => "new" }
@@ -64,7 +64,7 @@ class TestparametersController < ApplicationController
 
     respond_to do |format|
       if @testparameter.update_attributes(params[:testparameter])
-        format.html { redirect_to(@testparameter, :notice => 'Testparameter was successfully updated.') }
+        format.html { redirect_to(@testparameter, :notice => 'Test Parameter was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -84,6 +84,8 @@ class TestparametersController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+	#search
 	def search
 		@query = params[:query]
 		@testparameters = Testparameter.search @query

@@ -48,11 +48,11 @@ class LablocationalsController < ApplicationController
   # POST /lablocationals.xml
   def create
     @lablocational = Lablocational.new(params[:lablocational])
-	@lablocational.labid = @lablocational.max
+#	@lablocational.labid = @lablocational.max
 
     respond_to do |format|
       if @lablocational.save
-        format.html { redirect_to(@lablocational, :notice => 'Lablocational was successfully created.') }
+        format.html { redirect_to(@lablocational, :notice => 'Locational Lab was successfully created.') }
         format.xml  { render :xml => @lablocational, :status => :created, :location => @lablocational }
       else
 	@labcentral = Labcentral.all
@@ -70,7 +70,7 @@ class LablocationalsController < ApplicationController
 
     respond_to do |format|
       if @lablocational.update_attributes(params[:lablocational])
-        format.html { redirect_to(@lablocational, :notice => 'Lablocational was successfully updated.') }
+        format.html { redirect_to(@lablocational, :notice => 'Locational Lab was successfully updated.') }
         format.xml  { head :ok }
       else
 	@labcentral = Labcentral.all
@@ -103,7 +103,7 @@ class LablocationalsController < ApplicationController
 			respond_to do |format|
 			format.js{
 			render :update do |page| 
-				page[:lablocation_labregional_id].replace collection_select(:lablocation,:labregional_id, @labregionals, :id, :labid)
+				page[:lablocational_labregional_id].replace collection_select(:lablocational,:labregional_id, @labregionals, :id, :labid)
 			end
 					}
 			end

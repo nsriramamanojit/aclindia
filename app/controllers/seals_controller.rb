@@ -84,6 +84,8 @@ class SealsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+	#Search
 	def search
 		@query = params[:query]
 		@seals = Seal.search @query

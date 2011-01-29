@@ -7,6 +7,7 @@ class Lablocational < ActiveRecord::Base
 	belongs_to :labcentral
 	#validations
 	validates :labname, :presence =>true
+    validates_length_of :pincode, :is => 6
 
 	#method define maximum of labid
 	def max

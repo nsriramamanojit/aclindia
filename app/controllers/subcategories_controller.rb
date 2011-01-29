@@ -90,6 +90,7 @@ class SubcategoriesController < ApplicationController
     end
   end
 
+	#search
 	def search
 		@query = params[:query]
 		@subcategories = Subcategory.search @query

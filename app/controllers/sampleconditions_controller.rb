@@ -48,7 +48,7 @@ class SampleconditionsController < ApplicationController
 
     respond_to do |format|
       if @samplecondition.save
-        format.html { redirect_to(@samplecondition, :notice => 'Samplecondition was successfully created.') }
+        format.html { redirect_to(@samplecondition, :notice => 'Sample Condition was successfully created.') }
         format.xml  { render :xml => @samplecondition, :status => :created, :location => @samplecondition }
       else
         format.html { render :action => "new" }
@@ -64,7 +64,7 @@ class SampleconditionsController < ApplicationController
 
     respond_to do |format|
       if @samplecondition.update_attributes(params[:samplecondition])
-        format.html { redirect_to(@samplecondition, :notice => 'Samplecondition was successfully updated.') }
+        format.html { redirect_to(@samplecondition, :notice => 'Sample Condition was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

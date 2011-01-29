@@ -48,7 +48,7 @@ class SampleplacesController < ApplicationController
 
     respond_to do |format|
       if @sampleplace.save
-        format.html { redirect_to(@sampleplace, :notice => 'Sampleplace was successfully created.') }
+        format.html { redirect_to(@sampleplace, :notice => 'Sample Place was successfully created.') }
         format.xml  { render :xml => @sampleplace, :status => :created, :location => @sampleplace }
       else
         format.html { render :action => "new" }
@@ -64,7 +64,7 @@ class SampleplacesController < ApplicationController
 
     respond_to do |format|
       if @sampleplace.update_attributes(params[:sampleplace])
-        format.html { redirect_to(@sampleplace, :notice => 'Sampleplace was successfully updated.') }
+        format.html { redirect_to(@sampleplace, :notice => 'Sample Place was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -85,8 +85,9 @@ class SampleplacesController < ApplicationController
     end
   end
 
-	def search
+  #Search	
+  def search
 		@query = params[:query]
 		@sampleplaces = Sampleplace.search @query
-	end
+  end
 end

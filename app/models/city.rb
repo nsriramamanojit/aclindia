@@ -9,7 +9,7 @@ class City < ActiveRecord::Base
 
 	#validations
 	validates_presence_of :name
-  	validates_length_of :description, :maximum => 10,
+  	validates_length_of :description, :maximum => 100,
     :too_long => "%{count} characters is the maximum allowed"
 
 	#Method: Indexing

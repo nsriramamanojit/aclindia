@@ -85,6 +85,7 @@ class WarehousesController < ApplicationController
     end
   end
 
+	#search
 	def search
 		@query = params[:query]
 		@warehouses = Warehouse.search @query

@@ -1,4 +1,35 @@
-<p id="notice"><%= notice %></p>
+<!-- START_HIGHLIGHT -->
+  <% if notice %>
+    <p id="notice"><%= notice %></p>
+  <% end %>
+<!-- END_HIGHLIGHT -->
+
+<h1>Test Standard Details</h1>
+<table id="one-column-emphasis">
+    <colgroup>
+    	<col class="oce-first" />
+    </colgroup>
+    <tbody>
+   	<tr>
+  <div>
+    <td>Name</td>
+    <td>  <%= @teststandard.name %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+    <td>Description</td>
+    <td><%= @teststandard.description %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+	  <td>Status</td>
+      <td><%= @teststandard.status %></td>
+  </div>
+</tr>
+    </tbody>
+</table>
 
 
 <%= link_to 'Edit', edit_teststandard_path(@teststandard) %> |
