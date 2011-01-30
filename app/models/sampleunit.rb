@@ -3,6 +3,9 @@
 #Model: Sample Units Information
 #--------------------------------
 class Sampleunit < ActiveRecord::Base
+
+	default_scope :order => 'name'
+
 	#validations
 	validates :name, :presence =>true
 	validates_uniqueness_of :name

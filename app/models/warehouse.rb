@@ -4,6 +4,8 @@
 #--------------------------------
 class Warehouse < ActiveRecord::Base
 
+	default_scope :order => 'whnickname'
+
 	#validations
 	validates :whnickname, :presence =>true
 	validates_uniqueness_of :whnickname

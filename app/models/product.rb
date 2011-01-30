@@ -3,6 +3,9 @@
 #Model: Product Information
 #--------------------------------
 class Product < ActiveRecord::Base
+
+	default_scope :order => 'name'
+
 	#relations
 	belongs_to :category
 	belongs_to :subcategory

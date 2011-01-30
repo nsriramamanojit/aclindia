@@ -2,6 +2,9 @@
 #Model: State Inforamtion
 #---------------------------------
 class State < ActiveRecord::Base
+
+	default_scope :order => 'name'
+
 	#relation
 	belongs_to :country
 	has_many :cities

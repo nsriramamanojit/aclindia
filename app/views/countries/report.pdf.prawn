@@ -10,7 +10,7 @@ countries=@country.map do |c|
 	c.status
 ]
 end
-pdf.table countries, :border_style=> :grid, :row_colors=> ["FFFFFF","DDDDDD"], :headers=> ["Name","Status"], :align=> {0=> :center, 1=>:center, 2=> :center}, :width => 500, :font_size  => 10,:border_color => "951313",  :header_color => 'f07878',  :header_text_color  => "000000"
+pdf.table countries, :border_style=> :grid, :row_colors=> ["FFFFFF","FFFFFF"], :headers=> ["Name","Status"], :align=> {0=> :center, 1=>:center, 2=> :center}, :width => 500, :font_size  => 10,:border_color => "951313",  :header_color => 'f07878',  :header_text_color  => "000000"
 
 
 

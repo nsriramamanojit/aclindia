@@ -1,4 +1,10 @@
+#------------------------------
+#Author: Chaitanya Ram N
+#Model: User Role  Information
+#--------------------------------
 class Userrole < ActiveRecord::Base
+
+	default_scope :order => 'name'
 
 	#validations
 	validates_presence_of :name

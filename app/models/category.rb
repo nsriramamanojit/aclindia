@@ -3,6 +3,8 @@
 #Model: Commodity Category Information
 #--------------------------------
 class Category < ActiveRecord::Base
+
+	default_scope :order => 'name'
 	#relations
 	has_many :subcategories
 	has_many :products #, :through => :subcategories

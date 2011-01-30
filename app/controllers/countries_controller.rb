@@ -29,8 +29,18 @@ prawnto :prawn => {
 
     respond_to do |format|
       format.html # show.html.erb
-#      format.xml  { render :xml => @country }
+      format.xml  { render :xml => @country }
       format.pdf { render :layout => false }
+    end
+  end
+
+  def view
+    @country = Country.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @country }
+#      format.pdf { render :layout => false }
     end
   end
 
@@ -101,16 +111,5 @@ prawnto :prawn => {
 	end
 	#end:Search
 
-  #report using prawn	
-  def report
-    @country = Country.all
-
-    respond_to do |format|
-      format.html # show.html.erb
-#      format.xml  { render :xml => @country }
-      format.pdf { render :layout => false }
-    end
-  end
-  #end report
 
 end

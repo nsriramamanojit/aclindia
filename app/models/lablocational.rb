@@ -2,6 +2,9 @@
 #Model: Location Lab
 #---------------------------------
 class Lablocational < ActiveRecord::Base
+
+	default_scope :order => 'labname'
+
 	#Relations
 	belongs_to :labregional
 	belongs_to :labcentral

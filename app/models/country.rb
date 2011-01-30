@@ -2,6 +2,8 @@
 #Model: Country
 #---------------------------------
 class Country < ActiveRecord::Base
+	default_scope :order => 'name'
+
 	#relations
 	has_many :states
 	has_many :cities #, :through => :states

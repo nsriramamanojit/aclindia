@@ -32,13 +32,13 @@
     </thead>
          <tfoot>
     	<tr>
-        	<td colspan="4"><%= link_to 'Report', :action=> "show" ,:format=> "pdf" %> <%= link_to 'Report', :action=> "report" ,:format=> "pdf" %></td>
+        	<td colspan="4"><%= link_to 'Report', :action=> 'show' ,:format=> "pdf" %></td>
          </tr>
     </tfoot>
 <% @countries.each do |country| %>
   <tr>
     <td><%= country.name %></td>
-    <td><%= link_to 'View', country %></td>
+    <td><%= link_to 'View', {:action => 'view', :id => country.id} %></td>
     <td><%= link_to 'Edit', edit_country_path(country) %></td>
     <td><%= link_to 'Delete', country, :confirm => 'Are you sure?',
        :method => :delete %></td>

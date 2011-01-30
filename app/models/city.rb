@@ -3,6 +3,8 @@
 #Model: City Information
 #--------------------------------
 class City < ActiveRecord::Base
+
+	default_scope :order => 'country_id'
 	#relation
 	belongs_to :state
 	belongs_to :country

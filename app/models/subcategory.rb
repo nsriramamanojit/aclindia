@@ -3,6 +3,9 @@
 #Model: Commodity Sub Category Information
 #--------------------------------
 class Subcategory < ActiveRecord::Base
+
+	default_scope :order => 'name'
+
 	#relations
 	belongs_to :category
 	has_many   :products 

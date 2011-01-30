@@ -3,7 +3,7 @@
 <%= form_for(@lablocational) do |f| %>
   <% if @lablocational.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@lablocational.errors.count, "error") %> prohibited this lablocational from being saved:</h2>
+      <h2><%= pluralize(@lablocational.errors.count, "error") %> prohibited this Locational Lab from being saved:</h2>
 
       <ul>
       <% @lablocational.errors.full_messages.each do |msg| %>

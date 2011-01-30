@@ -31836,3 +31836,3093 @@ Started GET "/countries.csv" for 127.0.0.1 at Sat Jan 29 19:10:50 +0530 2011
 Rendered text template (0.0ms)
 Sent data  (4.0ms)
 Completed 200 OK in 559ms (Views: 3.6ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Jan 29 23:21:57 +0530 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/home (131.1ms)
+Completed 200 OK in 300ms (Views: 292.9ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started POST "/home" for 127.0.0.1 at Sat Jan 29 23:22:20 +0530 2011
+  Processing by SessionsController#create as HTML
+  Parameters: {"name"=>"admin", "commit"=>"Login", "authenticity_token"=>"AR/qb5hy/WG8foPKz33OkkOKd+VrNp63beLSJwIqJ00=", "utf8"=>"✓", "password"=>"[FILTERED]"}
+  [1m[36mSQL (1.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mUser Load (22.1ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`name` = 'admin') LIMIT 1
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 889ms
+
+
+Started GET "/admin" for 127.0.0.1 at Sat Jan 29 23:22:21 +0530 2011
+  Processing by AdminController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Rendered admin/index.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 620ms (Views: 62.1ms | ActiveRecord: 23.6ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:24:01 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.9ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/index.html.erb within layouts/application (64.9ms)
+Completed 200 OK in 1250ms (Views: 91.2ms | ActiveRecord: 0.9ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/1" for 127.0.0.1 at Sat Jan 29 23:24:05 +0530 2011
+  Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/show.html.erb within layouts/application (29.4ms)
+Completed   in 492ms
+
+ActionView::Template::Error (undefined method `name' for #<Array:0xb6c738a8>):
+    13:    	<tr>
+    14:   <div>
+    15:     <td>Name</td>
+    16:     <td>  <%= @country.name %></td>
+    17:   </div>
+    18: </tr>
+    19: <tr>
+  app/views/countries/show.html.erb:16:in `_app_views_countries_show_html_erb___537664536__614243238_0'
+  app/controllers/countries_controller.rb:30:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (12.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (23.3ms)
+
+
+Started GET "/countries/1/edit" for 127.0.0.1 at Sat Jan 29 23:25:10 +0530 2011
+  Processing by CountriesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCountry Load (0.5ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1
+Rendered countries/_form.html.erb (15.2ms)
+Rendered countries/edit.html.erb within layouts/application (50.7ms)
+Completed 200 OK in 462ms (Views: 84.0ms | ActiveRecord: 0.5ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:25:12 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (24.8ms)
+Completed 200 OK in 411ms (Views: 34.6ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/report?format=pdf" for 127.0.0.1 at Sat Jan 29 23:25:16 +0530 2011
+  Processing by CountriesController#show as PDF
+  Parameters: {"id"=>"report"}
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/show.pdf.prawn (502.5ms)
+Completed 200 OK in 900ms (Views: 505.5ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:26:03 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (24.9ms)
+Completed 200 OK in 421ms (Views: 32.9ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/1" for 127.0.0.1 at Sat Jan 29 23:26:05 +0530 2011
+  Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCountry Load (0.1ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1
+Rendered countries/show.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 419ms (Views: 27.7ms | ActiveRecord: 0.1ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:26:07 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (30.9ms)
+Completed 200 OK in 503ms (Views: 41.8ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/report?format=pdf" for 127.0.0.1 at Sat Jan 29 23:26:09 +0530 2011
+  Processing by CountriesController#show as PDF
+  Parameters: {"id"=>"report"}
+  [1m[35mCountry Load (0.5ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 0) LIMIT 1
+Completed   in 586ms
+
+ActiveRecord::RecordNotFound (Couldn't find Country with ID=report):
+  app/controllers/countries_controller.rb:28:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.4ms)
+
+
+Started GET "/countries/show?format=pdf" for 127.0.0.1 at Sat Jan 29 23:26:15 +0530 2011
+  Processing by CountriesController#show as PDF
+  Parameters: {"id"=>"show"}
+  [1m[36mCountry Load (0.1ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 0) LIMIT 1[0m
+Completed   in 690ms
+
+ActiveRecord::RecordNotFound (Couldn't find Country with ID=show):
+  app/controllers/countries_controller.rb:28:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (21.7ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:27:11 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.3ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (41.8ms)
+Completed 200 OK in 464ms (Views: 50.1ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/report?format=pdf" for 127.0.0.1 at Sat Jan 29 23:27:15 +0530 2011
+  Processing by CountriesController#show as PDF
+  Parameters: {"id"=>"report"}
+  [1m[35mSQL (29.7ms)[0m  SHOW TABLES
+  [1m[36mCountry Load (0.1ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 0) LIMIT 1[0m
+Completed   in 420ms
+
+ActiveRecord::RecordNotFound (Couldn't find Country with ID=report):
+  app/controllers/countries_controller.rb:28:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.4ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (177.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (188.1ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:28:28 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/index.html.erb within layouts/application (26.2ms)
+Completed 200 OK in 428ms (Views: 34.3ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/report" for 127.0.0.1 at Sat Jan 29 23:28:32 +0530 2011
+  Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"report"}
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/show.html.erb within layouts/application (8.2ms)
+Completed   in 403ms
+
+ActionView::Template::Error (undefined method `name' for #<Array:0xb6bda1a8>):
+    13:    	<tr>
+    14:   <div>
+    15:     <td>Name</td>
+    16:     <td>  <%= @country.name %></td>
+    17:   </div>
+    18: </tr>
+    19: <tr>
+  app/views/countries/show.html.erb:16:in `_app_views_countries_show_html_erb___537664536__614569828_0'
+  app/controllers/countries_controller.rb:30:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (174.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (183.8ms)
+
+
+Started GET "/countries/report" for 127.0.0.1 at Sat Jan 29 23:28:45 +0530 2011
+  Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"report"}
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/show.html.erb within layouts/application (6.2ms)
+Completed   in 401ms
+
+ActionView::Template::Error (undefined method `name' for #<Array:0xb6c178a0>):
+    13:    	<tr>
+    14:   <div>
+    15:     <td>Name</td>
+    16:     <td>  <%= @country.name %></td>
+    17:   </div>
+    18: </tr>
+    19: <tr>
+  app/views/countries/show.html.erb:16:in `_app_views_countries_show_html_erb___537664536__614462208_0'
+  app/controllers/countries_controller.rb:30:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (18.1ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:29:10 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (35.9ms)
+Completed 200 OK in 540ms (Views: 56.2ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/show?format=pdf" for 127.0.0.1 at Sat Jan 29 23:29:12 +0530 2011
+  Processing by CountriesController#show as PDF
+  Parameters: {"id"=>"show"}
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/show.pdf.prawn (626.2ms)
+Completed 200 OK in 1055ms (Views: 631.5ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/1" for 127.0.0.1 at Sat Jan 29 23:29:22 +0530 2011
+  Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/show.html.erb within layouts/application (3.8ms)
+Completed   in 456ms
+
+ActionView::Template::Error (undefined method `name' for #<Array:0xb6c21f44>):
+    13:    	<tr>
+    14:   <div>
+    15:     <td>Name</td>
+    16:     <td>  <%= @country.name %></td>
+    17:   </div>
+    18: </tr>
+    19: <tr>
+  app/views/countries/show.html.erb:16:in `_app_views_countries_show_html_erb___537664536__614451408_0'
+  app/controllers/countries_controller.rb:30:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (175.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (186.7ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:31:51 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/index.html.erb within layouts/application (33.1ms)
+Completed 200 OK in 472ms (Views: 45.0ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/show1/1" for 127.0.0.1 at Sat Jan 29 23:31:55 +0530 2011
+  Processing by CountriesController#show1 as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCountry Load (0.1ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1[0m
+Completed   in 399ms
+
+ActionView::MissingTemplate (Missing template countries/show1 with {:formats=>[:html], :locale=>[:en, :en], :handlers=>[:rxml, :erb, :prawn_dsl, :rjs, :builder, :rhtml, :prawn_xxx, :prawn]} in view paths "/home/chaitanya/aclindia/app/views", "/home/chaitanya/aclindia/vendor/plugins/prawnto/app/views"):
+  app/controllers/countries_controller.rb:40:in `show1'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.1ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:32:17 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/index.html.erb within layouts/application (26.9ms)
+Completed 200 OK in 425ms (Views: 35.4ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/show1/2" for 127.0.0.1 at Sat Jan 29 23:32:21 +0530 2011
+  Processing by CountriesController#show1 as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCountry Load (0.5ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 2) LIMIT 1[0m
+Completed   in 416ms
+
+ActionView::MissingTemplate (Missing template countries/show1 with {:formats=>[:html], :locale=>[:en, :en], :handlers=>[:rxml, :erb, :prawn_dsl, :rjs, :builder, :rhtml, :prawn_xxx, :prawn]} in view paths "/home/chaitanya/aclindia/app/views", "/home/chaitanya/aclindia/vendor/plugins/prawnto/app/views"):
+  app/controllers/countries_controller.rb:40:in `show1'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.9ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:32:54 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/index.html.erb within layouts/application (25.3ms)
+Completed 200 OK in 455ms (Views: 33.8ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/show1/1" for 127.0.0.1 at Sat Jan 29 23:32:56 +0530 2011
+  Processing by CountriesController#show1 as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1[0m
+Rendered countries/show1.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 419ms (Views: 26.8ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:32:59 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/index.html.erb within layouts/application (26.6ms)
+Completed 200 OK in 689ms (Views: 35.5ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/show?format=pdf" for 127.0.0.1 at Sat Jan 29 23:33:01 +0530 2011
+  Processing by CountriesController#show as PDF
+  Parameters: {"id"=>"show"}
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/show.pdf.prawn (461.4ms)
+Completed 200 OK in 1035ms (Views: 464.2ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/1/edit" for 127.0.0.1 at Sat Jan 29 23:33:11 +0530 2011
+  Processing by CountriesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1
+Rendered countries/_form.html.erb (21.7ms)
+Rendered countries/edit.html.erb within layouts/application (37.4ms)
+Completed 200 OK in 715ms (Views: 48.0ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:33:13 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.4ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (27.7ms)
+Completed 200 OK in 627ms (Views: 38.1ms | ActiveRecord: 0.4ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:34:08 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/index.html.erb within layouts/application (28.4ms)
+Completed 200 OK in 618ms (Views: 178.4ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/1" for 127.0.0.1 at Sat Jan 29 23:34:12 +0530 2011
+  Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1[0m
+Completed   in 608ms
+
+ActionView::MissingTemplate (Missing template countries/show with {:formats=>[:html], :locale=>[:en, :en], :handlers=>[:rxml, :erb, :prawn_dsl, :rjs, :builder, :rhtml, :prawn_xxx, :prawn]} in view paths "/home/chaitanya/aclindia/app/views", "/home/chaitanya/aclindia/vendor/plugins/prawnto/app/views"):
+  app/controllers/countries_controller.rb:31:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (2.7ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:34:24 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/index.html.erb within layouts/application (25.8ms)
+Completed 200 OK in 540ms (Views: 34.3ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/1" for 127.0.0.1 at Sat Jan 29 23:34:26 +0530 2011
+  Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCountry Load (0.1ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1[0m
+Rendered countries/show.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 441ms (Views: 28.1ms | ActiveRecord: 0.1ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:34:28 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/index.html.erb within layouts/application (24.7ms)
+Completed 200 OK in 424ms (Views: 33.7ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/report?format=pdf" for 127.0.0.1 at Sat Jan 29 23:34:31 +0530 2011
+  Processing by CountriesController#show as PDF
+  Parameters: {"id"=>"report"}
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 0) LIMIT 1[0m
+Completed   in 398ms
+
+ActiveRecord::RecordNotFound (Couldn't find Country with ID=report):
+  app/controllers/countries_controller.rb:29:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (19.9ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:35:00 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/index.html.erb within layouts/application (26.4ms)
+Completed 200 OK in 484ms (Views: 34.3ms | ActiveRecord: 0.4ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/view/1" for 127.0.0.1 at Sat Jan 29 23:35:03 +0530 2011
+
+AbstractController::ActionNotFound (The action 'view' could not be found for CountriesController):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (0.9ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:35:41 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (25.6ms)
+Completed 200 OK in 498ms (Views: 34.0ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/view/1" for 127.0.0.1 at Sat Jan 29 23:35:44 +0530 2011
+  Processing by CountriesController#view as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCountry Load (0.1ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1
+Rendered countries/view.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 454ms (Views: 25.5ms | ActiveRecord: 0.1ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:35:46 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (26.3ms)
+Completed 200 OK in 425ms (Views: 34.7ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/report?format=pdf" for 127.0.0.1 at Sat Jan 29 23:35:48 +0530 2011
+  Processing by CountriesController#show as PDF
+  Parameters: {"id"=>"report"}
+Rendered countries/show.pdf.prawn (260.3ms)
+Completed   in 270ms
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.map):
+    4: pdf.move_down 10
+    5: 
+    6: 
+    7: countries=@country.map do |c|
+    8: [
+    9: 	c.name,
+    10: 	c.status
+  app/views/countries/show.pdf.prawn:7:in `_app_views_countries_show_pdf_prawn___161647564__613225628_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (17.7ms)
+
+
+Started GET "/countries/report?format=pdf" for 127.0.0.1 at Sat Jan 29 23:36:17 +0530 2011
+  Processing by CountriesController#show as PDF
+  Parameters: {"id"=>"report"}
+Rendered countries/show.pdf.prawn (438.5ms)
+Completed   in 447ms
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.map):
+    4: pdf.move_down 10
+    5: 
+    6: 
+    7: countries=@country.map do |c|
+    8: [
+    9: 	c.name,
+    10: 	c.status
+  app/views/countries/show.pdf.prawn:7:in `_app_views_countries_show_pdf_prawn___161647564__615977028_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (9.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (20.8ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:36:42 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.3ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (41.7ms)
+Completed 200 OK in 461ms (Views: 50.0ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/report?format=pdf" for 127.0.0.1 at Sat Jan 29 23:36:47 +0530 2011
+  Processing by CountriesController#show as PDF
+  Parameters: {"id"=>"report"}
+Rendered countries/show.pdf.prawn (260.4ms)
+Completed   in 269ms
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.map):
+    4: pdf.move_down 10
+    5: 
+    6: 
+    7: countries=@country.map do |c|
+    8: [
+    9: 	c.name,
+    10: 	c.status
+  app/views/countries/show.pdf.prawn:7:in `_app_views_countries_show_pdf_prawn___161647564__613549328_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (18.5ms)
+
+
+Started GET "/countries/view/2" for 127.0.0.1 at Sat Jan 29 23:36:54 +0530 2011
+  Processing by CountriesController#view as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mSQL (0.9ms)[0m  SHOW TABLES
+  [1m[36mCountry Load (0.1ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 2) LIMIT 1[0m
+Rendered countries/view.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 415ms (Views: 26.9ms | ActiveRecord: 1.1ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:36:56 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/index.html.erb within layouts/application (26.5ms)
+Completed 200 OK in 651ms (Views: 34.6ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:37:39 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (26.6ms)
+Completed 200 OK in 699ms (Views: 37.0ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/view/1" for 127.0.0.1 at Sat Jan 29 23:37:41 +0530 2011
+  Processing by CountriesController#view as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCountry Load (0.1ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1
+Rendered countries/view.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 599ms (Views: 28.2ms | ActiveRecord: 0.1ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:37:43 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (26.9ms)
+Completed 200 OK in 598ms (Views: 37.8ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/show?format=pdf" for 127.0.0.1 at Sat Jan 29 23:37:45 +0530 2011
+  Processing by CountriesController#show as PDF
+  Parameters: {"id"=>"show"}
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/show.pdf.prawn (604.8ms)
+Completed 200 OK in 1030ms (Views: 609.1ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:38:00 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (169.0ms)
+Completed 200 OK in 697ms (Views: 176.8ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/show?format=pdf" for 127.0.0.1 at Sat Jan 29 23:38:02 +0530 2011
+  Processing by CountriesController#show as PDF
+  Parameters: {"id"=>"show"}
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/show.pdf.prawn (462.0ms)
+Completed 200 OK in 1036ms (Views: 465.2ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/new" for 127.0.0.1 at Sat Jan 29 23:38:08 +0530 2011
+  Processing by CountriesController#new as HTML
+Completed   in 627ms
+
+ActionView::MissingTemplate (Missing template countries/new with {:formats=>[:html], :locale=>[:en, :en], :handlers=>[:rxml, :erb, :prawn_dsl, :rjs, :builder, :rhtml, :prawn_xxx, :prawn]} in view paths "/home/chaitanya/aclindia/app/views", "/home/chaitanya/aclindia/vendor/plugins/prawnto/app/views"):
+  app/controllers/countries_controller.rb:52:in `new'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:38:35 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.3ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (39.8ms)
+Completed 200 OK in 465ms (Views: 48.5ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/new" for 127.0.0.1 at Sat Jan 29 23:38:38 +0530 2011
+  Processing by CountriesController#new as HTML
+Completed   in 424ms
+
+ActionView::MissingTemplate (Missing template countries/new with {:formats=>[:html], :locale=>[:en, :en], :handlers=>[:rxml, :erb, :prawn_dsl, :rjs, :builder, :rhtml, :prawn_xxx, :prawn]} in view paths "/home/chaitanya/aclindia/app/views", "/home/chaitanya/aclindia/vendor/plugins/prawnto/app/views"):
+  app/controllers/countries_controller.rb:52:in `new'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.5ms)
+
+
+Started GET "/countries/1/edit" for 127.0.0.1 at Sat Jan 29 23:38:44 +0530 2011
+  Processing by CountriesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSQL (0.9ms)[0m  SHOW TABLES
+  [1m[36mCountry Load (0.1ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1[0m
+Rendered countries/_form.html.erb (18.9ms)
+Rendered countries/edit.html.erb within layouts/application (34.3ms)
+Completed 200 OK in 507ms (Views: 46.1ms | ActiveRecord: 1.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:38:47 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/index.html.erb within layouts/application (33.9ms)
+Completed 200 OK in 476ms (Views: 44.4ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:39:20 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 687ms (Views: 35.1ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/new" for 127.0.0.1 at Sat Jan 29 23:39:22 +0530 2011
+  Processing by CountriesController#new as HTML
+Completed   in 399ms
+
+ActionView::MissingTemplate (Missing template countries/new with {:formats=>[:html], :locale=>[:en, :en], :handlers=>[:rxml, :erb, :prawn_dsl, :rjs, :builder, :rhtml, :prawn_xxx, :prawn]} in view paths "/home/chaitanya/aclindia/app/views", "/home/chaitanya/aclindia/vendor/plugins/prawnto/app/views"):
+  app/controllers/countries_controller.rb:52:in `new'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.9ms)
+
+
+Started GET "/countries/1" for 127.0.0.1 at Sat Jan 29 23:39:26 +0530 2011
+  Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Completed   in 645ms
+
+ActionView::MissingTemplate (Missing template countries/show with {:formats=>[:html], :locale=>[:en, :en], :handlers=>[:rxml, :erb, :prawn_dsl, :rjs, :builder, :rhtml, :prawn_xxx, :prawn]} in view paths "/home/chaitanya/aclindia/app/views", "/home/chaitanya/aclindia/vendor/plugins/prawnto/app/views"):
+  app/controllers/countries_controller.rb:30:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.1ms)
+
+
+Started GET "/countries/2" for 127.0.0.1 at Sat Jan 29 23:39:34 +0530 2011
+  Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Completed   in 601ms
+
+ActionView::MissingTemplate (Missing template countries/show with {:formats=>[:html], :locale=>[:en, :en], :handlers=>[:rxml, :erb, :prawn_dsl, :rjs, :builder, :rhtml, :prawn_xxx, :prawn]} in view paths "/home/chaitanya/aclindia/app/views", "/home/chaitanya/aclindia/vendor/plugins/prawnto/app/views"):
+  app/controllers/countries_controller.rb:30:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.0ms)
+
+
+Started GET "/countries/show?format=pdf" for 127.0.0.1 at Sat Jan 29 23:39:37 +0530 2011
+  Processing by CountriesController#show as PDF
+  Parameters: {"id"=>"show"}
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/show.pdf.prawn (462.2ms)
+Completed 200 OK in 1020ms (Views: 467.5ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:40:49 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.3ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (42.1ms)
+Completed 200 OK in 461ms (Views: 50.4ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/new" for 127.0.0.1 at Sat Jan 29 23:40:52 +0530 2011
+  Processing by CountriesController#new as HTML
+Completed   in 382ms
+
+ActionView::MissingTemplate (Missing template countries/new with {:formats=>[:html], :locale=>[:en, :en], :handlers=>[:rxml, :erb, :prawn_dsl, :rjs, :builder, :rhtml, :prawn_xxx, :prawn]} in view paths "/home/chaitanya/aclindia/app/views", "/home/chaitanya/aclindia/vendor/plugins/prawnto/app/views"):
+  app/controllers/countries_controller.rb:52:in `new'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.8ms)
+
+
+Started GET "/countries/1" for 127.0.0.1 at Sat Jan 29 23:40:57 +0530 2011
+  Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/show.html.erb within layouts/application (4.3ms)
+Completed   in 388ms
+
+ActionView::Template::Error (undefined method `name' for #<Array:0xb6de2374>):
+    13:    	<tr>
+    14:   <div>
+    15:     <td>Name</td>
+    16:     <td>  <%= @country.name %></td>
+    17:   </div>
+    18: </tr>
+    19: <tr>
+  app/views/countries/show.html.erb:16:in `_app_views_countries_show_html_erb___537664536__613488578_0'
+  app/controllers/countries_controller.rb:30:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (20.1ms)
+
+
+Started GET "/countries/2" for 127.0.0.1 at Sat Jan 29 23:41:00 +0530 2011
+  Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/show.html.erb within layouts/application (4.1ms)
+Completed   in 389ms
+
+ActionView::Template::Error (undefined method `name' for #<Array:0xb6e01b98>):
+    13:    	<tr>
+    14:   <div>
+    15:     <td>Name</td>
+    16:     <td>  <%= @country.name %></td>
+    17:   </div>
+    18: </tr>
+    19: <tr>
+  app/views/countries/show.html.erb:16:in `_app_views_countries_show_html_erb___537664536__613439608_0'
+  app/controllers/countries_controller.rb:30:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (18.2ms)
+
+
+Started GET "/countries/show?format=pdf" for 127.0.0.1 at Sat Jan 29 23:41:04 +0530 2011
+  Processing by CountriesController#show as PDF
+  Parameters: {"id"=>"show"}
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/show.pdf.prawn (529.2ms)
+Completed 200 OK in 978ms (Views: 534.4ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/states" for 127.0.0.1 at Sat Jan 29 23:41:07 +0530 2011
+  Processing by StatesController#index as HTML
+  [1m[36mState Load (1.2ms)[0m  [1mSELECT `states`.* FROM `states`[0m
+  [1m[35mSQL (0.9ms)[0m  SHOW TABLES
+  [1m[36mCountry Load (0.1ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1[0m
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 2) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 2) LIMIT 1[0m
+Rendered states/index.html.erb within layouts/application (50.9ms)
+Completed 200 OK in 469ms (Views: 92.0ms | ActiveRecord: 2.5ms | Sphinx: 0.0ms)
+
+
+Started GET "/states/new" for 127.0.0.1 at Sat Jan 29 23:41:10 +0530 2011
+  Processing by StatesController#new as HTML
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered states/_form.html.erb (22.4ms)
+Rendered states/new.html.erb within layouts/application (53.6ms)
+Completed 200 OK in 737ms (Views: 149.3ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/states" for 127.0.0.1 at Sat Jan 29 23:41:14 +0530 2011
+  Processing by StatesController#index as HTML
+  [1m[36mState Load (0.2ms)[0m  [1mSELECT `states`.* FROM `states`[0m
+  [1m[35mCountry Load (0.1ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 2) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 2) LIMIT 1
+Rendered states/index.html.erb within layouts/application (53.1ms)
+Completed 200 OK in 633ms (Views: 61.0ms | ActiveRecord: 0.6ms | Sphinx: 0.0ms)
+
+
+Started GET "/states/1" for 127.0.0.1 at Sat Jan 29 23:41:18 +0530 2011
+  Processing by StatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+  [1m[35mState Load (0.5ms)[0m  SELECT `states`.* FROM `states` WHERE (`states`.`id` = 1) LIMIT 1
+  [1m[36mCountry Load (0.1ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1[0m
+Rendered states/show.html.erb within layouts/application (37.1ms)
+Completed 200 OK in 649ms (Views: 69.2ms | ActiveRecord: 0.9ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:41:21 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/index.html.erb within layouts/application (27.5ms)
+Completed 200 OK in 620ms (Views: 37.8ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/new" for 127.0.0.1 at Sat Jan 29 23:41:24 +0530 2011
+  Processing by CountriesController#new as HTML
+Completed   in 438ms
+
+ActionView::MissingTemplate (Missing template countries/new with {:formats=>[:html], :locale=>[:en, :en], :handlers=>[:rxml, :erb, :prawn_dsl, :rjs, :builder, :rhtml, :prawn_xxx, :prawn]} in view paths "/home/chaitanya/aclindia/app/views", "/home/chaitanya/aclindia/vendor/plugins/prawnto/app/views"):
+  app/controllers/countries_controller.rb:52:in `new'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.3ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:41:40 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.8ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (33.2ms)
+Completed 200 OK in 522ms (Views: 43.3ms | ActiveRecord: 1.8ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/new" for 127.0.0.1 at Sat Jan 29 23:41:42 +0530 2011
+  Processing by CountriesController#new as HTML
+Completed   in 406ms
+
+ActionView::MissingTemplate (Missing template countries/new with {:formats=>[:html], :locale=>[:en, :en], :handlers=>[:rxml, :erb, :prawn_dsl, :rjs, :builder, :rhtml, :prawn_xxx, :prawn]} in view paths "/home/chaitanya/aclindia/app/views", "/home/chaitanya/aclindia/vendor/plugins/prawnto/app/views"):
+  app/controllers/countries_controller.rb:43:in `new'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.8ms)
+
+
+Started GET "/countries.csv" for 127.0.0.1 at Sat Jan 29 23:42:01 +0530 2011
+  Processing by CountriesController#index as CSV
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered text template (0.0ms)
+Sent data  (17.6ms)
+Completed 200 OK in 416ms (Views: 15.1ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:42:53 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (25.6ms)
+Completed 200 OK in 655ms (Views: 34.3ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/new" for 127.0.0.1 at Sat Jan 29 23:42:56 +0530 2011
+  Processing by CountriesController#new as HTML
+Completed   in 394ms
+
+ActionView::MissingTemplate (Missing template countries/new with {:formats=>[:html], :locale=>[:en, :en], :handlers=>[:rxml, :erb, :prawn_dsl, :rjs, :builder, :rhtml, :prawn_xxx, :prawn]} in view paths "/home/chaitanya/aclindia/app/views", "/home/chaitanya/aclindia/vendor/plugins/prawnto/app/views"):
+  app/controllers/countries_controller.rb:43:in `new'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.2ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:43:06 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.4ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/index.html.erb within layouts/application (26.3ms)
+Completed 200 OK in 685ms (Views: 34.6ms | ActiveRecord: 0.4ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/new" for 127.0.0.1 at Sat Jan 29 23:43:08 +0530 2011
+  Processing by CountriesController#new as HTML
+Completed   in 606ms
+
+ActionView::MissingTemplate (Missing template countries/new with {:formats=>[:html], :locale=>[:en, :en], :handlers=>[:rxml, :erb, :prawn_dsl, :rjs, :builder, :rhtml, :prawn_xxx, :prawn]} in view paths "/home/chaitanya/aclindia/app/views", "/home/chaitanya/aclindia/vendor/plugins/prawnto/app/views"):
+  app/controllers/countries_controller.rb:43:in `new'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.9ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:43:21 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (26.4ms)
+Completed 200 OK in 687ms (Views: 35.1ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/new" for 127.0.0.1 at Sat Jan 29 23:43:23 +0530 2011
+  Processing by CountriesController#new as HTML
+Completed   in 600ms
+
+ActionView::MissingTemplate (Missing template countries/new with {:formats=>[:html], :locale=>[:en, :en], :handlers=>[:rxml, :erb, :prawn_dsl, :rjs, :builder, :rhtml, :prawn_xxx, :prawn]} in view paths "/home/chaitanya/aclindia/app/views", "/home/chaitanya/aclindia/vendor/plugins/prawnto/app/views"):
+  app/controllers/countries_controller.rb:39:in `new'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.9ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:44:11 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/index.html.erb within layouts/application (26.7ms)
+Completed 200 OK in 643ms (Views: 37.3ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/new" for 127.0.0.1 at Sat Jan 29 23:44:13 +0530 2011
+  Processing by CountriesController#new as HTML
+Completed   in 576ms
+
+ActionView::MissingTemplate (Missing template countries/new with {:formats=>[:html], :locale=>[:en, :en], :handlers=>[:rxml, :erb, :prawn_dsl, :rjs, :builder, :rhtml, :prawn_xxx, :prawn]} in view paths "/home/chaitanya/aclindia/app/views", "/home/chaitanya/aclindia/vendor/plugins/prawnto/app/views"):
+  app/controllers/countries_controller.rb:39:in `new'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:44:37 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.3ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (39.1ms)
+Completed 200 OK in 456ms (Views: 47.7ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:44:41 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/index.html.erb within layouts/application (28.8ms)
+Completed 200 OK in 440ms (Views: 37.1ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/new" for 127.0.0.1 at Sat Jan 29 23:44:43 +0530 2011
+  Processing by CountriesController#new as HTML
+Completed   in 396ms
+
+ActionView::MissingTemplate (Missing template countries/new with {:formats=>[:html], :locale=>[:en, :en], :handlers=>[:rxml, :erb, :prawn_dsl, :rjs, :builder, :rhtml, :prawn_xxx, :prawn]} in view paths "/home/chaitanya/aclindia/app/views", "/home/chaitanya/aclindia/vendor/plugins/prawnto/app/views"):
+  app/controllers/countries_controller.rb:39:in `new'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.9ms)
+
+
+Started GET "/countries/1" for 127.0.0.1 at Sat Jan 29 23:44:48 +0530 2011
+  Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (1.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mCountry Load (0.1ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1
+Rendered countries/show.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 507ms (Views: 30.7ms | ActiveRecord: 1.1ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:44:50 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (25.3ms)
+Completed 200 OK in 440ms (Views: 34.8ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/1/edit" for 127.0.0.1 at Sat Jan 29 23:44:52 +0530 2011
+  Processing by CountriesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1
+Rendered countries/_form.html.erb (15.4ms)
+Rendered countries/edit.html.erb within layouts/application (28.5ms)
+Completed 200 OK in 598ms (Views: 36.7ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:44:54 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (25.8ms)
+Completed 200 OK in 606ms (Views: 34.1ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/new" for 127.0.0.1 at Sat Jan 29 23:44:56 +0530 2011
+  Processing by CountriesController#new as HTML
+Completed   in 576ms
+
+ActionView::MissingTemplate (Missing template countries/new with {:formats=>[:html], :locale=>[:en, :en], :handlers=>[:rxml, :erb, :prawn_dsl, :rjs, :builder, :rhtml, :prawn_xxx, :prawn]} in view paths "/home/chaitanya/aclindia/app/views", "/home/chaitanya/aclindia/vendor/plugins/prawnto/app/views"):
+  app/controllers/countries_controller.rb:39:in `new'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:45:47 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/index.html.erb within layouts/application (180.3ms)
+Completed 200 OK in 633ms (Views: 189.6ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/new" for 127.0.0.1 at Sat Jan 29 23:45:49 +0530 2011
+  Processing by CountriesController#new as HTML
+Rendered countries/_form.html.erb (14.0ms)
+Rendered countries/new.html.erb within layouts/application (26.1ms)
+Completed 200 OK in 598ms (Views: 176.6ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:45:53 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 466ms (Views: 32.1ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:46:44 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/index.html.erb within layouts/application (31.9ms)
+Completed 200 OK in 504ms (Views: 44.7ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/1" for 127.0.0.1 at Sat Jan 29 23:46:47 +0530 2011
+  Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCountry Load (0.1ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1[0m
+Rendered countries/show.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 408ms (Views: 26.8ms | ActiveRecord: 0.1ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:46:49 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/index.html.erb within layouts/application (24.9ms)
+Completed 200 OK in 420ms (Views: 33.7ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/new" for 127.0.0.1 at Sat Jan 29 23:46:50 +0530 2011
+  Processing by CountriesController#new as HTML
+Rendered countries/_form.html.erb (12.9ms)
+Rendered countries/new.html.erb within layouts/application (24.2ms)
+Completed 200 OK in 606ms (Views: 32.4ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:46:53 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (26.1ms)
+Completed 200 OK in 599ms (Views: 36.5ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/show?format=pdf" for 127.0.0.1 at Sat Jan 29 23:47:01 +0530 2011
+  Processing by CountriesController#show as PDF
+  Parameters: {"id"=>"show"}
+  [1m[35mCountry Load (0.1ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 0) LIMIT 1
+Completed   in 570ms
+
+ActiveRecord::RecordNotFound (Couldn't find Country with ID=show):
+  app/controllers/countries_controller.rb:24:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (9.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.8ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:49:23 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (28.2ms)
+Completed 200 OK in 722ms (Views: 36.8ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/new" for 127.0.0.1 at Sat Jan 29 23:49:25 +0530 2011
+  Processing by CountriesController#new as HTML
+Rendered countries/_form.html.erb (13.9ms)
+Rendered countries/new.html.erb within layouts/application (25.6ms)
+Completed 200 OK in 605ms (Views: 34.6ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:49:28 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/index.html.erb within layouts/application (161.1ms)
+Completed 200 OK in 601ms (Views: 171.0ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/show?format=pdf" for 127.0.0.1 at Sat Jan 29 23:49:30 +0530 2011
+  Processing by CountriesController#show as PDF
+  Parameters: {"id"=>"show"}
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/show.pdf.prawn (610.1ms)
+Completed 200 OK in 1065ms (Views: 612.9ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/view/1" for 127.0.0.1 at Sat Jan 29 23:49:34 +0530 2011
+  Processing by CountriesController#view as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCountry Load (0.1ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1
+Rendered countries/view.html.erb within layouts/application (21.9ms)
+Completed 200 OK in 500ms (Views: 31.0ms | ActiveRecord: 0.1ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:49:36 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 421ms (Views: 33.6ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:50:54 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/index.html.erb within layouts/application (25.5ms)
+Completed 200 OK in 515ms (Views: 33.7ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/view?format=pdf" for 127.0.0.1 at Sat Jan 29 23:50:57 +0530 2011
+  Processing by CountriesController#show as PDF
+  Parameters: {"id"=>"view"}
+  [1m[36mCountry Load (0.1ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 0) LIMIT 1[0m
+Completed   in 399ms
+
+ActiveRecord::RecordNotFound (Couldn't find Country with ID=view):
+  app/controllers/countries_controller.rb:28:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.0ms)
+
+
+Started GET "/countries/1" for 127.0.0.1 at Sat Jan 29 23:51:02 +0530 2011
+  Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCountry Load (0.1ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1
+Completed   in 401ms
+
+ActionView::MissingTemplate (Missing template countries/show with {:formats=>[:html], :locale=>[:en, :en], :handlers=>[:rxml, :erb, :prawn_dsl, :rjs, :builder, :rhtml, :prawn_xxx, :prawn]} in view paths "/home/chaitanya/aclindia/app/views", "/home/chaitanya/aclindia/vendor/plugins/prawnto/app/views"):
+  app/controllers/countries_controller.rb:30:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.2ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:51:21 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (1.3ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (25.8ms)
+Completed 200 OK in 676ms (Views: 34.4ms | ActiveRecord: 1.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/view?format=pdf" for 127.0.0.1 at Sat Jan 29 23:51:23 +0530 2011
+  Processing by CountriesController#show as PDF
+  Parameters: {"id"=>"view"}
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 0) LIMIT 1
+Completed   in 589ms
+
+ActiveRecord::RecordNotFound (Couldn't find Country with ID=view):
+  app/controllers/countries_controller.rb:28:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (9.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (19.5ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:52:47 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (27.3ms)
+Completed 200 OK in 693ms (Views: 37.3ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/1" for 127.0.0.1 at Sat Jan 29 23:52:49 +0530 2011
+  Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1
+Rendered countries/show.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 611ms (Views: 26.8ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:52:51 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (25.6ms)
+Completed 200 OK in 602ms (Views: 35.9ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/view?format=pdf" for 127.0.0.1 at Sat Jan 29 23:52:54 +0530 2011
+  Processing by CountriesController#show as PDF
+  Parameters: {"id"=>"view"}
+  [1m[35mCountry Load (0.1ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 0) LIMIT 1
+Completed   in 569ms
+
+ActiveRecord::RecordNotFound (Couldn't find Country with ID=view):
+  app/controllers/countries_controller.rb:28:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:53:53 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (28.5ms)
+Completed 200 OK in 678ms (Views: 189.4ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/show?format=pdf" for 127.0.0.1 at Sat Jan 29 23:53:56 +0530 2011
+  Processing by CountriesController#show as PDF
+  Parameters: {"id"=>"show"}
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Completed   in 567ms
+
+ActionView::MissingTemplate (Missing template countries/show with {:formats=>[:pdf], :locale=>[:en, :en], :handlers=>[:rxml, :erb, :prawn_dsl, :rjs, :builder, :rhtml, :prawn_xxx, :prawn]} in view paths "/home/chaitanya/aclindia/app/views", "/home/chaitanya/aclindia/vendor/plugins/prawnto/app/views"):
+  app/controllers/countries_controller.rb:33:in `show'
+  app/controllers/countries_controller.rb:30:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:54:29 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (23.2ms)
+Completed 200 OK in 522ms (Views: 32.8ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/show?format=pdf" for 127.0.0.1 at Sat Jan 29 23:54:31 +0530 2011
+  Processing by CountriesController#show as PDF
+  Parameters: {"id"=>"show"}
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/show.pdf.prawn (605.1ms)
+Completed 200 OK in 1003ms (Views: 608.1ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/view/1" for 127.0.0.1 at Sat Jan 29 23:54:37 +0530 2011
+  Processing by CountriesController#view as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1[0m
+Rendered countries/view.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 609ms (Views: 29.4ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:54:39 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/index.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 470ms (Views: 33.6ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started POST "/countries/search" for 127.0.0.1 at Sat Jan 29 23:55:33 +0530 2011
+  Processing by CountriesController#search as HTML
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"AR/qb5hy/WG8foPKz33OkkOKd+VrNp63beLSJwIqJ00=", "utf8"=>"✓", "query"=>"india"}
+  [1m[36mSQL (1.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.9ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.9ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.9ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.9ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.1ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.9ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.9ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.9ms)[0m  SHOW TABLES
+  [1m[32mSphinx Query (2.5ms)[0m  [1mindia[0m
+Rendered countries/search.html.erb within layouts/application (4.0ms)
+Completed   in 551ms
+
+ActionView::Template::Error (Connection to 127.0.0.1 on 9312 failed. Connection refused - connect(2)):
+    1: <h1>Search Results</h1>
+    2: <% if @countries.blank? %>
+    3:  	<p>Oops!!! No Matches found.</p>
+    4: <% else %>
+    5: <table id="newspaper-b">
+  app/views/countries/search.html.erb:2:in `_app_views_countries_search_html_erb__115061465__614177138_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (11.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (21.4ms)
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (13.3ms)[0m  SELECT @@global.sql_mode, @@session.sql_mode;
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.9ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.1ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.9ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (8.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.9ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.1ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.1ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.9ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.9ms)[0m  SHOW TABLES
+
+
+Started POST "/countries/search" for 127.0.0.1 at Sat Jan 29 23:55:55 +0530 2011
+  Processing by CountriesController#search as HTML
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"AR/qb5hy/WG8foPKz33OkkOKd+VrNp63beLSJwIqJ00=", "utf8"=>"✓", "query"=>"india"}
+  [1m[36mSQL (1.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.9ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.9ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.9ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.9ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.1ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.9ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (2.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.9ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.9ms)[0m  SHOW TABLES
+  [1m[32mSphinx Query (19.9ms)[0m  india
+  [1m[32mSphinx[0m  [1mFound 1 result[0m
+  [1m[36mCountry Load (0.7ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` IN (1))[0m
+Rendered countries/search.html.erb within layouts/application (66.1ms)
+Completed 200 OK in 724ms (Views: 53.9ms | ActiveRecord: 22.6ms | Sphinx: 22.4ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:55:57 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Rendered countries/index.html.erb within layouts/application (26.6ms)
+Completed 200 OK in 576ms (Views: 163.6ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/1/edit" for 127.0.0.1 at Sat Jan 29 23:55:59 +0530 2011
+  Processing by CountriesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) LIMIT 1[0m
+Rendered countries/_form.html.erb (18.5ms)
+Rendered countries/edit.html.erb within layouts/application (32.9ms)
+Completed 200 OK in 539ms (Views: 44.0ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/countries/1" for 127.0.0.1 at Sat Jan 29 23:56:02 +0530 2011
+  Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries`
+Completed   in 393ms
+
+ActionView::MissingTemplate (Missing template countries/show with {:formats=>[:html], :locale=>[:en, :en], :handlers=>[:rxml, :erb, :prawn_dsl, :rjs, :builder, :rhtml, :prawn_xxx, :prawn]} in view paths "/home/chaitanya/aclindia/app/views", "/home/chaitanya/aclindia/vendor/plugins/prawnto/app/views"):
+  app/controllers/countries_controller.rb:30:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.9ms)
+
+
+Started GET "/countries" for 127.0.0.1 at Sat Jan 29 23:56:06 +0530 2011
+  Processing by CountriesController#index as HTML
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+Rendered countries/index.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 414ms (Views: 31.8ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sun Jan 30 19:43:49 +0530 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/home (112.7ms)
+Completed 200 OK in 173ms (Views: 172.4ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started POST "/home" for 127.0.0.1 at Sun Jan 30 19:44:01 +0530 2011
+  Processing by SessionsController#create as HTML
+  Parameters: {"name"=>"admin", "commit"=>"Login", "authenticity_token"=>"qvwn97PL4nitE3mUbUrmGlwzL6HJqCxD1pOkMwRMJ7E=", "utf8"=>"✓", "password"=>"[FILTERED]"}
+  [1m[36mSQL (1.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mUser Load (225.7ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`name` = 'admin') LIMIT 1
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 1494ms
+
+
+Started GET "/admin" for 127.0.0.1 at Sun Jan 30 19:44:02 +0530 2011
+  Processing by AdminController#index as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Rendered admin/index.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 1038ms (Views: 87.2ms | ActiveRecord: 228.7ms | Sphinx: 0.0ms)
+
+
+Started GET "/labcentrals" for 127.0.0.1 at Sun Jan 30 19:44:23 +0530 2011
+  Processing by LabcentralsController#index as HTML
+  [1m[35mLabcentral Load (9.8ms)[0m  SELECT `labcentrals`.* FROM `labcentrals`
+Rendered labcentrals/index.html.erb within layouts/application (60.5ms)
+Completed 200 OK in 1015ms (Views: 119.2ms | ActiveRecord: 9.8ms | Sphinx: 0.0ms)
+
+
+Started GET "/labcentrals/new" for 127.0.0.1 at Sun Jan 30 19:44:59 +0530 2011
+  Processing by LabcentralsController#new as HTML
+  [1m[36mSQL (0.5ms)[0m  [1mSELECT COUNT(*) FROM `labcentrals`[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT MAX(`labcentrals`.`id`) AS max_id FROM `labcentrals`
+Rendered labcentrals/_form.html.erb (16.0ms)
+Rendered labcentrals/new.html.erb within layouts/application (207.8ms)
+Completed 200 OK in 700ms (Views: 238.4ms | ActiveRecord: 0.9ms | Sphinx: 0.0ms)
+
+
+Started GET "/labcentrals/new" for 127.0.0.1 at Sun Jan 30 19:45:43 +0530 2011
+  Processing by LabcentralsController#new as HTML
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `labcentrals`[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT MAX(`labcentrals`.`id`) AS max_id FROM `labcentrals`
+Rendered labcentrals/_form.html.erb (152.2ms)
+Rendered labcentrals/new.html.erb within layouts/application (195.7ms)
+Completed 200 OK in 765ms (Views: 215.1ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started POST "/labcentrals" for 127.0.0.1 at Sun Jan 30 19:45:46 +0530 2011
+  Processing by LabcentralsController#create as HTML
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"qvwn97PL4nitE3mUbUrmGlwzL6HJqCxD1pOkMwRMJ7E=", "utf8"=>"✓", "labcentral"=>{"city"=>"", "housenumber"=>"", "pincode"=>"", "landmark"=>"", "land"=>"", "street"=>"", "mobile"=>"", "area"=>"", "labname"=>"", "fax"=>"", "status"=>"A", "email"=>"", "state"=>"", "labid"=>"CEN/2"}}
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM `labcentrals`
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`labcentrals`.`id`) AS max_id FROM `labcentrals`[0m
+Rendered labcentrals/_form.html.erb (17.2ms)
+Rendered labcentrals/new.html.erb within layouts/application (51.0ms)
+Completed 200 OK in 746ms (Views: 59.2ms | ActiveRecord: 2.9ms | Sphinx: 0.0ms)
+
+
+Started POST "/labcentrals" for 127.0.0.1 at Sun Jan 30 19:45:54 +0530 2011
+  Processing by LabcentralsController#create as HTML
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"qvwn97PL4nitE3mUbUrmGlwzL6HJqCxD1pOkMwRMJ7E=", "utf8"=>"✓", "labcentral"=>{"city"=>"", "housenumber"=>"", "pincode"=>"", "landmark"=>"", "land"=>"", "street"=>"", "mobile"=>"", "area"=>"", "labname"=>"", "fax"=>"", "status"=>"A", "email"=>"adfasd", "state"=>"", "labid"=>"CEN/2"}}
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.1ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `labcentrals`[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT MAX(`labcentrals`.`id`) AS max_id FROM `labcentrals`
+Rendered labcentrals/_form.html.erb (16.1ms)
+Rendered labcentrals/new.html.erb within layouts/application (49.2ms)
+Completed 200 OK in 755ms (Views: 57.1ms | ActiveRecord: 1.8ms | Sphinx: 0.0ms)
+
+
+Started POST "/labcentrals" for 127.0.0.1 at Sun Jan 30 19:46:32 +0530 2011
+  Processing by LabcentralsController#create as HTML
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"qvwn97PL4nitE3mUbUrmGlwzL6HJqCxD1pOkMwRMJ7E=", "utf8"=>"✓", "labcentral"=>{"city"=>"", "housenumber"=>"", "pincode"=>"", "landmark"=>"", "land"=>"", "street"=>"", "mobile"=>"", "area"=>"", "labname"=>"", "fax"=>"", "status"=>"A", "email"=>"adfasd", "state"=>"", "labid"=>"CEN/2"}}
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM `labcentrals`
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`labcentrals`.`id`) AS max_id FROM `labcentrals`[0m
+Rendered labcentrals/_form.html.erb (17.8ms)
+Rendered labcentrals/new.html.erb within layouts/application (49.6ms)
+Completed 200 OK in 722ms (Views: 57.7ms | ActiveRecord: 1.7ms | Sphinx: 0.0ms)
+
+
+Started GET "/labcentrals/new" for 127.0.0.1 at Sun Jan 30 19:46:40 +0530 2011
+  Processing by LabcentralsController#new as HTML
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM `labcentrals`
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`labcentrals`.`id`) AS max_id FROM `labcentrals`[0m
+Rendered labcentrals/_form.html.erb (15.9ms)
+Rendered labcentrals/new.html.erb within layouts/application (53.2ms)
+Completed 200 OK in 653ms (Views: 63.0ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started POST "/labcentrals" for 127.0.0.1 at Sun Jan 30 19:46:43 +0530 2011
+  Processing by LabcentralsController#create as HTML
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"qvwn97PL4nitE3mUbUrmGlwzL6HJqCxD1pOkMwRMJ7E=", "utf8"=>"✓", "labcentral"=>{"city"=>"", "housenumber"=>"", "pincode"=>"", "landmark"=>"", "land"=>"", "street"=>"", "mobile"=>"", "area"=>"", "labname"=>"", "fax"=>"", "status"=>"A", "email"=>"", "state"=>"", "labid"=>"CEN/2"}}
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `labcentrals`[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT MAX(`labcentrals`.`id`) AS max_id FROM `labcentrals`
+Rendered labcentrals/_form.html.erb (17.4ms)
+Rendered labcentrals/new.html.erb within layouts/application (49.1ms)
+Completed 200 OK in 476ms (Views: 58.3ms | ActiveRecord: 1.5ms | Sphinx: 0.0ms)
+
+
+Started POST "/labcentrals" for 127.0.0.1 at Sun Jan 30 19:46:51 +0530 2011
+  Processing by LabcentralsController#create as HTML
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"qvwn97PL4nitE3mUbUrmGlwzL6HJqCxD1pOkMwRMJ7E=", "utf8"=>"✓", "labcentral"=>{"city"=>"", "housenumber"=>"", "pincode"=>"", "landmark"=>"", "land"=>"", "street"=>"", "mobile"=>"", "area"=>"", "labname"=>"", "fax"=>"", "status"=>"A", "email"=>"adfasd", "state"=>"", "labid"=>"CEN/2"}}
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT COUNT(*) FROM `labcentrals`
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`labcentrals`.`id`) AS max_id FROM `labcentrals`[0m
+Rendered labcentrals/_form.html.erb (20.9ms)
+Rendered labcentrals/new.html.erb within layouts/application (52.9ms)
+Completed 200 OK in 477ms (Views: 60.4ms | ActiveRecord: 1.8ms | Sphinx: 0.0ms)
+
+
+Started GET "/labregionals" for 127.0.0.1 at Sun Jan 30 19:47:15 +0530 2011
+  Processing by LabregionalsController#index as HTML
+  [1m[35mLabregional Load (0.9ms)[0m  SELECT `labregionals`.* FROM `labregionals`
+  [1m[36mLabcentral Load (0.6ms)[0m  [1mSELECT `labcentrals`.* FROM `labcentrals` WHERE (`labcentrals`.`id` = 1) LIMIT 1[0m
+Rendered labregionals/index.html.erb within layouts/application (52.2ms)
+Completed 200 OK in 468ms (Views: 82.2ms | ActiveRecord: 1.5ms | Sphinx: 0.0ms)
+
+
+Started GET "/labregionals/new" for 127.0.0.1 at Sun Jan 30 19:49:13 +0530 2011
+  Processing by LabregionalsController#new as HTML
+  [1m[35mLabcentral Load (0.2ms)[0m  SELECT `labcentrals`.* FROM `labcentrals`
+  [1m[36mSQL (0.5ms)[0m  [1mSELECT COUNT(*) FROM `labregionals`[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT MAX(`labregionals`.`id`) AS max_id FROM `labregionals`
+Rendered labregionals/_form.html.erb (13.0ms)
+Rendered labregionals/new.html.erb within layouts/application (74.9ms)
+Completed 200 OK in 547ms (Views: 107.9ms | ActiveRecord: 1.1ms | Sphinx: 0.0ms)
+
+
+Started POST "/labregionals" for 127.0.0.1 at Sun Jan 30 19:49:17 +0530 2011
+  Processing by LabregionalsController#create as HTML
+  Parameters: {"commit"=>"Save", "labregional"=>{"city"=>"", "housenumber"=>"", "labcentral_id"=>"", "pincode"=>"", "landmark"=>"", "land"=>"", "street"=>"", "mobile"=>"", "area"=>"", "labname"=>"", "fax"=>"", "status"=>"A", "email"=>"", "state"=>"", "labid"=>"REG/2"}, "authenticity_token"=>"qvwn97PL4nitE3mUbUrmGlwzL6HJqCxD1pOkMwRMJ7E=", "utf8"=>"✓"}
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mLabcentral Load (0.2ms)[0m  SELECT `labcentrals`.* FROM `labcentrals`
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `labregionals`[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT MAX(`labregionals`.`id`) AS max_id FROM `labregionals`
+Rendered labregionals/_form.html.erb (16.3ms)
+Rendered labregionals/new.html.erb within layouts/application (61.9ms)
+Completed 200 OK in 518ms (Views: 71.1ms | ActiveRecord: 1.7ms | Sphinx: 0.0ms)
+
+
+Started GET "/labcentrals" for 127.0.0.1 at Sun Jan 30 19:49:29 +0530 2011
+  Processing by LabcentralsController#index as HTML
+  [1m[36mLabcentral Load (0.2ms)[0m  [1mSELECT `labcentrals`.* FROM `labcentrals`[0m
+Rendered labcentrals/index.html.erb within layouts/application (27.8ms)
+Completed 200 OK in 423ms (Views: 39.3ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/labcentrals/new" for 127.0.0.1 at Sun Jan 30 19:50:05 +0530 2011
+  Processing by LabcentralsController#new as HTML
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM `labcentrals`
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`labcentrals`.`id`) AS max_id FROM `labcentrals`[0m
+Rendered labcentrals/_form.html.erb (18.3ms)
+Rendered labcentrals/new.html.erb within layouts/application (65.6ms)
+Completed 200 OK in 711ms (Views: 78.9ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/labregionals" for 127.0.0.1 at Sun Jan 30 19:50:08 +0530 2011
+  Processing by LabregionalsController#index as HTML
+  [1m[35mLabregional Load (0.2ms)[0m  SELECT `labregionals`.* FROM `labregionals`
+  [1m[36mLabcentral Load (0.2ms)[0m  [1mSELECT `labcentrals`.* FROM `labcentrals` WHERE (`labcentrals`.`id` = 1) LIMIT 1[0m
+Rendered labregionals/index.html.erb within layouts/application (53.8ms)
+Completed 200 OK in 638ms (Views: 62.1ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/labregionals/new" for 127.0.0.1 at Sun Jan 30 19:50:10 +0530 2011
+  Processing by LabregionalsController#new as HTML
+  [1m[35mLabcentral Load (0.2ms)[0m  SELECT `labcentrals`.* FROM `labcentrals`
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `labregionals`[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT MAX(`labregionals`.`id`) AS max_id FROM `labregionals`
+Rendered labregionals/_form.html.erb (13.9ms)
+Rendered labregionals/new.html.erb within layouts/application (74.3ms)
+Completed 200 OK in 698ms (Views: 82.5ms | ActiveRecord: 0.5ms | Sphinx: 0.0ms)
+
+
+Started POST "/labregionals" for 127.0.0.1 at Sun Jan 30 19:50:13 +0530 2011
+  Processing by LabregionalsController#create as HTML
+  Parameters: {"commit"=>"Save", "labregional"=>{"city"=>"", "housenumber"=>"", "labcentral_id"=>"", "pincode"=>"", "landmark"=>"", "land"=>"", "street"=>"", "mobile"=>"", "area"=>"", "labname"=>"", "fax"=>"", "status"=>"A", "email"=>"", "state"=>"", "labid"=>"REG/2"}, "authenticity_token"=>"qvwn97PL4nitE3mUbUrmGlwzL6HJqCxD1pOkMwRMJ7E=", "utf8"=>"✓"}
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mLabcentral Load (0.2ms)[0m  SELECT `labcentrals`.* FROM `labcentrals`
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `labregionals`[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT MAX(`labregionals`.`id`) AS max_id FROM `labregionals`
+Rendered labregionals/_form.html.erb (18.9ms)
+Rendered labregionals/new.html.erb within layouts/application (65.9ms)
+Completed 200 OK in 860ms (Views: 74.1ms | ActiveRecord: 1.7ms | Sphinx: 0.0ms)
+
+
+Started GET "/lablocationals" for 127.0.0.1 at Sun Jan 30 19:50:41 +0530 2011
+  Processing by LablocationalsController#index as HTML
+  [1m[36mLablocational Load (1.0ms)[0m  [1mSELECT `lablocationals`.* FROM `lablocationals`[0m
+  [1m[35mLabregional Load (0.6ms)[0m  SELECT `labregionals`.* FROM `labregionals` WHERE (`labregionals`.`id` = 1) LIMIT 1
+  [1m[36mLabcentral Load (0.2ms)[0m  [1mSELECT `labcentrals`.* FROM `labcentrals` WHERE (`labcentrals`.`id` = 1) LIMIT 1[0m
+Rendered lablocationals/index.html.erb within layouts/application (79.4ms)
+Completed 200 OK in 688ms (Views: 112.4ms | ActiveRecord: 1.8ms | Sphinx: 0.0ms)
+
+
+Started GET "/lablocationals/new" for 127.0.0.1 at Sun Jan 30 19:50:43 +0530 2011
+  Processing by LablocationalsController#new as HTML
+  [1m[35mSQL (0.5ms)[0m  SELECT COUNT(*) FROM `lablocationals`
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT MAX(`lablocationals`.`id`) AS max_id FROM `lablocationals`[0m
+  [1m[35mLabcentral Load (0.2ms)[0m  SELECT `labcentrals`.* FROM `labcentrals`
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `labcentrals`.* FROM `labcentrals`[0m
+Rendered lablocationals/_form.html.erb (18.2ms)
+Rendered lablocationals/new.html.erb within layouts/application (105.1ms)
+Completed 200 OK in 702ms (Views: 112.7ms | ActiveRecord: 1.0ms | Sphinx: 0.0ms)
+
+
+Started POST "/lablocationals/load_regional" for 127.0.0.1 at Sun Jan 30 19:50:46 +0530 2011
+  Processing by LablocationalsController#load_regional as JS
+  Parameters: {"authenticity_token"=>"qvwn97PL4nitE3mUbUrmGlwzL6HJqCxD1pOkMwRMJ7E=", "id"=>"1", "_"=>""}
+  [1m[35mLabregional Load (0.6ms)[0m  SELECT `labregionals`.* FROM `labregionals` WHERE (`labregionals`.`labcentral_id` = 1)
+Completed 200 OK in 573ms (Views: 21.9ms | ActiveRecord: 0.6ms | Sphinx: 0.0ms)
+
+
+Started GET "/lablocationals" for 127.0.0.1 at Sun Jan 30 19:50:56 +0530 2011
+  Processing by LablocationalsController#index as HTML
+  [1m[36mLablocational Load (0.2ms)[0m  [1mSELECT `lablocationals`.* FROM `lablocationals`[0m
+  [1m[35mLabregional Load (0.2ms)[0m  SELECT `labregionals`.* FROM `labregionals` WHERE (`labregionals`.`id` = 1) LIMIT 1
+  [1m[36mLabcentral Load (0.2ms)[0m  [1mSELECT `labcentrals`.* FROM `labcentrals` WHERE (`labcentrals`.`id` = 1) LIMIT 1[0m
+Rendered lablocationals/index.html.erb within layouts/application (82.5ms)
+Completed 200 OK in 674ms (Views: 91.1ms | ActiveRecord: 0.6ms | Sphinx: 0.0ms)
+
+
+Started GET "/lablocationals/new" for 127.0.0.1 at Sun Jan 30 19:50:58 +0530 2011
+  Processing by LablocationalsController#new as HTML
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM `lablocationals`
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT MAX(`lablocationals`.`id`) AS max_id FROM `lablocationals`[0m
+  [1m[35mLabcentral Load (0.3ms)[0m  SELECT `labcentrals`.* FROM `labcentrals`
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `labcentrals`.* FROM `labcentrals`[0m
+Rendered lablocationals/_form.html.erb (19.9ms)
+Rendered lablocationals/new.html.erb within layouts/application (221.1ms)
+Completed 200 OK in 671ms (Views: 228.4ms | ActiveRecord: 0.6ms | Sphinx: 0.0ms)
+
+
+Started GET "/exchanges" for 127.0.0.1 at Sun Jan 30 19:54:44 +0530 2011
+  Processing by ExchangesController#index as HTML
+  [1m[35mExchange Load (1.1ms)[0m  SELECT `exchanges`.* FROM `exchanges` ORDER BY name
+Rendered exchanges/index.html.erb within layouts/application (31.3ms)
+Completed 200 OK in 643ms (Views: 91.2ms | ActiveRecord: 1.1ms | Sphinx: 0.0ms)
+
+
+Started POST "/exchanges/4" for 127.0.0.1 at Sun Jan 30 19:54:48 +0530 2011
+  Processing by ExchangesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"qvwn97PL4nitE3mUbUrmGlwzL6HJqCxD1pOkMwRMJ7E=", "id"=>"4"}
+  [1m[36mExchange Load (0.7ms)[0m  [1mSELECT `exchanges`.* FROM `exchanges` WHERE (`exchanges`.`id` = 4) ORDER BY name LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mAREL (0.5ms)[0m  DELETE FROM `exchanges` WHERE (`exchanges`.`id` = 4)
+  [1m[36mSQL (96.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/exchanges
+Completed 302 Found in 543ms
+
+
+Started GET "/exchanges" for 127.0.0.1 at Sun Jan 30 19:54:49 +0530 2011
+  Processing by ExchangesController#index as HTML
+  [1m[35mExchange Load (0.7ms)[0m  SELECT `exchanges`.* FROM `exchanges` ORDER BY name
+Rendered exchanges/index.html.erb within layouts/application (26.6ms)
+Completed 200 OK in 438ms (Views: 34.8ms | ActiveRecord: 0.7ms | Sphinx: 0.0ms)
+
+
+Started GET "/exchanges/new" for 127.0.0.1 at Sun Jan 30 19:54:55 +0530 2011
+  Processing by ExchangesController#new as HTML
+Rendered exchanges/_form.html.erb (14.4ms)
+Rendered exchanges/new.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 503ms (Views: 35.2ms | ActiveRecord: 98.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/exchanges" for 127.0.0.1 at Sun Jan 30 19:54:57 +0530 2011
+  Processing by ExchangesController#index as HTML
+  [1m[36mExchange Load (0.2ms)[0m  [1mSELECT `exchanges`.* FROM `exchanges` ORDER BY name[0m
+Rendered exchanges/index.html.erb within layouts/application (25.9ms)
+Completed 200 OK in 467ms (Views: 33.8ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/exchanges/1" for 127.0.0.1 at Sun Jan 30 19:54:59 +0530 2011
+  Processing by ExchangesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mExchange Load (0.5ms)[0m  SELECT `exchanges`.* FROM `exchanges` WHERE (`exchanges`.`id` = 1) ORDER BY name LIMIT 1
+Rendered exchanges/show.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 416ms (Views: 26.5ms | ActiveRecord: 0.5ms | Sphinx: 0.0ms)
+
+
+Started GET "/exchanges/1" for 127.0.0.1 at Sun Jan 30 19:56:23 +0530 2011
+  Processing by ExchangesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mExchange Load (0.1ms)[0m  [1mSELECT `exchanges`.* FROM `exchanges` WHERE (`exchanges`.`id` = 1) ORDER BY name LIMIT 1[0m
+Rendered exchanges/show.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 421ms (Views: 26.1ms | ActiveRecord: 0.1ms | Sphinx: 0.0ms)
+
+
+Started GET "/exchanges/1" for 127.0.0.1 at Sun Jan 30 19:56:26 +0530 2011
+  Processing by ExchangesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mExchange Load (0.1ms)[0m  SELECT `exchanges`.* FROM `exchanges` WHERE (`exchanges`.`id` = 1) ORDER BY name LIMIT 1
+Rendered exchanges/show.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 417ms (Views: 26.9ms | ActiveRecord: 0.1ms | Sphinx: 0.0ms)
+
+
+Started GET "/exchanges/1" for 127.0.0.1 at Sun Jan 30 19:56:34 +0530 2011
+  Processing by ExchangesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mExchange Load (0.1ms)[0m  [1mSELECT `exchanges`.* FROM `exchanges` WHERE (`exchanges`.`id` = 1) ORDER BY name LIMIT 1[0m
+ERROR: compiling _app_views_exchanges_show_html_erb___440876299__613650388_0 RAISED compile error
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:29: syntax error, unexpected ')', expecting kTHEN or ':' or '\n' or ';'
+... ( if @exchange.status == 'A');@output_buffer.safe_concat('
+                              ^
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:31: syntax error, unexpected kELSE, expecting ')'
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:33: syntax error, unexpected kEND, expecting ')'
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:42: syntax error, unexpected kENSURE, expecting ')'
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:44: syntax error, unexpected kEND, expecting ')'
+Function body:           def _app_views_exchanges_show_html_erb___440876299__613650388_0(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "exchanges/show";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<!-- START_HIGHLIGHT -->
+');   if notice 
+@output_buffer.safe_concat('    <p id="notice">');@output_buffer.append= ( notice );@output_buffer.safe_concat('</p>
+');   end 
+@output_buffer.safe_concat('<!-- END_HIGHLIGHT -->
+
+<h1>Exchange Details</h1>
+<table id="one-column-emphasis">
+    <colgroup>
+    	<col class="oce-first" />
+    </colgroup>
+    <tbody>
+   	<tr>
+  <div>
+    <td>Name</td>
+    <td>  ');@output_buffer.append= ( @exchange.name );@output_buffer.safe_concat('</td>
+  </div>
+</tr>
+<tr>
+  <div>
+    <td>Description</td>
+    <td>');@output_buffer.append= ( @exchange.description );@output_buffer.safe_concat('</td>
+  </div>
+</tr>
+<tr>
+  <div>
+	  <td>Status</td>
+      <td>
+');@output_buffer.append= ( if @exchange.status == 'A');@output_buffer.safe_concat('
+');@output_buffer.safe_concat('Active
+');else
+@output_buffer.safe_concat('Inactive
+');end
+@output_buffer.safe_concat('</td>
+  </div>
+</tr>
+    </tbody>
+</table>
+');@output_buffer.append= ( link_to 'Edit', edit_exchange_path(@exchange) );@output_buffer.safe_concat(' |
+');@output_buffer.append= ( link_to 'Back', exchanges_path );@output_buffer.safe_concat('
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/chaitanya/aclindia/app/views/exchanges/show.html.erb:44:in `compile'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:134:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:54:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:127:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:59:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:56:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:26:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:92:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:17:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/thinking-sphinx-2.0.2/lib/thinking_sphinx/action_controller.rb:12:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:261:in `retrieve_response_from_mimes'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:192:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:192:in `respond_to'
+/home/chaitanya/aclindia/app/controllers/exchanges_controller.rb:22:in `show'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:151:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:435:in `_run__853979853__process_action__453433196__callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:120:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:40:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal.rb:138:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal.rb:178:in `action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:89:in `optimized_each'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/usr/lib/ruby/gems/1.8/gems/pdfkit-0.5.0/lib/pdfkit/middleware.rb:15:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/head.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/cookies.rb:295:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:32:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:12:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:31:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:353:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/rack/logger.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/static.rb:30:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:168:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:77:in `send'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:77:in `method_missing'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/rack/log_tailer.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:13:in `run'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/server.rb:213:in `start'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands/server.rb:65:in `start'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:30
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:27:in `tap'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered exchanges/show.html.erb within layouts/application (25.7ms)
+Completed   in 437ms
+
+ActionView::Template::Error (compile error
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:29: syntax error, unexpected ')', expecting kTHEN or ':' or '\n' or ';'
+... ( if @exchange.status == 'A');@output_buffer.safe_concat('
+                              ^
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:31: syntax error, unexpected kELSE, expecting ')'
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:33: syntax error, unexpected kEND, expecting ')'
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:42: syntax error, unexpected kENSURE, expecting ')'
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:44: syntax error, unexpected kEND, expecting ')'):
+    26:   <div>
+    27: 	  <td>Status</td>
+    28:       <td>
+    29: <%= if @exchange.status == 'A'%>
+    30: Active
+    31: <%else%>
+    32: Inactive
+  app/views/exchanges/show.html.erb:44:in `compile'
+  app/controllers/exchanges_controller.rb:22:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (191.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (202.7ms)
+
+
+Started GET "/exchanges/1" for 127.0.0.1 at Sun Jan 30 19:56:48 +0530 2011
+  Processing by ExchangesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mExchange Load (0.1ms)[0m  SELECT `exchanges`.* FROM `exchanges` WHERE (`exchanges`.`id` = 1) ORDER BY name LIMIT 1
+ERROR: compiling _app_views_exchanges_show_html_erb___440876299__613596968_0 RAISED compile error
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:29: syntax error, unexpected ')', expecting kTHEN or ':' or '\n' or ';'
+...= ( if @exchange.status = 'A');@output_buffer.safe_concat('
+                              ^
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:31: syntax error, unexpected kELSE, expecting ')'
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:33: syntax error, unexpected kEND, expecting ')'
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:42: syntax error, unexpected kENSURE, expecting ')'
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:44: syntax error, unexpected kEND, expecting ')'
+Function body:           def _app_views_exchanges_show_html_erb___440876299__613596968_0(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "exchanges/show";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<!-- START_HIGHLIGHT -->
+');   if notice 
+@output_buffer.safe_concat('    <p id="notice">');@output_buffer.append= ( notice );@output_buffer.safe_concat('</p>
+');   end 
+@output_buffer.safe_concat('<!-- END_HIGHLIGHT -->
+
+<h1>Exchange Details</h1>
+<table id="one-column-emphasis">
+    <colgroup>
+    	<col class="oce-first" />
+    </colgroup>
+    <tbody>
+   	<tr>
+  <div>
+    <td>Name</td>
+    <td>  ');@output_buffer.append= ( @exchange.name );@output_buffer.safe_concat('</td>
+  </div>
+</tr>
+<tr>
+  <div>
+    <td>Description</td>
+    <td>');@output_buffer.append= ( @exchange.description );@output_buffer.safe_concat('</td>
+  </div>
+</tr>
+<tr>
+  <div>
+	  <td>Status</td>
+      <td>
+');@output_buffer.append= ( if @exchange.status = 'A');@output_buffer.safe_concat('
+');@output_buffer.safe_concat('Active
+');else
+@output_buffer.safe_concat('Inactive
+');end
+@output_buffer.safe_concat('</td>
+  </div>
+</tr>
+    </tbody>
+</table>
+');@output_buffer.append= ( link_to 'Edit', edit_exchange_path(@exchange) );@output_buffer.safe_concat(' |
+');@output_buffer.append= ( link_to 'Back', exchanges_path );@output_buffer.safe_concat('
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/chaitanya/aclindia/app/views/exchanges/show.html.erb:44:in `compile'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:134:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:54:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:127:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:59:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:56:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:26:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:92:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:17:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/thinking-sphinx-2.0.2/lib/thinking_sphinx/action_controller.rb:12:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:261:in `retrieve_response_from_mimes'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:192:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:192:in `respond_to'
+/home/chaitanya/aclindia/app/controllers/exchanges_controller.rb:22:in `show'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:151:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:435:in `_run__853979853__process_action__453433196__callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:120:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:40:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal.rb:138:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal.rb:178:in `action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:89:in `optimized_each'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/usr/lib/ruby/gems/1.8/gems/pdfkit-0.5.0/lib/pdfkit/middleware.rb:15:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/head.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/cookies.rb:295:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:32:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:12:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:31:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:353:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/rack/logger.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/static.rb:30:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:168:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:77:in `send'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:77:in `method_missing'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/rack/log_tailer.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:13:in `run'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/server.rb:213:in `start'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands/server.rb:65:in `start'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:30
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:27:in `tap'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered exchanges/show.html.erb within layouts/application (1.6ms)
+Completed   in 407ms
+
+ActionView::Template::Error (compile error
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:29: syntax error, unexpected ')', expecting kTHEN or ':' or '\n' or ';'
+...= ( if @exchange.status = 'A');@output_buffer.safe_concat('
+                              ^
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:31: syntax error, unexpected kELSE, expecting ')'
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:33: syntax error, unexpected kEND, expecting ')'
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:42: syntax error, unexpected kENSURE, expecting ')'
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:44: syntax error, unexpected kEND, expecting ')'):
+    26:   <div>
+    27: 	  <td>Status</td>
+    28:       <td>
+    29: <%= if @exchange.status = 'A'%>
+    30: Active
+    31: <%else%>
+    32: Inactive
+  app/views/exchanges/show.html.erb:44:in `compile'
+  app/controllers/exchanges_controller.rb:22:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (21.3ms)
+
+
+Started GET "/exchanges/1" for 127.0.0.1 at Sun Jan 30 20:00:38 +0530 2011
+  Processing by ExchangesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mExchange Load (0.4ms)[0m  [1mSELECT `exchanges`.* FROM `exchanges` WHERE (`exchanges`.`id` = 1) ORDER BY name LIMIT 1[0m
+ERROR: compiling _app_views_exchanges_show_html_erb___440876299__613538878_0 RAISED compile error
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:29: syntax error, unexpected ')'
+... @exchange.status = 'A' then );@output_buffer.safe_concat(' 
+                              ^
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:42: syntax error, unexpected kENSURE, expecting ')'
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:44: syntax error, unexpected kEND, expecting ')'
+Function body:           def _app_views_exchanges_show_html_erb___440876299__613538878_0(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "exchanges/show";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<!-- START_HIGHLIGHT -->
+');   if notice 
+@output_buffer.safe_concat('    <p id="notice">');@output_buffer.append= ( notice );@output_buffer.safe_concat('</p>
+');   end 
+@output_buffer.safe_concat('<!-- END_HIGHLIGHT -->
+
+<h1>Exchange Details</h1>
+<table id="one-column-emphasis">
+    <colgroup>
+    	<col class="oce-first" />
+    </colgroup>
+    <tbody>
+   	<tr>
+  <div>
+    <td>Name</td>
+    <td>  ');@output_buffer.append= ( @exchange.name );@output_buffer.safe_concat('</td>
+  </div>
+</tr>
+<tr>
+  <div>
+    <td>Description</td>
+    <td>');@output_buffer.append= ( @exchange.description );@output_buffer.safe_concat('</td>
+  </div>
+</tr>
+<tr>
+  <div>
+	  <td>Status</td>
+      <td>
+');@output_buffer.append= ( if @exchange.status = 'A' then );@output_buffer.safe_concat(' 
+');@output_buffer.safe_concat('Active
+');else
+@output_buffer.safe_concat('Inactive
+');end
+@output_buffer.safe_concat('</td>
+  </div>
+</tr>
+    </tbody>
+</table>
+');@output_buffer.append= ( link_to 'Edit', edit_exchange_path(@exchange) );@output_buffer.safe_concat(' |
+');@output_buffer.append= ( link_to 'Back', exchanges_path );@output_buffer.safe_concat('
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/chaitanya/aclindia/app/views/exchanges/show.html.erb:44:in `compile'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:134:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:54:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:127:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:59:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:56:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:26:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:92:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:17:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/thinking-sphinx-2.0.2/lib/thinking_sphinx/action_controller.rb:12:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:261:in `retrieve_response_from_mimes'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:192:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:192:in `respond_to'
+/home/chaitanya/aclindia/app/controllers/exchanges_controller.rb:22:in `show'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:151:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:435:in `_run__853979853__process_action__453433196__callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:120:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:40:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal.rb:138:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal.rb:178:in `action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:89:in `optimized_each'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/usr/lib/ruby/gems/1.8/gems/pdfkit-0.5.0/lib/pdfkit/middleware.rb:15:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/head.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/cookies.rb:295:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:32:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:12:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:31:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:353:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/rack/logger.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/static.rb:30:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:168:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:77:in `send'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:77:in `method_missing'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/rack/log_tailer.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:13:in `run'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/server.rb:213:in `start'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands/server.rb:65:in `start'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:30
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:27:in `tap'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered exchanges/show.html.erb within layouts/application (1.6ms)
+Completed   in 495ms
+
+ActionView::Template::Error (compile error
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:29: syntax error, unexpected ')'
+... @exchange.status = 'A' then );@output_buffer.safe_concat(' 
+                              ^
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:42: syntax error, unexpected kENSURE, expecting ')'
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:44: syntax error, unexpected kEND, expecting ')'):
+    26:   <div>
+    27: 	  <td>Status</td>
+    28:       <td>
+    29: <%= if @exchange.status = 'A' then %> 
+    30: Active
+    31: <%else%>
+    32: Inactive
+  app/views/exchanges/show.html.erb:44:in `compile'
+  app/controllers/exchanges_controller.rb:22:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (16.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (29.7ms)
+
+
+Started GET "/exchanges/1" for 127.0.0.1 at Sun Jan 30 20:00:41 +0530 2011
+  Processing by ExchangesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mExchange Load (0.1ms)[0m  SELECT `exchanges`.* FROM `exchanges` WHERE (`exchanges`.`id` = 1) ORDER BY name LIMIT 1
+ERROR: compiling _app_views_exchanges_show_html_erb___440876299__613538578_0 RAISED compile error
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:29: syntax error, unexpected ')'
+... @exchange.status = 'A' then );@output_buffer.safe_concat(' 
+                              ^
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:42: syntax error, unexpected kENSURE, expecting ')'
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:44: syntax error, unexpected kEND, expecting ')'
+Function body:           def _app_views_exchanges_show_html_erb___440876299__613538578_0(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "exchanges/show";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<!-- START_HIGHLIGHT -->
+');   if notice 
+@output_buffer.safe_concat('    <p id="notice">');@output_buffer.append= ( notice );@output_buffer.safe_concat('</p>
+');   end 
+@output_buffer.safe_concat('<!-- END_HIGHLIGHT -->
+
+<h1>Exchange Details</h1>
+<table id="one-column-emphasis">
+    <colgroup>
+    	<col class="oce-first" />
+    </colgroup>
+    <tbody>
+   	<tr>
+  <div>
+    <td>Name</td>
+    <td>  ');@output_buffer.append= ( @exchange.name );@output_buffer.safe_concat('</td>
+  </div>
+</tr>
+<tr>
+  <div>
+    <td>Description</td>
+    <td>');@output_buffer.append= ( @exchange.description );@output_buffer.safe_concat('</td>
+  </div>
+</tr>
+<tr>
+  <div>
+	  <td>Status</td>
+      <td>
+');@output_buffer.append= ( if @exchange.status = 'A' then );@output_buffer.safe_concat(' 
+');@output_buffer.safe_concat('Active
+');else
+@output_buffer.safe_concat('Inactive
+');end
+@output_buffer.safe_concat('</td>
+  </div>
+</tr>
+    </tbody>
+</table>
+');@output_buffer.append= ( link_to 'Edit', edit_exchange_path(@exchange) );@output_buffer.safe_concat(' |
+');@output_buffer.append= ( link_to 'Back', exchanges_path );@output_buffer.safe_concat('
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/chaitanya/aclindia/app/views/exchanges/show.html.erb:44:in `compile'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:134:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:54:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:127:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:59:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:56:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:26:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:92:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:17:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/thinking-sphinx-2.0.2/lib/thinking_sphinx/action_controller.rb:12:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:261:in `retrieve_response_from_mimes'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:192:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:192:in `respond_to'
+/home/chaitanya/aclindia/app/controllers/exchanges_controller.rb:22:in `show'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:151:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:435:in `_run__853979853__process_action__453433196__callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:120:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:40:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal.rb:138:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal.rb:178:in `action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:89:in `optimized_each'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/usr/lib/ruby/gems/1.8/gems/pdfkit-0.5.0/lib/pdfkit/middleware.rb:15:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/head.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/cookies.rb:295:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:32:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:12:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:31:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:353:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/rack/logger.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/static.rb:30:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:168:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:77:in `send'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:77:in `method_missing'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/rack/log_tailer.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:13:in `run'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/server.rb:213:in `start'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands/server.rb:65:in `start'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:30
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:27:in `tap'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered exchanges/show.html.erb within layouts/application (1.8ms)
+Completed   in 445ms
+
+ActionView::Template::Error (compile error
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:29: syntax error, unexpected ')'
+... @exchange.status = 'A' then );@output_buffer.safe_concat(' 
+                              ^
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:42: syntax error, unexpected kENSURE, expecting ')'
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:44: syntax error, unexpected kEND, expecting ')'):
+    26:   <div>
+    27: 	  <td>Status</td>
+    28:       <td>
+    29: <%= if @exchange.status = 'A' then %> 
+    30: Active
+    31: <%else%>
+    32: Inactive
+  app/views/exchanges/show.html.erb:44:in `compile'
+  app/controllers/exchanges_controller.rb:22:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (22.0ms)
+
+
+Started GET "/exchanges/1" for 127.0.0.1 at Sun Jan 30 20:01:03 +0530 2011
+  Processing by ExchangesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mExchange Load (0.1ms)[0m  [1mSELECT `exchanges`.* FROM `exchanges` WHERE (`exchanges`.`id` = 1) ORDER BY name LIMIT 1[0m
+ERROR: compiling _app_views_exchanges_show_html_erb___440876299__613400648_0 RAISED compile error
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:29: syntax error, unexpected ')', expecting kTHEN or ':' or '\n' or ';'
+...= ( if @exchange.status = 'A');@output_buffer.safe_concat(' 
+                              ^
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:31: syntax error, unexpected kELSE, expecting ')'
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:33: syntax error, unexpected kEND, expecting ')'
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:42: syntax error, unexpected kENSURE, expecting ')'
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:44: syntax error, unexpected kEND, expecting ')'
+Function body:           def _app_views_exchanges_show_html_erb___440876299__613400648_0(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "exchanges/show";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<!-- START_HIGHLIGHT -->
+');   if notice 
+@output_buffer.safe_concat('    <p id="notice">');@output_buffer.append= ( notice );@output_buffer.safe_concat('</p>
+');   end 
+@output_buffer.safe_concat('<!-- END_HIGHLIGHT -->
+
+<h1>Exchange Details</h1>
+<table id="one-column-emphasis">
+    <colgroup>
+    	<col class="oce-first" />
+    </colgroup>
+    <tbody>
+   	<tr>
+  <div>
+    <td>Name</td>
+    <td>  ');@output_buffer.append= ( @exchange.name );@output_buffer.safe_concat('</td>
+  </div>
+</tr>
+<tr>
+  <div>
+    <td>Description</td>
+    <td>');@output_buffer.append= ( @exchange.description );@output_buffer.safe_concat('</td>
+  </div>
+</tr>
+<tr>
+  <div>
+	  <td>Status</td>
+      <td>
+');@output_buffer.append= ( if @exchange.status = 'A');@output_buffer.safe_concat(' 
+');@output_buffer.safe_concat('Active
+');else
+@output_buffer.safe_concat('Inactive
+');end
+@output_buffer.safe_concat('</td>
+  </div>
+</tr>
+    </tbody>
+</table>
+');@output_buffer.append= ( link_to 'Edit', edit_exchange_path(@exchange) );@output_buffer.safe_concat(' |
+');@output_buffer.append= ( link_to 'Back', exchanges_path );@output_buffer.safe_concat('
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/chaitanya/aclindia/app/views/exchanges/show.html.erb:44:in `compile'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:134:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:54:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:127:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:59:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:56:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:26:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:92:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:17:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/thinking-sphinx-2.0.2/lib/thinking_sphinx/action_controller.rb:12:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:261:in `retrieve_response_from_mimes'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:192:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:192:in `respond_to'
+/home/chaitanya/aclindia/app/controllers/exchanges_controller.rb:22:in `show'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:151:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:435:in `_run__853979853__process_action__453433196__callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:120:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:40:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal.rb:138:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal.rb:178:in `action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:89:in `optimized_each'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/usr/lib/ruby/gems/1.8/gems/pdfkit-0.5.0/lib/pdfkit/middleware.rb:15:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/head.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/cookies.rb:295:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:32:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:12:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:31:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:353:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/rack/logger.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/static.rb:30:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:168:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:77:in `send'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:77:in `method_missing'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/rack/log_tailer.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:13:in `run'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/server.rb:213:in `start'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands/server.rb:65:in `start'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:30
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:27:in `tap'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered exchanges/show.html.erb within layouts/application (1.5ms)
+Completed   in 434ms
+
+ActionView::Template::Error (compile error
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:29: syntax error, unexpected ')', expecting kTHEN or ':' or '\n' or ';'
+...= ( if @exchange.status = 'A');@output_buffer.safe_concat(' 
+                              ^
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:31: syntax error, unexpected kELSE, expecting ')'
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:33: syntax error, unexpected kEND, expecting ')'
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:42: syntax error, unexpected kENSURE, expecting ')'
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:44: syntax error, unexpected kEND, expecting ')'):
+    26:   <div>
+    27: 	  <td>Status</td>
+    28:       <td>
+    29: <%= if @exchange.status = 'A'%> 
+    30: Active
+    31: <%else%>
+    32: Inactive
+  app/views/exchanges/show.html.erb:44:in `compile'
+  app/controllers/exchanges_controller.rb:22:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (13.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (26.6ms)
+
+
+Started GET "/exchanges/1" for 127.0.0.1 at Sun Jan 30 20:04:41 +0530 2011
+  Processing by ExchangesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mExchange Load (2.6ms)[0m  SELECT `exchanges`.* FROM `exchanges` WHERE (`exchanges`.`id` = 1) ORDER BY name LIMIT 1
+ERROR: compiling _app_views_exchanges_show_html_erb___440876299__613385818_0 RAISED compile error
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:29: syntax error, unexpected ')', expecting kTHEN or ':' or '\n' or ';'
+...nd= ( if @exchange.status = A);@output_buffer.safe_concat(' 
+                              ^
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:31: syntax error, unexpected kELSE, expecting ')'
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:33: syntax error, unexpected kEND, expecting ')'
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:42: syntax error, unexpected kENSURE, expecting ')'
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:44: syntax error, unexpected kEND, expecting ')'
+Function body:           def _app_views_exchanges_show_html_erb___440876299__613385818_0(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "exchanges/show";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<!-- START_HIGHLIGHT -->
+');   if notice 
+@output_buffer.safe_concat('    <p id="notice">');@output_buffer.append= ( notice );@output_buffer.safe_concat('</p>
+');   end 
+@output_buffer.safe_concat('<!-- END_HIGHLIGHT -->
+
+<h1>Exchange Details</h1>
+<table id="one-column-emphasis">
+    <colgroup>
+    	<col class="oce-first" />
+    </colgroup>
+    <tbody>
+   	<tr>
+  <div>
+    <td>Name</td>
+    <td>  ');@output_buffer.append= ( @exchange.name );@output_buffer.safe_concat('</td>
+  </div>
+</tr>
+<tr>
+  <div>
+    <td>Description</td>
+    <td>');@output_buffer.append= ( @exchange.description );@output_buffer.safe_concat('</td>
+  </div>
+</tr>
+<tr>
+  <div>
+	  <td>Status</td>
+      <td>
+');@output_buffer.append= ( if @exchange.status = A);@output_buffer.safe_concat(' 
+');@output_buffer.safe_concat('Active
+');else
+@output_buffer.safe_concat('Inactive
+');end
+@output_buffer.safe_concat('</td>
+  </div>
+</tr>
+    </tbody>
+</table>
+');@output_buffer.append= ( link_to 'Edit', edit_exchange_path(@exchange) );@output_buffer.safe_concat(' |
+');@output_buffer.append= ( link_to 'Back', exchanges_path );@output_buffer.safe_concat('
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/chaitanya/aclindia/app/views/exchanges/show.html.erb:44:in `compile'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:134:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:54:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:127:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:59:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:56:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:26:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:92:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:17:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/thinking-sphinx-2.0.2/lib/thinking_sphinx/action_controller.rb:12:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:261:in `retrieve_response_from_mimes'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:192:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:192:in `respond_to'
+/home/chaitanya/aclindia/app/controllers/exchanges_controller.rb:22:in `show'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:151:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:435:in `_run__853979853__process_action__453433196__callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:120:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:40:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal.rb:138:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal.rb:178:in `action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:89:in `optimized_each'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/usr/lib/ruby/gems/1.8/gems/pdfkit-0.5.0/lib/pdfkit/middleware.rb:15:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/head.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/cookies.rb:295:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:32:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:12:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:31:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:353:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/rack/logger.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/static.rb:30:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:168:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:77:in `send'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:77:in `method_missing'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/rack/log_tailer.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:13:in `run'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/server.rb:213:in `start'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands/server.rb:65:in `start'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:30
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:27:in `tap'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered exchanges/show.html.erb within layouts/application (1.5ms)
+Completed   in 547ms
+
+ActionView::Template::Error (compile error
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:29: syntax error, unexpected ')', expecting kTHEN or ':' or '\n' or ';'
+...nd= ( if @exchange.status = A);@output_buffer.safe_concat(' 
+                              ^
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:31: syntax error, unexpected kELSE, expecting ')'
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:33: syntax error, unexpected kEND, expecting ')'
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:42: syntax error, unexpected kENSURE, expecting ')'
+/home/chaitanya/aclindia/app/views/exchanges/show.html.erb:44: syntax error, unexpected kEND, expecting ')'):
+    26:   <div>
+    27: 	  <td>Status</td>
+    28:       <td>
+    29: <%= if @exchange.status = A%> 
+    30: Active
+    31: <%else%>
+    32: Inactive
+  app/views/exchanges/show.html.erb:44:in `compile'
+  app/controllers/exchanges_controller.rb:22:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (22.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (36.1ms)
+
+
+Started GET "/exchanges/1" for 127.0.0.1 at Sun Jan 30 20:05:00 +0530 2011
+  Processing by ExchangesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mExchange Load (1.7ms)[0m  [1mSELECT `exchanges`.* FROM `exchanges` WHERE (`exchanges`.`id` = 1) ORDER BY name LIMIT 1[0m
+Rendered exchanges/show.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 496ms (Views: 29.0ms | ActiveRecord: 1.7ms | Sphinx: 0.0ms)
+
+
+Started GET "/exchanges" for 127.0.0.1 at Sun Jan 30 20:05:32 +0530 2011
+  Processing by ExchangesController#index as HTML
+  [1m[35mExchange Load (0.2ms)[0m  SELECT `exchanges`.* FROM `exchanges` ORDER BY name
+Rendered exchanges/index.html.erb within layouts/application (43.7ms)
+Completed 200 OK in 493ms (Views: 52.1ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/categories" for 127.0.0.1 at Sun Jan 30 20:05:53 +0530 2011
+  Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.9ms)[0m  [1mSELECT `categories`.* FROM `categories`[0m
+Rendered categories/index.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 451ms (Views: 64.3ms | ActiveRecord: 0.9ms | Sphinx: 0.0ms)
+
+
+Started GET "/categories" for 127.0.0.1 at Sun Jan 30 20:06:09 +0530 2011
+  Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (0.7ms)[0m  SELECT `categories`.* FROM `categories` ORDER BY name
+Rendered categories/index.html.erb within layouts/application (24.7ms)
+Completed 200 OK in 654ms (Views: 34.5ms | ActiveRecord: 0.7ms | Sphinx: 0.0ms)
+
+
+Started GET "/testmethods" for 127.0.0.1 at Sun Jan 30 20:10:26 +0530 2011
+  Processing by TestmethodsController#index as HTML
+  [1m[36mTestmethod Load (21.2ms)[0m  [1mSELECT `testmethods`.* FROM `testmethods` ORDER BY name[0m
+Rendered testmethods/index.html.erb within layouts/application (26.1ms)
+Completed 200 OK in 478ms (Views: 57.0ms | ActiveRecord: 21.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/subcategories" for 127.0.0.1 at Sun Jan 30 20:10:31 +0530 2011
+  Processing by SubcategoriesController#index as HTML
+  [1m[35mSubcategory Load (22.6ms)[0m  SELECT `subcategories`.* FROM `subcategories` ORDER BY name
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 1) ORDER BY name LIMIT 1[0m
+  [1m[35mCategory Load (2.0ms)[0m  SELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 3) ORDER BY name LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `categories`.* FROM `categories` WHERE (`categories`.`id` = 1) ORDER BY name LIMIT 1[0m
+Rendered subcategories/index.html.erb within layouts/application (43.9ms)
+Completed 200 OK in 507ms (Views: 79.8ms | ActiveRecord: 25.1ms | Sphinx: 0.0ms)
+
+
+Started GET "/warehouses" for 127.0.0.1 at Sun Jan 30 20:10:50 +0530 2011
+  Processing by WarehousesController#index as HTML
+  [1m[35mWarehouse Load (0.8ms)[0m  SELECT `warehouses`.* FROM `warehouses` ORDER BY whnickname
+Rendered warehouses/index.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 774ms (Views: 100.7ms | ActiveRecord: 0.8ms | Sphinx: 0.0ms)
+
+
+Started GET "/cities" for 127.0.0.1 at Sun Jan 30 20:10:53 +0530 2011
+  Processing by CitiesController#index as HTML
+  [1m[36mCity Load (22.8ms)[0m  [1mSELECT `cities`.* FROM `cities` ORDER BY name[0m
+  [1m[35mState Load (21.0ms)[0m  SELECT `states`.* FROM `states` WHERE (`states`.`id` = 1) ORDER BY name LIMIT 1
+  [1m[36mCountry Load (0.6ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) ORDER BY name LIMIT 1[0m
+  [1m[35mState Load (0.6ms)[0m  SELECT `states`.* FROM `states` WHERE (`states`.`id` = 2) ORDER BY name LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) ORDER BY name LIMIT 1[0m
+  [1m[35mState Load (0.8ms)[0m  SELECT `states`.* FROM `states` WHERE (`states`.`id` = 4) ORDER BY name LIMIT 1
+  [1m[36mCountry Load (0.5ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 2) ORDER BY name LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `states`.* FROM `states` WHERE (`states`.`id` = 2) ORDER BY name LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) ORDER BY name LIMIT 1[0m
+Rendered cities/index.html.erb within layouts/application (91.0ms)
+Completed 200 OK in 741ms (Views: 96.2ms | ActiveRecord: 46.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/cities" for 127.0.0.1 at Sun Jan 30 20:11:44 +0530 2011
+  Processing by CitiesController#index as HTML
+Completed   in 7ms
+
+SyntaxError (/home/chaitanya/aclindia/app/models/city.rb:7: syntax error, unexpected '\n', expecting tASSOC):
+  app/controllers/cities_controller.rb:8:in `index'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.4ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.6ms)
+
+
+Started GET "/cities" for 127.0.0.1 at Sun Jan 30 20:11:52 +0530 2011
+  Processing by CitiesController#index as HTML
+Completed   in 8ms
+
+SyntaxError (/home/chaitanya/aclindia/app/models/city.rb:7: syntax error, unexpected '\n', expecting tASSOC):
+  app/controllers/cities_controller.rb:8:in `index'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.6ms)
+
+
+Started GET "/cities" for 127.0.0.1 at Sun Jan 30 20:15:18 +0530 2011
+  Processing by CitiesController#index as HTML
+  [1m[35mCity Load (0.7ms)[0m  SELECT `cities`.* FROM `cities` ORDER BY name, country_id
+  [1m[36mState Load (0.2ms)[0m  [1mSELECT `states`.* FROM `states` WHERE (`states`.`id` = 1) ORDER BY name LIMIT 1[0m
+  [1m[35mCountry Load (0.2ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) ORDER BY name LIMIT 1
+  [1m[36mState Load (0.4ms)[0m  [1mSELECT `states`.* FROM `states` WHERE (`states`.`id` = 2) ORDER BY name LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) ORDER BY name LIMIT 1
+  [1m[36mState Load (0.2ms)[0m  [1mSELECT `states`.* FROM `states` WHERE (`states`.`id` = 4) ORDER BY name LIMIT 1[0m
+  [1m[35mCountry Load (0.1ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 2) ORDER BY name LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `states`.* FROM `states` WHERE (`states`.`id` = 2) ORDER BY name LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) ORDER BY name LIMIT 1
+Rendered cities/index.html.erb within layouts/application (69.5ms)
+Completed 200 OK in 647ms (Views: 85.8ms | ActiveRecord: 1.8ms | Sphinx: 0.0ms)
+
+
+Started GET "/cities" for 127.0.0.1 at Sun Jan 30 20:15:22 +0530 2011
+  Processing by CitiesController#index as HTML
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT `cities`.* FROM `cities` ORDER BY name, country_id[0m
+  [1m[35mState Load (0.1ms)[0m  SELECT `states`.* FROM `states` WHERE (`states`.`id` = 1) ORDER BY name LIMIT 1
+  [1m[36mCountry Load (0.1ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) ORDER BY name LIMIT 1[0m
+  [1m[35mState Load (0.2ms)[0m  SELECT `states`.* FROM `states` WHERE (`states`.`id` = 2) ORDER BY name LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) ORDER BY name LIMIT 1[0m
+  [1m[35mState Load (0.2ms)[0m  SELECT `states`.* FROM `states` WHERE (`states`.`id` = 4) ORDER BY name LIMIT 1
+  [1m[36mCountry Load (0.1ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 2) ORDER BY name LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `states`.* FROM `states` WHERE (`states`.`id` = 2) ORDER BY name LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) ORDER BY name LIMIT 1[0m
+Rendered cities/index.html.erb within layouts/application (70.2ms)
+Completed 200 OK in 685ms (Views: 77.8ms | ActiveRecord: 1.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/cities" for 127.0.0.1 at Sun Jan 30 20:15:46 +0530 2011
+  Processing by CitiesController#index as HTML
+  [1m[35mCity Load (0.7ms)[0m  SELECT `cities`.* FROM `cities` ORDER BY country_id
+  [1m[36mState Load (0.1ms)[0m  [1mSELECT `states`.* FROM `states` WHERE (`states`.`id` = 1) ORDER BY name LIMIT 1[0m
+  [1m[35mCountry Load (0.1ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) ORDER BY name LIMIT 1
+  [1m[36mState Load (0.2ms)[0m  [1mSELECT `states`.* FROM `states` WHERE (`states`.`id` = 2) ORDER BY name LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) ORDER BY name LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `states`.* FROM `states` WHERE (`states`.`id` = 2) ORDER BY name LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) ORDER BY name LIMIT 1
+  [1m[36mState Load (0.2ms)[0m  [1mSELECT `states`.* FROM `states` WHERE (`states`.`id` = 4) ORDER BY name LIMIT 1[0m
+  [1m[35mCountry Load (0.1ms)[0m  SELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 2) ORDER BY name LIMIT 1
+Rendered cities/index.html.erb within layouts/application (66.4ms)
+Completed 200 OK in 542ms (Views: 73.7ms | ActiveRecord: 1.5ms | Sphinx: 0.0ms)
+
+
+Started GET "/cities/1/edit" for 127.0.0.1 at Sun Jan 30 20:17:55 +0530 2011
+  Processing by CitiesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mState Load (0.9ms)[0m  [1mSELECT `states`.* FROM `states` ORDER BY name[0m
+  [1m[35mCountry Load (0.5ms)[0m  SELECT `countries`.* FROM `countries` ORDER BY name
+  [1m[36mCity Load (0.6ms)[0m  [1mSELECT `cities`.* FROM `cities` WHERE (`cities`.`id` = 1) ORDER BY country_id LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `countries`.* FROM `countries` ORDER BY name
+Rendered cities/_form.html.erb (26.2ms)
+Rendered cities/edit.html.erb within layouts/application (38.1ms)
+Completed 200 OK in 694ms (Views: 62.2ms | ActiveRecord: 2.1ms | Sphinx: 0.0ms)
+
+
+Started POST "/cities/load_states" for 127.0.0.1 at Sun Jan 30 20:18:00 +0530 2011
+  Processing by CitiesController#load_states as JS
+  Parameters: {"authenticity_token"=>"qvwn97PL4nitE3mUbUrmGlwzL6HJqCxD1pOkMwRMJ7E=", "id"=>"2", "_"=>""}
+  [1m[36mState Load (4.4ms)[0m  [1mSELECT `states`.* FROM `states` WHERE (`states`.`country_id` = 2) ORDER BY name[0m
+Completed 200 OK in 502ms (Views: 43.8ms | ActiveRecord: 4.4ms | Sphinx: 0.0ms)
+
+
+Started POST "/cities/load_states" for 127.0.0.1 at Sun Jan 30 20:18:01 +0530 2011
+  Processing by CitiesController#load_states as JS
+  Parameters: {"authenticity_token"=>"qvwn97PL4nitE3mUbUrmGlwzL6HJqCxD1pOkMwRMJ7E=", "id"=>"1", "_"=>""}
+  [1m[35mState Load (0.7ms)[0m  SELECT `states`.* FROM `states` WHERE (`states`.`country_id` = 1) ORDER BY name
+Completed 200 OK in 451ms (Views: 18.3ms | ActiveRecord: 0.7ms | Sphinx: 0.0ms)
+
+
+Started GET "/cities" for 127.0.0.1 at Sun Jan 30 20:18:03 +0530 2011
+  Processing by CitiesController#index as HTML
+  [1m[36mCity Load (0.2ms)[0m  [1mSELECT `cities`.* FROM `cities` ORDER BY country_id[0m
+  [1m[35mState Load (0.1ms)[0m  SELECT `states`.* FROM `states` WHERE (`states`.`id` = 1) ORDER BY name LIMIT 1
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) ORDER BY name LIMIT 1[0m
+  [1m[35mState Load (0.4ms)[0m  SELECT `states`.* FROM `states` WHERE (`states`.`id` = 2) ORDER BY name LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) ORDER BY name LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `states`.* FROM `states` WHERE (`states`.`id` = 2) ORDER BY name LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 1) ORDER BY name LIMIT 1[0m
+  [1m[35mState Load (0.2ms)[0m  SELECT `states`.* FROM `states` WHERE (`states`.`id` = 4) ORDER BY name LIMIT 1
+  [1m[36mCountry Load (0.2ms)[0m  [1mSELECT `countries`.* FROM `countries` WHERE (`countries`.`id` = 2) ORDER BY name LIMIT 1[0m
+Rendered cities/index.html.erb within layouts/application (68.4ms)
+Completed 200 OK in 673ms (Views: 75.5ms | ActiveRecord: 1.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/userroles" for 127.0.0.1 at Sun Jan 30 20:19:21 +0530 2011
+  Processing by UserrolesController#index as HTML
+  [1m[35mUserrole Load (0.9ms)[0m  SELECT `userroles`.* FROM `userroles` ORDER BY name
+Rendered userroles/index.html.erb within layouts/application (22.2ms)
+Completed 200 OK in 676ms (Views: 72.8ms | ActiveRecord: 0.9ms | Sphinx: 0.0ms)
+
+
+Started GET "/userroles/1" for 127.0.0.1 at Sun Jan 30 20:19:27 +0530 2011
+  Processing by UserrolesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUserrole Load (0.5ms)[0m  [1mSELECT `userroles`.* FROM `userroles` WHERE (`userroles`.`id` = 1) ORDER BY name LIMIT 1[0m
+Rendered userroles/show.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 708ms (Views: 28.5ms | ActiveRecord: 0.5ms | Sphinx: 0.0ms)
+
+
+Started GET "/userroles" for 127.0.0.1 at Sun Jan 30 20:19:30 +0530 2011
+  Processing by UserrolesController#index as HTML
+  [1m[35mUserrole Load (0.2ms)[0m  SELECT `userroles`.* FROM `userroles` ORDER BY name
+Rendered userroles/index.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 480ms (Views: 29.3ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/userroles/1" for 127.0.0.1 at Sun Jan 30 20:19:33 +0530 2011
+  Processing by UserrolesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUserrole Load (0.2ms)[0m  [1mSELECT `userroles`.* FROM `userroles` WHERE (`userroles`.`id` = 1) ORDER BY name LIMIT 1[0m
+Rendered userroles/show.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 456ms (Views: 25.2ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/userroles" for 127.0.0.1 at Sun Jan 30 20:19:38 +0530 2011
+  Processing by UserrolesController#index as HTML
+  [1m[35mUserrole Load (0.2ms)[0m  SELECT `userroles`.* FROM `userroles` ORDER BY name
+Rendered userroles/index.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 441ms (Views: 30.5ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/packings" for 127.0.0.1 at Sun Jan 30 20:19:47 +0530 2011
+  Processing by PackingsController#index as HTML
+  [1m[36mPacking Load (0.9ms)[0m  [1mSELECT `packings`.* FROM `packings` ORDER BY name[0m
+Rendered packings/index.html.erb within layouts/application (26.3ms)
+Completed 200 OK in 693ms (Views: 57.9ms | ActiveRecord: 0.9ms | Sphinx: 0.0ms)
+
+
+Started GET "/packings/new" for 127.0.0.1 at Sun Jan 30 20:19:51 +0530 2011
+  Processing by PackingsController#new as HTML
+Rendered packings/_form.html.erb (9.0ms)
+Rendered packings/new.html.erb within layouts/application (30.0ms)
+Completed 200 OK in 661ms (Views: 57.5ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/packings/new" for 127.0.0.1 at Sun Jan 30 20:23:26 +0530 2011
+  Processing by PackingsController#new as HTML
+Rendered packings/_form.html.erb (14.9ms)
+Rendered packings/new.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 991ms (Views: 60.7ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started POST "/packings" for 127.0.0.1 at Sun Jan 30 20:23:40 +0530 2011
+  Processing by PackingsController#create as HTML
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"qvwn97PL4nitE3mUbUrmGlwzL6HJqCxD1pOkMwRMJ7E=", "utf8"=>"✓", "packing"=>{"name"=>"", "description"=>"", "status"=>"A"}}
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+Rendered packings/_form.html.erb (9.6ms)
+Rendered packings/new.html.erb within layouts/application (21.6ms)
+Completed 200 OK in 815ms (Views: 30.8ms | ActiveRecord: 1.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/packings" for 127.0.0.1 at Sun Jan 30 20:23:43 +0530 2011
+  Processing by PackingsController#index as HTML
+  [1m[36mPacking Load (0.2ms)[0m  [1mSELECT `packings`.* FROM `packings` ORDER BY name[0m
+Rendered packings/index.html.erb within layouts/application (29.8ms)
+Completed 200 OK in 692ms (Views: 39.3ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/packings/1" for 127.0.0.1 at Sun Jan 30 20:23:53 +0530 2011
+  Processing by PackingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPacking Load (0.5ms)[0m  SELECT `packings`.* FROM `packings` WHERE (`packings`.`id` = 1) ORDER BY name LIMIT 1
+Rendered packings/show.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 719ms (Views: 61.7ms | ActiveRecord: 0.5ms | Sphinx: 0.0ms)
+
+
+Started GET "/packings/1" for 127.0.0.1 at Sun Jan 30 20:25:14 +0530 2011
+  Processing by PackingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPacking Load (0.2ms)[0m  [1mSELECT `packings`.* FROM `packings` WHERE (`packings`.`id` = 1) ORDER BY name LIMIT 1[0m
+Rendered packings/show.html.erb within layouts/application (169.7ms)
+Completed 200 OK in 757ms (Views: 178.8ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/packings" for 127.0.0.1 at Sun Jan 30 20:25:17 +0530 2011
+  Processing by PackingsController#index as HTML
+  [1m[35mPacking Load (0.2ms)[0m  SELECT `packings`.* FROM `packings` ORDER BY name
+Rendered packings/index.html.erb within layouts/application (30.6ms)
+Completed 200 OK in 695ms (Views: 41.9ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/packings/2/edit" for 127.0.0.1 at Sun Jan 30 20:25:20 +0530 2011
+  Processing by PackingsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPacking Load (0.5ms)[0m  [1mSELECT `packings`.* FROM `packings` WHERE (`packings`.`id` = 2) ORDER BY name LIMIT 1[0m
+Rendered packings/_form.html.erb (166.5ms)
+Rendered packings/edit.html.erb within layouts/application (181.5ms)
+Completed 200 OK in 725ms (Views: 223.2ms | ActiveRecord: 0.5ms | Sphinx: 0.0ms)
+
+
+Started GET "/packings" for 127.0.0.1 at Sun Jan 30 20:25:23 +0530 2011
+  Processing by PackingsController#index as HTML
+  [1m[35mPacking Load (0.2ms)[0m  SELECT `packings`.* FROM `packings` ORDER BY name
+Rendered packings/index.html.erb within layouts/application (28.8ms)
+Completed 200 OK in 563ms (Views: 36.9ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)

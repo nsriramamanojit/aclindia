@@ -1,3 +1,6 @@
+#Author: Chaitanya Ram
+#Controller: User Role
+#==========================================
 class UserrolesController < ApplicationController
   # GET /userroles
   # GET /userroles.xml

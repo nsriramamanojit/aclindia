@@ -4,7 +4,7 @@
   <% end %>
 <!-- END_HIGHLIGHT -->
 
-<h1>Exchange Details</h1>
+<h1>Country Details</h1>
 <table id="one-column-emphasis">
     <colgroup>
     	<col class="oce-first" />
@@ -13,23 +13,25 @@
    	<tr>
   <div>
     <td>Name</td>
-    <td>  <%= @exchange.name %></td>
+    <td>  <%= @country.name %></td>
   </div>
 </tr>
 <tr>
   <div>
     <td>Description</td>
-    <td><%= @exchange.description %></td>
+    <td><%= @country.description %></td>
   </div>
 </tr>
 <tr>
   <div>
 	  <td>Status</td>
-      <td><%=  @exchange.status%> 
-</td>
+      <td><%= @country.status %></td>
   </div>
 </tr>
     </tbody>
 </table>
-<%= link_to 'Edit', edit_exchange_path(@exchange) %> |
-<%= link_to 'Back', exchanges_path %>
+
+
+<%= link_to 'Edit', edit_country_path(@country) %> |
+<%= link_to 'Back', countries_path %>
+

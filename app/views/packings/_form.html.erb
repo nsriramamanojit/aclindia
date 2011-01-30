@@ -1,3 +1,4 @@
+<div class="home_form">
 <%= form_for(@packing) do |f| %>
   <% if @packing.errors.any? %>
     <div id="error_explanation">
@@ -11,7 +12,40 @@
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit %>
+  <fieldset>
+  <legend>Enter Package Details</legend>
+<table id="one-column-emphasis">
+    <colgroup>
+    	<col class="oce-first" />
+    </colgroup>
+    <tbody>
+   	<tr>
+  <div>
+    <td><%= f.label :name %></td>
+    <td><%= f.text_field :name,:class=>'title'%></td>
   </div>
+</tr>
+<tr>
+  <div>
+    <td><%= f.label :description %></td>
+    <td><%= f.text_field :description,:class=>'title' %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+	  <td><%= f.label :status %></td>
+      <td><%= f.radio_button :status, 'A', :checked => true %> Active
+    <%= f.radio_button :status, 'I' %> Inactive </td>
+  </div>
+</tr>
+<tr>
+  <div>
+	<td></td>
+   <td><%= f.submit "Save"%></td>
+  </div>
+</tr>
+    </tbody>
+</table>
+</fieldset>
 <% end %>
+</div>
