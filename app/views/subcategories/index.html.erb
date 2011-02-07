@@ -33,17 +33,18 @@
     </thead>
          <tfoot>
     	<tr>
-        	<td colspan="5"></td>
+        	<td colspan="3"><%= will_paginate @subcategories %></td>
+			<td colspan="2"><%= link_to 'Download Report (PDF)', :action=> 'show' ,:format=> "pdf" %></td>
         </tr>
     </tfoot>
 <% @subcategories.each do |subcategory| %>
   <tr>
     <td><%= subcategory.name %></td>
     <td><%= subcategory.category.name %></td>
-    <td><%= link_to 'View', subcategory %></td>
+    <td><%= link_to 'View', {:action => 'view', :id => subcategory.id} %></td>
     <td><%= link_to 'Edit', edit_subcategory_path(subcategory) %></td>
     <td><%= link_to 'Delete', subcategory, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
-<%= link_to 'New Sub Category', new_subcategory_path %>
+<%= link_to 'New Sub Category', new_subcategory_path, :class=>"more" %>

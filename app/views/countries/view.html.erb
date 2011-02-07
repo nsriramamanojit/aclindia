@@ -25,12 +25,11 @@
 <tr>
   <div>
 	  <td>Status</td>
-      <td><%= @country.status %></td>
+      <td><%=@country.status %></td>
   </div>
 </tr>
     </tbody>
 </table>
-
 
 <%= link_to 'Edit', edit_country_path(@country) %> |
 <%= link_to 'Back', countries_path %>

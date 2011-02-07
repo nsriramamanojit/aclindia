@@ -1,0 +1,134 @@
+<h1>New Customer</h1>
+<div class="home_form">
+<%= form_for(@customer) do |f| %>
+  <% if @customer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@customer.errors.count, "error") %> prohibited this Customer from being saved:</h2>
+
+      <ul>
+      <% @customer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <fieldset>
+  <legend>Enter Customer Details</legend>
+<table id="one-column-emphasis">
+    <colgroup>
+    	<col class="oce-first" />
+    </colgroup>
+    <tbody>
+   	<tr>
+  <div class="field">
+   <td><%= f.label :customerid ,"ID"%></td>
+    <td><%= f.text_field :customerid,:class=>'title',:value=>@customer.max,:readonly=>'true' %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+   <td><%= f.label :customerclass, "Class" %></td>
+   <td><%= f.radio_button :customerclass, 'Non-Agreement', :checked => true %> Non Agreement Customer
+    <%= f.radio_button :customerclass, 'Agreement' %>Agreement Customer</td>
+  </div>
+</tr>
+<tr>
+  <div>
+   <td><%= f.label :customertype, "Type" %></td>
+   <td><%= f.radio_button :customertype, 'Individual', :checked => true %> Individual
+    <%= f.radio_button :customertype, 'Organization' %>Organization</td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <td><%= f.label :customername, "Name" %></td>
+    <td><%= f.text_field :customername,:class=>'title' %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <td><%= f.label :housenumber,"Door No" %></td>
+    <td><%= f.text_field :housenumber,:class=>'title' %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <td><%= f.label :street %></td>
+    <td><%= f.text_field :street,:class=>'title' %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <td><%= f.label :area %></td>
+    <td><%= f.text_field :area,:class=>'title' %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <td><%= f.label :country, "Country"%></td>
+    <td><%= f.text_field :country,:class=>'title' %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <td><%= f.label :city %></td>
+    <td><%= f.text_field :city,:class=>'title' %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <td><%= f.label :state %></td>
+    <td><%= f.text_field :state,:class=>'title' %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <td><%= f.label :pincode,"PIN" %></td>
+    <td><%= f.text_field :pincode,:class=>'title' %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <td><%= f.label :phone, "Phone" %></td>
+    <td><%= f.text_field :phone,:class=>'title' %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <td><%= f.label :mobile %></td>
+    <td><%= f.text_field :mobile,:class=>'title' %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <td><%= f.label :email %></td>
+    <td><%= f.text_field :email,:class=>'title' %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <td><%= f.label :contactperson, "Contact Person" %></td>
+    <td><%= f.text_field :contactperson,:class=>'title' %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <td><%= f.label :remarks %></td>
+    <td><%= f.text_field :remarks,:class=>'title' %></td>
+  </div>
+</tr>
+<tr>
+  <div class="actions">
+	<td></td>
+    <td><%= f.submit "Save"%></td>
+  </div>
+</tr>
+    </tbody>
+</table>
+</fieldset>
+<% end %>
+</div>
+
+
+<!--<%= render 'form' %>-->
+<%= link_to 'Back', customers_path %>

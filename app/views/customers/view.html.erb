@@ -1,0 +1,114 @@
+<!-- START_HIGHLIGHT -->
+  <% if notice %>
+    <p id="notice"><%= notice %></p>
+  <% end %>
+<!-- END_HIGHLIGHT -->
+
+<h1>Central Lab Details</h1>
+<table id="one-column-emphasis">
+    <colgroup>
+    	<col class="oce-first" />
+    </colgroup>
+    <tbody>
+   	<tr>
+  <div>
+    <td>Customer Id</td>
+    <td><%= @customer.customerid %></td>
+  </div>
+</tr>
+   	<tr>
+  <div>
+    <td>Customer Name</td>
+    <td><%= @customer.customername %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+    <td>Class</td>
+    <td><%= @customer.customerclass %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+    <td>Type</td>
+    <td><%= @customer.customertype %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+    <td>Door No</td>
+    <td><%= @customer.housenumber %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+	  <td>Street</td>
+      <td><%= @customer.street %></td>
+  </div>
+</tr>
+<tr>
+<tr>
+  <div>
+	  <td>Street</td>
+      <td><%= @customer.area %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+	  <td>City</td>
+      <td><%= @customer.city %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+	  <td>State</td>
+      <td><%= @customer.state %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+	  <td>Country</td>
+      <td><%= @customer.country %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+	  <td>PIN</td>
+      <td><%= @customer.pincode %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+	  <td>Phone</td>
+      <td><%= @customer.phone %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+	  <td>Mobile</td>
+      <td><%= @customer.mobile %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+	  <td>Email</td>
+      <td><%= @customer.email %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+	  <td>Contact Person</td>
+      <td><%= @customer.contactperson %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+	  <td>Remarks</td>
+      <td><%= @customer.remarks %></td>
+  </div>
+</tr>
+    </tbody>
+</table>
+
+<%= link_to 'Edit', edit_customer_path(@customer) %> |
+<%= link_to 'Back', customers_path %>

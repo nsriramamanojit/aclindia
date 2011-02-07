@@ -3,11 +3,20 @@
 #Controller: Product Category
 #--------------------------------
 class ProductsController < ApplicationController
+prawnto :prawn => {
+          :left_margin => 48, 
+          :right_margin => 48,
+          :top_margin => 24,
+          :bottom_margin => 24,
+		  :page_size => 'A4'
+#          :page_layout=>:landscape
+}
   # GET /products
   # GET /products.xml
   def index
-    @products = Product.all
-
+#    @products = Product.all
+#pagination:
+	@products = Product.all.paginate :per_page => 5, :page => params[:page]
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @products }
@@ -17,6 +26,18 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.xml
   def show
+    @product = Product.all
+#    respond_to do |format|
+#      format.html # show.html.erb
+#      format.xml  { render :xml => @product }
+#    end
+	prawnto :filename => 'Report-Products.pdf', :inline => false
+
+  end
+
+  # GET /products/1
+  # GET /products/1.xml
+  def view
     @product = Product.find(params[:id])
 
     respond_to do |format|
@@ -48,7 +69,7 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to(@product, :notice => 'Product was successfully created.') }
+        format.html { redirect_to(products_path, :notice => 'Product was successfully created.') }
         format.xml  { render :xml => @product, :status => :created, :location => @product }
       else
 	@category = Category.all
@@ -66,7 +87,7 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.update_attributes(params[:product])
-        format.html { redirect_to(@product, :notice => 'Product was successfully updated.') }
+        format.html { redirect_to(products_path, :notice => 'Product was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

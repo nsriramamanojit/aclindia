@@ -33,18 +33,19 @@
     </thead>
          <tfoot>
     	<tr>
-        	<td colspan="5"></td>
+        	<td colspan="3"><%= will_paginate @labregionals %></td>
+			<td colspan="2"><%= link_to 'Download Report (PDF)', :action=> 'show' ,:format=> "pdf" %></td>
         </tr>
     </tfoot>
 <% @labregionals.each do |labregional| %>
    <tr>
     <td><%= labregional.labname %></td>
     <td><%= labregional.labcentral.labname %></td>
-    <td><%= link_to 'View', labregional %></td>
+    <td><%= link_to 'View', {:action => 'view', :id => labregional.id} %></td>
     <td><%= link_to 'Edit', edit_labregional_path(labregional) %></td>
     <td><%= link_to 'Delete', labregional, :confirm => 'Are you sure?',
        :method => :delete %></td>
   </tr>
 <% end %>
 </table>
-<%= link_to 'New Regional Lab', new_labregional_path %>
+<%= link_to 'New Regional Lab', new_labregional_path, :class=>"more" %>

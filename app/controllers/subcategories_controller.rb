@@ -3,10 +3,21 @@
 #Controller: Commodity SubCategory (based on Category)
 #--------------------------------
 class SubcategoriesController < ApplicationController
+
+prawnto :prawn => {
+          :left_margin => 48, 
+          :right_margin => 48,
+          :top_margin => 24,
+          :bottom_margin => 24,
+		  :page_size => 'A4'
+#          :page_layout=>:landscape
+}
   # GET /subcategories
   # GET /subcategories.xml
   def index
-    @subcategories = Subcategory.all
+#    @subcategories = Subcategory.all
+#pagination:
+	@subcategories = Subcategory.all.paginate :per_page => 5, :page => params[:page]
 
     respond_to do |format|
       format.html # index.html.erb
@@ -17,6 +28,17 @@ class SubcategoriesController < ApplicationController
   # GET /subcategories/1
   # GET /subcategories/1.xml
   def show
+    @subcategory = Subcategory.all
+#    respond_to do |format|
+#      format.html # show.html.erb
+#      format.xml  { render :xml => @subcategory }
+#    end
+	prawnto :filename => 'Report-SubCategories.pdf', :inline => false
+  end
+
+  # GET /subcategories/1
+  # GET /subcategories/1.xml
+  def view
 	@category = Category.all
     @subcategory = Subcategory.find(params[:id])
 
@@ -25,7 +47,6 @@ class SubcategoriesController < ApplicationController
       format.xml  { render :xml => @subcategory }
     end
   end
-
   # GET /subcategories/new
   # GET /subcategories/new.xml
   def new
@@ -51,7 +72,7 @@ class SubcategoriesController < ApplicationController
 
     respond_to do |format|
       if @subcategory.save
-        format.html { redirect_to(@subcategory, :notice => 'Subcategory Successfully Created.') }
+        format.html { redirect_to(subcategories_path, :notice => 'Subcategory Successfully Created.') }
         format.xml  { render :xml => @subcategory, :status => :created, :location => @subcategory }
       else
 	@category = Category.all
@@ -69,7 +90,7 @@ class SubcategoriesController < ApplicationController
 
     respond_to do |format|
       if @subcategory.update_attributes(params[:subcategory])
-        format.html { redirect_to(@subcategory, :notice => 'Subcategory Successfully Updated.') }
+        format.html { redirect_to(subcategories_path, :notice => 'Subcategory Successfully Updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

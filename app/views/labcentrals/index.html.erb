@@ -32,17 +32,17 @@
     </thead>
          <tfoot>
     	<tr>
-        	<td colspan="4"></td>
+        	<td colspan="4"><%= link_to 'Download Report (PDF)', :action=> 'show' ,:format=> "pdf" %></td>
         </tr>
     </tfoot>
 <% @labcentrals.each do |labcentral| %>
    <tr>
     <td><%= labcentral.labname %></td>
-    <td><%= link_to 'View', labcentral %></td>
+    <td><%= link_to 'View', {:action => 'view', :id => labcentral.id} %></td>
     <td><%= link_to 'Edit', edit_labcentral_path(labcentral) %></td>
     <td><%= link_to 'Delete', labcentral, :confirm => 'Are you sure?',
        :method => :delete %></td>
   </tr>
 <% end %>
 </table>
-<%= link_to 'New Central Lab', new_labcentral_path %>
+<%= link_to 'New Central Lab', new_labcentral_path, :class=>"more" %>

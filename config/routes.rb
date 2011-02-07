@@ -1,4 +1,8 @@
 Aclindia::Application.routes.draw do
+  resources :samples
+
+  resources :customers
+
   resources :userroles
 
   resources :sampleconditions
@@ -35,7 +39,9 @@ Aclindia::Application.routes.draw do
 
   resources :labcentrals
 
-  resources :cities
+  resources :cities  do 
+	 get 'load_states',:on => :collection
+  end 
 
   resources :states
 

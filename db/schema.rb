@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110129055237) do
+ActiveRecord::Schema.define(:version => 20110204043911) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -38,6 +38,31 @@ ActiveRecord::Schema.define(:version => 20110129055237) do
     t.string   "name"
     t.string   "description"
     t.string   "status"
+    t.string   "created_by"
+    t.string   "modified_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "customers", :force => true do |t|
+    t.string   "customerid",       :limit => 20
+    t.string   "customername",     :limit => 100
+    t.string   "customertype"
+    t.string   "customerclass"
+    t.string   "organizationname"
+    t.string   "groupname"
+    t.string   "housenumber"
+    t.string   "street"
+    t.string   "area"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.string   "phone",            :limit => 20
+    t.string   "mobile",           :limit => 20
+    t.string   "email",            :limit => 100
+    t.string   "contactperson"
+    t.string   "pincode",          :limit => 10
+    t.string   "remarks"
     t.string   "created_by"
     t.string   "modified_by"
     t.datetime "created_at"
@@ -119,12 +144,6 @@ ActiveRecord::Schema.define(:version => 20110129055237) do
     t.string   "status"
     t.string   "created_by"
     t.string   "modified_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "ones", :force => true do |t|
-    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

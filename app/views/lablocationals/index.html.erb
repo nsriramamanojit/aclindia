@@ -34,7 +34,8 @@
     </thead>
          <tfoot>
     	<tr>
-        	<td colspan="6"></td>
+        	<td colspan="4"><%= will_paginate @lablocationals %></td>
+			<td colspan="2"><%= link_to 'Download Report (PDF)', :action=> 'show' ,:format=> "pdf" %></td>
         </tr>
     </tfoot>
 
@@ -43,11 +44,11 @@
     <td><%= lablocational.labname %></td>
     <td><%= lablocational.labregional.labname %></td>
     <td><%= lablocational.labcentral.labname %></td>
-    <td><%= link_to 'View', lablocational %></td>
+    <td><%= link_to 'View', {:action => 'view', :id => lablocational.id} %></td>
     <td><%= link_to 'Edit', edit_lablocational_path(lablocational) %></td>
     <td><%= link_to 'Delete', lablocational, :confirm => 'Are you sure?',
        :method => :delete %></td>
   </tr>
 <% end %>
 </table>
-<%= link_to 'New Location Lab', new_lablocational_path %>
+<%= link_to 'New Location Lab', new_lablocational_path, :class=>"more" %>

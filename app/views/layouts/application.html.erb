@@ -8,7 +8,7 @@
 <%= stylesheet_link_tag "menu" %>
 <!-- END:stylesheet -->
 <%= javascript_include_tag :defaults %>
-<%= javascript_include_tag "menu" %>
+<%= javascript_include_tag "menu"%>
 <!--<%= javascript_include_tag "jquery" %> -->
 <%= csrf_meta_tag %>
 <style type="text/css">
@@ -18,6 +18,7 @@
 </head>
 <body id="home">
 <div id="banner">
+    <%= image_tag("logo.gif",:size => "120x60", :alt => "SSLL") %>
 <!-- START_HIGHLIGHT -->
 <%= @page_title || t('.title') %>
 <!-- END_HIGHLIGHT -->
@@ -27,6 +28,15 @@
 <div id="menu">
 <ul class="menu">
 <li><a href="/admin"><span><%= t('.home') %></span></a></li>
+<li><a href="#"class="parent"><span><%= t('.registration') %></span></a>
+            <div>
+			<ul>
+               <li><a href="/customers"><span><%= t('.customer') %></span></a></li>
+<li><a href="/"><span><%= t('.sample') %></span></a></li>
+
+            </ul>
+			</div>
+</li>
 <li><a href="#"class="parent"><span><%= t('.user') %></span></a>
             <div>
 			<ul>

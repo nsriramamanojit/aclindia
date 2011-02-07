@@ -1,5 +1,12 @@
-pdf.text "ACL India", :align => :center,   :size => 26, :style => :bold
-pdf.text "Countires List:", :align => :left, :font_size  =>18, :style => :bold
+pdf.text "ANALYSIS & CERTIFICATION LABORATORY", :align => :center,   :size => 20, :style => :bold
+pdf.text "41, Kalpataru Synergy,", :align => :center,   :size => 14
+pdf.text "Opp. Grand Hyatt, Santacruz (East),", :align => :center,   :size => 14
+pdf.text "Mumbai - 400 055. INDIA.", :align => :center,   :size => 14
+pdf.stroke_horizontal_rule
+
+pdf.move_down 10
+
+pdf.text "Report - Countries", :align => :left, :font_size  =>18, :style => :bold
 
 pdf.move_down 10
 
@@ -7,10 +14,21 @@ pdf.move_down 10
 countries=@country.map do |c|
 [
 	c.name,
+	c.description,
 	c.status
 ]
 end
-pdf.table countries, :border_style=> :grid, :row_colors=> ["FFFFFF","FFFFFF"], :headers=> ["Name","Status"], :align=> {0=> :center, 1=>:center, 2=> :center}, :width => 500, :font_size  => 10,:border_color => "951313",  :header_color => 'f07878',  :header_text_color  => "000000"
+pdf.table countries, 
+	:border_style=> :grid, 
+	:row_colors=> ["FFFFFF","FFFFFF"], 
+	:headers=> ["Name","Description","Status"], 
+	:align_headers => :center,
+	:align=> :center, 
+	:width => 400, 
+	:font_size  => 10,
+	:border_color => "000000",  
+	:header_color => 'FFFFFF',  
+	:header_text_color  => "000000",
+	:position => :center
 
-
-
+  

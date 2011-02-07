@@ -1,0 +1,32 @@
+<h1>Search Results</h1>
+<% if @customers.blank? %>
+ 	<p>Oops!!! No Matches found.</p>
+<% else %>
+<table id="newspaper-b">
+    <thead>
+    	<tr>
+        	<th scope="col">ID</th>
+        	<th scope="col">Name</th>
+            <th scope="col">View</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+ 
+        </tr>
+    </thead>
+         <tfoot>
+    	<tr>
+        	<td colspan="5"></td>
+        </tr>
+    </tfoot>
+<% @customers.each do |customer| %>
+  <tr>
+    <td><%= customer.customerid %></td>
+    <td><%= customer.customername %></td>
+    <td><%= link_to 'View', {:action => 'view', :id => customer.id} %></td>
+    <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
+    <td><%= link_to 'Delete', customer, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+<% end %>
+<%= link_to 'Back to Customers', customers_path %>

@@ -35,7 +35,7 @@
   text-align: center;
 }
 #banner img {
-  float: left;
+  float: center;
 }
 
 #columns {
@@ -113,7 +113,7 @@
 	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
 	font-size: 12px;
 	margin: 15px;
-	width: 480px;
+	width: 600px;
 	text-align: left;
 	border-collapse: collapse;
 	border: 1px solid #69c;
@@ -188,3 +188,24 @@ input[type=text], input.text, input.title, textarea, select {background-color:#f
 input[type=text]:focus, input.text:focus, input.title:focus, textarea:focus, select:focus {border-color:#666;}
 input[type=text], input.text, input.title, textarea, select {margin:0.5em 0;}
 /* END:TEXT Entry */
+
+
+/* button & link */
+.more-large:hover{text-decoration:none;color:#646363;}
+.more, more:visited{
+	background-image:url(images/but-color.gif);
+	background-repeat:repeat-x;
+	display:inline-block;
+	height:31px;
+	line-height:29px;
+	padding:0 20px;
+	color:#fff !important;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+}	
+.more:hover{
+	background-position:0 -31px !important;
+	text-decoration:none;
+	color:#fff;
+}

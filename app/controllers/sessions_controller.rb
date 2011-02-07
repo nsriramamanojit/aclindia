@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to admin_url
     else
-      redirect_to home_url, :alert => "Please Check Username or Password"
+      redirect_to home_url, :alert => "Authentication Failed. Check User Name and Password !!!"
     end
   end
 

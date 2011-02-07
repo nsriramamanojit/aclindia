@@ -67,3 +67,8 @@
 [Thu Jan 20 12:21:25.408 2011] 0.000 sec [all/2/rel 0 (0,20)] [user_core] Assam
 [Sat Jan 29 11:41:40.085 2011] 0.011 sec [all/2/rel 1 (0,20)] [userrole_core] Administrator
 [Sat Jan 29 23:55:55.895 2011] 0.002 sec [all/2/rel 1 (0,20)] [country_core] india
+[Fri Feb  4 17:20:30.121 2011] 0.040 sec [all/2/rel 1 (0,20)] [customer_core] cu/2011/1
+[Fri Feb  4 17:34:18.271 2011] 0.000 sec [scan/2/rel 1 (0,20)] [customer_core]
+[Fri Feb  4 17:34:37.163 2011] 0.002 sec [all/2/rel 1 (0,20)] [customer_core] cu/2011/1
+[Fri Feb  4 17:35:10.758 2011] 0.000 sec [all/2/rel 1 (0,20)] [customer_core] cu/2011/1
+[Fri Feb  4 17:36:26.717 2011] 0.000 sec [scan/2/rel 1 (0,20)] [customer_core]

@@ -2,12 +2,21 @@
 #Controller: States Information
 #==========================================
 class StatesController < ApplicationController
-
+prawnto :prawn => {
+          :left_margin => 48, 
+          :right_margin => 48,
+          :top_margin => 24,
+          :bottom_margin => 24,
+		  :page_size => 'A4'
+#          :page_layout=>:landscape
+}
   # GET /states
   # GET /states.xml
   def index
-    @states = State.all
-
+#    @states = State.all
+#pagination:
+	@states = State.all.paginate :per_page => 5, :page => params[:page]
+	
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @states }
@@ -17,6 +26,18 @@ class StatesController < ApplicationController
   # GET /states/1
   # GET /states/1.xml
   def show
+#	@country = Country.all
+    @state = State.all
+#    respond_to do |format|
+#      format.html # show.html.erb
+#      format.xml  { render :xml => @state }
+#    end
+	prawnto :filename => 'Report-states.pdf', :inline => false
+  end
+
+  # GET /states/1
+  # GET /states/1.xml
+  def view
 	@country = Country.all
     @state = State.find(params[:id])
 
@@ -51,7 +72,7 @@ class StatesController < ApplicationController
 
     respond_to do |format|
       if @state.save
-        format.html { redirect_to(@state, :notice => 'State was Created Successfully.') }
+        format.html { redirect_to(states_path, :notice => 'State was Created Successfully.') }
         format.xml  { render :xml => @state, :status => :created, :location => @state }
       else
 	@country = Country.all
@@ -68,7 +89,7 @@ class StatesController < ApplicationController
 
     respond_to do |format|
       if @state.update_attributes(params[:state])
-        format.html { redirect_to(@state, :notice => 'State was successfully updated.') }
+        format.html { redirect_to(states_path, :notice => 'State was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

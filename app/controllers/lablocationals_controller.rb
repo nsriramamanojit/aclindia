@@ -2,10 +2,20 @@
 #Controller: Location Lab Information
 #==========================================
 class LablocationalsController < ApplicationController
+prawnto :prawn => {
+          :left_margin => 48, 
+          :right_margin => 48,
+          :top_margin => 24,
+          :bottom_margin => 24,
+		  :page_size => 'A4',
+          :page_layout=>:landscape
+}
   # GET /lablocationals
   # GET /lablocationals.xml
   def index
-    @lablocationals = Lablocational.all
+#    @lablocationals = Lablocational.all
+#pagination:
+	@lablocationals = Lablocational.all.paginate :per_page => 5, :page => params[:page]
 
     respond_to do |format|
       format.html # index.html.erb
@@ -16,6 +26,18 @@ class LablocationalsController < ApplicationController
   # GET /lablocationals/1
   # GET /lablocationals/1.xml
   def show
+    @lablocational = Lablocational.all
+#    respond_to do |format|
+#      format.html # show.html.erb
+#      format.xml  { render :xml => @lablocational }
+#    end
+	prawnto :filename => 'Report-LocationalLab.pdf', :inline => false
+
+  end
+
+  # GET /lablocationals/1
+  # GET /lablocationals/1.xml
+  def view
 	@labcentral = Labcentral.all
 	@labregional = Labregional.all
     @lablocational = Lablocational.find(params[:id])
@@ -25,7 +47,6 @@ class LablocationalsController < ApplicationController
       format.xml  { render :xml => @lablocational }
     end
   end
-
   # GET /lablocationals/new
   # GET /lablocationals/new.xml
   def new
@@ -52,7 +73,7 @@ class LablocationalsController < ApplicationController
 
     respond_to do |format|
       if @lablocational.save
-        format.html { redirect_to(@lablocational, :notice => 'Locational Lab was successfully created.') }
+        format.html { redirect_to(lablocationals_path, :notice => 'Locational Lab was successfully created.') }
         format.xml  { render :xml => @lablocational, :status => :created, :location => @lablocational }
       else
 	@labcentral = Labcentral.all
@@ -70,7 +91,7 @@ class LablocationalsController < ApplicationController
 
     respond_to do |format|
       if @lablocational.update_attributes(params[:lablocational])
-        format.html { redirect_to(@lablocational, :notice => 'Locational Lab was successfully updated.') }
+        format.html { redirect_to(lablocationals_path, :notice => 'Locational Lab was successfully updated.') }
         format.xml  { head :ok }
       else
 	@labcentral = Labcentral.all

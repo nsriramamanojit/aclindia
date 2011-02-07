@@ -1,0 +1,50 @@
+<h1>Search Customer</h1>
+<!--Start of search text box -->
+<%= form_tag :action => 'search' %>
+	<table id="one-column-emphasis">
+    <colgroup>
+    	<col class="oce-first" />
+    </colgroup>
+	<tr>
+		<td>Search</td>
+		<td><%= text_field_tag :query ,@query ||="Enter Customer ID/Name",:class=>'title',
+:onfocus=>"javascript: this.value=''",:onblur=>"javascript: if(this.value=='') this.value='Enter Customer ID/Name'" %></td>
+		<td><%= submit_tag "Search" %></td>
+	</tr>
+	</table>
+<%= form_tag %>
+<!--end of search text box -->
+<h1>Listing Customers</h1>
+<!-- START_HIGHLIGHT -->
+  <% if notice %>
+    <p id="notice"><%= notice %></p>
+  <% end %>
+<!-- END_HIGHLIGHT -->
+<table id="newspaper-b">
+    <thead>
+    	<tr>
+        	<th scope="col">ID</th>
+        	<th scope="col">Name</th>
+            <th scope="col">View</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+ 
+        </tr>
+    </thead>
+         <tfoot>
+    	<tr>
+			<td colspan="3"><%= will_paginate @customers %></td>
+        	<td colspan="2"><%= link_to 'Download Report (PDF)', :action=> 'show' ,:format=> "pdf" %></td>
+        </tr>
+    </tfoot>
+<% @customers.each do |customer| %>
+  <tr>
+    <td><%= customer.customerid %></td>
+    <td><%= customer.customername %></td>
+    <td><%= link_to 'View', {:action => 'view', :id => customer.id} %></td>
+    <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
+    <td><%= link_to 'Delete', customer, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+<%= link_to 'New Customer', new_customer_path, :class=>"more" %>

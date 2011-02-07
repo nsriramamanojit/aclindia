@@ -7,9 +7,10 @@ gem 'rails', '3.0.3'
 
 gem 'mysql'
 gem 'prawn'
-gem 'to_csv'
-gem 'to_xls'
-gem 'pdfkit', '0.5.0'
+#gem 'to_csv'
+#gem 'to_xls'
+#gem 'pdfkit', '0.5.0'
+gem 'will_paginate'
 gem 'thinking-sphinx', '2.0.2', :require => 'thinking_sphinx'
 
 # Use unicorn as the web server

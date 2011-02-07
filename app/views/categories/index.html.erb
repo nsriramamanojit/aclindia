@@ -32,17 +32,21 @@
     </thead>
          <tfoot>
     	<tr>
-        	<td colspan="4"><em>Report</em></td>
+			<td colspan="2"><%= will_paginate @categories %></td>
+        	<td colspan="2"><%= link_to 'Download Report (PDF)', :action=> 'show' ,:format=> "pdf" %></td>
 
         </tr>
     </tfoot>
 <% @categories.each do |category| %>
   <tr>
     <td><%= category.name %></td>
-    <td><%= link_to 'Show', category %></td>
+    <td><%= link_to 'View', {:action => 'view', :id => category.id} %></td>
     <td><%= link_to 'Edit', edit_category_path(category) %></td>
-    <td><%= link_to 'Delete', category, :confirm => 'Are you sure?', :method => :destroy %></td>
+    <td><%= link_to 'Delete', category, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
-<%= link_to 'New Category', new_category_path %>
+<%= link_to 'New Category', new_category_path, :class=>"more" %>
+
+
+

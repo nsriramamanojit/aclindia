@@ -2,6 +2,15 @@
 #Controller: Central Lab Information
 #==========================================
 class LabcentralsController < ApplicationController
+prawnto :prawn => {
+          :left_margin => 48, 
+          :right_margin => 48,
+          :top_margin => 24,
+          :bottom_margin => 24,
+		  :page_size => 'A4',
+          :page_layout=>:landscape
+}
+
   # GET /labcentrals
   # GET /labcentrals.xml
   def index
@@ -16,6 +25,17 @@ class LabcentralsController < ApplicationController
   # GET /labcentrals/1
   # GET /labcentrals/1.xml
   def show
+    @labcentral = Labcentral.all
+#    respond_to do |format|
+#      format.html # show.html.erb
+#      format.xml  { render :xml => @labcentral }
+#    end
+	prawnto :filename => 'Report-CentralLab.pdf', :inline => false
+  end
+
+  # GET /labcentrals/1
+  # GET /labcentrals/1.xml
+  def view
     @labcentral = Labcentral.find(params[:id])
 	
     respond_to do |format|
@@ -48,7 +68,7 @@ class LabcentralsController < ApplicationController
 
     respond_to do |format|
       if @labcentral.save
-        format.html { redirect_to(@labcentral, :notice => 'Central Lab Successfully Created.') }
+        format.html { redirect_to(labcentrals_path, :notice => 'Central Lab Successfully Created.') }
         format.xml  { render :xml => @labcentral, :status => :created, :location => @labcentral }
       else
         format.html { render :action => "new" }
@@ -64,7 +84,7 @@ class LabcentralsController < ApplicationController
 
     respond_to do |format|
       if @labcentral.update_attributes(params[:labcentral])
-        format.html { redirect_to(@labcentral, :notice => 'Central Lab was successfully updated.') }
+        format.html { redirect_to(labcentrals_path, :notice => 'Central Lab was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

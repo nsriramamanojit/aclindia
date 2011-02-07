@@ -33,18 +33,19 @@
     </thead>
          <tfoot>
     	<tr>
-        	<td colspan="5">Report</td>
+        	<td colspan="3"><%= will_paginate @states %></td>
+			<td colspan="2"><%= link_to 'Download Report (PDF)', :action=> 'show' ,:format=> "pdf" %></td>
         </tr>
     </tfoot>
 <% @states.each do |state| %>
   <tr>
     <td><%= state.name %></td>
     <td><%= state.country.name %></td>
-    <td><%= link_to 'View', state %></td>
+    <td><%= link_to 'View', {:action => 'view', :id => state.id} %></td>
     <td><%= link_to 'Edit', edit_state_path(state) %></td>
     <td><%= link_to 'Delete', state, :confirm => 'Are you sure?',
        :method => :delete %></td>
   </tr>
 <% end %>
 </table>
-<%= link_to 'New State', new_state_path %>
+<%= link_to 'New State', new_state_path, :class=>"more" %>

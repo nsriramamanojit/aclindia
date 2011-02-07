@@ -33,7 +33,9 @@ en:
       samplecondition:        "Sample Condition"
       userrole:        "User Roles"
       logout:        "Logout"
-
+      registration:        "Registraion"
+      customer:        "Customer"
+      sample:        "Sample"
     home:
       title:       "Shree Shubham Logistics Limited"
 #END:layout

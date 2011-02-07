@@ -2,23 +2,27 @@
 #Controller: Country Information
 #==========================================
 class CountriesController < ApplicationController
-
 prawnto :prawn => {
           :left_margin => 48, 
           :right_margin => 48,
           :top_margin => 24,
-          :bottom_margin => 24}
+          :bottom_margin => 24,
+		  :page_size => 'A4'
+#          :page_layout=>:landscape
+}
+
 
   # GET /countries
   # GET /countries.xml
   def index
-    @countries = Country.all
+#    @countries = Country.all
+#pagination:
+	@countries = Country.all.paginate :per_page => 5, :page => params[:page]
 
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @countries }
-	  format.csv { send_data @countries.to_csv }
-    end
+     end
 
   end
 
@@ -26,12 +30,12 @@ prawnto :prawn => {
   # GET /countries/1.xml
   def show
     @country = Country.all
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @country }
-      format.pdf { render :layout => false }
-    end
+#    respond_to do |format|
+#      format.html # show.html.erb
+#      format.xml  { render :xml => @country }
+#      format.pdf { render :layout => false }
+#    end
+	prawnto :filename => 'Report-Countries.pdf', :inline => false
   end
 
   def view
@@ -67,7 +71,7 @@ prawnto :prawn => {
 
     respond_to do |format|
       if @country.save
-        format.html { redirect_to(@country, :notice => 'Country was successfully created.') }
+        format.html { redirect_to(countries_path, :notice => 'Country was successfully created.') }
         format.xml  { render :xml => @country, :status => :created, :location => @country }
       else
         format.html { render :action => "new" }
@@ -83,7 +87,7 @@ prawnto :prawn => {
 
     respond_to do |format|
       if @country.update_attributes(params[:country])
-        format.html { redirect_to(@country, :notice => 'Country was successfully updated.') }
+        format.html { redirect_to(countries_path, :notice => 'Country was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

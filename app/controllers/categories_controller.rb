@@ -3,11 +3,21 @@
 #Controller: Commodity Category
 #--------------------------------
 class CategoriesController < ApplicationController
+
+prawnto :prawn => {
+          :left_margin => 48, 
+          :right_margin => 48,
+          :top_margin => 24,
+          :bottom_margin => 24,
+		  :page_size => 'A4'
+#          :page_layout=>:landscape
+}
   # GET /categories
   # GET /categories.xml
   def index
-    @categories = Category.all
-
+#    @categories = Category.all
+#pagination:
+	@categories = Category.all.paginate :per_page => 5, :page => params[:page]
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @categories }
@@ -17,6 +27,17 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.xml
   def show
+    @category = Category.all
+#    respond_to do |format|
+#      format.html # show.html.erb
+#      format.xml  { render :xml => @category }
+#    end
+	prawnto :filename => 'Report-Categories.pdf', :inline => false
+  end
+
+  # GET /categories/1
+  # GET /categories/1.xml
+  def view
     @category = Category.find(params[:id])
 
     respond_to do |format|
@@ -48,7 +69,7 @@ class CategoriesController < ApplicationController
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to(@category, :notice => 'Category was successfully created.') }
+        format.html { redirect_to(categories_path, :notice => 'Category was successfully created.') }
         format.xml  { render :xml => @category, :status => :created, :location => @category }
       else
         format.html { render :action => "new" }
@@ -64,7 +85,7 @@ class CategoriesController < ApplicationController
 
     respond_to do |format|
       if @category.update_attributes(params[:category])
-        format.html { redirect_to(@category, :notice => 'Category was successfully updated.') }
+        format.html { redirect_to(categories_path, :notice => 'Category was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

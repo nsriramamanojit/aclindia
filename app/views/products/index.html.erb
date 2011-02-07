@@ -34,7 +34,8 @@
     </thead>
          <tfoot>
     	<tr>
-        	<td colspan="6"></td>
+         	<td colspan="4"><%= will_paginate @products %></td>
+			<td colspan="2"><%= link_to 'Download Report (PDF)', :action=> 'show' ,:format=> "pdf" %></td>
         </tr>
     </tfoot>
 <% @products.each do |product| %>
@@ -42,10 +43,10 @@
     <td><%= product.name %></td>
     <td><%= product.subcategory.name %></td>
     <td><%= product.category.name %></td>
-    <td><%= link_to 'View', product %></td>
+    <td><%= link_to 'View', {:action => 'view', :id => product.id} %></td>
     <td><%= link_to 'Edit', edit_product_path(product) %></td>
     <td><%= link_to 'Delete', product, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
-<%= link_to 'New Product', new_product_path %>
+<%= link_to 'New Product', new_product_path, :class=>"more" %>
